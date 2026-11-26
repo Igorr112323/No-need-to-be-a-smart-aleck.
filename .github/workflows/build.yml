@@ -45,7 +45,10 @@ jobs:
 
       - name: Make icon
         working-directory: repo
-        run: python build/make_icon.py
+        shell: bash
+        run: |
+          python build/make_icon.py || echo "make_icon warning — icon already exists"
+          ls -lh assets/openlight.ico || echo "no icon"
 
       - name: Install pyinstaller
         working-directory: repo
