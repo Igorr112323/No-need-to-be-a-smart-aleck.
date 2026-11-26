@@ -35,19 +35,6 @@ def get_version() -> str:
     return "1.0.0"
 APP_VERSION = get_version()
 
-# --selftest флаг (без окна) для CI проверки exe — работает и в --windowed (без консоли)
-if "--selftest" in sys.argv:
-    # в windowed-сборке консоли нет — пробуем AllocConsole, иначе пишем в stderr
-    try:
-        if os.name == 'nt':
-            import ctypes
-            ctypes.windll.kernel32.AllocConsole()
-    except:
-        pass
-    print(f"OpenLight {APP_VERSION}")
-    sys.stdout.flush()
-    sys.exit(0)
-
 def get_app_data_dir() -> pathlib.Path:
     if os.name == 'nt':
         base = os.environ.get('APPDATA', os.path.expanduser('~'))
@@ -57,6 +44,101 @@ def get_app_data_dir() -> pathlib.Path:
     else:
         xdg = os.environ.get('XDG_DATA_HOME', os.path.join(os.path.expanduser('~'), '.config'))
         return pathlib.Path(xdg) / APP_NAME
+
+# ——— DIAG: флаг --diag — лог в файл + debug ———
+DIAG_MODE = "--diag" in sys.argv
+
+def _diag_log_path() -> pathlib.Path:
+    base = get_app_data_dir()
+    p = base / "logs" / "init.log"
+    return p
+
+def diag_log(msg: str):
+    # всегда пишет в файл если --diag, иначе только при ошибке
+    try:
+        path = _diag_log_path()
+        path.parent.mkdir(parents=True, exist_ok=True)
+        ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+        line = f"[{ts}] {msg}\n"
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(line)
+        if DIAG_MODE:
+            try:
+                print(line, end="")
+            except:
+                pass
+    except Exception as e:
+        try:
+            print(f"diag_log failed: {e}")
+        except:
+            pass
+
+if DIAG_MODE:
+    # свежий лог на каждый запуск с --diag
+    try:
+        p = _diag_log_path()
+        p.parent.mkdir(parents=True, exist_ok=True)
+        # ротация: если >1МБ — перезаписать
+        if p.exists() and p.stat().st_size > 1024*1024:
+            p.write_text("", encoding="utf-8")
+        diag_log(f"=== OpenLight {APP_VERSION} --diag start ===")
+        diag_log(f"argv={sys.argv}")
+        diag_log(f"exe={sys.executable} cwd={os.getcwd()} frozen={getattr(sys,'frozen',False)}")
+        # _MEIPASS/web
+        meipass = getattr(sys, '_MEIPASS', None)
+        diag_log(f"_MEIPASS={meipass}")
+        base = pathlib.Path(__file__).parent
+        if meipass:
+            base = pathlib.Path(meipass)
+        web_root = base / "web"
+        diag_log(f"web_root={web_root} exists={web_root.exists()}")
+        idx = web_root / "index.html"
+        diag_log(f"web/index.html exists={idx.exists()} size={idx.stat().st_size if idx.exists() else 'NA'}")
+        for rel in ["vendor/three.module.js","vendor/OrbitControls.js","vendor/STLLoader.js","vendor/STLExporter.js","vendor/three.min.js"]:
+            fp = web_root / rel
+            diag_log(f"web/{rel} exists={fp.exists()} size={(fp.stat().st_size if fp.exists() else 'NA')}")
+        for cand in [pathlib.Path(__file__).parent / "VERSION", pathlib.Path("VERSION"), pathlib.Path(meipass)/"VERSION" if meipass else None]:
+            if cand:
+                diag_log(f"VERSION cand {cand} exists={cand.exists()} val={(cand.read_text(encoding='utf-8').strip()[:40] if cand.exists() else 'NA')}")
+        diag_log(f"APPDATA={get_app_data_dir()} exists={get_app_data_dir().exists()}")
+        # WebView2 detection (Windows)
+        if os.name == 'nt':
+            try:
+                import subprocess, shutil
+                # via reg query
+                out = subprocess.run(["reg","query",r"HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients"], capture_output=True, text=True, timeout=3)
+                diag_log(f"WebView2 reg query rc={out.returncode} out_len={len(out.stdout)}")
+                if out.returncode==0:
+                    diag_log(out.stdout[:600])
+                # via Get-ItemProperty for Edge version
+                ps = subprocess.run(["powershell","-Command","(Get-ItemProperty -Path 'HKLM:\\SOFTWARE\\WOW6432Node\\Microsoft\\EdgeUpdate\\Clients\\*' -ErrorAction SilentlyContinue | Select-Object -First 1 pv).pv"], capture_output=True, text=True, timeout=3)
+                diag_log(f"WebView2 ps pv={ps.stdout.strip()[:200]}")
+            except Exception as e:
+                diag_log(f"WebView2 detect error: {e}")
+    except Exception as e:
+        diag_log(f"diag init error: {e}\n{traceback.format_exc()}")
+
+# --selftest флаг (без окна) для CI проверки exe — работает и в --windowed (без консоли)
+if "--selftest" in sys.argv:
+    diag_log(f"--selftest start version={APP_VERSION}") if DIAG_MODE else None
+    # в windowed-сборке консоли нет — пробуем AllocConsole, иначе пишем в stderr
+    try:
+        if os.name == 'nt':
+            import ctypes
+            ctypes.windll.kernel32.AllocConsole()
+    except:
+        pass
+    print(f"OpenLight {APP_VERSION}")
+    sys.stdout.flush()
+    if DIAG_MODE:
+        diag_log("--selftest done, exit 0")
+    sys.exit(0)
+
+# --diag без окна (только лог) для проверки Controlled Folder Access
+if DIAG_MODE and "--diag-headless" in sys.argv:
+    diag_log("--diag-headless: log only, exit 0")
+    print(f"OpenLight {APP_VERSION} diag headless OK, log at {_diag_log_path()}")
+    sys.exit(0)
 
 APP_DATA_DIR = get_app_data_dir()
 AUTOSAVE_PATH = APP_DATA_DIR / 'autosave.olight.json'
@@ -122,14 +204,32 @@ def _next_job_id():
 class Api:
     """Методы доступны в JS как window.pywebview.api.*"""
 
+    def diag_log_js(self, msg: str):
+        diag_log(f"JS: {msg}")
+        return {'ok': True}
+
+    def diag_ping(self, marker: str):
+        diag_log(f"marker {marker}")
+        return {'ok': True}
+
     # —— базовые ——
     def get_app_info(self):
-        ensure_app_data()
-        # версия из build/VERSION, лицензия ждёт куратора, ссылка на GitHub
-        return {'version': APP_VERSION, 'appData': str(APP_DATA_DIR), 'name': APP_NAME, 'license': LICENSE_NAME, 'github': GITHUB_URL}
+        diag_log("API get_app_info called")
+        try:
+            ensure_app_data()
+            # версия из build/VERSION, лицензия ждёт куратора, ссылка на GitHub
+            res = {'version': APP_VERSION, 'appData': str(APP_DATA_DIR), 'name': APP_NAME, 'license': LICENSE_NAME, 'github': GITHUB_URL}
+            diag_log(f"API get_app_info OK version={APP_VERSION} appData={APP_DATA_DIR}")
+            return res
+        except Exception as e:
+            diag_log(f"API get_app_info ERROR {e}\n{traceback.format_exc()}")
+            raise
 
     def get_recent(self):
-        return load_recent()
+        diag_log("API get_recent called")
+        res = load_recent()
+        diag_log(f"API get_recent OK len={len(res)}")
+        return res
 
     def open_model(self):
         try:
@@ -422,9 +522,11 @@ class Api:
 
 def main():
     # двойной запуск из exe не открывает второе окно — только один инстанс
+    diag_log(f"main() start diag={DIAG_MODE} version={APP_VERSION}")
     try:
         import webview
-    except ImportError:
+    except ImportError as e:
+        diag_log(f"pywebview missing {e}")
         print("pywebview не установлен. Установите зависимости: pip install -r requirements.txt")
         import webbrowser
         url = get_web_path()
@@ -432,9 +534,11 @@ def main():
         webbrowser.open(url)
         return
     url = get_web_path()
+    diag_log(f"web url={url}")
     api = Api()
     # Фаза A: системную плашку скрываем — frameless окно (дизайн web/* не менялся)
     # На Windows frameless убирает чёрную системную плашку, оставляя только dot-grid пилюли
+    diag_log("create_window frameless=True easy_drag=True")
     window = webview.create_window(
         "OpenLight",
         url=url,
@@ -448,7 +552,23 @@ def main():
         js_api=api,
         background_color="#F9F9FB"
     )
-    webview.start(debug=False)
+    # обработчики событий для лога
+    def _on_loaded():
+        diag_log("event loaded")
+    def _on_shown():
+        diag_log("event shown")
+    try:
+        window.events.loaded += _on_loaded
+        window.events.shown += _on_shown
+    except Exception as e:
+        diag_log(f"events bind error {e}")
+    diag_log(f"webview.start debug={DIAG_MODE}")
+    try:
+        webview.start(debug=DIAG_MODE, http_port=42000 if DIAG_MODE else None)
+        diag_log("webview.start returned")
+    except Exception as e:
+        diag_log(f"webview.start ERROR {e}\n{traceback.format_exc()}")
+        raise
 
 if __name__ == "__main__":
     main()

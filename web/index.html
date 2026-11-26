@@ -54,6 +54,18 @@
   </script>
 </head>
 <body>
+  <script>
+  // DIAG boot wrapper — ошибки → title, маркеры в init.log
+  (function(){
+    window.__diag = function(m){ try{ if(window.pywebview && window.pywebview.api && window.pywebview.api.diag_ping) window.pywebview.api.diag_ping(m); else if(window.pywebview && window.pywebview.api && window.pywebview.api.diag_log_js) window.pywebview.api.diag_log_js(m); console.log('[diag] '+m); }catch(e){ console.log('diag fail '+e); } };
+    window.onerror = function(msg, src, line, col, err){ try{ document.title='ERR: '+msg; }catch(e){} window.__diag('onerror '+msg+' @'+(src||'')+':'+line+':'+col); console.error('onerror',msg,src,line,col,err); };
+    window.addEventListener('unhandledrejection', function(e){ try{ document.title='ERR: '+(e.reason && e.reason.message || e.reason); }catch(ex){} window.__diag('unhandledrejection '+(e.reason && e.reason.stack || e.reason)); console.error('unhandledrejection',e.reason); });
+    window.__diag('splash shown');
+    document.addEventListener('DOMContentLoaded', function(){ window.__diag('web-loaded DOMContentLoaded'); });
+    window.addEventListener('load', function(){ window.__diag('js-ready window.load'); });
+    window.addEventListener('pywebviewready', function(){ window.__diag('api-ready pywebviewready'); try{ window.pywebview.api.get_app_info().then(function(r){ window.__diag('api get_app_info OK '+JSON.stringify(r).slice(0,400)); }).catch(function(e){ window.__diag('api get_app_info ERR '+e); }); }catch(e){ window.__diag('api get_app_info throw '+e); } });
+  })();
+  </script>
   <!-- Экран загрузки -->
   <div id="appLoader" class="app-loader" aria-hidden="true">
     <div class="loader-card">
