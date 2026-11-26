@@ -362,7 +362,7 @@ btnMore.addEventListener('click', (e) => { e.stopPropagation(); if (popSettings.
 document.getElementById('btnBack').addEventListener('click', () => showToast('Проекты — скоро'));
 // ——— экспорт STL ———
 document.getElementById('btnExport').addEventListener('click', () => {
-  if (!state.optimized) { showToast('Сначала оптимизируйте — демо-режим'); return; }
+  if (!state.optimized) { showToast('Сначала оптимизируйте'); return; }
   try {
     const exporter = new STLExporter();
     const toExport = (currentLightGroup && currentLightGroup.visible) ? currentLightGroup : getLightGroup(state.currentRelief).group;
@@ -817,7 +817,7 @@ function setView(mode) {
     Object.values(lightCache).forEach(v => enableStressMaterial(v.group, false));
     renderer.setScissorTest(false);
   } else if (mode === 'stress') {
-    if (!state.optimized) { showToast('Сначала оптимизируйте — демо-режим'); viewMode = 'original'; return; }
+    if (!state.optimized) { showToast('Сначала оптимизируйте'); viewMode = 'original'; return; }
     // для импорта тоже показать его
     if (importedGroup) {
       importedGroup.visible = true; bracket.visible = false;
@@ -832,8 +832,8 @@ function setView(mode) {
     legendEl.classList.add('show'); renderer.setScissorTest(false);
   } else if (mode === 'light') {
     if (!state.optimized) { showToast('Сначала оптимизируйте'); viewMode = 'original'; return; }
-    // если импорт — облегчённая недоступна
-    if (importedGroup) { showToast('Облегчение доступно только для тестового кронштейна в демо-режиме'); viewMode = 'original'; return; }
+    // если импорт — облегчённая недоступна (ограничение MVP)
+    if (importedGroup) { showToast('Облегчение доступно только для тестового кронштейна'); viewMode = 'original'; return; }
     switchLight(state.currentRelief);
     enableStressMaterial(currentLightGroup, false); legendEl.classList.remove('show'); splitDivider.classList.remove('show'); renderer.setScissorTest(false);
   } else if (mode === 'split') {
@@ -980,7 +980,7 @@ function handleOpenModelViaApi() {
           if (found) geometry = found;
           else { showWarning('OBJ без геометрии'); return; }
         } else if (ext === '.step' || ext === '.stp') {
-          showWarning('STEP пока не поддерживается в демо-режиме'); return;
+          showWarning('STEP пока не поддерживается'); return;
         } else {
           // попробовать как STL ASCII
           try { geometry = stlLoader.parse(buffer); } catch { showWarning('Неизвестный формат'); return; }

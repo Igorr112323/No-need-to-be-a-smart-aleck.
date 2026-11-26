@@ -1,0 +1,34 @@
+name: Build OpenLight.exe
+on:
+  push:
+    branches: [ main, "arena/**" ]
+  workflow_dispatch:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Vendor (internet once)
+        run: python build/vendor.py
+      - name: Make icon
+        run: python build/make_icon.py
+      - name: Build exe
+        run: |
+          chcp 65001
+          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" main.py
+      - name: Size
+        run: dir dist\OpenLight.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: OpenLight.exe
+          path: dist/OpenLight.exe
+          retention-days: 14

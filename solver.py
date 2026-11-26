@@ -27,9 +27,9 @@ except ImportError:
 
 # ——— свойства материалов ———
 MATERIALS = {
-    "steel": {"E": 200e9, "nu": 0.30, "yield": 345e6, "name": "Сталь 09Г2С", "density": 7850},
-    "alu":   {"E": 71e9,  "nu": 0.33, "yield": 140e6, "name": "АМг6", "density": 2640},
-    "pla":   {"E": 3.5e9, "nu": 0.36, "yield": 50e6,  "name": "PLA", "density": 1240},
+    "steel": {"E": 200e9, "nu": 0.30, "yield": 345e6, "name": "Сталь 09Г2С", "density": 7.85},
+    "alu":   {"E": 71e9,  "nu": 0.33, "yield": 140e6, "name": "АМг6", "density": 2.64},
+    "pla":   {"E": 3.5e9, "nu": 0.36, "yield": 50e6,  "name": "PLA", "density": 1.24},
 }
 
 # ——— вокселизация ———
@@ -360,29 +360,38 @@ def optimize_topology(
             edofMat[eid, ni*3+1] = base+1
             edofMat[eid, ni*3+2] = base+2
 
-    # опоры -> fixed DOFs
+    # опоры -> fixed DOFs (проверка координат с учётом vg.bounds[0]/pitch, фикс ВСЕХ узлов в радиусе опоры)
     fixed_dofs = set()
+    support_radius = 12.0  # мм, физический размер опоры (не зависит от pitch)
     for sup in supports:
         pos = np.array(sup["position"], dtype=float)
-        # ближайший solid воксель
-        ijk = np.floor((pos - origin) / pitch).astype(int)
-        # поиск в радиусе 2 вокселя ближайшего solid
-        best = None; best_dist = 1e9
-        for dx in [-1, 0, 1]:
-            for dy in [-1, 0, 1]:
-                for dz in [-1, 0, 1]:
-                    ii, jj, kk = ijk[0]+dx, ijk[1]+dy, ijk[2]+dz
-                    if 0 <= ii < nx and 0 <= jj < ny and 0 <= kk < nz and mat_vox[ii, jj, kk]:
-                        vox_c = origin + (np.array([ii, jj, kk]) + 0.5)*pitch
-                        d = np.linalg.norm(vox_c - pos)
-                        if d < best_dist:
-                            best_dist = d; best = (ii, jj, kk)
-        if best is not None:
-            ix, iy, iz = best
-            # все 8 узлов этого вокселя — фиксируем
-            for dx, dy, dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]:
-                nid = node_id(ix+dx, iy+dy, iz+dz)
-                fixed_dofs.update([nid*3, nid*3+1, nid*3+2])
+        rad = float(sup.get("radiusMm", support_radius))
+        # фиксируем ВСЕ узлы сетки в радиусе rad от опоры (координаты узлов = origin + [ix,iy,iz]*pitch)
+        # это обеспечивает несингулярную K (все узлы торца)
+        for ix in range(nx+1):
+            for iy in range(ny+1):
+                for iz in range(nz+1):
+                    node_coord = origin + np.array([ix, iy, iz]) * pitch
+                    if np.linalg.norm(node_coord - pos) <= rad:
+                        nid = node_id(ix, iy, iz)
+                        fixed_dofs.update([nid*3, nid*3+1, nid*3+2])
+        # fallback: если ни одного узла не попало (опора вне сетки) — ближайший solid воксель
+        if not fixed_dofs:
+            ijk = np.floor((pos - origin) / pitch).astype(int)
+            best = None; best_dist = 1e9
+            for dx in [-1,0,1]:
+                for dy in [-1,0,1]:
+                    for dz in [-1,0,1]:
+                        ii, jj, kk = ijk[0]+dx, ijk[1]+dy, ijk[2]+dz
+                        if 0 <= ii < nx and 0 <= jj < ny and 0 <= kk < nz and mat_vox[ii,jj,kk]:
+                            vox_c = origin + (np.array([ii,jj,kk])+0.5)*pitch
+                            d=np.linalg.norm(vox_c-pos)
+                            if d<best_dist: best_dist=d; best=(ii,jj,kk)
+            if best is not None:
+                ix,iy,iz=best
+                for dx,dy,dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]:
+                    nid=node_id(ix+dx,iy+dy,iz+dz)
+                    fixed_dofs.update([nid*3,nid*3+1,nid*3+2])
     if not fixed_dofs:
         # если опор нет — фиксируем низ (y=0) как fallback, чтобы не было сингулярности
         print("[solver] нет опор — фиксируем нижнюю грань")
@@ -391,9 +400,18 @@ def optimize_topology(
                 nid = node_id(ix, 0, iz)
                 fixed_dofs.update([nid*3, nid*3+1, nid*3+2])
 
-    fixed = np.array(sorted(fixed_dofs), dtype=int)
-    free = np.array([i for i in range(n_dof) if i not in fixed_dofs], dtype=int)
-    print(f"[solver] fixed {len(fixed)} free {len(free)}")
+    # активные узлы — только те, что принадлежат хотя бы одному solid вокселю (иначе K нулевая строка → сингулярность)
+    active_nodes = set()
+    for (ix, iy, iz) in solid_idx:
+        for dx, dy, dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]:
+            active_nodes.add(node_id(ix+dx, iy+dy, iz+dz))
+    active_dofs = set()
+    for n in active_nodes:
+        active_dofs.update([n*3, n*3+1, n*3+2])
+    # free = только активные минус защемлённые
+    fixed = np.array(sorted(fixed_dofs.intersection(active_dofs)), dtype=int)
+    free = np.array(sorted(active_dofs - fixed_dofs), dtype=int)
+    print(f"[solver] active_nodes {len(active_nodes)}/{n_nodes} active_dofs {len(active_dofs)} fixed {len(fixed)} free {len(free)}")
 
     # силы -> F вектор
     F = np.zeros(n_dof, dtype=float)
@@ -470,27 +488,23 @@ def optimize_topology(
         Kff = K[free, :][:, free]
         Ff = F[free]
 
-        # решение — CG с предобуславливанием (диагональ)
-        # для малых — spsolve быстрее
+        # решение — spsolve до 40k иначе CG с rtol 1e-8..1e-10, печать info/итераций
         try:
             if len(free) < 40000:
-                # прямой
                 u_free = spsolve(Kff, Ff)
+                print(f"[solver][{it+1}] spsolve {len(free)} DOF ok")
             else:
-                # CG с ILU предобуславливателем
-                # диагональный предобуславливатель
-                diag = Kff.diagonal()
-                diag[diag == 0] = 1e-12
-                M = sparse.diags(1/diag)
-                # обёртка для cg
-                u_free, info = cg(Kff, Ff, rtol=1e-6, maxiter=500, M=M)
+                diag = Kff.diagonal(); diag[diag==0]=1e-12; M=sparse.diags(1/diag)
+                u_free, info = cg(Kff, Ff, rtol=1e-8, maxiter=1000, M=M)
+                print(f"[solver][{it+1}] CG info={info} free={len(free)}")
                 if info != 0:
                     print(f"[solver] CG не сошёлся info={info}, пробуем spsolve")
                     u_free = spsolve(Kff, Ff)
         except Exception as e:
-            print(f"[solver] solve failed {e}, пробуем CG")
+            print(f"[solver] spsolve failed {e}, пробуем CG rtol 1e-8")
             diag = Kff.diagonal(); diag[diag==0]=1e-12; M=sparse.diags(1/diag)
-            u_free, info = cg(Kff, Ff, rtol=1e-5, maxiter=800, M=M)
+            u_free, info = cg(Kff, Ff, rtol=1e-8, maxiter=1000, M=M)
+            print(f"[solver] CG retry info={info}")
             if info != 0:
                 raise RuntimeError(f"CG failed {info}")
 
@@ -545,12 +559,13 @@ def optimize_topology(
         # целевая масса
         # учитывать пассивные (они не участвуют в ограничении)
         # простой OC: rho_new = rho * ( -dc / lmid )**eta
-        l1, l2 = 0, 1e9
+        # OC: l2 адаптивно от max(-dc), чтобы не улететь в 1e9 и не получить nan
+        dc_pos = np.maximum(1e-9, -dc)
+        l1, l2 = 0, float(np.max(dc_pos) * 2 + 1e-9)
+        if l2 < 1e-9: l2 = 1.0
         move = 0.2
         eta = 0.5
-        # отфильтрованная плотность для ограничения
-        # вычислим среднюю
-        for _ in range(50):
+        for _ in range(60):
             lmid = 0.5*(l1+l2)
             rho_new = np.maximum(0.001, np.maximum(rho - move, np.minimum(1.0, np.minimum(rho + move, rho * ((-dc)/lmid) ** eta))))
             # passive остаются 1
@@ -569,10 +584,13 @@ def optimize_topology(
                 l2 = lmid
             if abs(vol - vol_frac) < 1e-3 or (l2 - l1) < 1e-6:
                 break
-        # если не сошлось — fallback
         if 'rho_new' not in locals():
             rho_new = rho
-        rho = rho_new
+        # проверка что сумма активных >0 (не все 1e-3)
+        if np.count_nonzero(rho_new > 0.01) == 0:
+            print(f"[solver] предупреждение: все rho -> 0.001, оставляем предыдущую")
+            rho_new = rho
+        rho = np.maximum(1e-3, rho_new)  # минимум плотности 1e-3 для несингулярности
 
         # прогресс
         pct = 15 + (it+1)/max_iter * 70
@@ -592,23 +610,21 @@ def optimize_topology(
         rho_grid_final[ix, iy, iz] = rho[eid]
     binary_final = rho_grid_final > 0.5
     # объединить с passive (они уже 1)
-    # marching cubes
+    # marching cubes с guard N_min
     progress("Marching cubes", 88, "поверхность")
-    # нужно инвертировать? marching_cubes ожидает 0/1 где 1 — внутри
-    # добавить паддинг 1 вокруг для замкнутости
+    n_active = int(np.count_nonzero(binary_final))
+    if n_active < 50:
+        raise RuntimeError(f"marching cubes: слишком мало активных вокселей {n_active} (мин 50), rho мин {rho.min():.3f} макс {rho.max():.3f} mean {rho.mean():.3f} доля>0.5 {np.mean(rho>0.5):.3f}")
     padded = np.pad(binary_final.astype(np.float32), 1, mode='constant', constant_values=0)
-    # pitch остаётся тем же
     try:
         if HAS_SKIMAGE:
             verts, faces, normals, vals = marching_cubes(padded, level=0.5, spacing=(pitch, pitch, pitch))
-            # сместить обратно на origin - pitch (из-за паддинга) + origin
-            verts += origin - pitch  # учесть паддинг
+            verts += origin - pitch
         else:
-            # trimesh fallback
             verts, faces = trimesh.voxel.ops.matrix_to_marching_cubes(padded, pitch=pitch)
             verts += origin - pitch
     except Exception as e:
-        raise RuntimeError(f"marching cubes failed: {e}")
+        raise RuntimeError(f"marching cubes failed: {e} | active {n_active} rho [{rho.min():.3f},{rho.max():.3f}]")
 
     # Taubin smoothing
     progress("Сглаживание Taubin", 93, "10 итераций")
@@ -618,7 +634,11 @@ def optimize_topology(
     progress("Экспорт STL", 95, "генерация")
     # создать меш для экспорта
     exp_mesh = trimesh.Trimesh(vertices=verts_s, faces=faces_s, process=True)
-    exp_mesh.remove_duplicate_faces()
+    try:
+        exp_mesh.remove_duplicate_faces()
+    except AttributeError:
+        # trimesh 5.x: нет такого метода — пропускаем
+        pass
     exp_mesh.remove_unreferenced_vertices()
     # объём для веса после
     try:
