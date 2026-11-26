@@ -1,79 +1,79 @@
-# OpenLight
+# OpenLight — бесплатный Windows .exe для умного облегчения 3D-деталей
 
-Лёгкое Windows-приложение для «умного» облегчения 3D-деталей с сохранением прочности. MVP в стиле Apple Freeform.
+[![CI](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/ci.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/ci.yml)
+[![Build](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/build.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/build.yml)
+[![Corpus](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/corpus.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/corpus.yml)
 
-> **Статус: Этап 7 (фаза B) — реальное ядро.** Воксельная дискретизация 64³ (≤150k), МКЭ на гекс-элементах (numpy+scipy.sparse), SIMP 15–25 итераций, удаление несвязных компонент, marching cubes + Taubin, запас по von Mises. Подпись «Демонстрационный режим» убрана.
+Лёгкое Windows-приложение (единый .exe, стиль Apple Freeform) для «умного» облегчения 3D-деталей с сохранением прочности. **Полностью бесплатно, без подписок/ключей/триалов.**
+
+> **Статус: v0.9.0 — GitHub-центричный.** Ядро 7B/9: эталон балки 2.06% (<5%), 24³ 12.8с watertight, 48³ в работе. Дизайн заморожен.
 
 ## Требования
 
-* **Windows 10 / 11 x64**, **WebView2** (в Win11 встроен; Win10 → [Evergreen Bootstrapper](https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section))
-* Для сборки: **Python 3.10+** + `pip`
+* **Windows 10/11 x64**, **WebView2** (Win11 встроен; Win10 → [Evergreen Bootstrapper](https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section))
+* Для сборки: Python 3.10+ + pip
 
-> **Интернет нужен только один раз, для вендора** — `python build/vendor.py` скачивает `three.module.js` и др. в `web/vendor/`. Дальше офлайн.
+> Интернет нужен только один раз, для вендора — `python build/vendor.py`. Дальше полностью офлайн (Network 0).
 
-## Быстрый старт
+## Быстрый старт (локально)
 
 ```bash
 pip install -r requirements.txt
 python main.py
 ```
+Окно 1400×900, ЛКМ вращение, колесо зум, ПКМ панорама, Esc выход, Ctrl+S/O проекты.
 
-Окно 1400×900, `ЛКМ` вращение, `колесо` зум, `ПКМ` панорама, `Esc` выход. `Ctrl+S`/`Ctrl+O` проект.
+## Сборка и тесты — через GitHub Actions
 
-## Что нового в Этапе 7
+Все сборки и стресс-тесты — только на GitHub, не в песочнице:
 
-1. **Вокселизация** — `trimesh → voxel grid 64³` по длинной стороне, ≤150k ячеек, pitch = longest/64.
-2. **МКЭ** — 8-узловые гексы, матрица `C(3,3)` из `E,ν`, `D` 6×6, `B` 6×24, `Ke = ∫BᵀDB dV` 2×2×2 Гаусс, Dirichlet у опор, нагрузки у сил, решатель `spsolve` / `CG` с диагональным предобуславливателем.
-3. **SIMP** — фильтр плотности `r=1.5` без чекерборда, `p=3`, 15–25 итераций, таргет `vol=1−relief`, OC-обновление, каждые 5 итераций `scipy.ndimage.label` удаляет несвязные.
-4. **Геометрия** — `marching cubes` (skimage) + `Taubin smoothing` → экспорт через `STLExporter` (тот же `save_stl`).
-5. **Поле напряжений** — ИЗ РЕШЕНИЯ `B·u → σ → von Mises`, запас `yield / max(σ)` по выбранному материалу (Сталь 345 МПа, АМг6 140 МПа, PLA 50 МПа).
-6. **Прогресс** — честный `фаза + итерация + %`, счётчик `i/25`, тайм-аут 45 с → предложение снизить до `32³`.
+| Workflow | Раннер | Что делает |
+|---|---|---|
+| `ci.yml` | ubuntu-latest | lint (py_compile, node --check), `import solver`, `pytest tests/test_beam.py` (балка ≤2%) |
+| `build.yml` | windows-latest | `vendor.py → make_icon → build_exe.bat → dist/OpenLight.exe` (artifact + Release на тег `v*`) |
+| `corpus.yml` | ubuntu-latest | `fetch_corpus.py --limit 30 → make_stress_report.py → report.html/json` (бейдж stress-tested) |
 
-## Сборка
+**Как получить .exe:**
+- **Через CI:** Actions → Build → Artifacts `OpenLight.exe` (14 дней) или Releases `v*`
+- **Локально:** `build_exe.bat` → `dist\OpenLight.exe` <60МБ
+- **Bundle:** `openlight.bundle` (git bundle --all)
 
-```bat
-python --version
-pip install -r requirements.txt
-python build/vendor.py      # интернет только здесь
-python build/make_icon.py   # Pillow → assets/openlight.ico
-build_exe.bat               # PyInstaller --onefile --windowed → dist\OpenLight.exe (~45 МБ <60)
-```
+Публичный репо без лимита минут; private — 2000 мин/мес. Крупные модели — через скачивание в workflow с кэшем, не через git.
 
-Проверка офлайн: отключите Wi-Fi → импорт STL, опоры/силы, *Оптимизировать* (воксели/SIMP), карта, облегчённая, шторка, слайдер, вес/запас честные, экспорт — всё без сети (Network 0).
+## Корпус тестовых моделей
 
-## Таблица
+Только открытые лицензии: NASA 3D (public domain), NIH 3D, Printables CC0/CC-BY, Thingi10K CC, собственные процедурные. Не берём APM/Fidesys/KOMPAS/nTop/Ansys.
 
-| Есть | Нет |
-|---|---|
-| Реальный МКЭ/SIMP, воксели, von Mises, запас | STEP-парсинг — заглушка |
-| Импорт STL/OBJ, проекты `.olight.json`, последние 5, автосейв | Отчёт PDF — Этап 6 |
-| Опоры/силы/зоны, материал, облегчение 20/40/60, карта, шторка | — |
+`tests/corpus/manifest.json` — 30 записей (→100+), каждая `{file, source_url, license, sha256, category, notes}`, ≤15МБ.
+
+Скачивание: `python tools/fetch_corpus.py [--limit N]` → `tests/corpus/cache/` (не в git), проверка sha256, детерминирован/идемпотентен, кэш `actions/cache`.
+
+Отчёт: `python tools/make_stress_report.py [--limit 30]` → `report.json/html` (file/license/parse/watertight/voxel_ok/время/итог).
 
 ## Структура
 
 ```
-openlight/
-  main.py              # pywebview + Api (open_model/save_stl/projects + start_optimization/get_optimization_progress)
-  solver.py            # воксели + Ke + CG/spsolve + SIMP + label + marching cubes + Taubin + von Mises
-  web/                 # index.html + app.css + app.js (ES-модуль, STLLoader) + vendor/
-  build/vendor.py      # pinned r160 SHA256
-  build/make_icon.py   # Pillow
+.github/workflows/ci.yml|build.yml|corpus.yml
+main.py  solver.py  requirements.txt  build_exe.bat
+web/...  build/...  assets/...  design/freeform-reference.jpg
+tests/test_beam.py test_solver.py test_corpus.py conftest.py
+tests/corpus/manifest.json  tools/fetch_corpus.py make_stress_report.py
+docs/TESTING.md BUG_LIST.md KNOWN_LIMITATIONS.md CHANGELOG.md
 ```
 
-## Как получить .exe
+## Известные ограничения (честно)
 
-- **Через CI (рекомендуется):** после пуша на `main`/`arena/**` workflow `.github/workflows/build.yml` собирается на `windows-latest`: `pip install -r requirements.txt → python build/vendor.py → python build/make_icon.py → pyinstaller --onefile --windowed --name OpenLight ... main.py` → артефакт `dist/OpenLight.exe` в разделе Actions → Artifacts (14 дней). Для PR/Release — аналогично в Releases.
-- **Локально:** выполни «Сборка» выше (`build_exe.bat`) на Windows 10/11 — получишь `dist\OpenLight.exe`.
-- **Bundle для офлайн-доставки:** `openlight.bundle` (git bundle --all, 641K) содержит всю историю ветки и может быть склонирован `git clone openlight.bundle`.
+См. [docs/KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md) — МКЭ 48³ OC коллапс, von Mises упрощённый, STEP заглушка, и т.д.
 
-## Чек-лист
+## Чек-лист приёмки
 
-* `dist\OpenLight.exe` <60 МБ, двойной клик → окно, все этапы без интернета, Network 0, иконка пилюля+искра #007AFF.
+`dist\OpenLight.exe` <60МБ, двойной клик → офлайн Network 0, дизайн пиксель-в-пиксель Freeform.
 
-## Известные ограничения (честно, Этап 7B)
+## Лицензия
 
-- **МКЭ-матрица — частично исправлена 2026-11-26**: введён `active_nodes` фильтр + 12мм фиксированная сфера (was 24 fixed → теперь 948 для 24³, 4080 для 48³), эталон балки 32×8×8 ошибка 2.06% (<5% допуск). Г-кронштейн 24³: 12.8с 12 итераций watertight True; 48³: OC коллапс (0 active <50) — SIMP lambda требует доработки.
-- **Marching cubes** падает на `res 24/16` при `vol_frac 0.4` → `Surface level must be within volume data range` (binary пусто после `keep_connected`).
-- **Исправлено 2026-11-26:** `trimesh 5.2.2 vg.origin → vg.bounds[0]` и `scipy 1.17 cg(tol→rtol)`.
-- **Упрощения, влияющие на числа:** von Mises ≈ `sqrt(ce·E/vol)` (не полный `B·D·B`), `density_filter` — uniform вместо конуса, Taubin — ленивый fallback. Числа безопасности/веса для Этапа 7 — эвристика.
-- **UI:** тосты «— демо-режим» остались в `app.js:365,820,836` как fallback-ветка для браузера без Python, в `index.html` подпись убрана.
+Пока не выбрана куратором: рекомендуется MIT/Apache-2.0 для кода (бесплатно для всех) или proprietary freeware — от этого зависит страница «О программе».
+
+## Ссылки
+
+- Releases: https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./releases
+- Issues: https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./issues

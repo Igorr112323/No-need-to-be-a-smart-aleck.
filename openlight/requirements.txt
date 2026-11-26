@@ -1,6 +1,0 @@
-pywebview
-trimesh
-numpy
-scipy
-scikit-image
-Pillow

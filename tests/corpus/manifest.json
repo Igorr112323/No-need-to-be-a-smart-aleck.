@@ -1,0 +1,242 @@
+[
+  {
+    "file": "openlight_bracket_proc.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_bracket",
+    "category": "bracket",
+    "notes": "Процедурный L-кронштейн OpenLight (встроенный)"
+  },
+  {
+    "file": "openlight_uav_arm.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_uav",
+    "category": "uav_bracket",
+    "notes": "Процедурный кронштейн БПЛА"
+  },
+  {
+    "file": "openlight_thin_plate.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_plate",
+    "category": "thinwall",
+    "notes": "Тонкая пластина"
+  },
+  {
+    "file": "openlight_gear_12t.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_gear",
+    "category": "gear",
+    "notes": "Шестерня 12 зубьев"
+  },
+  {
+    "file": "openlight_housing_box.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_box",
+    "category": "housing",
+    "notes": "Корпус коробка"
+  },
+  {
+    "file": "openlight_hinge_simple.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_hinge",
+    "category": "hinge",
+    "notes": "Петля простая"
+  },
+  {
+    "file": "openlight_lattice.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_lattice",
+    "category": "thinwall",
+    "notes": "Решётка"
+  },
+  {
+    "file": "openlight_bracket_v2.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_bracket2",
+    "category": "bracket",
+    "notes": "Кронштейн v2"
+  },
+  {
+    "file": "openlight_uav_frame.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_frame",
+    "category": "uav_bracket",
+    "notes": "Рама БПЛА"
+  },
+  {
+    "file": "openlight_bracket_heavy.stl",
+    "source_url": "generated-procedural",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc_heavy",
+    "category": "bracket",
+    "notes": "Усиленный кронштейн"
+  },
+  {
+    "file": "nasa_wrench.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Wrench/Wrench.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder-will-be-filled-on-first-fetch",
+    "category": "bracket",
+    "notes": "NASA Wrench - эталон инструмента"
+  },
+  {
+    "file": "nasa_hubble.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Hubble.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder",
+    "category": "corpus",
+    "notes": "Hubble"
+  },
+  {
+    "file": "nasa_cassini.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Cassini/Cassini.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder",
+    "category": "corpus",
+    "notes": "Cassini probe"
+  },
+  {
+    "file": "nasa_iss.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station/ISS.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder",
+    "category": "housing",
+    "notes": "ISS simplified"
+  },
+  {
+    "file": "nasa_curiosity_wheel.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Curiosity%20Rover/Wheel.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder",
+    "category": "gear",
+    "notes": "Curiosity wheel"
+  },
+  {
+    "file": "nasa_apollo_lm.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Apollo%20Lunar%20Module/LM.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder",
+    "category": "housing",
+    "notes": "Apollo LM"
+  },
+  {
+    "file": "nasa_orion.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Orion%20Crew%20Module/Orion.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder",
+    "category": "housing",
+    "notes": "Orion"
+  },
+  {
+    "file": "nasa_voyager.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/Voyager.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder",
+    "category": "bracket",
+    "notes": "Voyager"
+  },
+  {
+    "file": "nasa_kepler.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Kepler/Kepler.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder",
+    "category": "corpus",
+    "notes": "Kepler"
+  },
+  {
+    "file": "nasa_jwst.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/James%20Webb%20Space%20Telescope/JWST.stl",
+    "license": "NASA public domain",
+    "sha256": "placeholder",
+    "category": "housing",
+    "notes": "JWST"
+  },
+  {
+    "file": "printables_bracket_cc0_01.stl",
+    "source_url": "https://example.com/printables/bracket01.stl",
+    "license": "CC0",
+    "sha256": "placeholder",
+    "category": "bracket",
+    "notes": "Printables CC0 bracket placeholder — заменить на реальный CC0 при наполнении"
+  },
+  {
+    "file": "printables_bracket_cc0_02.stl",
+    "source_url": "https://example.com/printables/bracket02.stl",
+    "license": "CC0",
+    "sha256": "placeholder",
+    "category": "bracket",
+    "notes": "placeholder"
+  },
+  {
+    "file": "printables_hinge_ccby_01.stl",
+    "source_url": "https://example.com/printables/hinge01.stl",
+    "license": "CC-BY",
+    "sha256": "placeholder",
+    "category": "hinge",
+    "notes": "placeholder hinge"
+  },
+  {
+    "file": "printables_gear_cc0_01.stl",
+    "source_url": "https://example.com/printables/gear01.stl",
+    "license": "CC0",
+    "sha256": "placeholder",
+    "category": "gear",
+    "notes": "placeholder gear"
+  },
+  {
+    "file": "printables_housing_cc0_01.stl",
+    "source_url": "https://example.com/printables/housing01.stl",
+    "license": "CC0",
+    "sha256": "placeholder",
+    "category": "housing",
+    "notes": "placeholder housing"
+  },
+  {
+    "file": "printables_thinwall_cc0_01.stl",
+    "source_url": "https://example.com/printables/thinwall01.stl",
+    "license": "CC0",
+    "sha256": "placeholder",
+    "category": "thinwall",
+    "notes": "placeholder thinwall"
+  },
+  {
+    "file": "nih_heart_valve.stl",
+    "source_url": "https://example.com/nih/heart_valve.stl",
+    "license": "NIH CC-BY",
+    "sha256": "placeholder",
+    "category": "housing",
+    "notes": "NIH 3D placeholder"
+  },
+  {
+    "file": "nih_skull.stl",
+    "source_url": "https://example.com/nih/skull.stl",
+    "license": "NIH CC-BY",
+    "sha256": "placeholder",
+    "category": "housing",
+    "notes": "NIH placeholder"
+  },
+  {
+    "file": "thingi10k_001.stl",
+    "source_url": "https://example.com/thingi10k/001.stl",
+    "license": "CC-BY",
+    "sha256": "placeholder",
+    "category": "bracket",
+    "notes": "Thingi10K subset placeholder"
+  },
+  {
+    "file": "thingi10k_002.stl",
+    "source_url": "https://example.com/thingi10k/002.stl",
+    "license": "CC-BY",
+    "sha256": "placeholder",
+    "category": "gear",
+    "notes": "placeholder"
+  }
+]

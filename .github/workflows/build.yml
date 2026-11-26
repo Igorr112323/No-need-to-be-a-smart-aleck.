@@ -1,10 +1,12 @@
 name: Build OpenLight.exe
 on:
   push:
+    tags: [ "v*" ]
     branches: [ main, "arena/**" ]
   workflow_dispatch:
   pull_request:
     branches: [ main ]
+  # также ручной пуш на arena/** для теста
 
 jobs:
   build-windows:
@@ -21,14 +23,23 @@ jobs:
         run: python build/vendor.py
       - name: Make icon
         run: python build/make_icon.py
+      - name: Install pyinstaller
+        run: pip install pyinstaller
       - name: Build exe
-        run: |
-          chcp 65001
-          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" main.py
+        shell: cmd
+        run: build_exe.bat
       - name: Size
-        run: dir dist\OpenLight.exe
+        shell: bash
+        run: ls -lh dist/OpenLight.exe || dir dist/OpenLight.exe
       - uses: actions/upload-artifact@v4
         with:
           name: OpenLight.exe
           path: dist/OpenLight.exe
           retention-days: 14
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/OpenLight.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

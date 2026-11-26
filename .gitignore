@@ -25,3 +25,12 @@ Thumbs.db
 
 # Логи
 *.log
+
+# Corpus cache — не коммитим, качается в CI
+tests/corpus/cache/
+report.json
+report.html
+openlight.bundle
+
+# Bundle
+*.bundle

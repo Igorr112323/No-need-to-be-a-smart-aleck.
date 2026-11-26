@@ -1,0 +1,31 @@
+name: CI
+on:
+  push:
+    branches: [ main, "arena/**" ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Python deps
+        run: pip install -r requirements.txt && pip install pytest
+      - name: Python compile
+        run: python -m py_compile main.py solver.py build/vendor.py build/make_icon.py tools/fetch_corpus.py tools/make_stress_report.py tests/test_beam.py tests/test_solver.py tests/test_corpus.py
+      - name: Node check
+        run: node --check web/js/app.js && node --check web/js/state.js
+      - name: Solver import smoke
+        run: python -c "import solver; print(solver.MATERIALS)"
+      - name: Beam etalon (≤2%)
+        run: pytest tests/test_beam.py -v
+      - name: Solver smoke
+        run: pytest tests/test_solver.py -v -k "not corpus"
