@@ -98,7 +98,7 @@ jobs:
           E2E_URL: http://127.0.0.1:8080/index.html
         run: |
           mkdir -p docs/qa
-          pytest tests/e2e/test_e2e.py -v --tb=short 2>&1 | tee /tmp/e2e.log
+          pytest tests/e2e/test_e2e.py -v -s --tb=short 2>&1 | tee /tmp/e2e.log
           echo "=== screenshots after e2e ==="
           ls -lh docs/qa/ || echo "no docs/qa"
           echo "count $(ls -1 docs/qa/*.png 2>/dev/null | wc -l)"
