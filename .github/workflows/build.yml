@@ -172,6 +172,12 @@ jobs:
           name: OpenLight.exe
           path: ./out
       - run: |
+          ls -R ./out || true
+          find ./out -type f -ls || true
+          f=$(find ./out -name "OpenLight.exe" -type f | head -n1)
+          echo "found $f"
+          test -n "$f" || (echo "no exe found"; exit 1)
+          cp "$f" ./out/OpenLight.exe 2>/dev/null || true
           ls -lh ./out/OpenLight.exe
           sz=$(stat -c%s ./out/OpenLight.exe)
           echo "Size $sz"
