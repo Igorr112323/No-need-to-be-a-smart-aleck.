@@ -63,3 +63,11 @@ openlight/
 ## Чек-лист
 
 * `dist\OpenLight.exe` <60 МБ, двойной клик → окно, все этапы без интернета, Network 0, иконка пилюля+искра #007AFF.
+
+## Известные ограничения (честно, Этап 7B)
+
+- **МКЭ-матрица сингулярна в текущей реализации** — на Г-кронштейне 32³ (3414 эл, 80760 DOF, 24 fixed) `spsolve` → `Matrix is exactly singular`, CG не сходится (`info=500`) → тайм-аут 45с. Требуется доработка фиксации/границ. Пока работает демо-ветка (fallback в `app.js`).
+- **Marching cubes** падает на `res 24/16` при `vol_frac 0.4` → `Surface level must be within volume data range` (binary пусто после `keep_connected`).
+- **Исправлено 2026-11-26:** `trimesh 5.2.2 vg.origin → vg.bounds[0]` и `scipy 1.17 cg(tol→rtol)`.
+- **Упрощения, влияющие на числа:** von Mises ≈ `sqrt(ce·E/vol)` (не полный `B·D·B`), `density_filter` — uniform вместо конуса, Taubin — ленивый fallback. Числа безопасности/веса для Этапа 7 — эвристика.
+- **UI:** тосты «— демо-режим» остались в `app.js:365,820,836` как fallback-ветка для браузера без Python, в `index.html` подпись убрана.

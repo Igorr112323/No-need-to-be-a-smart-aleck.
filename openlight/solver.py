@@ -50,7 +50,10 @@ def load_mesh_from_b64(b64_str: str) -> trimesh.Trimesh:
             merged = trimesh.util.concatenate([m for m in mesh.geometry.values()])
             mesh = merged
         mesh.remove_unreferenced_vertices()
-        mesh.fix_inversion()
+        try:
+            mesh.fix_inversion()
+        except AttributeError:
+            pass  # trimesh 5.x: метода нет
         return mesh
     finally:
         pathlib.Path(tmp_path).unlink(missing_ok=True)
@@ -92,8 +95,11 @@ def voxelize_trimesh(mesh: trimesh.Trimesh, resolution: int = 64, max_cells: int
     # матрица (nx,ny,nz) bool
     mat = vg.matrix  # уже bool
     print(f"[voxel] матрица {mat.shape} pitch={pitch:.4f} заполнено {np.count_nonzero(mat)} / {mat.size}")
-    origin = vg.origin  # минимальная точка
-    # origin в trimesh — это нижний угол bbox вокселей
+    # trimesh 5.x: origin = bounds[0] (transform не нужен, т.к. matrix индексируется от bounds)
+    try:
+        origin = vg.origin
+    except AttributeError:
+        origin = np.array(vg.bounds[0], dtype=float)
     dims = np.array(mat.shape, dtype=int)
     return mat, pitch, origin, dims, vg
 
@@ -477,14 +483,14 @@ def optimize_topology(
                 diag[diag == 0] = 1e-12
                 M = sparse.diags(1/diag)
                 # обёртка для cg
-                u_free, info = cg(Kff, Ff, tol=1e-6, maxiter=500, M=M)
+                u_free, info = cg(Kff, Ff, rtol=1e-6, maxiter=500, M=M)
                 if info != 0:
                     print(f"[solver] CG не сошёлся info={info}, пробуем spsolve")
                     u_free = spsolve(Kff, Ff)
         except Exception as e:
             print(f"[solver] solve failed {e}, пробуем CG")
             diag = Kff.diagonal(); diag[diag==0]=1e-12; M=sparse.diags(1/diag)
-            u_free, info = cg(Kff, Ff, tol=1e-5, maxiter=800, M=M)
+            u_free, info = cg(Kff, Ff, rtol=1e-5, maxiter=800, M=M)
             if info != 0:
                 raise RuntimeError(f"CG failed {info}")
 
