@@ -162,6 +162,294 @@
     "notes": "Процедурный bracket seed 42 idx 9"
   },
   {
+    "file": "gen_bracket_43_0000.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "9f1cec2a8c82cc63a7007b37b366a28f389f9a5d9797c6d219b859ef89a5a464",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 43 idx 0"
+  },
+  {
+    "file": "gen_bracket_43_0001.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d940354c14373a6c32763cb98e4617f609d554353b5da2fe6af62fd8a251ee39",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 43 idx 1"
+  },
+  {
+    "file": "gen_bracket_43_0002.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "86fc9b149ac29e9a92cecb7dd18aaab412af5b838ce9685690f3db23cee59837",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 43 idx 2"
+  },
+  {
+    "file": "gen_bracket_43_0003.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b4b0602eafbf74249565f8903aed5e36e735bd22fcd449a6a773041d42b16c55",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 43 idx 3"
+  },
+  {
+    "file": "gen_bracket_43_0004.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6eb3b6093b29c4e74ec644b8eed7392c3c12a2b03579bdcfdf1b05e733f766cc",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 43 idx 4"
+  },
+  {
+    "file": "gen_bracket_43_0005.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6afee3ea08550c1952970c756800bf8e991f9d9f76dfc67a25f26e0edf136e82",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 43 idx 5"
+  },
+  {
+    "file": "gen_bracket_43_0006.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "dbdd27977f619bf7e172d7e7a16d145c5ace32d26db1b57181f261741f0b25c1",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 43 idx 6"
+  },
+  {
+    "file": "gen_bracket_43_0007.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c4366a26285ae37341be1e6dc037f484389eb9a5e1cedaa3395d97fe7336062b",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 43 idx 7"
+  },
+  {
+    "file": "gen_bracket_43_0008.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0f28184c20e560c846d6e4d8b9a354a3d36424aa0d78c965cb0f9db8214989cb",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 43 idx 8"
+  },
+  {
+    "file": "gen_bracket_44_0000.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "bef580dc4568e6f93c2fab3f8a8393312a2966f684496f36a0394149d8e00620",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 44 idx 0"
+  },
+  {
+    "file": "gen_bracket_44_0001.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "29dd4c49289e635a117650df2b9e85b402d1584ac159089b7637402553803f4d",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 44 idx 1"
+  },
+  {
+    "file": "gen_bracket_44_0002.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4af3b5e938cd0f763ca3809ac99347a3734c1b355f18bc795c45e3ed899926c8",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 44 idx 2"
+  },
+  {
+    "file": "gen_bracket_44_0003.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "26cd116c29f35ae77e48c87c40ff0bfff4f0312582ede37aeab186bfd6a26c1b",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 44 idx 3"
+  },
+  {
+    "file": "gen_bracket_44_0004.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3a66fe1302ebde96114a5d86d42874f647b0bedb03815052e1d6d2eb1dbd5a06",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 44 idx 4"
+  },
+  {
+    "file": "gen_bracket_44_0005.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e3fdfa876e72e2ad6a5ca8a3b00c0588fa53e0627a9c5f1cc82ee1611437097f",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 44 idx 5"
+  },
+  {
+    "file": "gen_bracket_44_0006.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7b79afcba75d8832fc157b0728b8d58ee271ea94b7d8c1d5e6e1ff216e782a38",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 44 idx 6"
+  },
+  {
+    "file": "gen_bracket_44_0007.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1932027c092b086d49d2048b9e88886193db3d8ae440cdc9f0cf2593b9321399",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 44 idx 7"
+  },
+  {
+    "file": "gen_bracket_44_0008.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "24acdab1ea64b463181c336e6fcbdbfc5af865df646cdf3f680b3285a51933a0",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 44 idx 8"
+  },
+  {
+    "file": "gen_bracket_45_0000.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "32a45bfbb95bf57d72f6352fbe88f53394bb10738b6a3a2d0a4ffea15f4f1e67",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 45 idx 0"
+  },
+  {
+    "file": "gen_bracket_45_0001.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e225886a6cd8aaadbb6016db647b6828865bf7e1e267fafbf53772fcb99e5f11",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 45 idx 1"
+  },
+  {
+    "file": "gen_bracket_45_0002.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c2fab136c0c85c3985c890a5c6ce0f063df3bf0de2563e479f3b019ba95f200d",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 45 idx 2"
+  },
+  {
+    "file": "gen_bracket_45_0003.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f511f728fc7fbf06bd33a60224946c2d37fc9490dfcc7835ed687bde1857e422",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 45 idx 3"
+  },
+  {
+    "file": "gen_bracket_45_0004.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ad99c4a937b42aed9ccb52c1297b208fbbbd04dd2551534721889d02fbba5585",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 45 idx 4"
+  },
+  {
+    "file": "gen_bracket_45_0005.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3d13795473cd114a9d738fb965f1fd323debedc0fd539a7c8591fff53cd3a30d",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 45 idx 5"
+  },
+  {
+    "file": "gen_bracket_45_0006.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "36f2c84409be65d1eff29c4395857c1438166e090f1addb4dfb18223f3007368",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 45 idx 6"
+  },
+  {
+    "file": "gen_bracket_45_0007.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "69a0c6ba9776dac4780354cb9b93a65b42052e89d1b9f0d429555d240edbdb7b",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 45 idx 7"
+  },
+  {
+    "file": "gen_bracket_45_0008.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5eb683472c6a6686433c21e767784eafa93eed0da22a8b439e2fbf505daf7a98",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 45 idx 8"
+  },
+  {
+    "file": "gen_bracket_46_0000.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "99548e34e66842212a5ea099d122ad4b0116379565439771e07664c68277ab3c",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 46 idx 0"
+  },
+  {
+    "file": "gen_bracket_46_0001.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b166c75d55d84045af7f4a61ed8f4c24e1b56f12f8e1d01b2853decbe1457b43",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 46 idx 1"
+  },
+  {
+    "file": "gen_bracket_46_0002.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d76f630d7aa74d81cf3a247926eddc6c57e6bf4978430bded3b914272d6000ee",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 46 idx 2"
+  },
+  {
+    "file": "gen_bracket_46_0003.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "74dd3edeeec5612e8cfe3eb06f93af2a843a42ee6abbcf498fd4b60cab0479fc",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 46 idx 3"
+  },
+  {
+    "file": "gen_bracket_46_0004.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "57b19b0165d3e7d71e411e32fd21e4bbba5b884138cea4eda469c56ecfecee62",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 46 idx 4"
+  },
+  {
     "file": "gen_fork_42_0070.stl",
     "source_url": "generated-procedural (tools/gen_corpus.py)",
     "origin": "openlight-proc",
@@ -250,6 +538,258 @@
     "sha256": "015094adeb55d47b8a7930932ff12848b35d6275a13f26b6841c74e3af28a304",
     "category": "fork",
     "notes": "Процедурный fork seed 42 idx 79"
+  },
+  {
+    "file": "gen_fork_43_0058.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e3d77b44edf3e75e064d1162ecb0b6a7f5b65164cd0fb0222cf74921f037d460",
+    "category": "fork",
+    "notes": "Процедурный fork seed 43 idx 58"
+  },
+  {
+    "file": "gen_fork_43_0059.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "91bb3ce7f29f9abf7c22ffc4cd6a96266120d666d60cddbe2024263dff39ecb8",
+    "category": "fork",
+    "notes": "Процедурный fork seed 43 idx 59"
+  },
+  {
+    "file": "gen_fork_43_0060.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c381b70b51fa1de501929f6b1c083cc9a43a93a7e6fc01c96ab8251671ffe6bd",
+    "category": "fork",
+    "notes": "Процедурный fork seed 43 idx 60"
+  },
+  {
+    "file": "gen_fork_43_0061.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "74cccf70f5bc65f2a59c47e27080bc8b720c76bf04db6e104b7f0767517c3496",
+    "category": "fork",
+    "notes": "Процедурный fork seed 43 idx 61"
+  },
+  {
+    "file": "gen_fork_43_0062.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "15f88eed96cf40e450255e1871cf8a762937a8d34e73ec9e9ed00f14238c4348",
+    "category": "fork",
+    "notes": "Процедурный fork seed 43 idx 62"
+  },
+  {
+    "file": "gen_fork_43_0063.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "bcf7d0e04d3d59877b8a61603e9bf06aaaa229e6755905541f15fde97315c444",
+    "category": "fork",
+    "notes": "Процедурный fork seed 43 idx 63"
+  },
+  {
+    "file": "gen_fork_43_0064.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "dc023582d776fb9a19fbce7aa6d7f3e0a75d49920403289aa1f8d72ea1e7b069",
+    "category": "fork",
+    "notes": "Процедурный fork seed 43 idx 64"
+  },
+  {
+    "file": "gen_fork_43_0065.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e18bfb5ec69a30e17bb0ddfb87c20dc83913702b01aca471aa5a4b13e8b5da7d",
+    "category": "fork",
+    "notes": "Процедурный fork seed 43 idx 65"
+  },
+  {
+    "file": "gen_fork_44_0058.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4c4eb0488b67009fd8835bbd0e5b2ce82c2a0bbae1954470143d8cb34aa0dd85",
+    "category": "fork",
+    "notes": "Процедурный fork seed 44 idx 58"
+  },
+  {
+    "file": "gen_fork_44_0059.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "dbbed13e9b7fc8f96327838e30b1965de29414d9110382135f96dad4001b7e29",
+    "category": "fork",
+    "notes": "Процедурный fork seed 44 idx 59"
+  },
+  {
+    "file": "gen_fork_44_0060.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a50e16277c8728a9b527d828d6489a23445321bc65ef1ba3701d700f5a2988b8",
+    "category": "fork",
+    "notes": "Процедурный fork seed 44 idx 60"
+  },
+  {
+    "file": "gen_fork_44_0061.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "82620e4557453bdf098a63e3529d52420ac418690a39425541aea117245a2255",
+    "category": "fork",
+    "notes": "Процедурный fork seed 44 idx 61"
+  },
+  {
+    "file": "gen_fork_44_0062.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c7cd4a49c8e2f059e6f904b545a69aaadc6abf7868ff4f33676dc92d510368da",
+    "category": "fork",
+    "notes": "Процедурный fork seed 44 idx 62"
+  },
+  {
+    "file": "gen_fork_44_0063.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e094f065c5f4e580611a65de59a33dcee5d2135bf30a2be7c98c39d0a0d25038",
+    "category": "fork",
+    "notes": "Процедурный fork seed 44 idx 63"
+  },
+  {
+    "file": "gen_fork_44_0064.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b6f87827b00daff485fc95ea806d87795489951db80b3f1851e495393ee99b97",
+    "category": "fork",
+    "notes": "Процедурный fork seed 44 idx 64"
+  },
+  {
+    "file": "gen_fork_44_0065.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "27216e5b3a37d251a2111196c7a2fb5e744431951d30aa72c2268f550560cf02",
+    "category": "fork",
+    "notes": "Процедурный fork seed 44 idx 65"
+  },
+  {
+    "file": "gen_fork_45_0058.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "fb8051cbe68623b8c65a9c5b34e81eb4044762c1861b6deee114bb7fd9e1e793",
+    "category": "fork",
+    "notes": "Процедурный fork seed 45 idx 58"
+  },
+  {
+    "file": "gen_fork_45_0059.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cb97bb36ac9423fcdbdc21664895f635071c9e2e85e79f21fc9da4bcfe356ee5",
+    "category": "fork",
+    "notes": "Процедурный fork seed 45 idx 59"
+  },
+  {
+    "file": "gen_fork_45_0060.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1f15f3be24eaa72071873a24f76a2b699587db626a94e71a506c503127aebcce",
+    "category": "fork",
+    "notes": "Процедурный fork seed 45 idx 60"
+  },
+  {
+    "file": "gen_fork_45_0061.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4c917b2db2f02ba49edd022689e04ee18707942e0f9ac4404e10e2d45fd306f8",
+    "category": "fork",
+    "notes": "Процедурный fork seed 45 idx 61"
+  },
+  {
+    "file": "gen_fork_45_0062.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1d700e66bd9e4fb6143f2e5832360a3eb2529a434461acb9ea1c00d099a2723b",
+    "category": "fork",
+    "notes": "Процедурный fork seed 45 idx 62"
+  },
+  {
+    "file": "gen_fork_45_0063.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "bb69025d191cc103bc9c6882cd96b65c79fbffbdc43b1bbd9d27435b7aaccb40",
+    "category": "fork",
+    "notes": "Процедурный fork seed 45 idx 63"
+  },
+  {
+    "file": "gen_fork_45_0064.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2b95ed1afcf64cd33bbe4723fb15dc95afba80bdc218d3326a1afcc4319a4f26",
+    "category": "fork",
+    "notes": "Процедурный fork seed 45 idx 64"
+  },
+  {
+    "file": "gen_fork_45_0065.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "aef31f63c3c0962d05dc2ff043a2976b6b643e56aeb5bea12defd6d436e8a546",
+    "category": "fork",
+    "notes": "Процедурный fork seed 45 idx 65"
+  },
+  {
+    "file": "gen_fork_46_0034.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f5801a07cc1d0862538fe4f2b824eebfca648b8316d438047eb330b29a8a872e",
+    "category": "fork",
+    "notes": "Процедурный fork seed 46 idx 34"
+  },
+  {
+    "file": "gen_fork_46_0035.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2833bc747e35587c3ccba162c9c64a141c4a7ba8b7416b1969866460114fdc8d",
+    "category": "fork",
+    "notes": "Процедурный fork seed 46 idx 35"
+  },
+  {
+    "file": "gen_fork_46_0036.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "59d11906dd347e42e0493697ca803f035a6167f132d187b1ad20b38535754f84",
+    "category": "fork",
+    "notes": "Процедурный fork seed 46 idx 36"
+  },
+  {
+    "file": "gen_fork_46_0037.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "58b7bde00e49ab8303f6b1a1a0edb74c2bdea2f8994c559e6503dcb61830485c",
+    "category": "fork",
+    "notes": "Процедурный fork seed 46 idx 37"
   },
   {
     "file": "gen_gear_n_42_0050.stl",
@@ -342,6 +882,267 @@
     "notes": "Процедурный gear_n seed 42 idx 59"
   },
   {
+    "file": "gen_gear_n_43_0042.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2cfb2f550afb98556eb6b681d7357496b66a5e3c13a648b3089a6f9ac4fafc2b",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 43 idx 42"
+  },
+  {
+    "file": "gen_gear_n_43_0043.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e4192f7d261c200bf48f552936abb66012fae24870580a7142018b3cb4701056",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 43 idx 43"
+  },
+  {
+    "file": "gen_gear_n_43_0044.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "de31378bf278e5b2187e42f24549ea8d32b8035d1c1377d98670c085d1048467",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 43 idx 44"
+  },
+  {
+    "file": "gen_gear_n_43_0045.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "26d1329bda15705fb3b36a6f7827e358674d5d26af74d10ec7d8c53c1d4d48f1",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 43 idx 45"
+  },
+  {
+    "file": "gen_gear_n_43_0046.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5072f5af5a6cdcae68a35c573a9c45e40dce51b9fa8a68c5a8b276bddcbbe22d",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 43 idx 46"
+  },
+  {
+    "file": "gen_gear_n_43_0047.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "665b96bfcb3648106cad14a02967cc4e007dc92db85d15be685b5b516f4e3eff",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 43 idx 47"
+  },
+  {
+    "file": "gen_gear_n_43_0048.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "01a8b5b6a4ae6bcecb5018ebdb27679ab7fe25d335e2697aab8f1846425f18dd",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 43 idx 48"
+  },
+  {
+    "file": "gen_gear_n_43_0049.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "48b0dbdce6cec46ac747c0c6f29694898b6ad123da18480ba43f569153d425a1",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 43 idx 49"
+  },
+  {
+    "file": "gen_gear_n_44_0042.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e7668b3a96af5f92db0d53d84e72a9d8619fa3c6cc2861f6c7d1a88f08789257",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 44 idx 42"
+  },
+  {
+    "file": "gen_gear_n_44_0043.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ce73ec9e65ae1a9ce8af89bab83ee411a49b8ca9e5c8774fb3da3eb031865bbf",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 44 idx 43"
+  },
+  {
+    "file": "gen_gear_n_44_0044.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "35beb9fc1a7b826b0c707da3c31b8203a70ffe8a90a4446f74f73f21accca7f7",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 44 idx 44"
+  },
+  {
+    "file": "gen_gear_n_44_0045.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5cd063c133bfff4f19df3a86d22cb856f84cf81bacd2935312610e6dcf7a81ae",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 44 idx 45"
+  },
+  {
+    "file": "gen_gear_n_44_0046.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "42f424d10e685e4e533e75fb94380e80860bcc82bf072bff6bcbfd3e31909d8c",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 44 idx 46"
+  },
+  {
+    "file": "gen_gear_n_44_0047.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "08ff204f8cb2551899bd12064a638f56640a33a513f5763c302c88344ca8162e",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 44 idx 47"
+  },
+  {
+    "file": "gen_gear_n_44_0048.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1c0daccac815fc87a575f7ad33f68c240618dd62b588c10ab547b500908d2864",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 44 idx 48"
+  },
+  {
+    "file": "gen_gear_n_44_0049.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f5a5a4e32b658bf13bdd93c1f3c7b0ecc91d09a65b4bfd6435b3094cc913c3e9",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 44 idx 49"
+  },
+  {
+    "file": "gen_gear_n_45_0042.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "90a62b2c303c0a99463b8e5b44a3375edff30560ee5d78721c74fa42e5c15fd3",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 45 idx 42"
+  },
+  {
+    "file": "gen_gear_n_45_0043.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "552176382e595ceb435f561a6f2ad563979211bc6e1b2287e07f002693ef3fe1",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 45 idx 43"
+  },
+  {
+    "file": "gen_gear_n_45_0044.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f09ff1fe329dac2823b900668f03f06f7b4e2a441a554edbd11802379a06b957",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 45 idx 44"
+  },
+  {
+    "file": "gen_gear_n_45_0045.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "036fb731541d34c31384abdf155a7ef8bd6d3ffff69d445ef8be5b6eba7ba968",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 45 idx 45"
+  },
+  {
+    "file": "gen_gear_n_45_0046.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "484d16e2892552d17657c9d7cbf6f9dd4abc7d4dd3d1d5b8029bee1856a5ba20",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 45 idx 46"
+  },
+  {
+    "file": "gen_gear_n_45_0047.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "65e2b8d6e09de07d5c5bb37d976e2df1ecf456815bf5bad916bf5ada1f722364",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 45 idx 47"
+  },
+  {
+    "file": "gen_gear_n_45_0048.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "433af1aa8b52bc44a49fa5a8f9ce419d7c4202f21cac401d65be389f6598f456",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 45 idx 48"
+  },
+  {
+    "file": "gen_gear_n_45_0049.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a753a6e13a046c91df1c83b58813e9ff40f2e5b521c9fc25b6e2e705329b4e8a",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 45 idx 49"
+  },
+  {
+    "file": "gen_gear_n_46_0025.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "fbdb1104c2648ea9e7311617fd4a7fe4d24e862c05f2c52f53a200e01f48e3df",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 46 idx 25"
+  },
+  {
+    "file": "gen_gear_n_46_0026.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1394e3c578ad7b83426cc8ccde42a3875cc162ecf5e59391438444240810e53d",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 46 idx 26"
+  },
+  {
+    "file": "gen_gear_n_46_0027.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "dc34e7bdea4a1148ca9f73192b0f3e940c209f44125cdd02833e48cbd89de620",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 46 idx 27"
+  },
+  {
+    "file": "gen_gear_n_46_0028.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b9f968e22f26b58c298c7f6d5c1df04358faae205cd9379c464c089fd835d05f",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 46 idx 28"
+  },
+  {
+    "file": "gen_gear_n_46_0029.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7be974987ef8fbcc04dc0734c5256f717146df809446821f7326bda45ca26bf4",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 46 idx 29"
+  },
+  {
     "file": "gen_hinge_42_0040.stl",
     "source_url": "generated-procedural (tools/gen_corpus.py)",
     "origin": "openlight-proc",
@@ -430,6 +1231,267 @@
     "sha256": "c97625cf6d10138cd7eae03f00cca4b70e0cf716288506b2962fe416b49c37b1",
     "category": "hinge",
     "notes": "Процедурный hinge seed 42 idx 49"
+  },
+  {
+    "file": "gen_hinge_43_0034.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ee7e230266a1cb274c6d610b8accdd399b2e324f2c9f459a60b206b73894d3d1",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 43 idx 34"
+  },
+  {
+    "file": "gen_hinge_43_0035.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e87db1d4cf90c9cf8199e82e5bc6dcc0faadd0fe2f6e513807813f2ca46b54b9",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 43 idx 35"
+  },
+  {
+    "file": "gen_hinge_43_0036.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cbac038ba9e32498bd5e5b17ddf00b09e6be3b213c83c6acd8a4be9bac6c6eee",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 43 idx 36"
+  },
+  {
+    "file": "gen_hinge_43_0037.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "438f33ddff70a27eae7dc9bc3b14f8721669454d25a6f1b1b98ca9af21bd1b0d",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 43 idx 37"
+  },
+  {
+    "file": "gen_hinge_43_0038.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "729c682291457f9d4af067c1f9f72d6a599ed4e9418af065a5019e2ef40122d2",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 43 idx 38"
+  },
+  {
+    "file": "gen_hinge_43_0039.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "39bdc7e396090d0c2c7072faee6ce595a52d86352b2767ce62bb45b5db128106",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 43 idx 39"
+  },
+  {
+    "file": "gen_hinge_43_0040.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cf11897b1619e0cdff0a9609c31e1854af4415965cc0f84d112fd6d37406aff0",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 43 idx 40"
+  },
+  {
+    "file": "gen_hinge_43_0041.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4a85d34a7063e8e1072f8fe62d7e1fcced199332f8acb476a685df49dddafbda",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 43 idx 41"
+  },
+  {
+    "file": "gen_hinge_44_0034.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b5f4cfd44d303d9cba980c97678213bb0b09224f76dbba713a472113815cdad5",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 44 idx 34"
+  },
+  {
+    "file": "gen_hinge_44_0035.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e6914f5b7542db07c9f833a670ae05cef15b561614c162cda4406fd0baec7c3e",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 44 idx 35"
+  },
+  {
+    "file": "gen_hinge_44_0036.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "bd23111120b18d4b7225c60447f2ff60203996315925439cb31f89827b357a58",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 44 idx 36"
+  },
+  {
+    "file": "gen_hinge_44_0037.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e32ac349101bfbb71b0e123bfd5a6fc990674551ef25f17eb8ce82a77ea0b7e8",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 44 idx 37"
+  },
+  {
+    "file": "gen_hinge_44_0038.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ca8302ab0fb982b8c92eece943a05c3119bb28ca623bf24ae939777685b3684e",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 44 idx 38"
+  },
+  {
+    "file": "gen_hinge_44_0039.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0269bcfb7b8ce3cd5951e9c9db8c0fc9f83d991ea28fa77b127c0f89085bc313",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 44 idx 39"
+  },
+  {
+    "file": "gen_hinge_44_0040.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "20a42d4b33e39b945f546b48859fcc693072f8243d334e828a20d31b14bba65f",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 44 idx 40"
+  },
+  {
+    "file": "gen_hinge_44_0041.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "032a9efaa6b99bc4917064e2d2ac7802a6b84e5a644f73d0ba4087b1bcd3b3fe",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 44 idx 41"
+  },
+  {
+    "file": "gen_hinge_45_0034.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0f7af38f0561e96a47c3a4529b8cf4c0dc5bbae82f3cde3b14f5d07170e7ca14",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 45 idx 34"
+  },
+  {
+    "file": "gen_hinge_45_0035.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6d742bd62f3cc6815a02908408b1b1e35c607411fc0c2405adfe931fa23645b5",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 45 idx 35"
+  },
+  {
+    "file": "gen_hinge_45_0036.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8e974ff1df351894b4db03042d3036e43bbe07c6ee0660c6e76519d08123236f",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 45 idx 36"
+  },
+  {
+    "file": "gen_hinge_45_0037.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e47b74eb159ca4595166fb956524c142a8ab31c5dc8a9975fe743e33f7bf474f",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 45 idx 37"
+  },
+  {
+    "file": "gen_hinge_45_0038.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "bc7de521a1cf52e86ade70e1ea19723d76f03f184b960bd7453bd2835adfd681",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 45 idx 38"
+  },
+  {
+    "file": "gen_hinge_45_0039.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "46cadd4c448811478a3bceaaf2f793806dfb68d2153c0a15e037441479054d04",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 45 idx 39"
+  },
+  {
+    "file": "gen_hinge_45_0040.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "dba7103d057bbc44f5e3e232b5f31bcc45221f7bc0e491620e7023b1ebd72507",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 45 idx 40"
+  },
+  {
+    "file": "gen_hinge_45_0041.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c80e50a375dd0b2b0106de636cfbcf438063d5c2594343d9f4c8d541f96c6039",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 45 idx 41"
+  },
+  {
+    "file": "gen_hinge_46_0020.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1401fe57b4b8c5ed2ac93ab9d34b1726bd1d355ec88631dba3ab18fdf20697a9",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 46 idx 20"
+  },
+  {
+    "file": "gen_hinge_46_0021.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3979c7e72ba3d4138c706aed6cd75f427a7375093f1c3e5931ed85521c3a7ef6",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 46 idx 21"
+  },
+  {
+    "file": "gen_hinge_46_0022.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3d97f79b5c5bc38638efba792480affe171fb6c9c9510bfe0803479accfb2b06",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 46 idx 22"
+  },
+  {
+    "file": "gen_hinge_46_0023.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0cdd7d38aa1e3ec211cfad362fa0fd37cc81893dd99bfd1956d8cdbd91135f86",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 46 idx 23"
+  },
+  {
+    "file": "gen_hinge_46_0024.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cfd655df0f28b0e186c517fd36f4183da9f3068c37d8efd796a5fb174feb9711",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 46 idx 24"
   },
   {
     "file": "gen_housing_box_42_0020.stl",
@@ -522,6 +1584,519 @@
     "notes": "Процедурный housing_box seed 42 idx 29"
   },
   {
+    "file": "gen_housing_box_43_0018.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f6efa08eeb54f0eb2e47373752e2a0f85c81315c0d51abb9f56ad870d08921f5",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 43 idx 18"
+  },
+  {
+    "file": "gen_housing_box_43_0019.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a82f53febbbec6ed470597e62f9cd85af63f2f812e69f5783acfe1d568e50573",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 43 idx 19"
+  },
+  {
+    "file": "gen_housing_box_43_0020.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3764868db24dabe5d51365744d736c27a99623bb0dcecacd3c09396b042fc9e9",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 43 idx 20"
+  },
+  {
+    "file": "gen_housing_box_43_0021.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "935656f86e394620b65de69eacb542a2907e4b7e547168035365be4bdfcbce0f",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 43 idx 21"
+  },
+  {
+    "file": "gen_housing_box_43_0022.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6102c4c40c8be90c475349f772624b20dc27477a82a70ac44603e2dc9f4355c1",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 43 idx 22"
+  },
+  {
+    "file": "gen_housing_box_43_0023.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d77895bb9691200752c7d5d9a4ac22695d5e981fb295248f157874288d7a03eb",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 43 idx 23"
+  },
+  {
+    "file": "gen_housing_box_43_0024.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a7c34a1e2ddb44fa25f7960195e2bb975c0043a7c910c3be5493af519f684d6e",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 43 idx 24"
+  },
+  {
+    "file": "gen_housing_box_43_0025.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8671003f2d817db14268dc72baef3feff0f292a217a52c8499a33205d23e1698",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 43 idx 25"
+  },
+  {
+    "file": "gen_housing_box_44_0018.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4cf5654873f0081f154feb0838614d9bc01a60e657e38610e8c3267cbe4c0ad2",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 44 idx 18"
+  },
+  {
+    "file": "gen_housing_box_44_0019.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "caa65c358aec6582406ce74dbb55adabec214252a5463e7e5dc8f615ebe0a76a",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 44 idx 19"
+  },
+  {
+    "file": "gen_housing_box_44_0020.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e3d9e2798d04ea1adc770afe308c0581e7469aa81593511d49f29703d6cab659",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 44 idx 20"
+  },
+  {
+    "file": "gen_housing_box_44_0021.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2fa309dff41e2632acfa9aeb4f2f29ea8fbb10734962ec5907e2cab571807f42",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 44 idx 21"
+  },
+  {
+    "file": "gen_housing_box_44_0022.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5f3bc31c85a72b75f16260d305ba3de9a280a63ac299948950b937712cb37f19",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 44 idx 22"
+  },
+  {
+    "file": "gen_housing_box_44_0023.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ab5fccdbab07c19b1a265f3ddf0259b0a34ea1dc1cf479297c0af5e31b1f7acb",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 44 idx 23"
+  },
+  {
+    "file": "gen_housing_box_44_0024.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "33cd786a43686ad7deef074bcb4f8519417d12de83091bc953a2b70da94ad963",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 44 idx 24"
+  },
+  {
+    "file": "gen_housing_box_44_0025.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2db1d6e8839bfc28bc4a58068fba81c2cae802bbf7c3aa36bb78207646aabea7",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 44 idx 25"
+  },
+  {
+    "file": "gen_housing_box_45_0018.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e7dac81e9087df0b5158942c175c4cfdb576092ce60673f495ed4fb664212f31",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 45 idx 18"
+  },
+  {
+    "file": "gen_housing_box_45_0019.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "9b7cef7e90f909a2e1d546a253e7053c08b9d6709fff29fa29aab91174c1c88f",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 45 idx 19"
+  },
+  {
+    "file": "gen_housing_box_45_0020.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "371e1e3348eb422c647b27daea4cc35d977a87e41cb019e24ae15dc0f6bcc715",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 45 idx 20"
+  },
+  {
+    "file": "gen_housing_box_45_0021.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "dbb1117e19c20ab36a6f7da5e0a0f68216e3f9bb62e446ce2a955f191cd6e69c",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 45 idx 21"
+  },
+  {
+    "file": "gen_housing_box_45_0022.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "90116ea8e786fb659c4aa852c606b03da9a0713f06e7ddc454afd3fa68c32e0f",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 45 idx 22"
+  },
+  {
+    "file": "gen_housing_box_45_0023.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c4e47af7c0b508d20ab870f8e74c58b02c357b4a8f3e30c19a89dc772654e19a",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 45 idx 23"
+  },
+  {
+    "file": "gen_housing_box_45_0024.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ce11ba0be21d607ad01af35276603b2d2b7e401e927e47f163a49988caf48b9b",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 45 idx 24"
+  },
+  {
+    "file": "gen_housing_box_45_0025.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ec17b0d0905e4e01a3b6ff3cc162c7a7604e477674a565685523f03c11bd2608",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 45 idx 25"
+  },
+  {
+    "file": "gen_housing_box_46_0010.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d13f72bcedf4b07189551cd229182088438ebcb4e476dee3f53444522abfc84d",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 46 idx 10"
+  },
+  {
+    "file": "gen_housing_box_46_0011.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6c6856d42046e14b00f79fc83e90f236fc50fbe434c06901acd96c7021a9fb10",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 46 idx 11"
+  },
+  {
+    "file": "gen_housing_box_46_0012.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b02176c9edea702a59a9453cc8e784e0971dabfaa757a22b26bfb007105534ad",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 46 idx 12"
+  },
+  {
+    "file": "gen_housing_box_46_0013.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4ce472bac91fbeb453e0025536755e6c3a850b03a93e780eb3bcc65c85c6ee18",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 46 idx 13"
+  },
+  {
+    "file": "gen_housing_box_46_0014.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a8aab07a8f48209843bd9896930f57ceca34d02cf0982b965e9a4d9d95031404",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 46 idx 14"
+  },
+  {
+    "file": "gen_lofted_plate_43_0074.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6ff2c9fb79b3349d39a6ae9d650bb1d6cb5a70e060c483bff9766b908e2ace59",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 43 idx 74"
+  },
+  {
+    "file": "gen_lofted_plate_43_0075.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1b2bfc892ee71b797bfbf53de1fd2a07d69d32adeb5ee2265e7463ff42ef3b68",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 43 idx 75"
+  },
+  {
+    "file": "gen_lofted_plate_43_0076.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a9ba73713792f28e3398f87b80625e261fbb67ec1abe0c751763e8426baf7ac9",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 43 idx 76"
+  },
+  {
+    "file": "gen_lofted_plate_43_0077.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c2744781ae4dd956f6fab04a4d65f6b991894b35a3a8b5aca9c7dfc3e95e2a96",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 43 idx 77"
+  },
+  {
+    "file": "gen_lofted_plate_43_0078.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6536a9f34bc42a72451a2b271ac674bc109b74a719c74c840971ee01b93c8996",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 43 idx 78"
+  },
+  {
+    "file": "gen_lofted_plate_43_0079.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "153d359a567dcacc9d1c5bb70d06129ecc824ee717295b3a895ef2b3046be5f1",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 43 idx 79"
+  },
+  {
+    "file": "gen_lofted_plate_43_0080.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "9568ab2821ad29437e2969777674e381126a9dc4d1956a78e83268f3377f0486",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 43 idx 80"
+  },
+  {
+    "file": "gen_lofted_plate_43_0081.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b425bec259074972faeb675e4531d745fea2c54766dc5319fd3c576fb7c0dacd",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 43 idx 81"
+  },
+  {
+    "file": "gen_lofted_plate_44_0074.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0faedab53923696a5d7c49d671359929b1635072ad41bb9231ee73ecca323fd7",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 44 idx 74"
+  },
+  {
+    "file": "gen_lofted_plate_44_0075.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cc00c4dfbf117b8f28c0a83fefb4d34ae7c9244a68f3b1021bd5268073e821ac",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 44 idx 75"
+  },
+  {
+    "file": "gen_lofted_plate_44_0076.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3f34e56fc947f19492d128c5ff695b4ddd20ca078f9f5797f12b8870209346bf",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 44 idx 76"
+  },
+  {
+    "file": "gen_lofted_plate_44_0077.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a9d2ef1bd39548b64f239b2f752ea4566f66b54175c1b1fa12f93c42eb63026a",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 44 idx 77"
+  },
+  {
+    "file": "gen_lofted_plate_44_0078.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e26966619cf6d30c85631f584717464aac664c953cc8e5469546cd3dff33471b",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 44 idx 78"
+  },
+  {
+    "file": "gen_lofted_plate_44_0079.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f2782952075dfb7b56c0c88702e96284d4193cb6951978c0b7206b1741225477",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 44 idx 79"
+  },
+  {
+    "file": "gen_lofted_plate_44_0080.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "01eb6be2aec361a3c5b943e4db85f35e05e2f110f0dd3d529f6313f7081bca28",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 44 idx 80"
+  },
+  {
+    "file": "gen_lofted_plate_44_0081.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0dd5f40344fac9f47f9070d708451193d11e8f6d96e8c0b850504971a15475fd",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 44 idx 81"
+  },
+  {
+    "file": "gen_lofted_plate_45_0074.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c6e76e4e935b2d2df25049489ca0961264187612e49c7027fd06fd18d15c0fc3",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 45 idx 74"
+  },
+  {
+    "file": "gen_lofted_plate_45_0075.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f6992c42308bf3326259d0bdb34cfe727a571f12282e99b930b9d88efd1e33e5",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 45 idx 75"
+  },
+  {
+    "file": "gen_lofted_plate_45_0076.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0034b780871ddc72bb9f874b4e708846e869008ce555ab395b570b31801f1aac",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 45 idx 76"
+  },
+  {
+    "file": "gen_lofted_plate_45_0077.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7f65b231057cd0692114257cfb1a210c475f029b05fa59bc7eb9529bfb4cc64d",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 45 idx 77"
+  },
+  {
+    "file": "gen_lofted_plate_45_0078.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "939fb741c806c5bc5900e5b36f8a26f3982c2c8d2113ea1329d47eed9dae0b8b",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 45 idx 78"
+  },
+  {
+    "file": "gen_lofted_plate_45_0079.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2997ca65d5e30af8531bc7d8f8961d628ad5ff5c524aa1c427c15394a42b2dc8",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 45 idx 79"
+  },
+  {
+    "file": "gen_lofted_plate_45_0080.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2832ee89fc183bae888d2250d7915a57845a24e859f73538c0befda7d73da5cc",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 45 idx 80"
+  },
+  {
+    "file": "gen_lofted_plate_45_0081.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1c532036a95d97583d76f2646222df1928c24652933117e738def43e6f7504d5",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 45 idx 81"
+  },
+  {
+    "file": "gen_lofted_plate_46_0042.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b6ed9fc30e14328bc92e79669d64fd5b33eb204eee42aacda65617396543bb23",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 46 idx 42"
+  },
+  {
+    "file": "gen_lofted_plate_46_0043.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a080923fb8a0804457854cfa626ec3ec15d00e89bada831725564564c6617aee",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 46 idx 43"
+  },
+  {
+    "file": "gen_lofted_plate_46_0044.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4f3f0f02aa5bc798f95f5b10277a5a4c7bc21ca1f5052f17b003a40e942248e6",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 46 idx 44"
+  },
+  {
+    "file": "gen_lofted_plate_46_0045.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b99edb7a03deb8a256e7482e1ee0627fcc14c4f243105a75ef9bb194d4730346",
+    "category": "lofted_plate",
+    "notes": "Процедурный lofted_plate seed 46 idx 45"
+  },
+  {
     "file": "gen_plate-with-holes_42_0010.stl",
     "source_url": "generated-procedural (tools/gen_corpus.py)",
     "origin": "openlight-proc",
@@ -610,6 +2185,294 @@
     "sha256": "3a1551f49417b2fa5e7537179e6fc25131db969185076b129b82d0d6b0953152",
     "category": "plate-with-holes",
     "notes": "Процедурный plate-with-holes seed 42 idx 19"
+  },
+  {
+    "file": "gen_plate-with-holes_43_0009.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f83b39c03f3eee2cd8f285ff9dd85b6c42b318a725f0c1d44037e32a8bf10fea",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 43 idx 9"
+  },
+  {
+    "file": "gen_plate-with-holes_43_0010.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "361089b81a22602717445f841419aca7ed6d17f44c6abd82825fa8703e7eca41",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 43 idx 10"
+  },
+  {
+    "file": "gen_plate-with-holes_43_0011.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "69c2096710ae2a5581cad4869c173b7081754e3a353974ee0e5101ecde51c1d8",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 43 idx 11"
+  },
+  {
+    "file": "gen_plate-with-holes_43_0012.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0e2d7e50de9762706c80474e20aac005c4afe6af39268e6888a680a1fb5890f7",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 43 idx 12"
+  },
+  {
+    "file": "gen_plate-with-holes_43_0013.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a430b3fc0d28aa8ba7148987f61876259fb91e6562f4a78ef8d05bbdf0127422",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 43 idx 13"
+  },
+  {
+    "file": "gen_plate-with-holes_43_0014.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "beea84a98fa350088541ccd59f3f1be6dada8eec061ba1b664c9070331c3b7a6",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 43 idx 14"
+  },
+  {
+    "file": "gen_plate-with-holes_43_0015.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c863faf09dae75c9d101d23a9ff4c73154b7e32964bb409b76cd0b4f3e88332e",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 43 idx 15"
+  },
+  {
+    "file": "gen_plate-with-holes_43_0016.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7b1d3dfaf6524ebf04897bbaf22a5d4626e4d0f0518bc780c51876b232dfd40d",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 43 idx 16"
+  },
+  {
+    "file": "gen_plate-with-holes_43_0017.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5dc25f96c17295f900266dea68cad6fa048f12fd87432ec9e064e59d0db510fe",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 43 idx 17"
+  },
+  {
+    "file": "gen_plate-with-holes_44_0009.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "83bfbcfd2adfb1f889ed3331fad292b72985090618c3768f0415e6944f38f29f",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 44 idx 9"
+  },
+  {
+    "file": "gen_plate-with-holes_44_0010.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c06b184b8c020e6e46adc1b0bb514a0d265e60c25464bca24aa9a20c9d293e2d",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 44 idx 10"
+  },
+  {
+    "file": "gen_plate-with-holes_44_0011.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "241c7308a90e46e25100f797a5d075d89cdd56610dccd052a9a437b0ab96f4dd",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 44 idx 11"
+  },
+  {
+    "file": "gen_plate-with-holes_44_0012.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "08eff9854d54ea8669ba2ce347d2f0a587de11adda39e84e731bcbf978e568a6",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 44 idx 12"
+  },
+  {
+    "file": "gen_plate-with-holes_44_0013.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3fcf2977ee11094f9911cf2c447730a1076cc8e3a0875634a2ec6cd544c8c1f8",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 44 idx 13"
+  },
+  {
+    "file": "gen_plate-with-holes_44_0014.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "76d77526d73623f0e74d2a6d406c7ae48f8eb56376c53de89f76cfcd195fed75",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 44 idx 14"
+  },
+  {
+    "file": "gen_plate-with-holes_44_0015.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "24231538854f88282e82e07e313b05a82e0a7fee00fb24d0ad50746a45bea897",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 44 idx 15"
+  },
+  {
+    "file": "gen_plate-with-holes_44_0016.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6b7ddd230e52b08cbb25220eafa7caaf0c5b65591008933355c77383e5e6de76",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 44 idx 16"
+  },
+  {
+    "file": "gen_plate-with-holes_44_0017.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "16fcf21c8eabe3623817c8bcba1a64505f86c6a00f97e76c6bf7dce65ac204f8",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 44 idx 17"
+  },
+  {
+    "file": "gen_plate-with-holes_45_0009.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "310c596af6d4e8b90e392b5494a1fe1dde297867c84e264ba470ea17e9cf50ee",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 45 idx 9"
+  },
+  {
+    "file": "gen_plate-with-holes_45_0010.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "bfddaac69c7db3804c4969eceb3734636ebb065fa7964c58957a74c5956ba61d",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 45 idx 10"
+  },
+  {
+    "file": "gen_plate-with-holes_45_0011.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a50c46ddcadd07a801bbc6ec8819605706f31912faeaa2a58d9542df38167657",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 45 idx 11"
+  },
+  {
+    "file": "gen_plate-with-holes_45_0012.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "efd62b1fd9c480ea1b77f2f382a6a1df236e2a0b0fc205ef6463569f289e3977",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 45 idx 12"
+  },
+  {
+    "file": "gen_plate-with-holes_45_0013.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "25064c1c5207b1a04693d6ff7d5dc44fe4519109ae355f9f4d4aa90a7b32e70c",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 45 idx 13"
+  },
+  {
+    "file": "gen_plate-with-holes_45_0014.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e5604999dd3cb53d5012872b3cc01c0395764c95e1e80c1a5cd5317f1888973b",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 45 idx 14"
+  },
+  {
+    "file": "gen_plate-with-holes_45_0015.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c61cb07e4baf04a8ef6bca9ca7db3de55a020d12f1d64c048c397660456b2e62",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 45 idx 15"
+  },
+  {
+    "file": "gen_plate-with-holes_45_0016.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "62011e04399fb6a76bfbf8e99c5f3b6ae017acd74b7776f678eaf8a8878c7d9e",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 45 idx 16"
+  },
+  {
+    "file": "gen_plate-with-holes_45_0017.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6dc7aa54802112145189632c0b0740c705d3bf2afc1234fe9b6f4e278460fddf",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 45 idx 17"
+  },
+  {
+    "file": "gen_plate-with-holes_46_0005.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "165510ddfe1d94f4f8fff598b138e920d7f298650dc000b0252d007588149851",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 46 idx 5"
+  },
+  {
+    "file": "gen_plate-with-holes_46_0006.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "92117f65787af17591b11a2ca121261d00ead219685ba8e50b274120db62e9ec",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 46 idx 6"
+  },
+  {
+    "file": "gen_plate-with-holes_46_0007.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2b46d8c4c1be0393b4f75781db787b89e6bd351186c2cd164da0a4e1b88c56f5",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 46 idx 7"
+  },
+  {
+    "file": "gen_plate-with-holes_46_0008.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a92117a4c00bd228ed7c0270fa8f7338d3c2f8a39bd167090d5dbffd47a0ce79",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 46 idx 8"
+  },
+  {
+    "file": "gen_plate-with-holes_46_0009.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b3731f76f2ee49bb00e4faaa6fc432f175ead1e027d4121afa6a9d469cb22c77",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 46 idx 9"
   },
   {
     "file": "gen_rib_42_0080.stl",
@@ -702,6 +2565,510 @@
     "notes": "Процедурный rib seed 42 idx 89"
   },
   {
+    "file": "gen_rib_43_0066.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e4b96d7b1bc76159083a971c7c6321b8d81d1e4a56ec4cdd2c94665aceed0530",
+    "category": "rib",
+    "notes": "Процедурный rib seed 43 idx 66"
+  },
+  {
+    "file": "gen_rib_43_0067.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2b83834dacdf77053a90be2c39426c5e96f9670cb493025a32724e91118c15e8",
+    "category": "rib",
+    "notes": "Процедурный rib seed 43 idx 67"
+  },
+  {
+    "file": "gen_rib_43_0068.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "59b242ce2c52d42a12c862d5e11e90208ffc0066ec2ad36794f215c55a5a1d1f",
+    "category": "rib",
+    "notes": "Процедурный rib seed 43 idx 68"
+  },
+  {
+    "file": "gen_rib_43_0069.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f2c19437c09bb1d896e7fc23d5271599eeb204579fb486184ead5fad579f2c4a",
+    "category": "rib",
+    "notes": "Процедурный rib seed 43 idx 69"
+  },
+  {
+    "file": "gen_rib_43_0070.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f2d45825d41ca59c0aaa67c5a1c73c1ba66001b8e6d1971551420f1d5e98c1e0",
+    "category": "rib",
+    "notes": "Процедурный rib seed 43 idx 70"
+  },
+  {
+    "file": "gen_rib_43_0071.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "55bf411f9728ca715a3e8566de249e1a5dddbb9bc52fb688bf113d423abe7e4f",
+    "category": "rib",
+    "notes": "Процедурный rib seed 43 idx 71"
+  },
+  {
+    "file": "gen_rib_43_0072.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "aebdf80f5832ad1cc758e35cb38b603243ac474a03f9a6c7aec1d6c717cf9314",
+    "category": "rib",
+    "notes": "Процедурный rib seed 43 idx 72"
+  },
+  {
+    "file": "gen_rib_43_0073.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "75828a5ea5d5b8bc2e494269cc4c17aac3f697fd9c7071d7706def5271510611",
+    "category": "rib",
+    "notes": "Процедурный rib seed 43 idx 73"
+  },
+  {
+    "file": "gen_rib_44_0066.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "992885442e04330ef71e0ac3716848915ad67da6f6a6cef61bc46a685eaa0065",
+    "category": "rib",
+    "notes": "Процедурный rib seed 44 idx 66"
+  },
+  {
+    "file": "gen_rib_44_0067.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0c75d22370b3b08bb4bfdb87bd9586ac09703ee2f855561d93c24e25f2a1625c",
+    "category": "rib",
+    "notes": "Процедурный rib seed 44 idx 67"
+  },
+  {
+    "file": "gen_rib_44_0068.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ff14874663a75bce4d8c4d25ff71c7bd927471e720ceed4339292489cfaaafbf",
+    "category": "rib",
+    "notes": "Процедурный rib seed 44 idx 68"
+  },
+  {
+    "file": "gen_rib_44_0069.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5fee6fd628bde715f731205fda2c0970dde0218d7f42cc0f8353db3d227092ff",
+    "category": "rib",
+    "notes": "Процедурный rib seed 44 idx 69"
+  },
+  {
+    "file": "gen_rib_44_0070.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2227b2f19386fab329e7f9c789310a93c67df5e356027baf2b2b337500cf14e5",
+    "category": "rib",
+    "notes": "Процедурный rib seed 44 idx 70"
+  },
+  {
+    "file": "gen_rib_44_0071.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5826fa369c9c903fc5e9372459cc4ad1d79aa0a1f6cfc3561991611a62653c8f",
+    "category": "rib",
+    "notes": "Процедурный rib seed 44 idx 71"
+  },
+  {
+    "file": "gen_rib_44_0072.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "00d4b57bebc634abfc8703ace0384bb9339f176bfbb3d0e65f5db78ba3b62ed2",
+    "category": "rib",
+    "notes": "Процедурный rib seed 44 idx 72"
+  },
+  {
+    "file": "gen_rib_44_0073.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c10b5834cf696ef95bed9d43ed8a0c1ee18606dcf46d795ec98bbe0bd3a1d92a",
+    "category": "rib",
+    "notes": "Процедурный rib seed 44 idx 73"
+  },
+  {
+    "file": "gen_rib_45_0066.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b71bee1d23f4866b7b227bdfc34df597999493c114c26dc9217d5c3d35a4ebcf",
+    "category": "rib",
+    "notes": "Процедурный rib seed 45 idx 66"
+  },
+  {
+    "file": "gen_rib_45_0067.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "79b2c504338635c872fa8c2ec1f01e129e9ffd7ae41a3764be9462a2ea49494b",
+    "category": "rib",
+    "notes": "Процедурный rib seed 45 idx 67"
+  },
+  {
+    "file": "gen_rib_45_0068.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "21da366b79bef647e5e03d020e1db11796fb7bfa54fb44d074291e5808bcc9e5",
+    "category": "rib",
+    "notes": "Процедурный rib seed 45 idx 68"
+  },
+  {
+    "file": "gen_rib_45_0069.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "07c06b3a7a792328d6d9b8a078412c72a361b032a65fe707e93bd5681b0cb056",
+    "category": "rib",
+    "notes": "Процедурный rib seed 45 idx 69"
+  },
+  {
+    "file": "gen_rib_45_0070.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "711ea7b1c4b355089afa485881675565495fc7722a3b532e248c68f02e12e13e",
+    "category": "rib",
+    "notes": "Процедурный rib seed 45 idx 70"
+  },
+  {
+    "file": "gen_rib_45_0071.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "bd8d9e2ee4b0c3fe91d622c41134397df519589dd1eb07bb64112c8e6777be9c",
+    "category": "rib",
+    "notes": "Процедурный rib seed 45 idx 71"
+  },
+  {
+    "file": "gen_rib_45_0072.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "58da1e3909a4a5a206d4824d8c0d88752ddc4d39a2393de80a6a170d193f2b01",
+    "category": "rib",
+    "notes": "Процедурный rib seed 45 idx 72"
+  },
+  {
+    "file": "gen_rib_45_0073.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e8027cd702de5be890d4cd2d475ef36216e6e8f54d33d4ed57bfa14fab324f3d",
+    "category": "rib",
+    "notes": "Процедурный rib seed 45 idx 73"
+  },
+  {
+    "file": "gen_rib_46_0038.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "14e51b070a5b3449db2c87a28542c3528cb1f436adae8dcd78f7b4e742888bcc",
+    "category": "rib",
+    "notes": "Процедурный rib seed 46 idx 38"
+  },
+  {
+    "file": "gen_rib_46_0039.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d536f5ed4dab316c397553ae60fa7eb645811c3611d0234f3fa3a80244e245a9",
+    "category": "rib",
+    "notes": "Процедурный rib seed 46 idx 39"
+  },
+  {
+    "file": "gen_rib_46_0040.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5c0c4b6e4964107b0a84f9e3363979de6fe01195f2d4008f4b58537f6ec83047",
+    "category": "rib",
+    "notes": "Процедурный rib seed 46 idx 40"
+  },
+  {
+    "file": "gen_rib_46_0041.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e882324488cfe3fb3eea3c49b4d248c0ccc1dff7d59d4781c58a62300793abec",
+    "category": "rib",
+    "notes": "Процедурный rib seed 46 idx 41"
+  },
+  {
+    "file": "gen_rib_grid_43_0082.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ef5a76b1003861a88e805dd21fae0c6af817d9d9ac4cb828d64ef7f39795e846",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 43 idx 82"
+  },
+  {
+    "file": "gen_rib_grid_43_0083.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5424c55f3fc08aab0dd4d42cbfe9da37f6644c9f009dd1e37f93a8d465ab445a",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 43 idx 83"
+  },
+  {
+    "file": "gen_rib_grid_43_0084.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d1304caf0e0809257f9a4949a77c6a1f921cbc60d1f898b4778c1a238a873f42",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 43 idx 84"
+  },
+  {
+    "file": "gen_rib_grid_43_0085.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1ea1da37544928345195d29ebb6165e7d6e6955b29678a92de28453e1c6d3412",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 43 idx 85"
+  },
+  {
+    "file": "gen_rib_grid_43_0086.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d856946dab231725f6a0295d70a7e253543b4f657d53dcbc491b0faf97dc691c",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 43 idx 86"
+  },
+  {
+    "file": "gen_rib_grid_43_0087.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c1aa0321cf54d3f3ad69fe21e44314061bc92c318bc80d339b5f0c1b34f5b38f",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 43 idx 87"
+  },
+  {
+    "file": "gen_rib_grid_43_0088.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "17c27792109ef6a42244d4ace2badda9e0fd1e052539da827a954b5fee1cfb8e",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 43 idx 88"
+  },
+  {
+    "file": "gen_rib_grid_43_0089.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4de79bcbf025e64016a6e2aabb40c2638d65bbfa7f8807bc72c8ba139f6c0339",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 43 idx 89"
+  },
+  {
+    "file": "gen_rib_grid_44_0082.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4f467d80e21442ceb07dff4166ac601dfca7437affeeeded0239771333212c59",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 44 idx 82"
+  },
+  {
+    "file": "gen_rib_grid_44_0083.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7c82c1e225c0d910c65cc3afb840c67bb44d944c68bbfa1211e3a61bfa622d49",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 44 idx 83"
+  },
+  {
+    "file": "gen_rib_grid_44_0084.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "35bbe6564d1aed88a90250612980d267b051691e80fc4158d0761485b2f00463",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 44 idx 84"
+  },
+  {
+    "file": "gen_rib_grid_44_0085.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "9b99101c00a7f98e1ae93996c0a12e91fcf7a9d1e9badb0d54bc83f27e6aaa2d",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 44 idx 85"
+  },
+  {
+    "file": "gen_rib_grid_44_0086.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "87ff99d783a9b22b4c12cf64539963fc6e24d51babb3bcf1d4a75781f8ab67cc",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 44 idx 86"
+  },
+  {
+    "file": "gen_rib_grid_44_0087.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8072bdcd41f5323dd5a695cbcc2679b14bc4ad062c6533dbab8646d83ddbf2b3",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 44 idx 87"
+  },
+  {
+    "file": "gen_rib_grid_44_0088.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e6a1320da735eb7ed3a1bb40965aa8be844dcd6c57fbce80fd16a488086e76a0",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 44 idx 88"
+  },
+  {
+    "file": "gen_rib_grid_44_0089.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f1bf50984ca21ea3f8353f199b12463cb2f68b36f1266f383e46c3fd0a475a11",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 44 idx 89"
+  },
+  {
+    "file": "gen_rib_grid_45_0082.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2b8cd85875e39f97208622c04e6b18901458f6fd5879b8ee8a01ad95faf4e19a",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 45 idx 82"
+  },
+  {
+    "file": "gen_rib_grid_45_0083.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a75433515ea15648b1bd52749e308a830a60f1a769a4ae4ea3f34b810c3b9831",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 45 idx 83"
+  },
+  {
+    "file": "gen_rib_grid_45_0084.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "68fd075be45dfd71530de4834f108a5496c932df448d84e4446939d03428535e",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 45 idx 84"
+  },
+  {
+    "file": "gen_rib_grid_45_0085.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4e7f78ad42ced97815eb523d0c468611b651b61239d5eeb7759942a1e10d15d5",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 45 idx 85"
+  },
+  {
+    "file": "gen_rib_grid_45_0086.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "9bd4451f9d55956e1df2a40f63f0dfe43bbe0b89d1fd2d85a266a494cf2c8a13",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 45 idx 86"
+  },
+  {
+    "file": "gen_rib_grid_45_0087.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ed0493e7d47e82a99a4b2adc06405e02f7b890580c6803d716e50bf5a867272a",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 45 idx 87"
+  },
+  {
+    "file": "gen_rib_grid_45_0088.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "86e315fd8a608ae71f4cf1867c635dc120e75bb67ec48e8e2dfb87f1f14ac7b2",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 45 idx 88"
+  },
+  {
+    "file": "gen_rib_grid_45_0089.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "320644a1319e035996e3945abec19c1840b49cc160d4914381ce0e79ab691863",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 45 idx 89"
+  },
+  {
+    "file": "gen_rib_grid_46_0046.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "9d4293848d6736c0d2dbdcfaaaac86ad19e96c6c92b0699d81a8f2452df02b8a",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 46 idx 46"
+  },
+  {
+    "file": "gen_rib_grid_46_0047.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b84784d67d4506ed7a0d6bc5afaf4e97ffc8e45941473d993686d05a8e2bc6d6",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 46 idx 47"
+  },
+  {
+    "file": "gen_rib_grid_46_0048.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4fc0f911f971b11fe8050d94c3a1b957228c31713a67cdb4bc114a514cd1aa20",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 46 idx 48"
+  },
+  {
+    "file": "gen_rib_grid_46_0049.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "67ba249dfeb18cdb8d66a1fad5dfd1a0f275a32408b4795a456d31a93220d871",
+    "category": "rib_grid",
+    "notes": "Процедурный rib_grid seed 46 idx 49"
+  },
+  {
     "file": "gen_thinwall_panel_42_0060.stl",
     "source_url": "generated-procedural (tools/gen_corpus.py)",
     "origin": "openlight-proc",
@@ -792,6 +3159,258 @@
     "notes": "Процедурный thinwall_panel seed 42 idx 69"
   },
   {
+    "file": "gen_thinwall_panel_43_0050.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "17d41560feda24816648555494d2bcc0335273365f93f566f06c4dec40007f42",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 43 idx 50"
+  },
+  {
+    "file": "gen_thinwall_panel_43_0051.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3173d71fa31dcf47dff2f9fb5f0b7e0a72f5dd2eebe1e2212cde5c7cb86d00a3",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 43 idx 51"
+  },
+  {
+    "file": "gen_thinwall_panel_43_0052.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f3a206c19dfc10cd1731883d6e3a5074b825756b6866611f83b6747aaec8d854",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 43 idx 52"
+  },
+  {
+    "file": "gen_thinwall_panel_43_0053.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "247481d3d4f768a51b72d7c66597f07f567624e9ccde8c330af1fc2fe8dacd99",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 43 idx 53"
+  },
+  {
+    "file": "gen_thinwall_panel_43_0054.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "66f138991f3e5f4aa443d1a1ad4557939220972a5e76a083d8d2b9de325eefb4",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 43 idx 54"
+  },
+  {
+    "file": "gen_thinwall_panel_43_0055.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c71442f6619d6f495f3ce88e916d2fe5ca828cb349d5ea0b76377132f93bb431",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 43 idx 55"
+  },
+  {
+    "file": "gen_thinwall_panel_43_0056.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "037bd1a402490367685773fca26698cfa8a3e314112f6c3e04a0eb31e16eabf0",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 43 idx 56"
+  },
+  {
+    "file": "gen_thinwall_panel_43_0057.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c51d2c4cde85e39589051a6d95fc009528146d4f206e15338bb24091d00972c1",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 43 idx 57"
+  },
+  {
+    "file": "gen_thinwall_panel_44_0050.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "948ed0af4be329e4c93d7ff1058864fc5e67e86dfdaf007cbc70d3e6835caa96",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 44 idx 50"
+  },
+  {
+    "file": "gen_thinwall_panel_44_0051.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cf708720e6892fc986167dc2cbaf2f57ca1f15ab78665cdc2b8741ac24242167",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 44 idx 51"
+  },
+  {
+    "file": "gen_thinwall_panel_44_0052.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e337d82afbb801d5f8656ded365170e788663f0484aa0e211efa1cf9de368d27",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 44 idx 52"
+  },
+  {
+    "file": "gen_thinwall_panel_44_0053.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a4a0dd508b447fff44bf88adbf14630a70b12c10c89ef25bcc9c006d3b05d992",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 44 idx 53"
+  },
+  {
+    "file": "gen_thinwall_panel_44_0054.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "35d7370a60ff6a46ac3cf4e675af1499377339c0295f1a8bba394a1ab0b2e3b0",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 44 idx 54"
+  },
+  {
+    "file": "gen_thinwall_panel_44_0055.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cd8b050d70e66261a1502c06d009eaf407c5f7f80c7996162180c062f8207976",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 44 idx 55"
+  },
+  {
+    "file": "gen_thinwall_panel_44_0056.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2ce729c56ac1c8aafc5292779b22d95993a95a6c29c27e018ccb6ae7eb4c7079",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 44 idx 56"
+  },
+  {
+    "file": "gen_thinwall_panel_44_0057.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c572bd6cf14c30f3c5060ec8c6c3f1896039acf33559875ac837e481630f28fa",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 44 idx 57"
+  },
+  {
+    "file": "gen_thinwall_panel_45_0050.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "47cdf66a16b6e900b1a913abf832bcc276fe80ac39360434cb62ae65efa6efcc",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 45 idx 50"
+  },
+  {
+    "file": "gen_thinwall_panel_45_0051.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f7c9d56191535b697774c42e9b80b4dd12ca701553a38f5f88007d6fb04d34ca",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 45 idx 51"
+  },
+  {
+    "file": "gen_thinwall_panel_45_0052.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0213a1f16af80dd3a930ad5a2a48beb0325fe0c3e3bab2746d1d43cfcae296eb",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 45 idx 52"
+  },
+  {
+    "file": "gen_thinwall_panel_45_0053.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "40f9a48fb6da676298e97f81f172b15af199a771d13a2e87a590a3579da7e333",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 45 idx 53"
+  },
+  {
+    "file": "gen_thinwall_panel_45_0054.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b50634da9a60b091d85254d0847125d5927f9f3c7233b1fedf005d13f9374936",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 45 idx 54"
+  },
+  {
+    "file": "gen_thinwall_panel_45_0055.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b7ae4fa9d0d6d0c70c50edfffd5689184fa7ca10ad763c7c4b71e2ce7529daf6",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 45 idx 55"
+  },
+  {
+    "file": "gen_thinwall_panel_45_0056.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "af3ffd3e54508a625b33d3379c75afaf12f9855d707df2349301b0c5ec509f92",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 45 idx 56"
+  },
+  {
+    "file": "gen_thinwall_panel_45_0057.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "52941707864b6b1f01759b77e42520ebc7a2a7b453a2286a0cbf284070989b90",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 45 idx 57"
+  },
+  {
+    "file": "gen_thinwall_panel_46_0030.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "12fb491a64f5054d5ea8acd6031c12ee060f0cd75d975198ab88dacd4d6ed9b1",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 46 idx 30"
+  },
+  {
+    "file": "gen_thinwall_panel_46_0031.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "9c4e6c2508804e3303bd4d1a7c2c7aa2700007474ead505c3019177667b532ed",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 46 idx 31"
+  },
+  {
+    "file": "gen_thinwall_panel_46_0032.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "04cb864adc319bb92e8ed6507c95c682cc5deefc6f5b7e9dc4ee7e6afe0354f3",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 46 idx 32"
+  },
+  {
+    "file": "gen_thinwall_panel_46_0033.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "fcda0894973db45c6b7744dbc4b5ff64703ddc726799c736bd41abcf80b2b740",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 46 idx 33"
+  },
+  {
     "file": "gen_uav_arm_42_0030.stl",
     "source_url": "generated-procedural (tools/gen_corpus.py)",
     "origin": "openlight-proc",
@@ -880,6 +3499,267 @@
     "sha256": "c3746df4b2ed1d0a6b0bbd4422abcd8cb12f5a53b603688a0d42e887bcbed379",
     "category": "uav_arm",
     "notes": "Процедурный uav_arm seed 42 idx 39"
+  },
+  {
+    "file": "gen_uav_arm_43_0026.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8f14759e4a74ff5f4bc6e972af7173925ede87011d38680b9d9b40e56c741bf9",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 43 idx 26"
+  },
+  {
+    "file": "gen_uav_arm_43_0027.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "829f48de68b4ed010e326721e587468924a8dfb1c477b8812536385b512f660a",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 43 idx 27"
+  },
+  {
+    "file": "gen_uav_arm_43_0028.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "28cb17a25784eda018e63db38d5b4483e7af29f7d3ae9bf1bb6c74c96905720e",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 43 idx 28"
+  },
+  {
+    "file": "gen_uav_arm_43_0029.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e302031b2ffe64d7c6adc4e295122b8f1132914a67ba8a91b841f3743da2a917",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 43 idx 29"
+  },
+  {
+    "file": "gen_uav_arm_43_0030.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "286f0c30878aa2ef09c09e1551384d076d4ba51f7f0dfe707188e71f36b13072",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 43 idx 30"
+  },
+  {
+    "file": "gen_uav_arm_43_0031.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "47d25b4056f15a036761dfabcbd4da89e8b32886d7a12bad1020ca638b5df086",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 43 idx 31"
+  },
+  {
+    "file": "gen_uav_arm_43_0032.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7415dc583dae5cda0c79dd503c0ac748fe9de06f685273c2825f0d4c7d213415",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 43 idx 32"
+  },
+  {
+    "file": "gen_uav_arm_43_0033.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a98e0aee8ce5d74a5378063225471e2ca64214d2da91d964061c92d4e9910b32",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 43 idx 33"
+  },
+  {
+    "file": "gen_uav_arm_44_0026.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "86cf82627a40fbd582e667a2a60b7bee2beb5b9ff88505f469a1cf195b098fa5",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 44 idx 26"
+  },
+  {
+    "file": "gen_uav_arm_44_0027.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5a1728bd44c37f0956f344233b84ef478c86251595716e86a4abc30a27a072e7",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 44 idx 27"
+  },
+  {
+    "file": "gen_uav_arm_44_0028.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7f61a27bc52d461fbeaebead01a2a844945a83650f860363c50c8e097f599a9a",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 44 idx 28"
+  },
+  {
+    "file": "gen_uav_arm_44_0029.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "04e29c0af59ef0ee17ba342af5ea105c70e28e43d27286f994f8005fac717eb7",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 44 idx 29"
+  },
+  {
+    "file": "gen_uav_arm_44_0030.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ee07d55d5bcbc5b1369b827996c3df155482d015f0e010006ec91f41cb95036d",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 44 idx 30"
+  },
+  {
+    "file": "gen_uav_arm_44_0031.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7358cc82d34b1d7d1ce1c1f6ac80fc090a8bc1d8c6d59d6072bee0639f5d664a",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 44 idx 31"
+  },
+  {
+    "file": "gen_uav_arm_44_0032.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e5459e883c153a19e650ee7dc3f3dab5e0376bd231e736f6c2595709c8fb1cfc",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 44 idx 32"
+  },
+  {
+    "file": "gen_uav_arm_44_0033.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "811ec5b45da2a436a2ccbfb6d8539ced5802da32735ac3384627ff2ec4005c68",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 44 idx 33"
+  },
+  {
+    "file": "gen_uav_arm_45_0026.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "081d56dc155096fbd4f01378b0ecc4e4e92de1c3c667b7be190e3d73eb47d15c",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 45 idx 26"
+  },
+  {
+    "file": "gen_uav_arm_45_0027.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "70430f93d608212200370ee839bf99e59c3f050366fd9a4d7e6331c75df7cb7d",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 45 idx 27"
+  },
+  {
+    "file": "gen_uav_arm_45_0028.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "003fa23a288a48d6457d503bcb5b29d75ed8b93bc9e824d4ddaebcaa69f49301",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 45 idx 28"
+  },
+  {
+    "file": "gen_uav_arm_45_0029.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "11f5dd1f44a9b099114d221dfdd31021b442531c4b477fe2a8395d9d7c719572",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 45 idx 29"
+  },
+  {
+    "file": "gen_uav_arm_45_0030.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0a89bf34e2a8dc4e1634f1992b7396ff9128830a7c7815d0b4401ff829fad524",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 45 idx 30"
+  },
+  {
+    "file": "gen_uav_arm_45_0031.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b58a0be2476261f6fad5243da0b77f9a964a4ead06c21b688f9028bfb0989320",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 45 idx 31"
+  },
+  {
+    "file": "gen_uav_arm_45_0032.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d759902b487a3acd98dfc4fc58bd6b5e807a600ced0a1fd63f20e41f34d86e5c",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 45 idx 32"
+  },
+  {
+    "file": "gen_uav_arm_45_0033.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2268afe98283d79defd866c09a7c868187ccdfc3e3a0504f3183ededaab37039",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 45 idx 33"
+  },
+  {
+    "file": "gen_uav_arm_46_0015.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "151c7688ab76169a3a2ed22b4a209a7a198ac037e001262079cbf8da65f83d75",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 46 idx 15"
+  },
+  {
+    "file": "gen_uav_arm_46_0016.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "436709e8444ef7d118b11a7424dadc6f509f74f42e662061ec8616d580899043",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 46 idx 16"
+  },
+  {
+    "file": "gen_uav_arm_46_0017.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1c17de62c8fa9d3cf2b13266fa68ec4b3ba369c7f89aad64c88be9a58a4841ed",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 46 idx 17"
+  },
+  {
+    "file": "gen_uav_arm_46_0018.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c4427c86678ef8198ad6550c9223537225b633654f3d525518579fac1582bafe",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 46 idx 18"
+  },
+  {
+    "file": "gen_uav_arm_46_0019.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0480d5c9ce31f40c6bb70e4cc40703e13833cc484772fab49892b17ad249ce1e",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 46 idx 19"
   },
   {
     "file": "happy.obj",
