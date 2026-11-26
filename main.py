@@ -481,42 +481,96 @@ class Api:
                 return {'ok': True}
         return {'error': 'Не найдено'}
 
-    # —— управление окном (frameless) ——
+    # —— управление окном (frameless) — светофор справа ——
     def minimize_window(self):
+        diag_log("ui: minimize clicked")
         try:
             import webview
             if webview.windows:
-                webview.windows[0].minimize()
+                try:
+                    webview.windows[0].minimize()
+                    diag_log("ui: minimize via pywebview")
+                except Exception as e:
+                    diag_log(f"ui: minimize pywebview fail {e}, fallback ctypes")
+                    raise
             return {'ok': True}
         except Exception as e:
+            diag_log(f"ui: minimize error {e}")
+            # fallback ctypes SW_MINIMIZE
+            try:
+                if os.name == 'nt':
+                    import ctypes
+                    hwnd = ctypes.windll.user32.FindWindowW(None, "OpenLight")
+                    if hwnd:
+                        ctypes.windll.user32.ShowWindow(hwnd, 6)  # SW_MINIMIZE
+                        diag_log(f"ui: minimize via ctypes hwnd={hwnd}")
+                        return {'ok': True}
+            except Exception as ce:
+                diag_log(f"ui: minimize ctypes fail {ce}")
             return {'error': str(e)}
 
     def maximize_window(self):
+        diag_log("ui: maximize clicked")
         try:
             import webview
             if webview.windows:
                 w = webview.windows[0]
                 try:
-                    # toggle: if maximized → restore
                     if getattr(w, '_is_maximized', False):
-                        w.restore()
+                        try:
+                            w.restore()
+                        except Exception:
+                            # ctypes restore
+                            if os.name == 'nt':
+                                import ctypes
+                                hwnd = ctypes.windll.user32.FindWindowW(None, "OpenLight")
+                                if hwnd:
+                                    ctypes.windll.user32.ShowWindow(hwnd, 9)
                         w._is_maximized = False
+                        diag_log("ui: restore")
                     else:
-                        w.maximize()
+                        try:
+                            w.maximize()
+                        except Exception:
+                            if os.name == 'nt':
+                                import ctypes
+                                hwnd = ctypes.windll.user32.FindWindowW(None, "OpenLight")
+                                if hwnd:
+                                    ctypes.windll.user32.ShowWindow(hwnd, 3)
                         w._is_maximized = True
-                except Exception:
+                        diag_log("ui: maximize")
+                except Exception as e:
+                    diag_log(f"ui: maximize inner fail {e}")
                     w.maximize()
             return {'ok': True}
         except Exception as e:
+            diag_log(f"ui: maximize error {e}")
+            # fallback ctypes toggle
+            try:
+                if os.name == 'nt':
+                    import ctypes
+                    hwnd = ctypes.windll.user32.FindWindowW(None, "OpenLight")
+                    if hwnd:
+                        # check zoomed
+                        is_max = ctypes.windll.user32.IsZoomed(hwnd)
+                        cmd = 9 if is_max else 3  # SW_RESTORE / SW_MAXIMIZE
+                        ctypes.windll.user32.ShowWindow(hwnd, cmd)
+                        diag_log(f"ui: maximize ctypes hwnd={hwnd} is_max={is_max} cmd={cmd}")
+                        return {'ok': True}
+            except Exception as ce:
+                diag_log(f"ui: maximize ctypes fail {ce}")
             return {'error': str(e)}
 
     def close_window(self):
+        diag_log("ui: close clicked")
         try:
             import webview
             if webview.windows:
                 webview.windows[0].destroy()
+                diag_log("ui: close via pywebview destroy")
             return {'ok': True}
         except Exception as e:
+            diag_log(f"ui: close error {e}")
             return {'error': str(e)}
 
 

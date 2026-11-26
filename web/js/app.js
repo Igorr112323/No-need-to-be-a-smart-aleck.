@@ -7,6 +7,12 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { STLExporter } from 'three/addons/exporters/STLExporter.js';
 import { state, DENSITIES, MATERIAL_LABELS, BRACKET_VOLUME_CM3, computeWeightGram, computeWeightAfter, computeSafety, pushHistory, popHistory, genId, setMaterial, setProcess } from './state.js';
 
+// ——— ранние состояния (до любых функций, чтобы не было TDZ) ———
+let importedVolumeCm3 = null; // для импортированной модели
+let importedGroup = null;
+let importedName = null;
+let useImported = false;
+
 // ——— управление окном (frameless) + лоадер + защита от зависания ———
 const appLoader = document.getElementById('appLoader');
 const loaderSub = document.getElementById('loaderSub');
@@ -49,10 +55,14 @@ const winClose = document.getElementById('winClose');
 const winMin = document.getElementById('winMin');
 const winMax = document.getElementById('winMax');
 function callApi(name){
+  try{ window.__diag && window.__diag('ui: '+name+' clicked'); }catch(e){}
   if(window.pywebview && window.pywebview.api && window.pywebview.api[name]){
-    window.pywebview.api[name]().catch(()=>{});
+    window.pywebview.api[name]().then(function(r){ window.__diag && window.__diag('ui: '+name+' OK '+JSON.stringify(r||{}).slice(0,200)); }).catch(function(e){ window.__diag('ui: '+name+' ERR '+e); });
   } else {
+    window.__diag && window.__diag('ui: '+name+' no pywebview fallback');
     if(name==='close_window') window.close();
+    else if(name==='minimize_window') showToast('Свернуть — только в exe');
+    else if(name==='maximize_window') showToast('Развернуть — только в exe');
   }
 }
 if(winClose) winClose.addEventListener('click', ()=> callApi('close_window'));
@@ -99,7 +109,6 @@ function showPhase(msg) { phaseText.textContent = msg; phaseEl.classList.add('sh
 function hidePhase() { phaseEl.classList.remove('show'); }
 
 // ——— метрики ———
-let importedVolumeCm3 = null; // для импортированной модели
 function formatRu(num) { return num.toFixed(1).replace('.', ','); }
 function getCurrentVolumeCm3() {
   if (importedGroup && importedGroup.visible && importedVolumeCm3) return importedVolumeCm3;
@@ -312,9 +321,6 @@ const horizPlate = (() => {
 const bracket = new THREE.Group();
 bracket.add(vertPlate, horizPlate);
 scene.add(bracket);
-
-let importedGroup = null;
-let importedName = null;
 
 const supportsGroup = new THREE.Group(); supportsGroup.name = 'supports';
 const forcesGroup = new THREE.Group(); forcesGroup.name = 'forces';
@@ -1039,7 +1045,6 @@ btnOptimize.addEventListener('click', (e) => {
 // ——— импорт STL ———
 const stlLoader = new STLLoader();
 const objLoader = new OBJLoader();
-let useImported = false;
 
 function computeVolumeCm3(geometry) {
   // объём через тетраэдры — для замкнутой сетки
@@ -1576,6 +1581,53 @@ function animate() {
 }
 animate();
 const hint = document.getElementById('centerHint');
-if (hint) setTimeout(() => hint.classList.add('hidden'), 600);
+if (hint) {
+  // CTA реально работает: клик по пустому полю открывает диалог
+  hint.style.pointerEvents = 'auto';
+  hint.style.cursor = 'pointer';
+  hint.addEventListener('click', (e)=>{ e.stopPropagation(); if(typeof handleOpenModelViaApi==='function') handleOpenModelViaApi(); });
+  setTimeout(() => hint.classList.add('hidden'), 600);
+}
+// drag & drop на всё окно
+document.addEventListener('dragover', (e)=>{ e.preventDefault(); if(hint) hint.classList.remove('hidden'); });
+document.addEventListener('drop', (e)=>{
+  e.preventDefault();
+  if(hint) hint.classList.add('hidden');
+  const file=e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+  if(file){
+    if(window.pywebview && window.pywebview.api && window.pywebview.api.open_model){
+      showToast('Перетаскивание в exe — используйте кнопку Открыть');
+    } else {
+      // браузерный fallback: читаем как STL/OBJ
+      const reader=new FileReader();
+      reader.onload=(ev)=>{
+        try{
+          let geo=null;
+          if(file.name.toLowerCase().endsWith('.stl')) geo=stlLoader.parse(ev.target.result);
+          else if(file.name.toLowerCase().endsWith('.obj')){
+            const text=new TextDecoder().decode(ev.target.result);
+            const obj=objLoader.parse(text);
+            obj.traverse(c=>{ if(c.isMesh && !geo) geo=c.geometry; });
+          }
+          if(geo) finalizeImport(geo, file.name);
+        }catch(err){ showWarning('Ошибка drop: '+err.message); }
+      };
+      reader.readAsArrayBuffer(file);
+    }
+  }
+});
+// проверка overlay-убийцы
+setTimeout(()=>{
+  try{
+    const el=document.elementFromPoint(window.innerWidth/2, window.innerHeight/2);
+    window.__diag && window.__diag('elementFromPoint center: '+(el ? (el.id||el.className||el.tagName) : 'null'));
+    if(el && (el.id==='appLoader' || el.closest && el.closest('#appLoader'))){
+      window.__diag('OVERLAY KILLER appLoader intercepts clicks!');
+      document.title='ERR: overlay blocks clicks';
+    }
+  }catch(e){}
+}, 1000);
+// listeners-attached маркер
+try{ window.__diag && window.__diag('listeners-attached'); }catch(e){}
 console.log('%cOpenLight Этап 5 — js_api, импорт STL, проекты, автосейв', 'color:#007AFF;font-weight:600');
 window._state = state; window._scene = scene;
