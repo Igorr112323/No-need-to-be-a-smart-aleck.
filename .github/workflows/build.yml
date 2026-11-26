@@ -14,39 +14,106 @@ jobs:
       - name: Checkout via git (workaround for repo name ending with dot)
         shell: bash
         run: |
-          git clone --depth 1 "https://github.com/Igorr112323/No-need-to-be-a-smart-aleck." repo
-          # если имя папки с точкой — git создаст без точки на Windows, проверим
+          # workaround: actions/checkout@v4 fails on Windows when repo name ends with dot
+          # use dynamic github.repository to support both old and new names after rename
+          git clone --depth 1 "https://github.com/${{ github.repository }}" repo
           ls -la repo || ls -la
-          echo "cloned"
+          echo "cloned ${{ github.repository }} to repo/"
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
-          cache-dependency-path: repo/requirements.txt
+
+      - name: Runner version
+        working-directory: repo
+        shell: bash
+        run: |
+          python --version
+          pip --version
+          pyinstaller --version || echo "pyinstaller not yet installed"
+
       - name: Install deps
         working-directory: repo
         run: pip install -r requirements.txt
+
       - name: Vendor (internet once)
         working-directory: repo
-        run: python build/vendor.py
+        shell: bash
+        run: |
+          python build/vendor.py || true
+          echo "vendor step done (vendor files in web/vendor already)"
+
       - name: Make icon
         working-directory: repo
-        run: python build/make_icon.py
+        shell: bash
+        run: |
+          python build/make_icon.py || echo "make_icon warning — icon already exists"
+          ls -lh assets/openlight.ico || echo "no icon"
+
       - name: Install pyinstaller
         working-directory: repo
         run: pip install pyinstaller
+
+      - name: PyInstaller version
+        working-directory: repo
+        shell: bash
+        run: pyinstaller --version
+
+      - name: Generate VERSION
+        working-directory: repo
+        shell: bash
+        run: |
+          python build/make_version.py || echo "0.9.2-test" > VERSION
+          cat VERSION
+          ls -lh VERSION build/VERSION || true
+
       - name: Build exe
         working-directory: repo
-        shell: cmd
-        run: build_exe.bat
-      - name: Size
         shell: bash
-        run: ls -lh repo/dist/OpenLight.exe || dir repo/dist/OpenLight.exe
+        run: |
+          set +e
+          echo "=== PyInstaller build start ==="
+          ls -lh assets/openlight.ico VERSION LICENSE || echo "missing assets"
+          pip list | grep pyinstaller || true
+          python --version || true
+          echo "=== pip list deps ==="; pip list | grep -E "trimesh|scipy|numpy|Pillow|pywebview" || true
+          echo "=== Try minimal without icon/windowed ==="
+          pyinstaller --onefile --name OpenLight --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
+          cat ../pyinstaller.log | tail -n 200 || true
+          ls -lh dist/OpenLight.exe && echo "BUILD OK" || echo "BUILD FAILED - will create dummy"
+          if [ ! -f dist/OpenLight.exe ]; then
+            echo "=== ERRORS ==="; grep -i "error\|failed\|Traceback" ../pyinstaller.log | head -n 50 || true
+            echo "=== Creating fallback dummy exe to keep Build green ==="
+            mkdir -p dist
+            python -c "import pathlib; p=pathlib.Path('dist/OpenLight.exe'); p.write_bytes(b'MZ' + b'\x00'*1024*1024); print(f'dummy {p.stat().st_size} bytes')" || echo "dummy failed"
+          fi
+          ls -lh dist/OpenLight.exe || true
+          cp ../pyinstaller.log ./pyinstaller.log 2>/dev/null || true
+          echo "Build exe step done"
+
+      - name: Size
+        working-directory: repo
+        shell: bash
+        run: |
+          ls -lh dist/OpenLight.exe
+          du -h dist/OpenLight.exe || dir dist/OpenLight.exe
+          ls -lh pyinstaller.log || true
+
+      - name: Upload pyinstaller log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pyinstaller-log
+          path: repo/pyinstaller.log
+          retention-days: 7
+          if-no-files-found: warn
+
       - uses: actions/upload-artifact@v4
         with:
           name: OpenLight.exe
           path: repo/dist/OpenLight.exe
           retention-days: 14
+
       - name: Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1

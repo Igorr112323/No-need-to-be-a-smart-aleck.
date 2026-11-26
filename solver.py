@@ -169,32 +169,18 @@ def density_filter(rho, radius=1.5):
     Для скорости используем uniform_filter как приближение.
     """
     from scipy.ndimage import uniform_filter
-    # размер ядра = 2*radius
     size = int(radius*2 + 1)
     if size < 3:
         return rho
-    # взвешенное среднее — приближённо uniform
-    filtered = uniform_filter(rho, size=size, mode='constant', cval=0.0)
+    filtered = uniform_filter(rho, size=size, mode='reflect')
     # нормировка чтобы границы не размывались слишком
     # простой вариант — вернуть filtered
     return filtered
 
 # ——— связные компоненты ———
-def keep_connected(rho, threshold=0.5):
-    """Оставить только компоненту, связанную с опорами (или самую большую). Удаляет несвязные островки."""
-    binary = rho > threshold
-    if not np.any(binary):
-        return rho
-    labeled, nfeat = nd_label(binary)
-    if nfeat <= 1:
-        return rho
-    # найти самую большую компоненту
-    counts = np.bincount(labeled.ravel())[1:]  # без фона 0
-    largest = np.argmax(counts) + 1
-    # оставить только largest
-    rho_filtered = np.where(labeled == largest, rho, 0.0)
-    # если есть опоры — лучше оставить компоненту, касающуюся опоры, но для простоты — largest
-    return rho_filtered
+def keep_connected(rho, threshold=1e-2):
+    """ВРЕМЕННО отключён до 5 зелёных MBB — return rho без изменений."""
+    return rho
 
 # ——— Taubin smoothing ———
 def taubin_smoothing(vertices, faces, lam=0.5, mu=-0.53, iters=10):
@@ -523,84 +509,83 @@ def optimize_topology(
             ue = U[dofs]
             ce[eid] = ue @ (Ke0 @ ue)  # для rho=1, потом масштабируем
 
-        # чувствительности (отрицательные)
-        dc = -p * (rho ** (p-1)) * ce
-        # фильтр плотности
-        # для простоты — равномерный фильтр по соседям
-        # создадим rho_grid для фильтра
-        # отобразим rho на 3D сетку (nx,ny,nz) где void =0
-        rho_grid = np.zeros(mat_vox.shape, dtype=float)
+        # чувствительности (отрицательные) p=3.0 фикс
+        dc = -p * (rho ** (p-1)) * ce  # dc = -p*rho^(p-1)*(u'K0 u)
+# --- фильтр чувствительности (не только плотности) ---
+        # собрать dc на сетку (nx,ny,nz), void=0
+        dc_grid = np.zeros(mat_vox.shape, dtype=float)
         for eid, (ix, iy, iz) in enumerate(solid_idx):
-            rho_grid[ix, iy, iz] = rho[eid]
-        # фильтр
-        rho_grid_f = density_filter(rho_grid, radius=r_min)
-        # чувствительности тоже фильтруем
-        # упрощённо — не фильтруем dc, только rho
+            dc_grid[ix, iy, iz] = dc[eid]
+        # применить density_filter с r_min=1.5 по тому же соседству
+        dc_grid_f = density_filter(dc_grid, radius=r_min)
+        # проверка объёма фильтра: filtered не должен терять >2%
+        if np.abs(dc_grid_f.sum() - dc_grid.sum()) > 0.02 * (abs(dc_grid.sum()) + 1e-12):
+            # uniform_filter с cval=0 на границах может занижать — предупредить, но не падать
+            print(f"[filter] dc volume changed {dc_grid.sum():.2e} -> {dc_grid_f.sum():.2e}")
+        # использовать ОТФИЛЬТРОВАННЫЙ dc в OC
+        # снять с сетки обратно в вектор
+        dc_f = np.zeros_like(dc)
+        for eid, (ix, iy, iz) in enumerate(solid_idx):
+            dc_f[eid] = dc_grid_f[ix, iy, iz]
+        dc = dc_f  # далее OC на dc_f
 
-        # удаление несвязных компонент каждые 5 итераций
-        if (it+1) % 5 == 0:
-            binary = rho_grid > 0.5
-            # заполнить passive
-            binary = binary | passive
-            # label
-            labeled, nfeat = nd_label(binary)
-            if nfeat > 1:
-                # найти компоненту, содержащую опоры (примерно — ближайшую к первой опоре)
-                # для простоты — оставляем крупнейшую
-                counts = np.bincount(labeled.ravel())[1:]
-                largest = np.argmax(counts) + 1
-                keep_mask = (labeled == largest)
-                # обновить rho
-                for eid, (ix, iy, iz) in enumerate(solid_idx):
-                    if not keep_mask[ix, iy, iz] and not passive[ix, iy, iz]:
-                        rho_grid[ix, iy, iz] = 0
-                # синхронизировать rho
-                for eid, (ix, iy, iz) in enumerate(solid_idx):
-                    rho[eid] = rho_grid[ix, iy, iz]
+        # удаление несвязных ВРЕМЕННО отключено до 5 зелёных MBB
+        # keep_connected вернёт rho без изменений
 
-        # OC update (optimality criteria)
-        # бисекция по лагранжиану
-        # целевая масса
-        # учитывать пассивные (они не участвуют в ограничении)
-        # простой OC: rho_new = rho * ( -dc / lmid )**eta
-        # OC: l2 адаптивно от max(-dc), чтобы не улететь в 1e9 и не получить nan
-        dc_pos = np.maximum(1e-9, -dc)
-        dc_max = float(np.max(dc_pos))
-        if dc_max < 1e-4:
-            scale = 1e-4 / max(dc_max, 1e-12)
-            dc_pos = dc_pos * scale
-            dc_max = float(np.max(dc_pos))
-        l1, l2 = 0.0, dc_max * 2.0 + 1e-9
-        if l2 < 1e-9:
-            l2 = 1.0
+        # --- OC Sigmund без скейлинга ---
+        # удалить блок dc_pos / dc_max <1e-4 scale — корень коллапса
+        n_passive = int(np.count_nonzero(passive))  # залоггировать отдельно
+        n_solid_total = n_elem
+        volfrac_target = vol_frac  # vol_frac = 1 - relief, от solid-вокселей
+        dc_abs_max = float(np.max(np.abs(dc))) if dc.size else 0.0
+        # критерий Sigmund: l1=0 l2=1e9 eta=0.5 move=0.2 ≤50 итераций
+        l1, l2 = 0.0, 1e9
         move = 0.2
-        eta = 0.5
-        for _ in range(60):
-            lmid = 0.5*(l1+l2)
-            rho_new = np.maximum(0.001, np.maximum(rho - move, np.minimum(1.0, np.minimum(rho + move, rho * ((-dc)/lmid) ** eta))))
-            # passive остаются 1
+        eta = 0.5  # фикс
+        # p=3.0 уже фикс выше (E, nu, vol_frac)
+        for _ in range(80):
+            lmid = 0.5 * (l1 + l2)
+            # защита деления на ноль: если lmid==0 то rho_ratio=0
+            if lmid < 1e-12:
+                rho_new = np.clip(rho - move, 0.001, 1.0)
+            else:
+                rho_new = np.maximum(0.001, np.maximum(rho - move, np.minimum(1.0, np.minimum(rho + move, rho * ((-dc)/lmid) ** eta))))
+            # пассивные принудительно =1 ТОЛЬКО после бисекции
+            # но для vol в бисекции они уже должны участвовать
+            # поэтому сначала считаем vol с пассивными=1
+            # временно проставим пассивные для проверки vol
             for eid, (ix, iy, iz) in enumerate(solid_idx):
                 if passive[ix, iy, iz]:
                     rho_new[eid] = 1.0
-            # объём
-            # считаем средний по всем solid (включая passive)
-            if lmid < 1e4:
-                # проверка объёма
-                pass
-            vol = np.mean(rho_new)
-            if vol - vol_frac > 0:
+            # критерий Sigmund: abs(sum(rho_new) - vol_frac*n_elem) < 1e-3*n_elem
+            vol = float(np.sum(rho_new))
+            target_vol = vol_frac * n_elem
+            if abs(vol - target_vol) < 1e-3 * n_elem or (l2 - l1) / (l1 + l2 + 1e-12) < 1e-6:
+                break
+            if vol - target_vol > 0:
                 l1 = lmid
             else:
                 l2 = lmid
-            if abs(vol - vol_frac) < 1e-3 or (l2 - l1) < 1e-6:
-                break
+        # после бисекции passive уже =1 (выше), vol уже учтён
+        volfrac_achieved = float(np.mean(rho_new)) if 'rho_new' in locals() else float(np.mean(rho))
+        # ОБЯЗАТЕЛЬНЫЙ fail-fast: |achieved - vol_frac| >0.01 → RuntimeError
+        if abs(volfrac_achieved - vol_frac) > 0.01:
+            print(f"[OC FAIL] it={it+1} target {vol_frac:.4f} achieved {volfrac_achieved:.4f} dc_abs_max {dc_abs_max:.2e} n_passive {n_passive}")
+            raise RuntimeError(f"OC fail-fast: |achieved {volfrac_achieved:.4f} - target {vol_frac:.4f}| >0.01 (l1 {l1:.2e} l2 {l2:.2e} lmid {lmid:.2e})")
         if 'rho_new' not in locals():
             rho_new = rho
-        # проверка что сумма активных >0 (не все 1e-3)
-        if np.count_nonzero(rho_new > 0.01) == 0:
-            print(f"[solver] предупреждение: все rho -> 0.001, оставляем предыдущую")
-            rho_new = rho
-        rho = np.maximum(1e-3, rho_new)  # минимум плотности 1e-3 для несингулярности
+        rho = np.maximum(1e-3, rho_new)
+        # klog каждая итерация: it, vol_frac, mean_rho, achieved_volfrac, dc_abs_max, n_active, n_comp
+        mean_rho = float(np.mean(rho))
+        n_active = int(np.count_nonzero(rho > 0.5))
+        try:
+            rho_grid_tmp = np.zeros(mat_vox.shape, dtype=float)
+            for eid, (ix, iy, iz) in enumerate(solid_idx):
+                rho_grid_tmp[ix, iy, iz] = rho[eid]
+            _, ncomp_tmp = nd_label(rho_grid_tmp > 1e-2)
+        except Exception:
+            ncomp_tmp = -1
+        print(f"[SIMP it={it+1}/{max_iter}] target={volfrac_target:.3f} mean_rho={mean_rho:.3f} achieved={volfrac_achieved:.3f} dc_abs_max={dc_abs_max:.2e} n_passive={n_passive} n_active={n_active} n_comp={ncomp_tmp}")
 
         # прогресс
         pct = 15 + (it+1)/max_iter * 70

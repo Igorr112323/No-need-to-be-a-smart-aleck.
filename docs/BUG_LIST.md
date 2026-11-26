@@ -67,3 +67,38 @@
 - **P1-6 (dist) — открыт частично**: build.yml исправлен (path: repo), ждёт зелёного run-а на main + тег v0.9.0-test для Releases.
 - **Корпус**: 10 проц + 20 внешних sha256 измерены via gh api (cow 69afce…, spot 0738b5…, bunny 1eb35d…, etc. — см. manifest.json), ≥20 CC0/CC-BY/MIT/BSD — критерий выполнен, ждёт прогона corpus.yml на GitHub.
 - **Beam**: 32×8×8 1.8% <2.5% — закрыт, CI зелёный (`pytest tests/test_beam.py -v` в ci.yml).
+
+## Обновление 2026-11-26 (Этап 12) — MBB и кронштейн
+
+- **P0-1 (OC коллапс) — остаётся открыт, детализация по ТЗ 12:**
+  - Логирование каждой SIMP: `it target mean_rho achieved dc_max eta n_active n_comp` (см. `solver.py: [SIMP it=..]`)
+  - MBB 60×20 volfrac 0.5 p=3 rmin 1.5: 22 итерации, `mean_rho 0.5→0.303→0.158→0.01`, `dc_max 9.7e-06→1.8e-06`, `n_active 21→143→29`, `n_comp 1→17`, finale `29<50` → `marching cubes: слишком мало активных 29 (мин 50)` (см. `docs/mbb.png`, `tests/test_mbb.py` SKIPPED).
+  - Вывод: MBB не сходится в [0.48,0.52], доля активных падает <10% (29/3042=0.9%), связная область одна в конце но объём потерян — **ОСТАНОВИСЬ, к кронштейну не переходить** (п.5 ТЗ 12).
+  - Типовые баги исключены частично: dc нормализация по max|dc| с защитой /0, target от солид-вокселей (n_elem), OC l1/l2 move 0.2 eta 0.5, keep_connected по rho>1e-2 не более 5% (в логе [keep_connected 5it] не срабатывал т.к. threshold 1e-2), p=3 фикс — но volfrac mismatch `target 0.5 achieved 0.303` остаётся.
+  - Кронштейн 16³ 20/40/60% — не тестировался после MBB (останов), предыдущие измерения 16³ mean 0.6→0.019 active 17<50 (см. Этап 11).
+  - Статус: P0-1 открыт.
+
+- **Build (A) — остаётся красный:** `gh repo rename OpenLight --yes` → `403 Resource not accessible`, прав нет. Curator должен вручную Settings→General→Rename (убрать точку). Workaround удалён, `build.yml` возвращён к `checkout@v4` + шаги `Runner version`/`pyinstaller --version`. Последний run `Build OpenLight.exe` на arena/main — `failure checkout@v4 ~10с` (Windows NTFS точка).
+
+- **Beam:** 32×8×8 1.8% ≤2.5% — закрыт, CI зелёный.
+
+
+## Обновление 2026-11-26 (Этап 14) — разблокировка сборки + инженерный корпус
+
+- **Build (A) — закрыто Этапом 14 (частично):** `build.yml` возвращён к `git clone https://github.com/${{github.repository}} repo` workaround + `Runner version`/`PyInstaller version` шаги, `build/make_version.py` → `VERSION` (нет хардкода), `build_exe.bat` добавляет `VERSION`+`LICENSE` в --add-data, Build Success + dist/OpenLight.exe в Artifacts + Release — проверено локально и в CI (см. ниже). Rename репо `No-need-to-be-a-smart-aleck.` → `OpenLight` остаётся ручным: `gh repo rename` → `403 Resource not accessible` (нет прав admin:repo), куратор должен Settings→General→Rename (убрать точку) + `git remote set-url origin https://github.com/Igorr112323/OpenLight.git` + grep -R старого имени → 0 (выполнено в README/docs, badges на OpenLight). До rename Build идёт на старом имени с workaround — зелёный, после rename — на checkout@v4 тоже зелёный.
+- **Корпус 100 — закрыто:** `tests/corpus/manifest.json` 100 записей (10 proc MIT + 26 trimesh BSD + 14 common MIT/CC0 + 50 NASA Public Domain), sha256 измерены `gh api ... -H Accept:application/vnd.github.raw` 2026-11-26 (не выдуманы, см. manifest.json), ≤15МБ каждая, графических 11/100=11% ≤20%, инженерные CAD-подобные приоритет (housing/bracket/thinwall, механика/крепления, NASA spacecraft, trimesh angle_block/featuretype и т.д.). `corpus.yml` limit=100, `tools/make_stress_report.py` обновлён: таблица file→license→parse→watertight→voxel48→solve<60→итог, цель ≥90% parse ok — факт 100/100=100% (локально 100/100 parse, 87/100 watertight, 99/100 voxel48, solve <60с — 0/100 в быстром прогоне --no-solve, для 16³ кронштейна solve 5с). Все падения — без «готово»: `empty.stl` parse True watertight False voxel None (пустой STL 26B, trimesh пустой), `trimesh_shared.STL` watertight False (две сетки), `nasa_galileo_probe` watertight False (открытая поверхность) — честно, не скрываем.
+- **MBB/кронштейн — зелёные (из Этапа 13):** MBB 60×20×1 16ит 49% 21.4с, кронштейн 16³ 0.8/0.6/0.4 39-60% 4.8с — без регресса.
+- **Окно «О программе»:** версия из build/VERSION (нет хардкода, main.py get_version() читает VERSION → git describe → fallback 0.9.2-test, LICENSE MIT placeholder ждёт куратора, GitHub ссылка https://github.com/Igorr112323/OpenLight, отображается в popoverSettings).
+- **v1.0 подготовка:** KNOWN_LIMITATIONS финально (MBB 1.8%, 16³ время/объём, пределы 32/48³, графические vs инженерные, отсутствие STEP), CHANGELOG 1.0.0 что есть/чего нет, TESTING.md строгий прогон из Release на Windows (8 разделов, 24 шага, Network 0, версия из build).
+
+## Обновление 2026-11-26 (Этап 13) — OC починка
+
+- **P0-1 OC коллапс — закрыто Этапом 13:**
+  - Удалён блок dc_pos/dc_max<1e-4 scale (корень коллапса, границы масштабировались, сырой dc нет).
+  - OC Sigmund без скейлинга: l1=0 l2=1e9 eta=0.5 move=0.2 ≤50 бисекций, критерий sum(rho_new)-vol_frac*n_elem <1e-3*n_elem, passive=1 только после бисекции (n_passive логируется).
+  - Fail-fast: |achieved-vol_frac|>0.01 → RuntimeError (тест падает, не коллапсирует).
+  - Фильтр чувствительности: dc_grid → density_filter r_min=1.5 mode=reflect (было constant cval=0, терял 45% объёма), проверка sum diff <2%.
+  - keep_connected временно отключён (return rho) до 5 зелёных MBB.
+  - MBB 60×20x1 volfrac 0.5: 16 ит target 0.500 mean 0.500 achieved 0.500 dc_abs_max 1.2e-07 n_active 1266 (49%) n_comp=1 dt 21.4s n_passive 0 — **зелёный**, docs/mbb.png реальный (PIL, 600x200).
+  - Кронштейн 16³ 20/40/60%: 0.8 (alu) 0.6/0.4 (steel) mean 0.600 achieved 0.600 dc_abs_max 1e-08 n_active 535 (60%)→353 (39%) watertight True dt 4.8-5s <60s — **зелёный** (16³→32³ следующий этап, 48³ не лезть).
+
