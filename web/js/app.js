@@ -1655,6 +1655,15 @@ setTimeout(()=>{
     if(missing.length) window.__diag('first-error: missing ids '+missing.join(','));
   }catch(e){ window.__diag && window.__diag('first-error: check failed '+e); }
 }, 1000);
+// C3: diag на каждый клик — логировать перехватывающий элемент
+document.addEventListener('click', (e)=>{
+  try{
+    const el=document.elementFromPoint(e.clientX, e.clientY);
+    if(el && (el.id==='appLoader' || (el.closest && el.closest('#appLoader')))){
+      window.__diag && window.__diag('click intercepted by appLoader at '+e.clientX+','+e.clientY+' target='+(e.target && e.target.id));
+    }
+  }catch(_){}
+});
 // listeners-attached маркер
 try{ window.__diag && window.__diag('listeners-attached'); }catch(e){}
 console.log('%cOpenLight Этап 5 — js_api, импорт STL, проекты, автосейв', 'color:#007AFF;font-weight:600');

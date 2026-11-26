@@ -132,8 +132,93 @@ git log --oneline -20: см. выше
 
 ---
 
-## СТАТИКА И ЮНИТ (Задача B) — TODO D
-## ЛОГИРОВАНИЕ UI (Задача C) — TODO
+## СТАТИКА И ЮНИТ (Задача B) — Linux, быстро (артефакт: логи)
+
+### B1. Компиляция
+```
+python3 -m py_compile main.py solver.py tools/*.py build/*.py tests/*.py → OK:0
+node --check web/js/app.js → OK
+node --check web/js/state.js → OK
+```
+**Вывод:** 0 ошибок.
+
+### B2. pytest -x (регрессии)
+```
+tests/test_beam.py::test_deflection PASSED (1.8% ≤2.5% — эталон балки)
+tests/test_kirsch.py::test_kirsch PASSED (2.5% ≤7%)
+tests/test_loadcases.py::test_envelope PASSED
+tests/test_solver.py::test_import PASSED
+tests/test_solver.py::test_voxelize_smoke PASSED
+tests/test_solver.py::test_corpus_parse PASSED
+tests/test_bracket_oc.py::test_bracket_16 PASSED (19.64s, 16³ relief 0.4)
+```
+`tests/test_mbb.py` — 60×20×1 16ит 49% 21.4с (локально 27.96s, в CI зелёный, см. ci.yml runs). `marching cubes` без scikit-image падал, с `scikit-image` ок.
+**Вывод:** Beam ≤2.5%, Kirsch ≤7%, bracket OC — зелёные. После каждого фикса перепроверено, отката не нужно.
+
+### B3. ЛИНТ ЛОГИКИ UI (addEventListener)
+
+Ключевые id из ТЗ:
+- #btnBack → `getElementById('btnBack').addEventListener('click', toast)` — есть
+- #btnUndo → `getElementById('btnUndo').addEventListener('click', handleUndo)` — есть
+- #btnExport → `getElementById('btnExport').addEventListener('click', save_stl)` — есть (+ contextmenu)
+- #btnMore / #btnMenu → `btnMore.addEventListener('click', popoverSettings)` — есть (имя btnMore, не btnMenu — P3 naming, но не ID-MISMATCH)
+- Док: `data-tool="fix"` / `force` / `keep` → `querySelectorAll('.dock-btn').forEach(... setTool)` — есть
+- #btnOptimize → `btnOptimize.addEventListener('click', start_optimization)` — есть
+- #btnMaterial → `btnMaterial.addEventListener('click', popoverMaterial)` — есть
+- #btnOpen / #centerHint → `btnOpen click → handleOpenModelViaApi`, `centerHint click/dragover/drop` — есть
+- Кнопки окна: #winClose/Min/Max → `addEventListener('click', callApi close/minimize/maximize)` — есть (светофор вправо)
+- Escape / Ctrl+W → `document.addEventListener('keydown', Escape→close_window)` — есть (17F)
+- CTA: текст `Нажмите <kbd>Открыть</kbd> или перетащите STL — диалог откроется` — нет `anev`
+
+**Сверка html↔js:** B3 полный, ID рассинхрона нет (см. A3).
+
+### B4. Отсутствие немых путей (pywebview try/catch + fallback)
+
+Каждый `pywebview.api.*` обёрнут `if(window.pywebview && window.pywebview.api && window.pywebview.api[name])` + `.then(...).catch(e=> __diag ERR)` + fallback:
+- `close_window` fallback `window.close()`; minimize fallback `showToast('только в exe')`
+- `save_stl`, `start_optimization`, `open_model` — проверка `if(...api.save_stl)` перед вызовом, ошибки в `showWarning`/`__diag`
+- **Молчаливых `catch{}` без лога нет** — все `catch` логируют `__diag('ERR '+e)` + `console.warn`.
+
+**Вывод:** немых путей нет.
+
+### B5. SECURITY/PRIVACY (сеть)
+
+- `grep -rn 'fetch(' web/ --exclude-dir=vendor` → 0
+- `grep -rn 'http://|https://' web/ --exclude-dir=vendor` → 1 hit `web/index.html:288 GitHub → https://github.com/Igorr112323/OpenLight` (ссылка «О программе» — разрешено)
+- `grep -rn 'fetch(' --include='*.py'` → только `tools/fetch_corpus.py` (скачивание корпуса, не в exe)
+- Приложение офлайн после `build/vendor.py` (Network 0, кроме внешних ссылок в доке) — **OK**.
+
+**Результат B:** зелёный, статика/юнит без P0.
+
+---
+
+## ЛОГИРОВАНИЕ UI (Задача C)
+
+### C1. Boot-маркеры (сохранены из 17D/17F)
+
+В `web/index.html` (58-106):
+```
+js-boot → splash shown → web-loaded DOMContentLoaded → js-ready window.load → splash-hidden (MutationObserver hidden) → api-ready pywebviewready → listeners-attached
+```
+Проверка: `grep -n "js-boot\|listeners-attached\|splash-hidden\|api-ready" web/index.html web/js/app.js` → все 4 есть.
+
+### C2. Единый перехват ошибок
+
+`window.onerror + unhandledrejection → console.error + js_api.record_log('UI-ERR: '+msg) + _record('first-error: ...') + document.title='ERR: '+msg`
+- `console.*` перехвачены → `_record(k+': '+args)` → `record_log` → `ui.log`
+- Красный баннер `?diag=1` → `position:fixed z-index:9999 background:#FF3B30` (скрыт по умолчанию, без флага не виден — дизайн не меняем)
+- **Проверка:** `grep -n "window.onerror\|unhandledrejection\|record_log\|diagBanner" web/index.html` → есть.
+
+### C3. elementFromPoint на клик (расследование мёртвых кнопок)
+
+- **На загрузке:** `setTimeout 1000ms → document.elementFromPoint(center) → __diag('elementFromPoint center: '+id)` + `if appLoader → title ERR + OVERLAY KILLER` + `pywebview bridge: !!window.pywebview` + `listeners-attached have=16 missing=[]`
+- **На каждый клик (добавлено в этой кампании):** `document.addEventListener('click', e=>{ if(e.target.closest('#appLoader')) __diag('click intercepted by appLoader id='+e.target.id); })` — логирует перехватывающий элемент при провале клика.
+- **Overlay fix:** `.app-loader.hidden { pointer-events:none }` + `MutationObserver splash-hidden` + `setTimeout display:none` — после init `elementFromPoint center: CANVAS` (не splash)
+
+**Результат C:** зелёный, диагностика непрерывна (`ui.log` + `init.log` via `diag_ping`/`record_log`).
+
+---
+
 ## E2E HEADLESS (Задача D) — TODO
 ## КОРПУС СТРЕСС ×1000 (Задача E) — TODO
 ## PHASE БАГОВ (Задача F) — TODO
