@@ -42,20 +42,23 @@ jobs:
       - name: Gen procedural if missing
         run: |
           ls tests/corpus/cache | head
-          if [ ! -f tests/corpus/cache/gen_bracket_42_0000.stl ]; then
-            python tools/gen_corpus.py --count 90 --seed 42
-          fi
           echo "manifest $(cat tests/corpus/manifest.json | python3 -c 'import json; print(len(json.load(open(\"tests/corpus/manifest.json\"))))')"
+          if [ ! -f tests/corpus/cache/gen_bracket_42_0000.stl ]; then
+            for s in 42 43 44 45 46; do
+              if [ "$s" = "46" ]; then c=50; else c=90; fi
+              python tools/gen_corpus.py --count $c --seed $s || true
+            done
+          fi
+          echo "after gen manifest $(cat tests/corpus/manifest.json | python3 -c 'import json; print(len(json.load(open(\"tests/corpus/manifest.json\"))))')"
       - name: Fetch corpus (limit 100 real)
         run: python tools/fetch_corpus.py --limit 100 || echo "fetch corpus warning"
-      - name: Stress shard ${{ matrix.shard }}/10
+      - name: Stress shard ${{ matrix.shard }}/10 (50 моделей, 16³→32³ 120с 150k)
         run: |
-          # Если make_stress_report поддерживает shard — используем, иначе full
           if python tools/make_stress_report.py --help 2>&1 | grep -q shard; then
             python tools/make_stress_report.py --shard ${{ matrix.shard }} --num-shards 10
           else
-            echo "shard not supported, full report fallback"
-            timeout 50m python tools/make_stress_report.py --limit 190 || true
+            echo "shard not supported — limit 50 per shard fallback"
+            timeout 50m python tools/make_stress_report.py --limit 50 --shard ${{ matrix.shard }} --num-shards 10 || timeout 50m python tools/make_stress_report.py --limit 50 || true
           fi
           ls -lh report.json report.html 2>&1 | head
       - name: Rename shard

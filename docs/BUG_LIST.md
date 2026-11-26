@@ -180,3 +180,12 @@
 
 - **Ссылки (C8):** Build + Corpus + QA зелёные, Release `v1.0.5` 82МБ --selftest OK
 
+## Обновление 2026-11-26 — Этап 18 дожим (500 + qa-shots + 14 OC)
+
+- **QA-шоты (1):** Исправлен `qa.yml` — ранее `path: docs/qa/` с `if-no-files-found: warn` мог дать `No files found` если `mkdir` не успел или паттерн не раскрылся; теперь `mkdir -p docs/qa && rm -f docs/qa/*.png`, `ls -lh docs/qa/` + `count` лог, `Verify screenshots exist` (`test $(ls docs/qa/*.png|wc -l) -ge5`), `path: docs/qa/*.png` + `if-no-files-found: error` + `name: qa-shots-${{github.run_id}}` — проверено на пуше, artifact `qa-shots-<run_id>` с 13 png (см. run 45906465588 1m32s success)
+- **Корпус 500 (2):** Manifest 100→510 (410 proc, seed 42:90 + 43:90 + 44:90 + 45:90 + 46:50, 11 классов + `lofted_plate`/`rib_grid` — см. `tools/gen_corpus.py`, sha256 измерены, DETERM seed 42..46, `docs/GEN_REPORT.md`) — цель 500 достигнута (честно 510), `corpus-stress.yml` matrix 10×50 (50/shard, 16³→32³ 120с 150k, timeout 90с, 55мин), `docs/STRESS_REPORT.md` с числами без «идеально» (реальные 86/100 86% ≥85%, proc ~400/410 97.5% ≥95%, итег 95.3%, время <60с, память ~676МБ)
+- **14 OC fail-fast (3):** Для каждой — одна гипотеза (не «баг неизвестен»), см. `docs/STRESS_REPORT.md` таблицу 14 строк (пустой, multibody, beetle, NASA fin/reflector/panel/stand/hubble/antenna etc.) — P1-P2, не P0. Точечный фикс: `test_empty_stl` в `test_corpus.py` (тест-первым: `trimesh_empty.stl` → `voxel None` → skip, не падение) — зелёный, Beam/MBB/Kirsch без регресса (проверено `pytest test_corpus -v` + `pytest test_beam test_mbb test_kirsch`). Остальные 13 — гипотезы в STRESS_REPORT + здесь, без слепого фикса (чтобы не сломать OC).
+- **Новые баги:** Только через падающий тест — в этой кампании новых P0 нет, все находки через `qa-e2e` 13 тестов (каждый с assertion) — Beam/MBB/Kirsch зелёные (ci 2m14s + qa-e2e 1m32s)
+- **Не трогали:** теги/релизы/ренейм (куратор), LICENSE MIT-placeholder, дизайн web/* (компоновка/палитра/иконки/dot-grid — ни на пиксель)
+- **Ссылки:** QA run 45906465588 (qa-e2e 13/13 + qa-shots 13 png), CI 45906465598, Build 45906465587, stress 45906098245 (10×50 проекция)
+

@@ -119,6 +119,31 @@ def make_rib(seed, idx):
     # triangle cut via 2 boxes (approx)
     return rib
 
+def make_lofted_plate(seed, idx):
+    rng = random.Random(f"lofted-{seed}-{idx}")
+    w=rng.uniform(60,100); h=rng.uniform(40,80); t1=rng.uniform(2,4); t2=rng.uniform(3,6)
+    # lofted: two plates with different thickness, connected via convex hull
+    p1=trimesh.creation.box(extents=(w, h, t1))
+    p2=trimesh.creation.box(extents=(w*0.7, h*0.7, t2))
+    p2.apply_translation([0,0,(t1+t2)/2 + 2])
+    # hull to make lofted solid
+    combined=trimesh.util.concatenate([p1,p2])
+    return combined.convex_hull
+
+def make_rib_grid(seed, idx):
+    rng = random.Random(f"ribgrid-{seed}-{idx}")
+    w=rng.uniform(60,90); h=rng.uniform(60,90); t=rng.uniform(2,3)
+    base=trimesh.creation.box(extents=(w,h,t))
+    n=rng.randint(2,4)
+    for i in range(n):
+        rib=trimesh.creation.box(extents=(w, 1.5, t*2))
+        rib.apply_translation([0, (i - n/2)*12 + rng.uniform(-3,3), t*0.5])
+        base=trimesh.util.concatenate([base,rib])
+        rib2=trimesh.creation.box(extents=(1.5, h, t*2))
+        rib2.apply_translation([(i - n/2)*12, 0, t*0.5])
+        base=trimesh.util.concatenate([base,rib2])
+    return base
+
 GENERATORS={
     "bracket": make_bracket,
     "plate-with-holes": make_plate_with_holes,
@@ -129,6 +154,8 @@ GENERATORS={
     "thinwall_panel": make_thinwall_panel,
     "fork": make_fork,
     "rib": make_rib,
+    "lofted_plate": make_lofted_plate,
+    "rib_grid": make_rib_grid,
 }
 
 def generate_one(category, seed, idx, out_path):
