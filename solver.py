@@ -414,6 +414,10 @@ def optimize_topology(
     print(f"[solver] active_nodes {len(active_nodes)}/{n_nodes} active_dofs {len(active_dofs)} fixed {len(fixed)} free {len(free)}")
 
     # силы -> F вектор
+    if not forces:
+        fallback_pos = [0.0, 68.0, 0.0]
+        forces = [{"position": fallback_pos, "direction": [0, -1, 0], "valueN": 500}]
+        print(f"[solver] нет сил — fallback нагрузка {fallback_pos} 500N")
     F = np.zeros(n_dof, dtype=float)
     for f in forces:
         pos = np.array(f["position"], dtype=float)
@@ -561,8 +565,14 @@ def optimize_topology(
         # простой OC: rho_new = rho * ( -dc / lmid )**eta
         # OC: l2 адаптивно от max(-dc), чтобы не улететь в 1e9 и не получить nan
         dc_pos = np.maximum(1e-9, -dc)
-        l1, l2 = 0, float(np.max(dc_pos) * 2 + 1e-9)
-        if l2 < 1e-9: l2 = 1.0
+        dc_max = float(np.max(dc_pos))
+        if dc_max < 1e-4:
+            scale = 1e-4 / max(dc_max, 1e-12)
+            dc_pos = dc_pos * scale
+            dc_max = float(np.max(dc_pos))
+        l1, l2 = 0.0, dc_max * 2.0 + 1e-9
+        if l2 < 1e-9:
+            l2 = 1.0
         move = 0.2
         eta = 0.5
         for _ in range(60):

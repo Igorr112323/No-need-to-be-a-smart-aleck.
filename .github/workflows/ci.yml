@@ -29,3 +29,5 @@ jobs:
         run: pytest tests/test_beam.py -v
       - name: Solver smoke
         run: pytest tests/test_solver.py -v -k "not corpus"
+      - name: All tests (beam must be present)
+        run: pytest tests/ -v --tb=short

@@ -6,7 +6,12 @@
 
 Лёгкое Windows-приложение (единый .exe, стиль Apple Freeform) для «умного» облегчения 3D-деталей с сохранением прочности. **Полностью бесплатно, без подписок/ключей/триалов.**
 
-> **Статус: v0.9.0 — GitHub-центричный.** Ядро 7B/9: эталон балки 2.06% (<5%), 24³ 12.8с watertight, 48³ в работе. Дизайн заморожен.
+> **Статус: v0.9.1 — Этап 11, корпус 30, beam 1.8%, build fix** Ядро 7B/9: эталон балки 2.06% (<5%), 24³ 12.8с watertight, 48³ в работе. Дизайн заморожен.
+
+## Артефакты
+- **CI**: [![CI](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/ci.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/ci.yml) — `ci.yml` ubuntu, beam ≤2.5%
+- **Build**: [![Build](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/build.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/build.yml) — `build.yml` windows, `dist/OpenLight.exe` в [Releases](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./releases) / Artifacts (тег `v0.9.0-test` → Release)
+- **Corpus**: [![Corpus](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/corpus.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/corpus.yml) — `corpus.yml` weekly + dispatch, `tests/corpus/cache` + `report.json/html`
 
 ## Требования
 

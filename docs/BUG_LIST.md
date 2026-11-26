@@ -57,3 +57,13 @@
 - **P0-2 (marching cubes) — улучшен**: guard N_min=50 с статистикой rho, но всё ещё падает на 48³ из-за OC.
 - **P1-5 (демо-режим тосты) — закрыт**: 365/820/836 очищены, css коммент исправлен (2026-11-26).
 - **P1-6 (dist) — закрыт**: push на GitHub успешен, bundle 641K + workflow build.yml (windows-latest) доставляет exe как artifact.
+
+## Обновление 2026-11-26 (Этап 11)
+
+- **P0-3 (vg.origin) — закрыт**: `vg.bounds[0]` проверено в CI (corpus voxel_ok).
+- **P0-4 (cg tol→rtol) — закрыт**: rtol 1e-8, CI зелёный.
+- **P0-1 частично закрыт, но остаётся**: active_nodes + 12мм сфера + fallback сила [0,68,0] 500N + OC scale (dc_max<1e-4 →1e-4) — spsolve теперь OK, но OC всё равно коллапс (rho mean 0.6→0.019, 0 active). Измерено локально 16³/24³ и в CI. **Г-кронштейн 48³ 20/40/60% <60с watertight — не подтверждено** (требует переписать OC, см. KNOWN_LIMITATIONS). Статус: открыт P0.
+- **P0-2 (marching cubes) — открыт**: guard N_min=50 работает, но падает из-за OC.
+- **P1-6 (dist) — открыт частично**: build.yml исправлен (path: repo), ждёт зелёного run-а на main + тег v0.9.0-test для Releases.
+- **Корпус**: 10 проц + 20 внешних sha256 измерены via gh api (cow 69afce…, spot 0738b5…, bunny 1eb35d…, etc. — см. manifest.json), ≥20 CC0/CC-BY/MIT/BSD — критерий выполнен, ждёт прогона corpus.yml на GitHub.
+- **Beam**: 32×8×8 1.8% <2.5% — закрыт, CI зелёный (`pytest tests/test_beam.py -v` в ci.yml).

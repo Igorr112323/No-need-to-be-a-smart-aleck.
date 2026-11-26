@@ -1,5 +1,11 @@
 # CHANGELOG — OpenLight
 
+## [0.9.1] - 2026-11-26 — Etap 11: реальный корпус + ворота
+- Корпус: 30 записей (10 proc + 20 external raw, sha256 via gh api, origin поле, LICENSES.md)
+- Build: fix checkout path: repo (Windows точка в имени), corpus fetch --limit 30 sha256-check
+- Ядро: fallback сила [0,68,0] 500N, OC scale dc<1e-4→1e-4, beam 32×8×8 1.8% CI ≤2.5%
+- Доки: KNOWN_LIMITATIONS с измеренными числами, BUG_LIST P0-1 остаётся открыт честно
+
 ## [0.9.0] - 2026-11-26 — Etap 9/10 : GitHub-центричный
 - CI: ci.yml (ubuntu) + build.yml (windows) + corpus.yml (weekly)
 - Ядро: active_nodes, 12мм опора, rtol, эталон балки 2.06%
