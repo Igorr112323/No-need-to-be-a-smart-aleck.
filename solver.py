@@ -551,6 +551,36 @@ def optimize_topology(
         # удаление несвязных ВРЕМЕННО отключено до 5 зелёных MBB
         # keep_connected вернёт rho без изменений
 
+        # --- vol_frac≈1.0: без оптимизации, только прямой расчёт (Кирш/верификация полной детали) ---
+        if vol_frac >= 0.999:
+            # сразу выходим из SIMP-цикла, оставив rho=1, но посчитаем напряжения один раз на последней итерации
+            # (U,ce уже посчитаны) — переходим к финальной обработке, пропустив OC
+            # чтобы не ломать счётчик it, делаем один «пустой» цикл и break на следующей проверке сходимости
+            # но проще: пропускаем OC и переходим к сохранению и выходу через флаг
+            # сохраним текущий U для последующего пост-процесса напряжений (делается после цикла)
+            # поэтому запоминаем U_last и прерываем SIMP
+            # однако stress вычисляется после цикла по rho — нам нужно сохранить U для stress
+            # кладём в переменную вне цикла
+            try:
+                U_last  # noqa
+            except NameError:
+                pass
+            # сохраним U текущего шага для финального расчёта напряжений (если цикл прервётся рано)
+            globals().setdefault('_kirsch_U', None)
+            # хак: запомним U в атрибуте функции
+            optimize_topology._last_U = U.copy()
+            optimize_topology._last_edofMat = edofMat
+            optimize_topology._last_solid_idx = solid_idx
+            optimize_topology._last_mat_vox = mat_vox
+            optimize_topology._last_pitch_m = pitch_m
+            optimize_topology._last_E = E; optimize_topology._last_nu = nu
+            optimize_topology._last_nx = nx; optimize_topology._last_ny = ny; optimize_topology._last_nz = nz
+            # установить rho=1 и завершить SIMP
+            rho[:] = 1.0
+            # логируем и прерываем
+            print(f"[SIMP it={it+1}/{max_iter}] vol_frac=1.0 — пропуск оптимизации, прямой расчёт (relief={1-vol_frac:.2f})")
+            break
+
         # --- OC Sigmund без скейлинга ---
         # удалить блок dc_pos / dc_max <1e-4 scale — корень коллапса
         n_passive = int(np.count_nonzero(passive))  # залоггировать отдельно

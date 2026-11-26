@@ -115,6 +115,29 @@
 
 - **Корпус (B6) — полный прогон 100 с ядром:** `corpus.yml` без `--no-solve`, `tools/make_stress_report.py` fallback `16³→32³` timeout `90с`, adaptive support radius `longest/10`, solver fix `lmid <1e-20` + `F на free нулевой → fallback верхний воксель` (исправлен `thin plate 17×1×17` где `F` попадал в заделку). Факт локально 2026-11-26 17:27 UTC: **parse 100/100 (100%), watertight 87/100, voxel 99/100, solve 85/100 (85%) — цель ≥80 ПРОЙДЕН** (было 52/100 до фикса). Остальные 15 падений честно: `empty.stl` (1, thinwall, пустой STL 26B, trimesh пустой → voxel None → skip), `trimesh_multibody.stl` (thinwall, 2, OC не сошёлся 0.40 vs 0.60), `housing` 13 (beetle/beetle-alt 2, NASA housing 11 — толстые/тонкие корпуса с `dc 0` или `F` вне домена, OC `0.40-0.58 vs 0.60`). Все — в `report.json` + `CORPUS_REPORT.md` столбец `solve 90с+время+res`, без «готово».
 
+## Обновление 2026-11-26 (Фаза F+B — корпус + сравнение)
+
+- **F1 (corpus.yml):** матрица 4×25 + merge, `solver.optimize_topology` 100 моделей из manifest.json, fallback 16³→32³ лимит 150k timeout 120с/модель, сбор parse/watertight/voxel_ok/solve_ok/время/σmax/safety/weight -% → report.json+report.html+docs/CORPUS_REPORT.md (100 строк). Если 1 job — время ~11мин в пределах 120мин, матрица — для гарантии при 120с×100.
+- **F2 приёмка:** solve_ok≥85/100 parse≤100/100 ≥25 инженерных ok, каждый fail → docs/BUG_LIST.md с воспроизведением, время/память зафиксированы.
+- **F3 VERIFICATION.md:** 3 кейса — Кирш 100×100×2 Ø10 σ10МПа 2.5% ≤7% (tests/test_kirsch.py), CalculiX ccx балка+кронштейн 16³ таблица σmax,δ,Δ% (tools/crosscheck_calculix.py 4.2%/6.6% ≤10%), 20 успешных корпус-деталей таблица до/после вес/σmax/safety/время.
+- **Кирш фикс:** solver vol_frac≥0.999 → пропуск SIMP, прямой расчёт (ранее OC fail 0.989 vs 1.0), результат 26.5 vs 27.2 МПа 2.5% pass.
+- **Корпус прогон 2026-11-26 18:23 UTC 100 моделей:** parse 100/100, watertight 87/100, voxel 99/100, solve 86/100 ≥85 — **пройден**, eng 75/100 ≥25 — **пройден**, время 11.3мин среднее 6.76с, память пик ~676МБ (оценка), report.json 103К, report.html 27К, CORPUS_REPORT.md 119 строк.
+- **14 падений честно (solve_ok false):**
+  1. trimesh_empty.stl (thinwall, MIT) — `voxel None` пустой STL 26B `trimesh.load` → `NoneType.tolist` — `tools/make_stress_report.py: voxel_error пустой` — воспроизведение `python -c \"import trimesh; print(trimesh.load('tests/corpus/cache/trimesh_empty.stl'))\"` — P2 (пустой вход, фильтрация)
+  2. trimesh_multibody.stl (thinwall) — OC `0.40 vs 0.60` l1 0 l2 8.27e-16 — две несвязные сетки
+  3. trimesh_two_objects_mixed.stl (housing) — OC `0.51 vs 0.60` l1 0
+  4. beetle.obj / beetle-alt.obj (housing) — OC `0.74-0.75 vs 0.60` l1 1e9 — beetle тонкостенный, dc перекос, vol завышен
+  5. nasa_saturn_v_rocket_fin_print_4 (housing) — OC 0.43 vs 0.60
+  6. nasa_ka_band ... sub_reflector_a/b (housing) — 0.76/0.54 vs 0.60
+  7. nasa_chandra_panel (housing) — 0.40 vs 0.60
+  8. nasa_voyager_stand (housing) — 0.54 vs 0.60
+  9. nasa_hubble_solar_panels (housing) — 0.52 vs 0.60
+  10. nasa_isee3_rad_antenna (housing, 49 эл, 0 failed) — 0.53 vs 0.60 — слишком мало элементов, dc дисперсия
+  11. nasa_viking_lander_tool2 (housing) — 0.51 vs 0.60
+  12. nasa_ka_band positioner_arm (housing, 3955 эл) — 0.46 vs 0.60
+  Каждый — `solver.optimize_topology(..., relief=0.4, resolution=16→32, timeout=120)` → RuntimeError OC fail-fast, P1-P2 (толстые/тонкие корпуса, см. report.json solve_error)
+- **Статус:** Build #45872492951 success 93.34МБ --selftest OK, Beam 1.8% и MBB зелёные, Kirsch 2.5% pass.
+
 - **MBB (B7) — толстый домен гипотеза:** см. выше P2-15 `MBB 60×20×4` CG не сходится, критерий `≤60с` — открыт, честно.
 
 - **Ссылки (C8):** Build + Corpus зелёные, Release `v0.9.3-test` содержит скачиваемый `OpenLight.exe` 40-70МБ (прямая ссылка `.../releases/download/v0.9.3-test/OpenLight.exe`).

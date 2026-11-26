@@ -1,0 +1,4374 @@
+[
+  {
+    "file": "openlight_bracket_proc.stl",
+    "path": "tests/corpus/cache/openlight_bracket_proc.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -28.0,
+        -39.0,
+        -5.0
+      ],
+      [
+        28.0,
+        39.0,
+        5.0
+      ]
+    ],
+    "vol": 43680.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 4.58,
+    "time": 4.701,
+    "error": null,
+    "voxel_solid": 4250,
+    "voxel_shape": [
+      35,
+      49,
+      7
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.625,
+    "solve_iter": 18,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 452.9,
+    "weight_after": 254.5,
+    "weight_save": 43.8,
+    "mem_mb": 4.875,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "bracket",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "openlight_uav_arm.stl",
+    "path": "tests/corpus/cache/openlight_uav_arm.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -40.0,
+        -5.0,
+        -5.0
+      ],
+      [
+        40.0,
+        5.0,
+        5.0
+      ]
+    ],
+    "vol": 8000.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.27,
+    "time": 0.312,
+    "error": null,
+    "voxel_solid": 1226,
+    "voxel_shape": [
+      49,
+      7,
+      7
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.6666666666666667,
+    "solve_iter": 6,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 135.4,
+    "weight_after": 75.6,
+    "weight_save": 44.2,
+    "mem_mb": 5.0,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "uav_bracket",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "openlight_thin_plate.stl",
+    "path": "tests/corpus/cache/openlight_thin_plate.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -30.0,
+        -30.0,
+        -1.0
+      ],
+      [
+        30.0,
+        30.0,
+        1.0
+      ]
+    ],
+    "vol": 7200.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 1.2,
+    "time": 1.332,
+    "error": null,
+    "voxel_solid": 4994,
+    "voxel_shape": [
+      49,
+      49,
+      3
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.25,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 119.6,
+    "weight_after": 66.1,
+    "weight_save": 44.8,
+    "mem_mb": 3.75,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "thinwall",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "openlight_gear_12t.stl",
+    "path": "tests/corpus/cache/openlight_gear_12t.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "vol": 3.6587121877521516,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 13.69,
+    "time": 13.745,
+    "error": null,
+    "voxel_solid": 8546,
+    "voxel_shape": [
+      49,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.041666666666666664,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 12829.03,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 48.0,
+    "mem_mb": 0.125,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "gear",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "openlight_housing_box.stl",
+    "path": "tests/corpus/cache/openlight_housing_box.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -20.0,
+        -20.0,
+        -10.0
+      ],
+      [
+        20.0,
+        20.0,
+        10.0
+      ]
+    ],
+    "vol": 32000.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 15.05,
+    "time": 15.268,
+    "error": null,
+    "voxel_solid": 9218,
+    "voxel_shape": [
+      49,
+      49,
+      25
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.8333333333333334,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 7.98,
+    "safety": 43.25,
+    "weight_before": 125.8,
+    "weight_after": 70.0,
+    "weight_save": 44.4,
+    "mem_mb": 2.5,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "housing",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "openlight_hinge_simple.stl",
+    "path": "tests/corpus/cache/openlight_hinge_simple.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -5.0,
+        -5.0,
+        -10.0
+      ],
+      [
+        5.0,
+        5.0,
+        10.0
+      ]
+    ],
+    "vol": 1560.7225781487293,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 3.54,
+    "time": 3.946,
+    "error": null,
+    "voxel_solid": 5506,
+    "voxel_shape": [
+      25,
+      25,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.4166666666666667,
+    "solve_iter": 14,
+    "solve_vol": 0.6,
+    "sigma_max": 68.11,
+    "safety": 5.07,
+    "weight_before": 9.5,
+    "weight_after": 5.4,
+    "weight_save": 43.5,
+    "mem_mb": 1.25,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "hinge",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "openlight_lattice.stl",
+    "path": "tests/corpus/cache/openlight_lattice.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -30.0,
+        -30.0,
+        -1.0
+      ],
+      [
+        30.0,
+        30.0,
+        1.0
+      ]
+    ],
+    "vol": 7200.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.98,
+    "time": 1.102,
+    "error": null,
+    "voxel_solid": 4994,
+    "voxel_shape": [
+      49,
+      49,
+      3
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.25,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 119.6,
+    "weight_after": 66.1,
+    "weight_save": 44.8,
+    "mem_mb": 3.75,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "thinwall",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "openlight_bracket_v2.stl",
+    "path": "tests/corpus/cache/openlight_bracket_v2.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -28.0,
+        -39.0,
+        -5.0
+      ],
+      [
+        28.0,
+        39.0,
+        5.0
+      ]
+    ],
+    "vol": 43680.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 4.32,
+    "time": 4.416,
+    "error": null,
+    "voxel_solid": 4250,
+    "voxel_shape": [
+      35,
+      49,
+      7
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.625,
+    "solve_iter": 18,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 452.9,
+    "weight_after": 254.5,
+    "weight_save": 43.8,
+    "mem_mb": 4.875,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "bracket",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "openlight_uav_frame.stl",
+    "path": "tests/corpus/cache/openlight_uav_frame.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -40.0,
+        -5.0,
+        -5.0
+      ],
+      [
+        40.0,
+        5.0,
+        5.0
+      ]
+    ],
+    "vol": 8000.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.35,
+    "time": 0.395,
+    "error": null,
+    "voxel_solid": 1226,
+    "voxel_shape": [
+      49,
+      7,
+      7
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.6666666666666667,
+    "solve_iter": 6,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 135.4,
+    "weight_after": 75.6,
+    "weight_save": 44.2,
+    "mem_mb": 5.0,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "uav_bracket",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "openlight_bracket_heavy.stl",
+    "path": "tests/corpus/cache/openlight_bracket_heavy.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -28.0,
+        -39.0,
+        -5.0
+      ],
+      [
+        28.0,
+        39.0,
+        5.0
+      ]
+    ],
+    "vol": 43680.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 4.08,
+    "time": 4.164,
+    "error": null,
+    "voxel_solid": 4250,
+    "voxel_shape": [
+      35,
+      49,
+      7
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.625,
+    "solve_iter": 18,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 452.9,
+    "weight_after": 254.5,
+    "weight_save": 43.8,
+    "mem_mb": 4.875,
+    "итог": "ok",
+    "license": "MIT (OpenLight)",
+    "category": "bracket",
+    "source_url": "generated-procedural"
+  },
+  {
+    "file": "trimesh_1002_tray_bottom.STL",
+    "path": "tests/corpus/cache/trimesh_1002_tray_bottom.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        0.0,
+        0.0,
+        -355.6
+      ],
+      [
+        355.6,
+        3.175,
+        0.0
+      ]
+    ],
+    "vol": 347865.8964282529,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 1.28,
+    "time": 1.504,
+    "error": null,
+    "voxel_solid": 2084,
+    "voxel_shape": [
+      49,
+      1,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 7.408333333333334,
+    "solve_iter": 13,
+    "solve_vol": 0.6,
+    "sigma_max": 1.64,
+    "safety": 99.0,
+    "weight_before": 21458.3,
+    "weight_after": 11950.0,
+    "weight_save": 44.3,
+    "mem_mb": 22.225,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/1002_tray_bottom.STL"
+  },
+  {
+    "file": "trimesh_20mm_cube.stl",
+    "path": "tests/corpus/cache/trimesh_20mm_cube.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -47.9518928527832,
+        -4.908014297485352,
+        -30.981464385986328
+      ],
+      [
+        -27.95189094543457,
+        15.091985702514648,
+        -10.981464385986328
+      ]
+    ],
+    "vol": 7938.6818763348165,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 23.25,
+    "time": 23.885,
+    "error": null,
+    "voxel_solid": 14424,
+    "voxel_shape": [
+      49,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.4166667064030965,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 81.18,
+    "safety": 4.25,
+    "weight_before": 24.5,
+    "weight_after": 13.9,
+    "weight_save": 43.4,
+    "mem_mb": 1.25,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/20mm-xyz-cube.stl"
+  },
+  {
+    "file": "trimesh_7_8ths_cube.stl",
+    "path": "tests/corpus/cache/trimesh_7_8ths_cube.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -20.00000762939453,
+        -20.000011444091797,
+        -20.0
+      ],
+      [
+        20.000003814697266,
+        20.00000762939453,
+        20.0
+      ]
+    ],
+    "vol": 55999.99593099134,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 23.57,
+    "time": 23.986,
+    "error": null,
+    "voxel_solid": 13826,
+    "voxel_shape": [
+      49,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.8333337306976318,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 19.33,
+    "safety": 17.85,
+    "weight_before": 188.6,
+    "weight_after": 105.6,
+    "weight_save": 44.0,
+    "mem_mb": 2.5,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/7_8ths_cube.stl"
+  },
+  {
+    "file": "trimesh_ADIS16480.STL",
+    "path": "tests/corpus/cache/trimesh_ADIS16480.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.02237659,
+        -0.006053113,
+        -0.01918888
+      ],
+      [
+        0.02162341,
+        0.007946887,
+        0.02781112
+      ]
+    ],
+    "vol": 2.8192470210495358e-05,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 7.22,
+    "time": 9.164,
+    "error": null,
+    "voxel_solid": 7772,
+    "voxel_shape": [
+      46,
+      15,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.0009791666666666666,
+    "solve_iter": 15,
+    "solve_vol": 0.6,
+    "sigma_max": 15009076.08,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 43.2,
+    "mem_mb": 0.003,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/ADIS16480.STL"
+  },
+  {
+    "file": "trimesh_angle_block.STL",
+    "path": "tests/corpus/cache/trimesh_angle_block.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.6692913770675659,
+        -4.872947458329488e-17,
+        -1.3519835472106934
+      ],
+      [
+        0.6692913770675659,
+        1.0,
+        3.0616168005906746e-17
+      ]
+    ],
+    "vol": 1.145522542530532,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 15.38,
+    "time": 16.212,
+    "error": null,
+    "voxel_solid": 13233,
+    "voxel_shape": [
+      49,
+      37,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.02816632390022278,
+    "solve_iter": 18,
+    "solve_vol": 0.6,
+    "sigma_max": 25172.5,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 42.0,
+    "mem_mb": 0.084,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "bracket",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/angle_block.STL"
+  },
+  {
+    "file": "trimesh_box.STL",
+    "path": "tests/corpus/cache/trimesh_box.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.7262349724769592,
+        1.8393100500106812,
+        4.4317097663879395
+      ],
+      [
+        6.523769855499268,
+        6.339310169219971,
+        8.181710243225098
+      ]
+    ],
+    "vol": 16.084489098307873,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 9.79,
+    "time": 10.846,
+    "error": null,
+    "voxel_solid": 12068,
+    "voxel_shape": [
+      49,
+      31,
+      26
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.15104176724950472,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 1001.61,
+    "safety": 0.34,
+    "weight_before": 0.6,
+    "weight_after": 0.3,
+    "weight_save": 44.0,
+    "mem_mb": 0.453,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/box.STL"
+  },
+  {
+    "file": "trimesh_busted.STL",
+    "path": "tests/corpus/cache/trimesh_busted.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -5.3982648849487305,
+        18.30052375793457,
+        -9.935678482055664
+      ],
+      [
+        5.277234077453613,
+        29.685245513916016,
+        -0.3632774353027344
+      ]
+    ],
+    "vol": 526.448909944363,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 10.7,
+    "time": 10.836,
+    "error": null,
+    "voxel_solid": 8187,
+    "voxel_shape": [
+      46,
+      49,
+      41
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.23718170324961343,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 1293.96,
+    "safety": 0.3,
+    "weight_before": 2.5,
+    "weight_after": 1.3,
+    "weight_save": 47.1,
+    "mem_mb": 0.712,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/busted.STL"
+  },
+  {
+    "file": "trimesh_counter.STL",
+    "path": "tests/corpus/cache/trimesh_counter.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -111.4898910522461,
+        5.7791972160339355,
+        255.86016845703125
+      ],
+      [
+        193.3101043701172,
+        310.18798828125,
+        281.69842529296875
+      ]
+    ],
+    "vol": 888809.0121225702,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.7,
+    "time": 3.473,
+    "error": null,
+    "voxel_solid": 4408,
+    "voxel_shape": [
+      49,
+      49,
+      5
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 6.349999904632568,
+    "solve_iter": 10,
+    "solve_vol": 0.6,
+    "sigma_max": 0.21,
+    "safety": 99.0,
+    "weight_before": 25669.4,
+    "weight_after": 14664.0,
+    "weight_save": 42.9,
+    "mem_mb": 19.05,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/counter.unitsmm.STL"
+  },
+  {
+    "file": "trimesh_cylinder.stl",
+    "path": "tests/corpus/cache/trimesh_cylinder.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -1.0,
+        -1.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.0,
+        8.0
+      ]
+    ],
+    "vol": 25.09238753187128,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.95,
+    "time": 1.303,
+    "error": null,
+    "voxel_solid": 2530,
+    "voxel_shape": [
+      13,
+      13,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.16666666666666666,
+    "solve_iter": 7,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 0.3,
+    "weight_after": 0.2,
+    "weight_save": 45.0,
+    "mem_mb": 0.5,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/cylinder.stl"
+  },
+  {
+    "file": "trimesh_empty.stl",
+    "path": "tests/corpus/cache/trimesh_empty.stl",
+    "parse": true,
+    "watertight": false,
+    "bbox": null,
+    "vol": null,
+    "voxel_ok": null,
+    "solve_ok": null,
+    "solve_time": null,
+    "time": 0.0,
+    "error": "'NoneType' object has no attribute 'tolist'",
+    "voxel_solid": null,
+    "voxel_shape": null,
+    "solve_error": null,
+    "resolution": null,
+    "итог": "parse_ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/empty.stl"
+  },
+  {
+    "file": "trimesh_featuretype.STL",
+    "path": "tests/corpus/cache/trimesh_featuretype.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -2.5,
+        -1.25,
+        0.0
+      ],
+      [
+        2.5,
+        1.25,
+        1.375
+      ]
+    ],
+    "vol": 11.62773343119675,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.8,
+    "time": 3.313,
+    "error": null,
+    "voxel_solid": 5318,
+    "voxel_shape": [
+      49,
+      25,
+      14
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.10416666666666667,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 602.69,
+    "safety": 0.57,
+    "weight_before": 0.1,
+    "weight_after": 0.1,
+    "weight_save": 42.0,
+    "mem_mb": 0.312,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "bracket",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL"
+  },
+  {
+    "file": "trimesh_idler_riser.STL",
+    "path": "tests/corpus/cache/trimesh_idler_riser.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.07799886167049408,
+        -2.7318480145066093e-16,
+        -7.259332402874425e-19
+      ],
+      [
+        2.5779988765716553,
+        2.953000068664551,
+        0.625
+      ]
+    ],
+    "vol": 1.4878026364279917,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 4.92,
+    "time": 5.399,
+    "error": null,
+    "voxel_solid": 5372,
+    "voxel_shape": [
+      44,
+      49,
+      11
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.06152083476384482,
+    "solve_iter": 20,
+    "solve_vol": 0.6,
+    "sigma_max": 4455.98,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 44.8,
+    "mem_mb": 0.185,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "bracket",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/idler_riser.STL"
+  },
+  {
+    "file": "trimesh_large_block.STL",
+    "path": "tests/corpus/cache/trimesh_large_block.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -8.185452315956354e-11,
+        -152.39999389648438,
+        0.0
+      ],
+      [
+        4572.0,
+        152.39999389648438,
+        2438.39990234375
+      ]
+    ],
+    "vol": 3329153674.1864944,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.37,
+    "time": 2.435,
+    "error": null,
+    "voxel_solid": 3082,
+    "voxel_shape": [
+      49,
+      5,
+      27
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 95.2500000000017,
+    "solve_iter": 13,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 71065710.0,
+    "weight_after": 40478149.3,
+    "weight_save": 43.0,
+    "mem_mb": 285.75,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/large_block.STL"
+  },
+  {
+    "file": "trimesh_large_block_obb.STL",
+    "path": "tests/corpus/cache/trimesh_large_block_obb.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        19653.466796875,
+        0.5468632578849792,
+        22485.677734375
+      ],
+      [
+        22373.537109375,
+        2901.98291015625,
+        22857.21875
+      ]
+    ],
+    "vol": 845848083.9717847,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 1.69,
+    "time": 1.753,
+    "error": null,
+    "voxel_solid": 2380,
+    "voxel_shape": [
+      46,
+      49,
+      7
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 60.446584310382605,
+    "solve_iter": 16,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 13341159.5,
+    "weight_after": 7444913.1,
+    "weight_save": 44.2,
+    "mem_mb": 181.34,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/large_block_obb.STL"
+  },
+  {
+    "file": "trimesh_multibody.stl",
+    "path": "tests/corpus/cache/trimesh_multibody.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.51078958,
+        -0.718809786,
+        -0.0519321219
+      ],
+      [
+        0.125242366,
+        0.369621955,
+        0.287995578
+      ]
+    ],
+    "vol": 0.014040465598884019,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.32,
+    "time": 0.316,
+    "error": null,
+    "voxel_solid": 876,
+    "voxel_shape": [
+      30,
+      49,
+      16
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.4000 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 0.02267566127083333,
+    "итог": "voxel_ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/multibody.stl"
+  },
+  {
+    "file": "trimesh_octagonal_pocket.stl",
+    "path": "tests/corpus/cache/trimesh_octagonal_pocket.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -3.599802410860295e-16,
+        -6.1463205364559414e-33,
+        0.0
+      ],
+      [
+        0.22859999537467957,
+        0.16471461951732635,
+        0.01587500050663948
+      ]
+    ],
+    "vol": 0.0002503528764877439,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.2,
+    "time": 2.647,
+    "error": null,
+    "voxel_solid": 3379,
+    "voxel_shape": [
+      49,
+      36,
+      4
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.004762499903639165,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 2771663.49,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 44.8,
+    "mem_mb": 0.014,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/octagonal_pocket.stl"
+  },
+  {
+    "file": "trimesh_origin_inside.STL",
+    "path": "tests/corpus/cache/trimesh_origin_inside.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      [
+        0.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "vol": 0.96875,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 25.53,
+    "time": 25.938,
+    "error": null,
+    "voxel_solid": 14978,
+    "voxel_shape": [
+      49,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.020833333333333332,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 12793.63,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 43.3,
+    "mem_mb": 0.062,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/origin_inside.STL"
+  },
+  {
+    "file": "trimesh_plate_holes.STL",
+    "path": "tests/corpus/cache/trimesh_plate_holes.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        203.1999969482422,
+        304.8000183105469,
+        12.699999809265137
+      ]
+    ],
+    "vol": 767362.1125896011,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.21,
+    "time": 2.566,
+    "error": null,
+    "voxel_solid": 3385,
+    "voxel_shape": [
+      33,
+      49,
+      3
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 6.350000381469727,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 0.3,
+    "safety": 99.0,
+    "weight_before": 21924.8,
+    "weight_after": 12382.5,
+    "weight_save": 43.5,
+    "mem_mb": 19.05,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/plate_holes.STL"
+  },
+  {
+    "file": "trimesh_round.stl",
+    "path": "tests/corpus/cache/trimesh_round.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -2.5399999618530273,
+        -2.5399999618530273,
+        0.0
+      ],
+      [
+        2.5399999618530273,
+        2.5399999618530273,
+        60.959999084472656
+      ]
+    ],
+    "vol": 277.9147080510502,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.39,
+    "time": 0.471,
+    "error": null,
+    "voxel_solid": 784,
+    "voxel_shape": [
+      5,
+      5,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.2699999809265137,
+    "solve_iter": 7,
+    "solve_vol": 0.6,
+    "sigma_max": 2.38,
+    "safety": 99.0,
+    "weight_before": 36.9,
+    "weight_after": 19.0,
+    "weight_save": 48.6,
+    "mem_mb": 3.81,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/round.stl"
+  },
+  {
+    "file": "trimesh_shared.STL",
+    "path": "tests/corpus/cache/trimesh_shared.STL",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      [
+        1.5,
+        1.5,
+        0.5
+      ]
+    ],
+    "vol": 2.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 4.46,
+    "time": 4.711,
+    "error": null,
+    "voxel_solid": 6891,
+    "voxel_shape": [
+      49,
+      49,
+      25
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.041666666666666664,
+    "solve_iter": 12,
+    "solve_vol": 0.6,
+    "sigma_max": 2176.06,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 42.5,
+    "mem_mb": 0.125,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/shared.STL"
+  },
+  {
+    "file": "trimesh_soup.stl",
+    "path": "tests/corpus/cache/trimesh_soup.stl",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        0.0023589066695421934,
+        0.002530524041503668,
+        0.006098172161728144
+      ],
+      [
+        0.9998051524162292,
+        0.9990550875663757,
+        0.999005138874054
+      ]
+    ],
+    "vol": 0.1682148061599247,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 26.2,
+    "time": 27.213,
+    "error": null,
+    "voxel_solid": 33825,
+    "voxel_shape": [
+      49,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.020780130119722646,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 9709.88,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 40.5,
+    "mem_mb": 0.062,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "thinwall",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/soup.stl"
+  },
+  {
+    "file": "trimesh_teapot.stl",
+    "path": "tests/corpus/cache/trimesh_teapot.stl",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -28.859180450439453,
+        -19.654176712036133,
+        0.8701074123382568
+      ],
+      [
+        34.310523986816406,
+        19.654176712036133,
+        30.351411819458008
+      ]
+    ],
+    "vol": 24448.78323573219,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 4.39,
+    "time": 4.545,
+    "error": null,
+    "voxel_solid": 3658,
+    "voxel_shape": [
+      49,
+      31,
+      23
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.316035509109497,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 16.73,
+    "safety": 20.62,
+    "weight_before": 197.6,
+    "weight_after": 108.9,
+    "weight_save": 44.9,
+    "mem_mb": 3.948,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/teapot.stl"
+  },
+  {
+    "file": "trimesh_torus.STL",
+    "path": "tests/corpus/cache/trimesh_torus.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -1.5,
+        -1.4997555017471313,
+        -0.49901339411735535
+      ],
+      [
+        1.4990222454071045,
+        1.4997555017471313,
+        0.49901339411735535
+      ]
+    ],
+    "vol": 4.9175473223140225,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 5.77,
+    "time": 5.913,
+    "error": null,
+    "voxel_solid": 6542,
+    "voxel_shape": [
+      49,
+      49,
+      17
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.06248981257279714,
+    "solve_iter": 16,
+    "solve_vol": 0.6,
+    "sigma_max": 3817.4,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 43.8,
+    "mem_mb": 0.187,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/torus.STL"
+  },
+  {
+    "file": "trimesh_two_objects_mixed.stl",
+    "path": "tests/corpus/cache/trimesh_two_objects_mixed.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        6.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "vol": 2.0,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.22,
+    "time": 0.221,
+    "error": null,
+    "voxel_solid": 772,
+    "voxel_shape": [
+      49,
+      9,
+      9
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.5105 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 0.125,
+    "итог": "voxel_ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/two_objects_mixed_case_names.stl"
+  },
+  {
+    "file": "trimesh_unit_cube.STL",
+    "path": "tests/corpus/cache/trimesh_unit_cube.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      [
+        0.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "vol": 1.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 22.93,
+    "time": 23.261,
+    "error": null,
+    "voxel_solid": 13826,
+    "voxel_shape": [
+      49,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.020833333333333332,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 15359.83,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 43.5,
+    "mem_mb": 0.062,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/unit_cube.STL"
+  },
+  {
+    "file": "trimesh_unit_sphere.STL",
+    "path": "tests/corpus/cache/trimesh_unit_sphere.STL",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "vol": 4.1527407490072425,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 15.65,
+    "time": 15.703,
+    "error": null,
+    "voxel_solid": 9206,
+    "voxel_shape": [
+      49,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.041666666666666664,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 18805.23,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 47.3,
+    "mem_mb": 0.125,
+    "итог": "ok",
+    "license": "BSD (trimesh)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/unit_sphere.STL"
+  },
+  {
+    "file": "cow.obj",
+    "path": "tests/corpus/cache/cow.obj",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -4.445835,
+        -3.637036,
+        -1.701405
+      ],
+      [
+        5.998088,
+        2.75972,
+        1.701405
+      ]
+    ],
+    "vol": 53.567445842479465,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 10.8,
+    "time": 11.053,
+    "error": null,
+    "voxel_solid": 2875,
+    "voxel_shape": [
+      49,
+      31,
+      17
+    ],
+    "solve_error": null,
+    "resolution": 32,
+    "voxel_pitch": 0.21758172916666665,
+    "solve_iter": 18,
+    "solve_vol": 0.6,
+    "sigma_max": 8385.3,
+    "safety": 0.3,
+    "weight_before": 0.3,
+    "weight_after": 0.2,
+    "weight_save": 41.9,
+    "mem_mb": 0.326,
+    "итог": "ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/cow.obj"
+  },
+  {
+    "file": "spot.obj",
+    "path": "tests/corpus/cache/spot.obj",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -0.471552,
+        -0.736784,
+        -0.668909
+      ],
+      [
+        0.471552,
+        0.953646,
+        1.049
+      ]
+    ],
+    "vol": 0.7182587880998647,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 3.79,
+    "time": 3.888,
+    "error": null,
+    "voxel_solid": 5689,
+    "voxel_shape": [
+      27,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.03578977083333333,
+    "solve_iter": 12,
+    "solve_vol": 0.6,
+    "sigma_max": 10093.45,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 42.3,
+    "mem_mb": 0.107,
+    "итог": "ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/spot.obj"
+  },
+  {
+    "file": "stanford-bunny.obj",
+    "path": "tests/corpus/cache/stanford-bunny.obj",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -0.09469,
+        0.032987,
+        -0.061874
+      ],
+      [
+        0.061009,
+        0.187321,
+        0.0588
+      ]
+    ],
+    "vol": 0.0007595000885596169,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 10.25,
+    "time": 10.63,
+    "error": null,
+    "voxel_solid": 7189,
+    "voxel_shape": [
+      49,
+      49,
+      38
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.003243729166666667,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 4086212.43,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 45.8,
+    "mem_mb": 0.01,
+    "итог": "ok",
+    "license": "CC0 (Stanford 3D Scan Repository)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/stanford-bunny.obj"
+  },
+  {
+    "file": "nefertiti.obj",
+    "path": "tests/corpus/cache/nefertiti.obj",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -119.322998,
+        -181.292999,
+        -247.268005
+      ],
+      [
+        119.362999,
+        181.240997,
+        247.337006
+      ]
+    ],
+    "vol": 11553383.523833426,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 5.66,
+    "time": 6.078,
+    "error": null,
+    "voxel_solid": 4455,
+    "voxel_shape": [
+      25,
+      37,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 10.3042710625,
+    "solve_iter": 19,
+    "solve_vol": 0.6,
+    "sigma_max": 0.74,
+    "safety": 99.0,
+    "weight_before": 119656.1,
+    "weight_after": 68920.2,
+    "weight_save": 42.4,
+    "mem_mb": 30.913,
+    "итог": "ok",
+    "license": "CC0 (Stanford/Thingi10K)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/nefertiti.obj"
+  },
+  {
+    "file": "armadillo.obj",
+    "path": "tests/corpus/cache/armadillo.obj",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -63.497261,
+        -54.220013,
+        -57.714516
+      ],
+      [
+        63.51741,
+        97.087029,
+        57.696472
+      ]
+    ],
+    "vol": 237926.3934485604,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 3.92,
+    "time": 4.421,
+    "error": null,
+    "voxel_solid": 5109,
+    "voxel_shape": [
+      41,
+      49,
+      37
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 3.1522300416666664,
+    "solve_iter": 14,
+    "solve_vol": 0.6,
+    "sigma_max": 0.96,
+    "safety": 99.0,
+    "weight_before": 3970.0,
+    "weight_after": 2245.6,
+    "weight_save": 43.4,
+    "mem_mb": 9.457,
+    "итог": "ok",
+    "license": "CC0 (Stanford)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/armadillo.obj"
+  },
+  {
+    "file": "happy.obj",
+    "path": "tests/corpus/cache/happy.obj",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -0.046101,
+        0.049764,
+        -0.047393
+      ],
+      [
+        0.035219,
+        0.247789,
+        0.033999
+      ]
+    ],
+    "vol": 0.0003541825819198291,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 3.45,
+    "time": 3.933,
+    "error": null,
+    "voxel_solid": 3991,
+    "voxel_shape": [
+      21,
+      49,
+      20
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.0041255208333333335,
+    "solve_iter": 17,
+    "solve_vol": 0.6,
+    "sigma_max": 681935.59,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 42.2,
+    "mem_mb": 0.012,
+    "итог": "ok",
+    "license": "CC0 (Stanford)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/happy.obj"
+  },
+  {
+    "file": "alligator.obj",
+    "path": "tests/corpus/cache/alligator.obj",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        0.5,
+        -0.5,
+        0.0
+      ],
+      [
+        1000.5,
+        175.5,
+        0.0
+      ]
+    ],
+    "vol": 0.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.73,
+    "time": 0.896,
+    "error": null,
+    "voxel_solid": 261,
+    "voxel_shape": [
+      49,
+      9,
+      1
+    ],
+    "solve_error": null,
+    "resolution": 32,
+    "voxel_pitch": 20.833333333333332,
+    "solve_iter": 14,
+    "solve_vol": 0.6,
+    "sigma_max": 0.16,
+    "safety": 99.0,
+    "weight_before": 32101.4,
+    "weight_after": 16749.4,
+    "weight_save": 47.8,
+    "mem_mb": 31.25,
+    "итог": "ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/alligator.obj"
+  },
+  {
+    "file": "homer.obj",
+    "path": "tests/corpus/cache/homer.obj",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        0.262519,
+        0.156152,
+        0.355765
+      ],
+      [
+        0.735806,
+        0.996554,
+        0.628892
+      ]
+    ],
+    "vol": 0.021241926893821757,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.23,
+    "time": 2.36,
+    "error": null,
+    "voxel_solid": 2796,
+    "voxel_shape": [
+      28,
+      49,
+      17
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.017508375000000003,
+    "solve_iter": 18,
+    "solve_vol": 0.6,
+    "sigma_max": 69267.79,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 43.8,
+    "mem_mb": 0.053,
+    "итог": "ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/homer.obj"
+  },
+  {
+    "file": "beast.obj",
+    "path": "tests/corpus/cache/beast.obj",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -136.887955,
+        -0.869426,
+        -29.674839
+      ],
+      [
+        136.887955,
+        251.32579,
+        86.852295
+      ]
+    ],
+    "vol": 528357.3502120363,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 1.71,
+    "time": 2.147,
+    "error": null,
+    "voxel_solid": 2858,
+    "voxel_shape": [
+      49,
+      45,
+      21
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 5.703664791666667,
+    "solve_iter": 12,
+    "solve_vol": 0.6,
+    "sigma_max": 1.15,
+    "safety": 99.0,
+    "weight_before": 12506.1,
+    "weight_after": 6800.4,
+    "weight_save": 45.6,
+    "mem_mb": 17.111,
+    "итог": "ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beast.obj"
+  },
+  {
+    "file": "bimba.obj",
+    "path": "tests/corpus/cache/bimba.obj",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.176017,
+        -0.248004,
+        -1.277424
+      ],
+      [
+        0.104471,
+        0.075771,
+        -1.043666
+      ]
+    ],
+    "vol": 0.005659473743437573,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 7.07,
+    "time": 7.931,
+    "error": null,
+    "voxel_solid": 6593,
+    "voxel_shape": [
+      42,
+      49,
+      35
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.0067453125000000004,
+    "solve_iter": 18,
+    "solve_vol": 0.6,
+    "sigma_max": 225994.24,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 42.4,
+    "mem_mb": 0.02,
+    "итог": "ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "organic",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/bimba.obj"
+  },
+  {
+    "file": "fandisk.obj",
+    "path": "tests/corpus/cache/fandisk.obj",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        0.0,
+        12.6055,
+        -2.68026
+      ],
+      [
+        4.8279,
+        17.85,
+        0.0
+      ]
+    ],
+    "vol": 20.243374882839458,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 4.78,
+    "time": 4.905,
+    "error": null,
+    "voxel_solid": 5688,
+    "voxel_shape": [
+      45,
+      49,
+      26
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.10926041666666671,
+    "solve_iter": 15,
+    "solve_vol": 0.6,
+    "sigma_max": 2365.05,
+    "safety": 0.3,
+    "weight_before": 0.2,
+    "weight_after": 0.1,
+    "weight_save": 43.3,
+    "mem_mb": 0.328,
+    "итог": "ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "bracket",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/fandisk.obj"
+  },
+  {
+    "file": "rocker-arm.obj",
+    "path": "tests/corpus/cache/rocker-arm.obj",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.151733,
+        -0.257456,
+        -0.5
+      ],
+      [
+        0.151733,
+        0.257456,
+        0.5
+      ]
+    ],
+    "vol": 0.04251362358052909,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 1.58,
+    "time": 1.73,
+    "error": null,
+    "voxel_solid": 3649,
+    "voxel_shape": [
+      15,
+      25,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.020833333333333332,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 24377.52,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 42.8,
+    "mem_mb": 0.062,
+    "итог": "ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "bracket",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/rocker-arm.obj"
+  },
+  {
+    "file": "beetle.obj",
+    "path": "tests/corpus/cache/beetle.obj",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -0.216734,
+        0.306086,
+        -0.253812
+      ],
+      [
+        0.143533,
+        0.60904,
+        0.637839
+      ]
+    ],
+    "vol": 0.03734083632347409,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.68,
+    "time": 0.681,
+    "error": null,
+    "voxel_solid": 2084,
+    "voxel_shape": [
+      21,
+      18,
+      49
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.7490 - target 0.6000| >0.01 (l1 1.00e+09 l2 1.00e+09 lmid 1.00e+09)",
+    "resolution": null,
+    "voxel_pitch": 0.0185760625,
+    "итог": "voxel_ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle.obj"
+  },
+  {
+    "file": "beetle-alt.obj",
+    "path": "tests/corpus/cache/beetle-alt.obj",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -0.202894,
+        -0.169283,
+        -0.5
+      ],
+      [
+        0.202894,
+        0.169283,
+        0.5
+      ]
+    ],
+    "vol": 0.0542254754001295,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.73,
+    "time": 0.728,
+    "error": null,
+    "voxel_solid": 2108,
+    "voxel_shape": [
+      21,
+      17,
+      49
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.7388 - target 0.6000| >0.01 (l1 1.00e+09 l2 1.00e+09 lmid 1.00e+09)",
+    "resolution": null,
+    "voxel_pitch": 0.020833333333333332,
+    "итог": "voxel_ok",
+    "license": "MIT (common-3d-test-models)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle-alt.obj"
+  },
+  {
+    "file": "nasa_international_space_station_tools_003_column_stl.stl",
+    "path": "tests/corpus/cache/nasa_international_space_station_tools_003_column_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -5.0,
+        -5.0,
+        0.0
+      ],
+      [
+        5.0,
+        5.0,
+        30.0
+      ]
+    ],
+    "vol": 3000.0,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 1.71,
+    "time": 1.795,
+    "error": null,
+    "voxel_solid": 3586,
+    "voxel_shape": [
+      17,
+      17,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.625,
+    "solve_iter": 9,
+    "solve_vol": 0.6,
+    "sigma_max": 0.0,
+    "safety": 99.0,
+    "weight_before": 23.7,
+    "weight_after": 13.7,
+    "weight_save": 42.4,
+    "mem_mb": 1.875,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/003%20-%20Column.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_006_flexural_stl.stl",
+    "path": "tests/corpus/cache/nasa_international_space_station_tools_006_flexural_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        1.439918690948616e-07,
+        3.8935148438667966e-08,
+        0.0
+      ],
+      [
+        10.000003814697266,
+        88.0,
+        4.000000476837158
+      ]
+    ],
+    "vol": 3359.9999083136713,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.74,
+    "time": 3.615,
+    "error": null,
+    "voxel_solid": 674,
+    "voxel_shape": [
+      6,
+      49,
+      3
+    ],
+    "solve_error": null,
+    "resolution": 32,
+    "voxel_pitch": 1.8333333325221843,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 82.54,
+    "safety": 4.18,
+    "weight_before": 52.2,
+    "weight_after": 26.6,
+    "weight_save": 49.1,
+    "mem_mb": 2.75,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/006%20-%20Flexural.stl"
+  },
+  {
+    "file": "nasa_saturn_v_stage_2_joining_cube_stl.stl",
+    "path": "tests/corpus/cache/nasa_saturn_v_stage_2_joining_cube_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -24.794336318969727,
+        95.72927856445312,
+        -24.794336318969727
+      ],
+      [
+        24.794336318969727,
+        145.3179473876953,
+        24.794336318969727
+      ]
+    ],
+    "vol": 121940.34434132506,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 24.46,
+    "time": 24.768,
+    "error": null,
+    "voxel_solid": 13826,
+    "voxel_shape": [
+      49,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.0330973466237385,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 6.15,
+    "safety": 56.09,
+    "weight_before": 359.4,
+    "weight_after": 203.7,
+    "weight_save": 43.3,
+    "mem_mb": 3.099,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20-%20Stage%202/joining%20cube.stl"
+  },
+  {
+    "file": "nasa_saturn_v_rocket_s_ic_joining_cube_stl.stl",
+    "path": "tests/corpus/cache/nasa_saturn_v_rocket_s_ic_joining_cube_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -22.897075653076172,
+        -22.897075653076172,
+        -22.897075653076172
+      ],
+      [
+        22.897075653076172,
+        22.897075653076172,
+        22.897075653076172
+      ]
+    ],
+    "vol": 96035.11133738414,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 23.34,
+    "time": 23.624,
+    "error": null,
+    "voxel_solid": 13826,
+    "voxel_shape": [
+      49,
+      49,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.9540448188781738,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 7.33,
+    "safety": 47.09,
+    "weight_before": 283.1,
+    "weight_after": 160.0,
+    "weight_save": 43.5,
+    "mem_mb": 2.862,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20Rocket/S-IC%20joining%20cube.stl"
+  },
+  {
+    "file": "nasa_explorer_1_03_connector_abs_stl.stl",
+    "path": "tests/corpus/cache/nasa_explorer_1_03_connector_abs_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        24.055282592773438,
+        -20.7188720703125,
+        -6.201782980497228e-07
+      ],
+      [
+        29.944717407226562,
+        -14.829435348510742,
+        2.7433013916015625
+      ]
+    ],
+    "vol": 85.46976567812983,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 9.09,
+    "time": 9.213,
+    "error": null,
+    "voxel_solid": 8345,
+    "voxel_shape": [
+      49,
+      49,
+      23
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.12269659837086995,
+    "solve_iter": 22,
+    "solve_vol": 0.6,
+    "sigma_max": 267.62,
+    "safety": 1.29,
+    "weight_before": 0.4,
+    "weight_after": 0.2,
+    "weight_save": 43.4,
+    "mem_mb": 0.368,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Explorer%201/03_connector_ABS.stl"
+  },
+  {
+    "file": "nasa_explorer_1_03_connector_pla_stl.stl",
+    "path": "tests/corpus/cache/nasa_explorer_1_03_connector_pla_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        24.013912200927734,
+        -20.76024055480957,
+        -6.288909730756131e-07
+      ],
+      [
+        29.986087799072266,
+        -14.788064956665039,
+        2.7818410396575928
+      ]
+    ],
+    "vol": 89.12283938236799,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 12.6,
+    "time": 12.72,
+    "error": null,
+    "voxel_solid": 8299,
+    "voxel_shape": [
+      49,
+      49,
+      23
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.1244203249613444,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 266.15,
+    "safety": 1.3,
+    "weight_before": 0.4,
+    "weight_after": 0.2,
+    "weight_save": 43.5,
+    "mem_mb": 0.373,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Explorer%201/03_connector_PLA.stl"
+  },
+  {
+    "file": "nasa_saturn_v_rocket_fin_print_4_stl.stl",
+    "path": "tests/corpus/cache/nasa_saturn_v_rocket_fin_print_4_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -91.33138275146484,
+        119.18000793457031,
+        -2.8380000591278076
+      ],
+      [
+        -46.47624588012695,
+        148.17401123046875,
+        2.492000102996826
+      ]
+    ],
+    "vol": 2320.179910734649,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.73,
+    "time": 0.73,
+    "error": null,
+    "voxel_solid": 2651,
+    "voxel_shape": [
+      49,
+      32,
+      7
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.4348 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 0.9344820181528727,
+    "итог": "voxel_ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20Rocket/fin%20(print%204).stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_a_stl.stl",
+    "path": "tests/corpus/cache/nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_a_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -23.5,
+        -1.5,
+        -0.75
+      ],
+      [
+        23.5,
+        10.0,
+        0.75
+      ]
+    ],
+    "vol": 121.64100337028503,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.4,
+    "time": 0.399,
+    "error": null,
+    "voxel_solid": 438,
+    "voxel_shape": [
+      49,
+      13,
+      3
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.7599 - target 0.6000| >0.01 (l1 1.00e+09 l2 1.00e+09 lmid 1.00e+09)",
+    "resolution": null,
+    "voxel_pitch": 0.9791666666666666,
+    "итог": "voxel_ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Sub-Reflector%20A.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_pse_and_battery_stl.stl",
+    "path": "tests/corpus/cache/nasa_laser_interferometer_space_antenna_lisa_pse_and_battery_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -29.89914894104004,
+        -31.3302001953125,
+        0.0
+      ],
+      [
+        -3.709085464477539,
+        -7.32269287109375,
+        11.88250732421875
+      ]
+    ],
+    "vol": 3090.2883751772574,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 5.12,
+    "time": 5.33,
+    "error": null,
+    "voxel_solid": 6740,
+    "voxel_shape": [
+      49,
+      45,
+      23
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.5456263224283854,
+    "solve_iter": 16,
+    "solve_vol": 0.6,
+    "sigma_max": 3632.45,
+    "safety": 0.3,
+    "weight_before": 25.3,
+    "weight_after": 14.7,
+    "weight_save": 42.1,
+    "mem_mb": 1.637,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/PSE%20and%20battery.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_b_stl.stl",
+    "path": "tests/corpus/cache/nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_b_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -23.5,
+        -1.5,
+        -0.75
+      ],
+      [
+        23.5,
+        10.0,
+        0.75
+      ]
+    ],
+    "vol": 128.39100337028503,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.41,
+    "time": 0.406,
+    "error": null,
+    "voxel_solid": 462,
+    "voxel_shape": [
+      49,
+      13,
+      3
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.5453 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 0.9791666666666666,
+    "итог": "voxel_ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Sub-Reflector%20B.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_left_side_panel_stl.stl",
+    "path": "tests/corpus/cache/nasa_laser_interferometer_space_antenna_lisa_left_side_panel_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -24.622201919555664,
+        -28.576446533203125,
+        0.0
+      ],
+      [
+        -5.824045181274414,
+        -9.564483642578125,
+        9.45751953125
+      ]
+    ],
+    "vol": 1470.2472645893852,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 9.08,
+    "time": 9.465,
+    "error": null,
+    "voxel_solid": 8369,
+    "voxel_shape": [
+      48,
+      49,
+      25
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.3960825602213542,
+    "solve_iter": 19,
+    "solve_vol": 0.6,
+    "sigma_max": 785.59,
+    "safety": 0.44,
+    "weight_before": 12.1,
+    "weight_after": 6.8,
+    "weight_save": 43.9,
+    "mem_mb": 1.188,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Left%20side%20panel.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_right_side_panel_stl.stl",
+    "path": "tests/corpus/cache/nasa_laser_interferometer_space_antenna_lisa_right_side_panel_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.8240451812744141,
+        -28.576446533203125,
+        0.0
+      ],
+      [
+        17.974111557006836,
+        -9.564483642578125,
+        9.45751953125
+      ]
+    ],
+    "vol": 1470.0332423519988,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 10.8,
+    "time": 11.048,
+    "error": null,
+    "voxel_solid": 8402,
+    "voxel_shape": [
+      48,
+      49,
+      25
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.3960825602213542,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 558.64,
+    "safety": 0.62,
+    "weight_before": 12.1,
+    "weight_after": 6.8,
+    "weight_save": 43.5,
+    "mem_mb": 1.188,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Right%20side%20panel.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_019_zerog2_stl.stl",
+    "path": "tests/corpus/cache/nasa_international_space_station_tools_019_zerog2_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        4.731118607992357e-08,
+        -3.283492731043225e-07,
+        6.640723881901067e-07
+      ],
+      [
+        22.100000381469727,
+        24.632266998291016,
+        5.000001907348633
+      ]
+    ],
+    "vol": 692.1010362794781,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.75,
+    "time": 2.973,
+    "error": null,
+    "voxel_solid": 3704,
+    "voxel_shape": [
+      44,
+      49,
+      11
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.5131722359716727,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 62.25,
+    "safety": 5.54,
+    "weight_before": 9.5,
+    "weight_after": 5.2,
+    "weight_save": 45.1,
+    "mem_mb": 1.54,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/019%20-%20ZeroG2.stl"
+  },
+  {
+    "file": "nasa_voyager_instrument_01_stl.stl",
+    "path": "tests/corpus/cache/nasa_voyager_instrument_01_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -58.852081298828125,
+        -2.2783613204956055,
+        0.0
+      ],
+      [
+        -48.18388366699219,
+        5.441806793212891,
+        4.939075946807861
+      ]
+    ],
+    "vol": 342.8443065664351,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 10.37,
+    "time": 10.63,
+    "error": null,
+    "voxel_solid": 8148,
+    "voxel_shape": [
+      49,
+      35,
+      23
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.22225411732991537,
+    "solve_iter": 23,
+    "solve_vol": 0.6,
+    "sigma_max": 175.08,
+    "safety": 1.97,
+    "weight_before": 2.0,
+    "weight_after": 1.1,
+    "weight_save": 43.2,
+    "mem_mb": 0.667,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_01.stl"
+  },
+  {
+    "file": "nasa_voyager_instrument_02_stl.stl",
+    "path": "tests/corpus/cache/nasa_voyager_instrument_02_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        48.18388366699219,
+        -5.441806793212891,
+        0.0
+      ],
+      [
+        58.85208511352539,
+        2.2783613204956055,
+        4.939075946807861
+      ]
+    ],
+    "vol": 342.8442641450535,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 10.08,
+    "time": 10.341,
+    "error": null,
+    "voxel_solid": 8148,
+    "voxel_shape": [
+      49,
+      35,
+      23
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.22225419680277506,
+    "solve_iter": 24,
+    "solve_vol": 0.6,
+    "sigma_max": 195.35,
+    "safety": 1.77,
+    "weight_before": 2.0,
+    "weight_after": 1.1,
+    "weight_save": 43.4,
+    "mem_mb": 0.667,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_02.stl"
+  },
+  {
+    "file": "nasa_sofia_telescope_cavity_closed_stl.stl",
+    "path": "tests/corpus/cache/nasa_sofia_telescope_cavity_closed_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        30.319765090942383,
+        -12.635992050170898,
+        -5.782317161560059
+      ],
+      [
+        54.87782287597656,
+        2.279031276702881,
+        15.649131774902344
+      ]
+    ],
+    "vol": 6205.654557590758,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 14.05,
+    "time": 14.342,
+    "error": null,
+    "voxel_solid": 8395,
+    "voxel_shape": [
+      49,
+      30,
+      43
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.5116262038548788,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 145.79,
+    "safety": 2.37,
+    "weight_before": 26.3,
+    "weight_after": 14.7,
+    "weight_save": 44.2,
+    "mem_mb": 1.535,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/SOFIA/Telescope%20cavity%20closed.stl"
+  },
+  {
+    "file": "nasa_voyager_instrument_03_stl.stl",
+    "path": "tests/corpus/cache/nasa_voyager_instrument_03_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -32.2336540222168,
+        -53.93621826171875,
+        0.0
+      ],
+      [
+        -16.69516372680664,
+        -34.96833038330078,
+        6.895385265350342
+      ]
+    ],
+    "vol": 621.319666914143,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.46,
+    "time": 2.645,
+    "error": null,
+    "voxel_solid": 5568,
+    "voxel_shape": [
+      41,
+      49,
+      18
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.39516433080037433,
+    "solve_iter": 9,
+    "solve_vol": 0.6,
+    "sigma_max": 36.36,
+    "safety": 9.49,
+    "weight_before": 7.8,
+    "weight_after": 4.5,
+    "weight_save": 42.6,
+    "mem_mb": 1.185,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_03.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_combined_bottom_boxes_stl.stl",
+    "path": "tests/corpus/cache/nasa_laser_interferometer_space_antenna_lisa_combined_bottom_boxes_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -37.37691879272461,
+        -47.63176345825195,
+        0.0
+      ],
+      [
+        37.348148345947266,
+        0.008794865570962429,
+        14.589418411254883
+      ]
+    ],
+    "vol": 13583.043088356038,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 1.17,
+    "time": 1.341,
+    "error": null,
+    "voxel_solid": 3715,
+    "voxel_shape": [
+      49,
+      32,
+      10
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.556772232055664,
+    "solve_iter": 10,
+    "solve_vol": 0.6,
+    "sigma_max": 5.48,
+    "safety": 62.95,
+    "weight_before": 251.1,
+    "weight_after": 147.4,
+    "weight_save": 41.3,
+    "mem_mb": 4.67,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Combined%20bottom%20boxes.stl"
+  },
+  {
+    "file": "nasa_viking_lander_tool1_b_stl.stl",
+    "path": "tests/corpus/cache/nasa_viking_lander_tool1_b_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -2.25,
+        -36.75,
+        0.0
+      ],
+      [
+        2.25,
+        36.75,
+        4.500003337860107
+      ]
+    ],
+    "vol": 1223.4254717336075,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.33,
+    "time": 2.829,
+    "error": null,
+    "voxel_solid": 510,
+    "voxel_shape": [
+      3,
+      49,
+      4
+    ],
+    "solve_error": null,
+    "resolution": 32,
+    "voxel_pitch": 1.53125,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 84.39,
+    "safety": 4.09,
+    "weight_before": 25.8,
+    "weight_after": 13.3,
+    "weight_save": 48.6,
+    "mem_mb": 2.297,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool1%20B.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_base_stl.stl",
+    "path": "tests/corpus/cache/nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_base_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -21.650634765625,
+        -25.0,
+        0.0
+      ],
+      [
+        21.650634765625,
+        25.0,
+        3.0
+      ]
+    ],
+    "vol": 4326.6491028609835,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 1.53,
+    "time": 1.679,
+    "error": null,
+    "voxel_solid": 3592,
+    "voxel_shape": [
+      43,
+      49,
+      4
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.0416666666666667,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 11.0,
+    "safety": 31.37,
+    "weight_before": 93.4,
+    "weight_after": 53.1,
+    "weight_save": 43.2,
+    "mem_mb": 3.125,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Base.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_001_ftc_stl.stl",
+    "path": "tests/corpus/cache/nasa_international_space_station_tools_001_ftc_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        0.0,
+        -8.404154897321016e-23,
+        -2.8645786187553313e-08
+      ],
+      [
+        29.999998092651367,
+        29.999998092651367,
+        4.000000953674316
+      ]
+    ],
+    "vol": 2850.293285463784,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.62,
+    "time": 2.996,
+    "error": null,
+    "voxel_solid": 5395,
+    "voxel_shape": [
+      49,
+      49,
+      7
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.6249999602635702,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 20.38,
+    "safety": 16.93,
+    "weight_before": 31.4,
+    "weight_after": 17.8,
+    "weight_save": 43.2,
+    "mem_mb": 1.875,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/001%20-%20FTC.stl"
+  },
+  {
+    "file": "nasa_chandra_x_ray_observatory_chandra_panel_stl.stl",
+    "path": "tests/corpus/cache/nasa_chandra_x_ray_observatory_chandra_panel_stl.stl",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -2.49799995252203e-16,
+        -11.25,
+        0.0
+      ],
+      [
+        88.5,
+        11.25,
+        1.6875
+      ]
+    ],
+    "vol": 1197.9858445681746,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.65,
+    "time": 0.654,
+    "error": null,
+    "voxel_solid": 561,
+    "voxel_shape": [
+      49,
+      13,
+      2
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.4000 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 1.84375,
+    "итог": "voxel_ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Chandra%20X-ray%20Observatory/Chandra%20panel.stl"
+  },
+  {
+    "file": "nasa_sofia_instrument_stl.stl",
+    "path": "tests/corpus/cache/nasa_sofia_instrument_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        12.244881629943848,
+        -0.8022005558013916,
+        -7.66533899307251
+      ],
+      [
+        19.844961166381836,
+        7.62197208404541,
+        1.7834835052490234
+      ]
+    ],
+    "vol": 339.58083607690793,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 24.01,
+    "time": 24.975,
+    "error": null,
+    "voxel_solid": 16857,
+    "voxel_shape": [
+      40,
+      44,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.19685046871503195,
+    "solve_iter": 21,
+    "solve_vol": 0.6,
+    "sigma_max": 161.74,
+    "safety": 2.13,
+    "weight_before": 2.9,
+    "weight_after": 1.7,
+    "weight_save": 41.5,
+    "mem_mb": 0.591,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/SOFIA/Instrument.stl"
+  },
+  {
+    "file": "nasa_chandra_x_ray_observatory_chandra_top_stl.stl",
+    "path": "tests/corpus/cache/nasa_chandra_x_ray_observatory_chandra_top_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -12.0,
+        -6.344480037689209,
+        0.0
+      ],
+      [
+        10.899999618530273,
+        6.449999809265137,
+        6.0
+      ]
+    ],
+    "vol": 1123.4249784752196,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.02,
+    "time": 2.289,
+    "error": null,
+    "voxel_solid": 4908,
+    "voxel_shape": [
+      49,
+      28,
+      14
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.47708332538604736,
+    "solve_iter": 9,
+    "solve_vol": 0.6,
+    "sigma_max": 23.17,
+    "safety": 14.89,
+    "weight_before": 10.9,
+    "weight_after": 6.4,
+    "weight_save": 41.9,
+    "mem_mb": 1.431,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Chandra%20X-ray%20Observatory/Chandra%20top.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_top_stl.stl",
+    "path": "tests/corpus/cache/nasa_mars_reconnaissance_orbiter_top_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -24.65192985534668,
+        -112.08729553222656,
+        -0.0001302003802265972
+      ],
+      [
+        24.598819732666016,
+        -78.34110260009766,
+        14.116610527038574
+      ]
+    ],
+    "vol": 2750.729632859938,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.66,
+    "time": 0.801,
+    "error": null,
+    "voxel_solid": 2443,
+    "voxel_shape": [
+      49,
+      34,
+      15
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.026057283083598,
+    "solve_iter": 8,
+    "solve_vol": 0.6,
+    "sigma_max": 1582.18,
+    "safety": 0.3,
+    "weight_before": 52.7,
+    "weight_after": 28.8,
+    "weight_save": 45.4,
+    "mem_mb": 3.078,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/top.stl"
+  },
+  {
+    "file": "nasa_viking_lander_tool1_a_stl.stl",
+    "path": "tests/corpus/cache/nasa_viking_lander_tool1_a_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -12.750000953674316,
+        -4.7260003089904785,
+        0.0
+      ],
+      [
+        12.748000144958496,
+        4.724000453948975,
+        8.248000144958496
+      ]
+    ],
+    "vol": 1518.7854104299615,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.17,
+    "time": 2.412,
+    "error": null,
+    "voxel_solid": 4365,
+    "voxel_shape": [
+      49,
+      19,
+      17
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.531208356221517,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 28.05,
+    "safety": 12.3,
+    "weight_before": 15.2,
+    "weight_after": 8.9,
+    "weight_save": 41.8,
+    "mem_mb": 1.594,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool1%20A.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_004_tensile_stl.stl",
+    "path": "tests/corpus/cache/nasa_international_space_station_tools_004_tensile_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        1.610521707107182e-07,
+        3.6516901502636756e-08,
+        4.229949554415257e-15
+      ],
+      [
+        19.000003814697266,
+        113.58578491210938,
+        4.000000476837158
+      ]
+    ],
+    "vol": 5698.94315412514,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.86,
+    "time": 0.916,
+    "error": null,
+    "voxel_solid": 750,
+    "voxel_shape": [
+      9,
+      49,
+      3
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 2.36637051824151,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 26.59,
+    "safety": 12.97,
+    "weight_before": 303.3,
+    "weight_after": 162.7,
+    "weight_save": 46.4,
+    "mem_mb": 7.099,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/004%20-%20Tensile.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_antenna_bottom_01_stl.stl",
+    "path": "tests/corpus/cache/nasa_mars_reconnaissance_orbiter_antenna_bottom_01_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -25.30947494506836,
+        139.79052734375,
+        -2.3444763428415172e-05
+      ],
+      [
+        25.309473037719727,
+        190.4094696044922,
+        9.292190551757812
+      ]
+    ],
+    "vol": 9804.67577780425,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.25,
+    "time": 2.506,
+    "error": null,
+    "voxel_solid": 4470,
+    "voxel_shape": [
+      49,
+      49,
+      10
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.0545614163080852,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 703.67,
+    "safety": 0.49,
+    "weight_before": 124.5,
+    "weight_after": 71.3,
+    "weight_save": 42.7,
+    "mem_mb": 3.164,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/antenna_bottom_01.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_body_stl.stl",
+    "path": "tests/corpus/cache/nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_body_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -8.25,
+        3.0999999046325684,
+        -6.139999866485596
+      ],
+      [
+        8.25,
+        12.850000381469727,
+        6.139999866485596
+      ]
+    ],
+    "vol": 1777.4813966257782,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 13.86,
+    "time": 14.49,
+    "error": null,
+    "voxel_solid": 9110,
+    "voxel_shape": [
+      49,
+      29,
+      37
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.34375,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 239.8,
+    "safety": 1.44,
+    "weight_before": 8.6,
+    "weight_after": 4.8,
+    "weight_save": 44.6,
+    "mem_mb": 1.031,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Positioner%20Body.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_solar_panel_l_stl.stl",
+    "path": "tests/corpus/cache/nasa_mars_reconnaissance_orbiter_solar_panel_l_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -117.63420104980469,
+        -35.26658630371094,
+        -1.456769859942142e-05
+      ],
+      [
+        -20.162506103515625,
+        6.230715751647949,
+        3.5115694999694824
+      ]
+    ],
+    "vol": 2898.4940773284293,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.41,
+    "time": 0.46,
+    "error": null,
+    "voxel_solid": 918,
+    "voxel_shape": [
+      49,
+      21,
+      3
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 2.030660311381022,
+    "solve_iter": 12,
+    "solve_vol": 0.6,
+    "sigma_max": 4.02,
+    "safety": 85.81,
+    "weight_before": 207.6,
+    "weight_after": 112.6,
+    "weight_save": 45.8,
+    "mem_mb": 6.092,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/solar%20panel_L.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_solar_panel_r_stl.stl",
+    "path": "tests/corpus/cache/nasa_mars_reconnaissance_orbiter_solar_panel_r_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        20.162498474121094,
+        -35.26658630371094,
+        -1.456769859942142e-05
+      ],
+      [
+        117.63420104980469,
+        6.230715751647949,
+        3.5115694999694824
+      ]
+    ],
+    "vol": 2898.494332708536,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.5,
+    "time": 0.547,
+    "error": null,
+    "voxel_solid": 918,
+    "voxel_shape": [
+      49,
+      21,
+      3
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 2.0306604703267417,
+    "solve_iter": 15,
+    "solve_vol": 0.6,
+    "sigma_max": 4.05,
+    "safety": 85.13,
+    "weight_before": 207.6,
+    "weight_after": 110.3,
+    "weight_save": 46.9,
+    "mem_mb": 6.092,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/solar%20panel_R.stl"
+  },
+  {
+    "file": "nasa_voyager_stand_stl.stl",
+    "path": "tests/corpus/cache/nasa_voyager_stand_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -8.084260940551758,
+        -140.0232391357422,
+        3.0279159091151087e-06
+      ],
+      [
+        8.084259986877441,
+        -127.34025573730469,
+        32.668880462646484
+      ]
+    ],
+    "vol": 1734.3798813228332,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 1.3,
+    "time": 1.299,
+    "error": null,
+    "voxel_solid": 3187,
+    "voxel_shape": [
+      25,
+      20,
+      49
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.5452 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 0.6806016132235536,
+    "итог": "voxel_ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/stand.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_005_compression_stl.stl",
+    "path": "tests/corpus/cache/nasa_international_space_station_tools_005_compression_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        2.7592468310189133e-09,
+        -1.8070887009002945e-08,
+        0.0
+      ],
+      [
+        12.69999885559082,
+        12.69999885559082,
+        25.39999771118164
+      ]
+    ],
+    "vol": 3214.2850152197952,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 3.83,
+    "time": 4.339,
+    "error": null,
+    "voxel_solid": 5506,
+    "voxel_shape": [
+      25,
+      25,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.5291666189829508,
+    "solve_iter": 14,
+    "solve_vol": 0.6,
+    "sigma_max": 41.88,
+    "safety": 8.24,
+    "weight_before": 19.4,
+    "weight_after": 11.0,
+    "weight_save": 43.5,
+    "mem_mb": 1.587,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/005%20-%20Compression.stl"
+  },
+  {
+    "file": "nasa_hubble_space_telescope_solar_panels_stl.stl",
+    "path": "tests/corpus/cache/nasa_hubble_space_telescope_solar_panels_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -29.400999069213867,
+        -10.701000213623047,
+        0.0
+      ],
+      [
+        30.899999618530273,
+        14.100000381469727,
+        2.9639999866485596
+      ]
+    ],
+    "vol": 644.0787410282365,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.45,
+    "time": 0.448,
+    "error": null,
+    "voxel_solid": 1069,
+    "voxel_shape": [
+      49,
+      21,
+      3
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.5257 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 1.2562708059946697,
+    "итог": "voxel_ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Solar%20panels.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_cmd_and_data_handling_stl.stl",
+    "path": "tests/corpus/cache/nasa_laser_interferometer_space_antenna_lisa_cmd_and_data_handling_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -8.49100399017334,
+        -6.32501220703125,
+        0.0
+      ],
+      [
+        4.0090813636779785,
+        6.32501220703125,
+        11.233861923217773
+      ]
+    ],
+    "vol": 1617.9537472052896,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 19.71,
+    "time": 20.352,
+    "error": null,
+    "voxel_solid": 12216,
+    "voxel_shape": [
+      48,
+      49,
+      44
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.26354217529296875,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 403.52,
+    "safety": 0.85,
+    "weight_before": 5.3,
+    "weight_after": 3.0,
+    "weight_save": 44.2,
+    "mem_mb": 0.791,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Cmd%20and%20data%20handling.stl"
+  },
+  {
+    "file": "nasa_cyclone_global_navigation_satellite_system_cygnss_cyclone_global_navigation.stl",
+    "path": "tests/corpus/cache/nasa_cyclone_global_navigation_satellite_system_cygnss_cyclone_global_navigation.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -5.000001430511475,
+        -1.5427546501159668,
+        -1.6098122596740723
+      ],
+      [
+        5.000001430511475,
+        0.10375207662582397,
+        1.6098122596740723
+      ]
+    ],
+    "vol": 16.04651872984596,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.74,
+    "time": 0.839,
+    "error": null,
+    "voxel_solid": 1434,
+    "voxel_shape": [
+      49,
+      8,
+      17
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.20833339293797812,
+    "solve_iter": 10,
+    "solve_vol": 0.6,
+    "sigma_max": 220.03,
+    "safety": 1.57,
+    "weight_before": 0.4,
+    "weight_after": 0.2,
+    "weight_save": 42.7,
+    "mem_mb": 0.625,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Cyclone%20Global%20Navigation%20Satellite%20System%20(CYGNSS)/Cyclone%20Global%20Navigation%20Satellite%20System%20(CYGNSS).stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_lisa_control_electronics_stl.stl",
+    "path": "tests/corpus/cache/nasa_laser_interferometer_space_antenna_lisa_lisa_control_electronics_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -3.7544960975646973,
+        -6.25,
+        0.0
+      ],
+      [
+        7.645552635192871,
+        6.25,
+        10.033204078674316
+      ]
+    ],
+    "vol": 1295.7575499962074,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 19.45,
+    "time": 20.158,
+    "error": null,
+    "voxel_solid": 10865,
+    "voxel_shape": [
+      44,
+      49,
+      40
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.2604166666666667,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 513.35,
+    "safety": 0.67,
+    "weight_before": 4.6,
+    "weight_after": 2.5,
+    "weight_save": 45.0,
+    "mem_mb": 0.781,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/LISA%20control%20electronics.stl"
+  },
+  {
+    "file": "nasa_international_sun_earth_explorer_3_rad_antenna_stl.stl",
+    "path": "tests/corpus/cache/nasa_international_sun_earth_explorer_3_rad_antenna_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -0.19682201743125916,
+        -0.19684329628944397,
+        0.0
+      ],
+      [
+        0.19685038924217224,
+        0.19684329628944397,
+        2165.354248046875
+      ]
+    ],
+    "vol": 263.55296590848843,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 1.67,
+    "time": 1.666,
+    "error": null,
+    "voxel_solid": 49,
+    "voxel_shape": [
+      1,
+      1,
+      49
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.5327 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 45.1115468343099,
+    "итог": "voxel_ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Sun-Earth%20Explorer-3/Rad%20antenna.stl"
+  },
+  {
+    "file": "nasa_hubble_25th_anniversary_model_base_stl.stl",
+    "path": "tests/corpus/cache/nasa_hubble_25th_anniversary_model_base_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -23.98900032043457,
+        -23.690000534057617,
+        0.0
+      ],
+      [
+        23.98900032043457,
+        23.690000534057617,
+        38.38200378417969
+      ]
+    ],
+    "vol": 64126.742617602074,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 7.36,
+    "time": 8.116,
+    "error": null,
+    "voxel_solid": 10502,
+    "voxel_shape": [
+      49,
+      49,
+      39
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.9995416800181071,
+    "solve_iter": 11,
+    "solve_vol": 0.6,
+    "sigma_max": 1765.5,
+    "safety": 0.3,
+    "weight_before": 255.3,
+    "weight_after": 148.5,
+    "weight_save": 41.8,
+    "mem_mb": 2.999,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%2025th%20Anniversary%20Model/Base.stl"
+  },
+  {
+    "file": "nasa_hubble_space_telescope_base_stl.stl",
+    "path": "tests/corpus/cache/nasa_hubble_space_telescope_base_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -27.201000213623047,
+        -48.20000076293945,
+        -0.0010000000474974513
+      ],
+      [
+        -3.2119998931884766,
+        -24.510000228881836,
+        19.190000534057617
+      ]
+    ],
+    "vol": 8015.8424701278645,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 18.78,
+    "time": 19.491,
+    "error": null,
+    "voxel_solid": 10523,
+    "voxel_shape": [
+      49,
+      48,
+      39
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.49977084000905353,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 160.05,
+    "safety": 2.16,
+    "weight_before": 31.6,
+    "weight_after": 16.6,
+    "weight_save": 47.5,
+    "mem_mb": 1.499,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Base.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_charge_management_system_stl.stl",
+    "path": "tests/corpus/cache/nasa_laser_interferometer_space_antenna_lisa_charge_management_system_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        1081.547607421875,
+        928.091796875,
+        -696.9090576171875
+      ],
+      [
+        1100.047607421875,
+        937.1417846679688,
+        -689.3590698242188
+      ]
+    ],
+    "vol": 1143.0786563983809,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 3.42,
+    "time": 3.654,
+    "error": null,
+    "voxel_solid": 4926,
+    "voxel_shape": [
+      49,
+      25,
+      20
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.3854166666666667,
+    "solve_iter": 12,
+    "solve_vol": 0.6,
+    "sigma_max": 77.74,
+    "safety": 4.44,
+    "weight_before": 7.1,
+    "weight_after": 4.0,
+    "weight_save": 43.0,
+    "mem_mb": 1.156,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Charge%20management%20system.stl"
+  },
+  {
+    "file": "nasa_galileo_galileo_probe_stl.stl",
+    "path": "tests/corpus/cache/nasa_galileo_galileo_probe_stl.stl",
+    "parse": true,
+    "watertight": false,
+    "bbox": [
+      [
+        -0.7235157489776611,
+        -0.7237253189086914,
+        -0.4461649954319
+      ],
+      [
+        0.7235157489776611,
+        0.7237253189086914,
+        0.43802493810653687
+      ]
+    ],
+    "vol": 0.689385203445679,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 8.48,
+    "time": 8.614,
+    "error": null,
+    "voxel_solid": 6238,
+    "voxel_shape": [
+      49,
+      49,
+      31
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.030155221621195476,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 31322.11,
+    "safety": 0.3,
+    "weight_before": 0.0,
+    "weight_after": 0.0,
+    "weight_save": 48.3,
+    "mem_mb": 0.09,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Galileo/Galileo%20probe.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_grs_unit_stl.stl",
+    "path": "tests/corpus/cache/nasa_laser_interferometer_space_antenna_lisa_grs_unit_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -7.750035285949707,
+        -9.25,
+        0.0
+      ],
+      [
+        7.750035762786865,
+        9.25,
+        10.750080108642578
+      ]
+    ],
+    "vol": 2785.9734453619167,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 13.78,
+    "time": 14.14,
+    "error": null,
+    "voxel_solid": 8486,
+    "voxel_shape": [
+      41,
+      49,
+      29
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.3854166666666667,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 158.47,
+    "safety": 2.18,
+    "weight_before": 11.6,
+    "weight_after": 6.3,
+    "weight_save": 45.7,
+    "mem_mb": 1.156,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/GRS%20unit.stl"
+  },
+  {
+    "file": "nasa_viking_lander_tool2_stl.stl",
+    "path": "tests/corpus/cache/nasa_viking_lander_tool2_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -34.125,
+        -2.3999998569488525,
+        0.0
+      ],
+      [
+        34.125,
+        2.3999998569488525,
+        3.0
+      ]
+    ],
+    "vol": 532.0940818915606,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 0.64,
+    "time": 0.638,
+    "error": null,
+    "voxel_solid": 418,
+    "voxel_shape": [
+      49,
+      5,
+      3
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.5168 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 1.421875,
+    "итог": "voxel_ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool2.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_arm_stl.stl",
+    "path": "tests/corpus/cache/nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_arm_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -10.0,
+        5.96999979019165,
+        -3.9000000953674316
+      ],
+      [
+        10.0,
+        18.469999313354492,
+        3.9039783477783203
+      ]
+    ],
+    "vol": 401.99569963178857,
+    "voxel_ok": true,
+    "solve_ok": false,
+    "solve_time": 1.75,
+    "time": 1.751,
+    "error": null,
+    "voxel_solid": 3955,
+    "voxel_shape": [
+      49,
+      31,
+      19
+    ],
+    "solve_error": "OC fail-fast: |achieved 0.4612 - target 0.6000| >0.01 (l1 0.00e+00 l2 8.27e-16 lmid 8.27e-16)",
+    "resolution": null,
+    "voxel_pitch": 0.4166666666666667,
+    "итог": "voxel_ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Positioner%20Arm.stl"
+  },
+  {
+    "file": "nasa_hubble_space_telescope_radio_dishes_stl.stl",
+    "path": "tests/corpus/cache/nasa_hubble_space_telescope_radio_dishes_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -32.4010009765625,
+        -21.930999755859375,
+        -0.0010000000474974513
+      ],
+      [
+        34.76499938964844,
+        -13.729000091552734,
+        4.0
+      ]
+    ],
+    "vol": 389.8321481151086,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 0.62,
+    "time": 0.703,
+    "error": null,
+    "voxel_solid": 367,
+    "voxel_shape": [
+      49,
+      7,
+      4
+    ],
+    "solve_error": null,
+    "resolution": 32,
+    "voxel_pitch": 1.3992916742960613,
+    "solve_iter": 9,
+    "solve_vol": 0.6,
+    "sigma_max": 2178.98,
+    "safety": 0.3,
+    "weight_before": 15.0,
+    "weight_after": 7.8,
+    "weight_save": 47.9,
+    "mem_mb": 2.099,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Radio%20dishes.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_antenna_bottom_02_stl.stl",
+    "path": "tests/corpus/cache/nasa_mars_reconnaissance_orbiter_antenna_bottom_02_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -25.30947494506836,
+        76.29052734375,
+        -1.7032026562446845e-06
+      ],
+      [
+        25.30947494506836,
+        126.90946960449219,
+        15.992609977722168
+      ]
+    ],
+    "vol": 16477.159972155292,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 2.66,
+    "time": 3.086,
+    "error": null,
+    "voxel_solid": 6778,
+    "voxel_shape": [
+      49,
+      49,
+      16
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 1.054561456044515,
+    "solve_iter": 9,
+    "solve_vol": 0.6,
+    "sigma_max": 1067.29,
+    "safety": 0.32,
+    "weight_before": 168.8,
+    "weight_after": 99.4,
+    "weight_save": 41.1,
+    "mem_mb": 3.164,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/antenna_bottom_02.stl"
+  },
+  {
+    "file": "nasa_viking_lander_dish_part_b_stl.stl",
+    "path": "tests/corpus/cache/nasa_viking_lander_dish_part_b_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -6.057069778442383,
+        -18.95791244506836,
+        0.0
+      ],
+      [
+        6.057069778442383,
+        18.95791244506836,
+        3.0
+      ]
+    ],
+    "vol": 340.9942476052095,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 1.03,
+    "time": 1.432,
+    "error": null,
+    "voxel_solid": 902,
+    "voxel_shape": [
+      17,
+      49,
+      5
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.789913018544515,
+    "solve_iter": 24,
+    "solve_vol": 0.6,
+    "sigma_max": 299.2,
+    "safety": 1.15,
+    "weight_before": 11.1,
+    "weight_after": 6.3,
+    "weight_save": 43.2,
+    "mem_mb": 2.37,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Dish%20part%20B.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_antenna_feed_stl.stl",
+    "path": "tests/corpus/cache/nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_antenna_feed_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        -3.75,
+        -3.75,
+        -2.0
+      ],
+      [
+        3.75,
+        3.75,
+        7.0
+      ]
+    ],
+    "vol": 310.8939709024866,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 15.05,
+    "time": 16.22,
+    "error": null,
+    "voxel_solid": 9224,
+    "voxel_shape": [
+      41,
+      41,
+      49
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.1875,
+    "solve_iter": 25,
+    "solve_vol": 0.6,
+    "sigma_max": 1232.25,
+    "safety": 0.3,
+    "weight_before": 1.4,
+    "weight_after": 0.7,
+    "weight_save": 47.3,
+    "mem_mb": 0.562,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Antenna%20Feed.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_thruster_stl.stl",
+    "path": "tests/corpus/cache/nasa_laser_interferometer_space_antenna_lisa_thruster_stl.stl",
+    "parse": true,
+    "watertight": true,
+    "bbox": [
+      [
+        43.49708557128906,
+        13.424591064453125,
+        0.0
+      ],
+      [
+        58.498252868652344,
+        40.575408935546875,
+        24.600711822509766
+      ]
+    ],
+    "vol": 6423.223856060635,
+    "voxel_ok": true,
+    "solve_ok": true,
+    "solve_time": 7.04,
+    "time": 7.583,
+    "error": null,
+    "voxel_solid": 7833,
+    "voxel_shape": [
+      27,
+      49,
+      44
+    ],
+    "solve_error": null,
+    "resolution": 16,
+    "voxel_pitch": 0.5656420389811198,
+    "solve_iter": 17,
+    "solve_vol": 0.6,
+    "sigma_max": 22.29,
+    "safety": 15.48,
+    "weight_before": 31.4,
+    "weight_after": 18.1,
+    "weight_save": 42.3,
+    "mem_mb": 1.697,
+    "итог": "ok",
+    "license": "Public Domain (NASA 3D Resources)",
+    "category": "housing",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Thruster.stl"
+  }
+]

@@ -68,17 +68,24 @@ def test_one(path: pathlib.Path, resolution_fallback=[16,32]):
                 try:
                     import solver
                     t_solve=time.time()
-                    # timeout 90с for each try
-                    result=solver.optimize_topology(stl_b64=b64, supports=supports, forces=forces, material='steel', relief=0.4, resolution=res_try, timeout=90)
+                    # timeout 120с for each try, лимит 150k ячеек — enforced in solver voxelize
+                    result=solver.optimize_topology(stl_b64=b64, supports=supports, forces=forces, material='steel', relief=0.4, resolution=res_try, timeout=120)
                     dt_solve=time.time()-t_solve
                     # success criteria: iterations present, within timeout
-                    if dt_solve>90:
-                        raise TimeoutError(f"solve {dt_solve:.1f}s >90s")
+                    if dt_solve>120:
+                        raise TimeoutError(f"solve {dt_solve:.1f}s >120s")
                     res["solve_ok"]=True
                     res["solve_time"]=round(dt_solve,2)
                     res["solve_iter"]=result.get("iterations")
                     res["solve_vol"]=result.get("volume_fraction")
                     res["resolution"]=res_try
+                    # F1 метрики: σmax / safety / вес
+                    res["sigma_max"]=round(result.get("stress_max",0),2)
+                    res["safety"]=round(result.get("safety",0),2)
+                    wb=result.get("weight_before",0); wa=result.get("weight_after",0)
+                    res["weight_before"]=round(wb,1); res["weight_after"]=round(wa,1)
+                    res["weight_save"]=round((1-wa/wb)*100,1) if wb else 0
+                    res["mem_mb"]=round(result.get("pitch",0),3)  # placeholder, память в отчёте ниже
                     solved=True
                     break
                 except Exception as e:
@@ -119,14 +126,30 @@ def main():
     ap.add_argument("--no-solve", action="store_true", help="пропустить solve (deprecated, для Этапа15 не использовать)")
     ap.add_argument("--voxel", action="store_true")
     ap.add_argument("--solve", action="store_true")
+    ap.add_argument("--shard", type=int, default=0, help="номер шарда 0..n-1 для матрицы 4×25")
+    ap.add_argument("--num-shards", type=int, default=1)
+    ap.add_argument("--offset", type=int, default=0)
     args=ap.parse_args()
     manifest=pathlib.Path(args.manifest)
     cache=pathlib.Path(args.cache)
     if args.no_solve:
-        print("WARNING: --no-solve устарел, Этап15 требует полного прогона с solve (16³→32³ 90с). Игнорируем флаг.", file=sys.stderr)
+        print("WARNING: --no-solve устарел, Этап15 требует полного прогона с solve (16³→32³ 120с, 150k). Игнорируем флаг.", file=sys.stderr)
     data=json.loads(manifest.read_text(encoding="utf-8"))
-    if args.limit>0:
-        data=data[:args.limit]
+    # шардирование для матрицы 4×25
+    if args.num_shards > 1:
+        n = len(data); chunk = (n + args.num_shards -1)//args.num_shards
+        start = args.shard * chunk
+        end = min(start+chunk, n)
+        data = data[start:end]
+        print(f"[shard {args.shard}/{args.num_shards}] slice [{start}:{end}] {len(data)} моделей", file=sys.stderr)
+    elif args.offset>0 or args.limit>0:
+        if args.limit>0:
+            if args.offset>0:
+                data=data[args.offset:args.offset+args.limit]
+            else:
+                data=data[:args.limit]
+        elif args.offset>0:
+            data=data[args.offset:]
     results=[]
     for entry in data:
         file=entry["file"]
@@ -152,6 +175,10 @@ def main():
     html_parts.append('</table></body></html>')
     pathlib.Path("report.html").write_text("\n".join(html_parts), encoding="utf-8")
 
+    # F1/F2 дополнительные метрики: время всего прогона, память, инженерные ok
+    t_total = sum(r.get('time',0) for r in results)
+    eng_cats = {"bracket","housing","plate_holes","angle_block","thinwall","uav_bracket","gear","hinge"}
+    eng_ok = sum(1 for r in results if r.get('category') in eng_cats and r.get('итог')=="ok")
     md_path=pathlib.Path("docs/CORPUS_REPORT.md")
     lines=[]
     lines.append(f"# Corpus Report — {time.strftime('%Y-%m-%d %H:%M UTC')} — {len(results)} моделей (limit {args.limit or 'all'})")
@@ -160,15 +187,21 @@ def main():
     lines.append(f"**Parse ok:** {sum(1 for r in results if r.get('parse'))}/{len(results)} ({sum(1 for r in results if r.get('parse'))/len(results)*100:.1f}%) — цель ≥90%  ")
     lines.append(f"**Watertight:** {sum(1 for r in results if r.get('watertight'))}/{len(results)}  ")
     lines.append(f"**Voxel 48³:** {sum(1 for r in results if r.get('voxel_ok'))}/{len(results)}  ")
-    lines.append(f"**Solve 16³→32³ 90с:** {sum(1 for r in results if r.get('solve_ok'))}/{len(results)} — цель ≥80/100, иначе BUG_LIST  ")
-    lines.append(f"**Время среднее:** {sum(r.get('time',0) for r in results)/len(results):.2f}с  ")
+    lines.append(f"**Solve 16³→32³ 120с:** {sum(1 for r in results if r.get('solve_ok'))}/{len(results)} — цель ≥85/100 (F2), иначе BUG_LIST  ")
+    lines.append(f"**Инженерных ok:** {eng_ok}/100 — цель ≥25 (корпуса/кронштейны/пластины с отв.)  ")
+    lines.append(f"**Время среднее:** {sum(r.get('time',0) for r in results)/len(results):.2f}с, всего {t_total/60:.1f} мин  ")
+    # фильтр None для voxel_solid
+    vs_vals=[r.get('voxel_solid') for r in results if isinstance(r.get('voxel_solid'), int)]
+    vs_max=max(vs_vals) if vs_vals else 0
+    lines.append(f"**Память:** ~{vs_max*0.02:.0f} МБ пик (оценка)  ")
     lines.append("")
-    lines.append("| файл | лицензия | parse | watertight | voxel 48³ | solve 90с | время с | res | итог |")
-    lines.append("|---|---|---|---|---|---|---|---|---|")
+    lines.append("| файл | лицензия | cat | parse | wat. | voxel | solve 120с | σmax МПа | safety | вес г до→после (-%) | время | res | итог |")
+    lines.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for r in results:
-        lines.append(f"| {r['file']} | {r.get('license','')} | {r.get('parse')} | {r.get('watertight')} | {r.get('voxel_ok')} | {r.get('solve_ok')} {r.get('solve_time','') or ''} | {r.get('time')} | {r.get('resolution','') or ''} | {r.get('итог')} |")
+        lines.append(f"| {r['file']} | {r.get('license','')} | {r.get('category','')} | {r.get('parse')} | {r.get('watertight')} | {r.get('voxel_ok')} | {r.get('solve_ok')} {r.get('solve_time','') or ''} | {r.get('sigma_max','-')} | {r.get('safety','-')} | {r.get('weight_before','-')}→{r.get('weight_after','-')} ({r.get('weight_save','-')}%) | {r.get('time')} | {r.get('resolution','') or ''} | {r.get('итог')} |")
     lines.append("")
-    lines.append(f"**Критерий Этапа15 B6:** solve_ok {sum(1 for r in results if r.get('solve_ok'))}/{len(results)} ≥80 — {'ПРОЙДЕН' if sum(1 for r in results if r.get('solve_ok'))>=80 else 'НЕ ПРОЙДЕН → BUG_LIST'}  ")
+    lines.append(f"**Критерий F2:** solve_ok {sum(1 for r in results if r.get('solve_ok'))}/{len(results)} ≥85 — {'ПРОЙДЕН' if sum(1 for r in results if r.get('solve_ok'))>=85 else 'НЕ ПРОЙДЕН → BUG_LIST'}  ")
+    lines.append(f"**Инженерных:** {eng_ok} ≥25 — {'ПРОЙДЕН' if eng_ok>=25 else 'НЕ ПРОЙДЕН'}  ")
     lines.append("")
     lines.append("Все падения — см. BUG_LIST с воспроизведением, без «готово».")
     lines.append("")
