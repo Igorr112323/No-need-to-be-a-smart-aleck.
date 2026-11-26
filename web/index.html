@@ -13,6 +13,45 @@
     }
   }
   </script>
+  <script>
+  // Независимый от app.js лоадер — прячем даже если модуль упал (Arena preview без pywebview)
+  (function(){
+    var tries=0;
+    function hide(){
+      var el=document.getElementById('appLoader');
+      if(el && !el.classList.contains('hidden')){
+        el.classList.add('hidden');
+        setTimeout(function(){ el.style.display='none'; }, 520);
+      }
+    }
+    // фейк-прогресс пока app.js не взял управление
+    var p=0, bar, sub;
+    var iv=setInterval(function(){
+      bar=document.getElementById('loaderFill');
+      sub=document.getElementById('loaderSub');
+      if(!bar) return;
+      p=Math.min(88, p + (Math.random()*5+1.5));
+      bar.style.width=p+'%'; bar.style.animation='none';
+      if(sub){
+        if(p<30) sub.textContent='Загрузка интерфейса…';
+        else if(p<65) sub.textContent='Подготовка сцены…';
+        else sub.textContent='Инициализация…';
+      }
+      if(document.readyState==='complete' || p>=88) clearInterval(iv);
+    }, 160);
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(hide, 700); clearInterval(iv); });
+    window.addEventListener('load', function(){ setTimeout(hide, 400); clearInterval(iv); });
+    window.addEventListener('error', function(){ setTimeout(hide, 600); });
+    // жёсткие фолбэки — в превью Arena модуль может не загрузиться вообще
+    setTimeout(function(){ clearInterval(iv); hide(); }, 2200);
+    setTimeout(function(){ hide(); if(document.getElementById('appLoader')) document.getElementById('appLoader').style.display='none'; }, 3800);
+    // клик по лоадеру — закрыть вручную (если завис)
+    document.addEventListener('click', function(e){
+      var el=document.getElementById('appLoader');
+      if(el && !el.classList.contains('hidden') && el.contains(e.target)) hide();
+    });
+  })();
+  </script>
 </head>
 <body>
   <!-- Экран загрузки -->
