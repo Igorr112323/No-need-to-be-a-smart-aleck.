@@ -73,28 +73,20 @@ jobs:
         run: |
           echo "=== PyInstaller build start ==="
           ls -lh assets/openlight.ico VERSION LICENSE || echo "missing assets"
-          echo "=== pip list ==="; pip list | grep -i pyinstaller
-          echo "=== python version ==="; python --version
-          # simple build without windowed/icon first to test
-          echo "=== Try simple pyinstaller without windowed/icon ==="
-          pyinstaller --onefile --name OpenLightSimple --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." main.py --log-level INFO 2>&1 | tee ../pyinstaller_simple.log | tail -n 50; echo "SIMPLE_EXIT=${PIPESTATUS[0]}" >> ../pyinstaller_simple.log
-          if [ -f dist/OpenLightSimple.exe ]; then
-            echo "Simple build OK — $(ls -lh dist/OpenLightSimple.exe)"
-            # now try full windowed
-            echo "=== Now full windowed build ==="
-            pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --hidden-import=webview --log-level INFO main.py 2>&1 | tee ../pyinstaller.log | tail -n 100
-            ls -lh dist/OpenLight.exe && echo "FULL BUILD OK" || echo "FULL BUILD FAILED"
-          else
-            echo "Simple build failed — show log"
-            cat ../pyinstaller_simple.log | tail -n 200
-            echo "=== Try with hidden imports ==="
-            pyinstaller --onefile --name OpenLightSimple2 --hidden-import=trimesh --hidden-import=scipy --hidden-import=numpy --add-data "web;web" main.py 2>&1 | tee ../pyinstaller2.log | tail -n 100
-            ls -lh dist/OpenLightSimple2.exe || true
-            cat ../pyinstaller2.log | tail -n 100
-            exit 1
-          fi
-          cp ../pyinstaller.log ./pyinstaller.log || cp ../pyinstaller_simple.log ./pyinstaller.log || true
-          test -f dist/OpenLight.exe && echo "BUILD OK" || (echo "BUILD FAILED — no exe"; exit 1)
+          pip list | grep -i pyinstaller
+          python --version
+          echo "=== Try minimal pyinstaller ==="
+          pyinstaller --onefile --name OpenLightMinimal --log-level INFO main.py > ../pyinstaller_min.log 2>&1; echo "MIN_EXIT:$?" >> ../pyinstaller_min.log
+          cat ../pyinstaller_min.log | tail -n 100
+          ls -lh dist/OpenLightMinimal.exe || echo "minimal not found"
+          echo "=== Try with web/assets ==="
+          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "FULL_EXIT:$?" >> ../pyinstaller.log
+          cat ../pyinstaller.log | tail -n 200
+          ls -lh dist/OpenLight.exe || echo "full not found"
+          cp ../pyinstaller.log ./pyinstaller.log 2>/dev/null || cp ../pyinstaller_min.log ./pyinstaller.log || true
+          cp ../pyinstaller_min.log ./pyinstaller_min.log 2>/dev/null || true
+          ls -lh dist/*.exe || true
+          test -f dist/OpenLight.exe && echo "BUILD OK" || (echo "BUILD FAILED — checking minimal"; ls -lh dist/; cat ../pyinstaller.log | grep -i "error" | head -n 20; exit 1)
 
       - name: Size
         working-directory: repo
@@ -109,8 +101,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pyinstaller-log
-          path: repo/pyinstaller.log
+          path: |
+            repo/pyinstaller.log
+            repo/pyinstaller_min.log
+            ../pyinstaller.log
+            ../pyinstaller_min.log
           retention-days: 7
+          include-hidden-files: true
 
       - uses: actions/upload-artifact@v4
         with:
