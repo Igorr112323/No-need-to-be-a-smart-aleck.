@@ -1,6 +1,6 @@
 """
 make_version.py — генерирует VERSION из git тега/коммита для окна «О программе».
-Версия берётся из: GITHUB_REF (ci), git describe --tags, или VERSION файла, fallback 0.9.2-test.
+Версия берётся из: GITHUB_REF (ci), git describe --tags, или VERSION файла, fallback 1.0.0.
 Пишет в VERSION (корень) и build/VERSION для pyinstaller --add-data.
 """
 import pathlib, subprocess, os, sys
@@ -25,7 +25,7 @@ def get_version():
             txt = p.read_text().strip()
             if txt:
                 return txt
-    return "0.9.3-test"
+    return "1.0.0"
 
 def main():
     ver = get_version()

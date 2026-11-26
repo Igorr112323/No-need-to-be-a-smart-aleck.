@@ -20,6 +20,10 @@ jobs:
   corpus:
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    strategy:
+      matrix:
+        shard: [0, 1, 2, 3]
+      fail-fast: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -33,17 +37,44 @@ jobs:
           key: corpus-${{ hashFiles('tests/corpus/manifest.json') }}
           restore-keys: corpus-
       - name: Install deps
-        run: pip install -r requirements.txt && pip install pytest
+        run: pip install -r requirements.txt && pip install pytest mapbox-earcut shapely
       - name: Fetch corpus
-        run: python tools/fetch_corpus.py --limit ${{ github.event.inputs.limit || '100' }}
-      - name: Make stress report (100, 16³→32³ 90с, без --no-solve)
-        run: python tools/make_stress_report.py --limit ${{ github.event.inputs.limit || '100' }}
-      - name: Upload report
+        run: python tools/fetch_corpus.py --limit 100
+      - name: Make stress report shard ${{ matrix.shard }} (25 моделей, 16³→32³ 120с, 150k)
+        run: python tools/make_stress_report.py --shard ${{ matrix.shard }} --num-shards 4
+      - name: Rename shard artifact
+        run: mv report.json report_shard_${{ matrix.shard }}.json && mv report.html report_shard_${{ matrix.shard }}.html || true
+      - name: Upload shard
+        uses: actions/upload-artifact@v4
+        with:
+          name: corpus-shard-${{ matrix.shard }}
+          path: |
+            report_shard_*.json
+            report_shard_*.html
+          retention-days: 14
+
+  merge:
+    needs: corpus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: corpus-shard-*
+          merge-multiple: true
+          path: shards
+      - name: Merge reports
+        run: python tools/merge_reports.py
+      - name: Upload merged report
         uses: actions/upload-artifact@v4
         with:
           name: corpus-report
           path: |
             report.json
             report.html
-            tests/corpus/cache/
+            docs/CORPUS_REPORT.md
           retention-days: 14

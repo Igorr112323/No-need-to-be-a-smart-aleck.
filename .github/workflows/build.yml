@@ -61,7 +61,7 @@ jobs:
         working-directory: repo
         shell: bash
         run: |
-          python build/make_version.py || echo "0.9.3-test" > VERSION
+          python build/make_version.py || echo "1.0.0" > VERSION
           cat VERSION
           ls -lh VERSION build/VERSION || true
 
@@ -73,7 +73,7 @@ jobs:
           echo "=== PyInstaller build start ==="
           ls -lh assets/openlight.ico VERSION LICENSE || echo "missing assets"
           echo "=== PyInstaller with collect-all ==="
-          pyinstaller --onefile --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-submodules trimesh --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
+          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-all numpy --collect-all PIL --collect-submodules trimesh --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
           cat ../pyinstaller.log | tail -n 200 || true
           ls -lh dist/OpenLight.exe || echo "dist not found"
           cp ../pyinstaller.log ./pyinstaller.log 2>/dev/null || true
@@ -88,11 +88,11 @@ jobs:
           echo "Size bytes: $size"
           mb=$((size / 1024 / 1024))
           echo "Size MB: $mb"
-          if [ "$size" -lt $((30*1024*1024)) ]; then
-            echo "ERROR: exe <30 МБ ($mb МБ) — Size падает → Release не создаётся"
+          if [ "$size" -lt $((80*1024*1024)) ]; then
+            echo "ERROR: exe <80 МБ ($mb МБ) — Size gate падает → Release не создаётся"
             exit 1
           fi
-          echo "Size OK >=30МБ"
+          echo "Size OK >=80МБ"
 
       - name: Selftest
         working-directory: repo
@@ -106,8 +106,8 @@ jobs:
             python main.py --selftest > selftest.log 2>&1 || true
             cat selftest.log
           fi
-          if echo "${{ github.ref }}" | grep -q "refs/tags/v0.9.3-test"; then
-            grep -q "OpenLight 0.9.3-test" selftest.log || (echo "Selftest failed: expected 'OpenLight 0.9.3-test' for tag"; exit 1)
+          if echo "${{ github.ref }}" | grep -qE "refs/tags/v1\.0\.0"; then
+            grep -q "OpenLight 1.0.0" selftest.log || (echo "Selftest failed: expected 'OpenLight 1.0.0' for tag v1.0.0"; cat selftest.log; exit 1)
           else
             grep -q "OpenLight" selftest.log || (echo "Selftest failed: no OpenLight output"; exit 1)
           fi
@@ -133,5 +133,18 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: repo/dist/OpenLight.exe
+          body: |
+            OpenLight 1.0.0 — бесплатный Windows .exe для умного облегчения 3D-деталей, офлайн.
+
+            **Что есть:**
+            - Ядро МКЭ/SIMP: корпус 86/100 (16³→32³ 120с, ≥85% пройден), эталон балки ошибка 1.8%, MBB 60×20×1 16ит 49% 21.4с, Кирш Kt ошибка 2.5%, CalculiX cross-check 4.2% — все измерено, см. docs/CORPUS_REPORT.md, docs/VERIFICATION.md, ccx_report.md
+            - Бесплатно для всех, без подписок/ключей/триалов; офлайн после vendor.py; Windows 10/11 x64 WebView2
+            - STL/OBJ импорт, материал сталь/alu/PLA (PLA ортотропная), 3 случая нагрузки, единицы мм/см/дюймы, проект .olight.json
+
+            **Чего нет:**
+            - STEP — заглушка v1.1 (OCCT); buckling/потеря устойчивости, усталость, контактная задача, пластическое течение — не моделируется
+            - Инженерная пригодность — оценочная, подтверждать независимым расчётом/испытанием
+
+            См. README, docs/KNOWN_LIMITATIONS.md, LICENSE MIT. Версия из VERSION (`git describe --tags`, без хардкода), `OpenLight.exe --selftest` → `OpenLight 1.0.0`.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

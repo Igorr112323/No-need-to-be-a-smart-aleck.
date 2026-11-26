@@ -38,15 +38,15 @@ echo.
 echo [4/5] Генерация VERSION...
 python build/make_version.py
 if errorlevel 1 (
-  echo [Предупреждение] make_version.py не удался — используем fallback 0.9.2-test
-  echo 0.9.2-test> VERSION
+  echo [Предупреждение] make_version.py не удался — используем fallback 1.0.0
+  echo 1.0.0> VERSION
 )
 
 REM 4. Сборка
 echo.
 echo [5/5] Сборка PyInstaller...
 REM --add-data "web;web" — для Windows (на Linux было бы "web:web"), добавляем VERSION и LICENSE
-pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." main.py
+pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-all numpy --collect-all PIL --collect-submodules trimesh --hidden-import=webview main.py
 if errorlevel 1 (
   echo [Ошибка] PyInstaller не удался
   pause

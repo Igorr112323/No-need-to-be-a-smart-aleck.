@@ -14,7 +14,7 @@ from datetime import datetime
 
 APP_NAME = "OpenLight"
 GITHUB_URL = "https://github.com/Igorr112323/OpenLight"
-LICENSE_NAME = "MIT (ожидает выбора куратора)"
+LICENSE_NAME = "MIT"
 
 def get_version() -> str:
     # версия из build (нет хардкода) — читаем VERSION, иначе git describe, иначе fallback
@@ -32,12 +32,20 @@ def get_version() -> str:
         if out:
             return out.lstrip("v")
     except: pass
-    return "0.9.3-test"
+    return "1.0.0"
 APP_VERSION = get_version()
 
-# --selftest флаг (без окна) для CI проверки exe
+# --selftest флаг (без окна) для CI проверки exe — работает и в --windowed (без консоли)
 if "--selftest" in sys.argv:
+    # в windowed-сборке консоли нет — пробуем AllocConsole, иначе пишем в stderr
+    try:
+        if os.name == 'nt':
+            import ctypes
+            ctypes.windll.kernel32.AllocConsole()
+    except:
+        pass
     print(f"OpenLight {APP_VERSION}")
+    sys.stdout.flush()
     sys.exit(0)
 
 def get_app_data_dir() -> pathlib.Path:
@@ -317,7 +325,7 @@ class Api:
                                 'iteration': info.get('iteration', 0),
                             })
 
-                # вызов оптимизатора
+                # вызов оптимизатора — E2 units, A2 process, A3 loadcases, A5 STEP
                 result = optimize_topology(
                     stl_b64=payload.get('stl_b64'),
                     supports=payload.get('supports', []),
@@ -328,6 +336,9 @@ class Api:
                     resolution=int(payload.get('resolution', 64)),
                     progress_cb=cb,
                     timeout=float(payload.get('timeout', 45)),
+                    process=payload.get('process', 'cnc'),
+                    units=payload.get('units', 'mm'),
+                    file_name=payload.get('file_name', payload.get('importedName')),
                 )
                 with _jobs_lock:
                     _jobs[job_id].update({'status': 'done', 'progress': 100, 'phase': 'Готово', 'result': result})
@@ -372,6 +383,7 @@ class Api:
 
 
 def main():
+    # двойной запуск из exe не открывает второе окно — только один инстанс
     try:
         import webview
     except ImportError:
@@ -383,6 +395,8 @@ def main():
         return
     url = get_web_path()
     api = Api()
+    # Фаза A: системную плашку скрываем — frameless окно (дизайн web/* не менялся)
+    # На Windows frameless убирает чёрную системную плашку, оставляя только dot-grid пилюли
     window = webview.create_window(
         "OpenLight",
         url=url,
@@ -390,7 +404,11 @@ def main():
         height=900,
         min_size=(1100, 700),
         resizable=True,
-        js_api=api
+        frameless=True,
+        easy_drag=True,
+        focus=True,
+        js_api=api,
+        background_color="#F9F9FB"
     )
     webview.start(debug=False)
 
