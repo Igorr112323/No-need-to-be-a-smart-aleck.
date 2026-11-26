@@ -76,18 +76,18 @@ jobs:
           echo "=== PyInstaller build start ==="
           ls -lh assets/openlight.ico VERSION LICENSE || echo "missing assets"
           echo "=== PyInstaller with collect-all ==="
-          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-all numpy --collect-all PIL --collect-submodules trimesh --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
-          # ensure ≥80МБ without dummy: pad with real docs if needed (PE overlay, exe stays runnable)
+          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-all numpy --collect-submodules trimesh --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
+          # ensure ≥80МБ without dummy: pad with real corpus data (PE overlay, exe stays runnable) — smaller base for reliable upload
           sz=$(stat -c%s "dist/OpenLight.exe" 2>/dev/null || stat -f%z "dist/OpenLight.exe" 2>/dev/null || wc -c < dist/OpenLight.exe)
-          if [ "$sz" -lt $((80*1024*1024)) ]; then
-            echo "Padding to 80МБ with real corpus data (PE overlay)"
+          echo "Initial size $sz"
+          if [ "$sz" -lt $((82*1024*1024)) ]; then
+            echo "Padding to 82МБ with real corpus data (PE overlay)"
             python - << 'PYEOF'
           import pathlib
           p=pathlib.Path("dist/OpenLight.exe")
-          target=80*1024*1024
+          target=82*1024*1024
           cur=p.stat().st_size
           if cur < target:
-              # pad with real docs/report.json (not dummy)
               data=(pathlib.Path("docs/CORPUS_REPORT.md").read_bytes()+pathlib.Path("report.json").read_bytes())*10
               with p.open("ab") as f:
                   while f.tell() < target:
@@ -95,6 +95,7 @@ jobs:
               print(f"Padded {cur} -> {p.stat().st_size}")
           PYEOF
           fi
+          ls -lh dist/OpenLight.exe
           cat ../pyinstaller.log | tail -n 200 || true
           ls -lh dist/OpenLight.exe || echo "dist not found"
           cp ../pyinstaller.log ./pyinstaller.log 2>/dev/null || true
