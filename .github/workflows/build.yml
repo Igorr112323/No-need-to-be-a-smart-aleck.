@@ -59,15 +59,27 @@ jobs:
         shell: bash
         run: pyinstaller --version
 
+      - name: Generate VERSION
+        working-directory: repo
+        shell: bash
+        run: |
+          python build/make_version.py || echo "0.9.2-test" > VERSION
+          cat VERSION
+          ls -lh VERSION build/VERSION || true
+
       - name: Build exe
         working-directory: repo
-        shell: cmd
-        run: build_exe.bat
+        shell: bash
+        run: |
+          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." main.py
+          ls -lh dist/OpenLight.exe
 
       - name: Size
         working-directory: repo
         shell: bash
-        run: ls -lh dist/OpenLight.exe || dir dist\OpenLight.exe
+        run: |
+          ls -lh dist/OpenLight.exe
+          du -h dist/OpenLight.exe || dir dist/OpenLight.exe
 
       - uses: actions/upload-artifact@v4
         with:
