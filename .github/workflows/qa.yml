@@ -88,8 +88,11 @@ jobs:
       - name: Start web server
         run: |
           nohup python -m http.server 8080 --directory web > /tmp/http.log 2>&1 &
-          sleep 1
+          sleep 2
           curl -sI http://127.0.0.1:8080/index.html | head
+          curl -s http://127.0.0.1:8080/index.html | grep -c "btnBack" && echo "html ok"
+          python3 -c "from playwright.sync_api import sync_playwright; print('playwright import ok')"
+          pytest tests/e2e/test_e2e.py --collect-only 2>&1 | head -n 30
       - name: Run e2e tests
         env:
           E2E_URL: http://127.0.0.1:8080/index.html
