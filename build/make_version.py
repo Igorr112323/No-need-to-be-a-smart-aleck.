@@ -25,7 +25,7 @@ def get_version():
             txt = p.read_text().strip()
             if txt:
                 return txt
-    return "0.9.2-test"
+    return "0.9.3-test"
 
 def main():
     ver = get_version()
