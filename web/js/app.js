@@ -1,7 +1,9 @@
-// OpenLight — Этап 4: оптимизация (демо-режим), карта напряжений, облегчённая геометрия, шторка, экспорт
-// Комментарии на русском. Всё офлайн, детерминированно, без МКЭ.
+// OpenLight — Этап 5: Python js_api — импорт STL, проекты, автосейв, последние файлы
+// Комментарии на русском. Всё офлайн, детерминированная демо-оптимизация.
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { STLExporter } from 'three/addons/exporters/STLExporter.js';
 import { state, DENSITIES, MATERIAL_LABELS, BRACKET_VOLUME_CM3, computeWeightGram, computeWeightAfter, computeSafety, pushHistory, popHistory, genId, setMaterial, setProcess } from './state.js';
 
@@ -22,19 +24,23 @@ function showWarning(msg) {
 }
 const phaseEl = document.getElementById('phaseToast');
 const phaseText = document.getElementById('phaseText');
-function showPhase(msg) {
-  phaseText.textContent = msg;
-  phaseEl.classList.add('show');
-}
+function showPhase(msg) { phaseText.textContent = msg; phaseEl.classList.add('show'); }
 function hidePhase() { phaseEl.classList.remove('show'); }
 
 // ——— метрики ———
-function formatRu(num) {
-  // одна цифра после запятой, запятая как разделитель
-  return num.toFixed(1).replace('.', ',');
+let importedVolumeCm3 = null; // для импортированной модели
+function formatRu(num) { return num.toFixed(1).replace('.', ','); }
+function getCurrentVolumeCm3() {
+  if (importedGroup && importedGroup.visible && importedVolumeCm3) return importedVolumeCm3;
+  return BRACKET_VOLUME_CM3;
+}
+function getCurrentWeightBefore() {
+  const vol = getCurrentVolumeCm3();
+  const dens = DENSITIES[state.material];
+  return Math.round(vol * dens);
 }
 function updateMetrics() {
-  const before = computeWeightGram();
+  const before = getCurrentWeightBefore();
   state.weightBefore = before;
   const beforeEl = document.getElementById('weightBefore');
   if (beforeEl) beforeEl.textContent = before + ' г';
@@ -45,7 +51,7 @@ function updateMetrics() {
     return;
   }
   const relief = state.currentRelief;
-  const after = computeWeightAfter(before, relief);
+  const after = Math.round(before * (1 - relief));
   state.weightAfter = after;
   state.economy = relief;
   const safety = computeSafety(relief);
@@ -108,11 +114,9 @@ scene.add(floor);
 
 // ——— материалы ———
 const bracketMat = new THREE.MeshStandardMaterial({ color: 0xC9CDD3, metalness: 0.85, roughness: 0.35 });
-const origMat = bracketMat.clone(); // для возврата
-// для карты напряжений — будет vertexColors
 const stressMatPrototype = new THREE.MeshStandardMaterial({ vertexColors: true, metalness: 0.1, roughness: 0.75 });
 
-// ——— геометрия пластин ———
+// ——— геометрия кронштейна (встроенный) ———
 function roundedRectShape(w, h, r) {
   const shape = new THREE.Shape();
   const x = -w / 2, y = -h / 2;
@@ -130,24 +134,13 @@ function roundedRectShape(w, h, r) {
 function createPlate({ w, h, thickness, radius, holes, organicHoles }) {
   const shape = roundedRectShape(w, h, radius);
   if (holes) for (const ho of holes) { const hole = new THREE.Path(); hole.absarc(ho.x, ho.y, ho.r, 0, Math.PI * 2, false); shape.holes.push(hole); }
-  if (organicHoles) {
-    for (const o of organicHoles) {
-      const hole = new THREE.Path();
-      // эллипс с поворотом
-      // используем ellipse(a,b,rx,ry,rot)
-      hole.ellipse(o.x, o.y, o.rx, o.ry, o.rot || 0, 0, Math.PI * 2, false);
-      shape.holes.push(hole);
-    }
-  }
+  if (organicHoles) for (const o of organicHoles) { const hole = new THREE.Path(); hole.ellipse(o.x, o.y, o.rx, o.ry, o.rot || 0, 0, Math.PI * 2, false); shape.holes.push(hole); }
   const geo = new THREE.ExtrudeGeometry(shape, { depth: thickness, bevelEnabled: true, bevelThickness: 1.1, bevelSize: 1.1, bevelSegments: 3, curveSegments: 16 });
   geo.translate(0, 0, -thickness / 2);
   geo.computeVertexNormals();
   return geo;
 }
-
-// органические отверстия — детерминированно по relief
 function organicForRelief(relief, plate) {
-  // plate: 'vert' | 'horiz'
   if (plate === 'vert') {
     if (relief === 0.2) return [{ x: 8, y: 5, rx: 5, ry: 3, rot: 0.3 }, { x: -8, y: 12, rx: 3.5, ry: 3.5, rot: 0 }, { x: -7, y: -10, rx: 4, ry: 3, rot: -0.2 }];
     if (relief === 0.4) return [{ x: 9, y: 8, rx: 6, ry: 3.8, rot: 0.4 }, { x: -9, y: 10, rx: 4.2, ry: 4, rot: -0.1 }, { x: -8, y: -6, rx: 5, ry: 3.2, rot: 0.2 }, { x: 7, y: -12, rx: 3.8, ry: 3.8, rot: 0 }];
@@ -159,40 +152,30 @@ function organicForRelief(relief, plate) {
   }
   return [];
 }
-function thicknessForRelief(relief) {
-  if (relief === 0.2) return 9;
-  if (relief === 0.4) return 8;
-  if (relief === 0.6) return 7;
-  return 10;
-}
-
-// исходные пластины
+function thicknessForRelief(relief) { if (relief === 0.2) return 9; if (relief === 0.4) return 8; if (relief === 0.6) return 7; return 10; }
 const vertPlate = (() => {
   const geo = createPlate({ w: 56, h: 78, thickness: 10, radius: 7, holes: [{ x: 0, y: 26, r: 4.6 }, { x: 0, y: -26, r: 4.6 }] });
-  const m = new THREE.Mesh(geo, bracketMat);
-  m.castShadow = true; m.receiveShadow = true; m.position.set(0, 29, -5);
-  return m;
+  const m = new THREE.Mesh(geo, bracketMat); m.castShadow = true; m.receiveShadow = true; m.position.set(0, 29, -5); return m;
 })();
 const horizPlate = (() => {
   const geo = createPlate({ w: 56, h: 70, thickness: 10, radius: 7, holes: [{ x: 0, y: 22, r: 5.4 }] });
-  const m = new THREE.Mesh(geo, bracketMat);
-  m.castShadow = true; m.receiveShadow = true; m.rotation.x = -Math.PI / 2; m.position.set(0, -5, 30);
-  return m;
+  const m = new THREE.Mesh(geo, bracketMat); m.castShadow = true; m.receiveShadow = true; m.rotation.x = -Math.PI / 2; m.position.set(0, -5, 30); return m;
 })();
 const bracket = new THREE.Group();
 bracket.add(vertPlate, horizPlate);
 scene.add(bracket);
 
-// группы маркеров
+let importedGroup = null;
+let importedName = null;
+
 const supportsGroup = new THREE.Group(); supportsGroup.name = 'supports';
 const forcesGroup = new THREE.Group(); forcesGroup.name = 'forces';
 const keepZonesGroup = new THREE.Group(); keepZonesGroup.name = 'keepZones';
 scene.add(supportsGroup, forcesGroup, keepZonesGroup);
 
-// ——— кэш облегчённых версий ———
-const lightCache = {}; // relief -> { group, vertGeo, horizGeo }
+// ——— кэш облегчённых ———
+const lightCache = {};
 let currentLightGroup = null;
-
 function getLightGroup(relief) {
   if (lightCache[relief]) return lightCache[relief];
   const th = thicknessForRelief(relief);
@@ -200,17 +183,10 @@ function getLightGroup(relief) {
   const orgH = organicForRelief(relief, 'horiz');
   const geoV = createPlate({ w: 56, h: 78, thickness: th, radius: 7, holes: [{ x: 0, y: 26, r: 4.6 }, { x: 0, y: -26, r: 4.6 }], organicHoles: orgV });
   const geoH = createPlate({ w: 56, h: 70, thickness: th, radius: 7, holes: [{ x: 0, y: 22, r: 5.4 }], organicHoles: orgH });
-  const mV = new THREE.Mesh(geoV, bracketMat);
-  mV.castShadow = true; mV.receiveShadow = true; mV.position.copy(vertPlate.position);
-  const mH = new THREE.Mesh(geoH, bracketMat);
-  mH.castShadow = true; mH.receiveShadow = true; mH.rotation.x = -Math.PI / 2; mH.position.copy(horizPlate.position);
-  const g = new THREE.Group();
-  g.add(mV, mH);
-  g.visible = false;
-  scene.add(g);
-  // кэшируем также геометрии отдельно для экспорта
+  const mV = new THREE.Mesh(geoV, bracketMat); mV.castShadow = true; mV.receiveShadow = true; mV.position.copy(vertPlate.position);
+  const mH = new THREE.Mesh(geoH, bracketMat); mH.castShadow = true; mH.receiveShadow = true; mH.rotation.x = -Math.PI / 2; mH.position.copy(horizPlate.position);
+  const g = new THREE.Group(); g.add(mV, mH); g.visible = false; scene.add(g);
   lightCache[relief] = { group: g, geoV, geoH, meshes: [mV, mH] };
-  // если уже есть стресс-поле — применим цвета и на лайт
   if (state.stressField) applyStressToGroup(g, state.stressField);
   return lightCache[relief];
 }
@@ -224,21 +200,17 @@ const popRelief = document.getElementById('popoverRelief');
 const forceInput = document.getElementById('forceInput');
 const legendEl = document.getElementById('legend');
 const splitDivider = document.getElementById('splitDivider');
+const restorePrompt = document.getElementById('restorePrompt');
 
 function hideAllPopovers() {
   popForce.classList.remove('show');
   popKeep.classList.remove('show');
   popMaterial.classList.remove('show');
   popSettings.classList.remove('show');
-  // relief не скрываем автоматически при кликах вне — только по Esc или выбору
 }
 function showPopover(el) {
-  // скрыть остальные кроме relief если это не relief
-  if (el !== popRelief) {
-    popForce.classList.remove('show');
-    popKeep.classList.remove('show');
-    popMaterial.classList.remove('show');
-    popSettings.classList.remove('show');
+  if (el !== popRelief && el !== restorePrompt) {
+    popForce.classList.remove('show'); popKeep.classList.remove('show'); popMaterial.classList.remove('show'); popSettings.classList.remove('show');
   }
   el.classList.add('show');
 }
@@ -247,12 +219,10 @@ function positionPopoverAt(el, point3D, offsetY = 22) {
   const x = (p.x * 0.5 + 0.5) * window.innerWidth;
   const y = (-p.y * 0.5 + 0.5) * window.innerHeight;
   const w = el.offsetWidth || 220, h = el.offsetHeight || 100;
-  let left = x - w / 2;
-  let top = y - h - offsetY;
+  let left = x - w / 2; let top = y - h - offsetY;
   left = Math.max(12, Math.min(window.innerWidth - w - 12, left));
   top = Math.max(12, top);
-  el.style.left = left + 'px';
-  el.style.top = top + 'px';
+  el.style.left = left + 'px'; el.style.top = top + 'px';
 }
 function positionPopoverNearElement(el, anchorEl, side = 'top') {
   const r = anchorEl.getBoundingClientRect();
@@ -263,14 +233,12 @@ function positionPopoverNearElement(el, anchorEl, side = 'top') {
   else if (side === 'material') { left = r.left; top = r.top - h - 16; }
   left = Math.max(12, Math.min(window.innerWidth - w - 12, left));
   top = Math.max(12, Math.min(window.innerHeight - h - 12, top));
-  el.style.left = left + 'px';
-  el.style.top = top + 'px';
+  el.style.left = left + 'px'; el.style.top = top + 'px';
 }
 
-// ——— создание маркеров (этап 3) ———
+// ——— маркеры ———
 function createSupportMarker(id, position, normal) {
-  const g = new THREE.Group();
-  g.userData = { kind: 'support', id };
+  const g = new THREE.Group(); g.userData = { kind: 'support', id };
   const capMat = new THREE.MeshStandardMaterial({ color: 0x2B2E45, metalness: 0.15, roughness: 0.65 });
   const capMat2 = new THREE.MeshStandardMaterial({ color: 0xE8EBF0, metalness: 0.05, roughness: 0.5 });
   const baseGeo = new THREE.CylinderGeometry(3.2, 3.6, 0.8, 20);
@@ -321,21 +289,14 @@ function createKeepZoneMarker(id, position, normal, radiusMm) {
 let currentTool = null;
 let pendingForce = null;
 let currentKeepRadius = 12;
-
-let viewMode = 'original'; // original|stress|light|split
+let viewMode = 'original';
 const btnOptimize = document.getElementById('btnOptimize');
 const optBarFill = document.getElementById('optBarFill');
-
 const dockBtns = document.querySelectorAll('.dock-btn[data-tool]');
 function setTool(tool) {
-  if (tool === currentTool) {
-    currentTool = null; dockBtns.forEach(b => b.classList.remove('active')); hideAllPopovers(); canvas.style.cursor = 'default'; return;
-  }
+  if (tool === currentTool) { currentTool = null; dockBtns.forEach(b => b.classList.remove('active')); hideAllPopovers(); canvas.style.cursor = 'default'; return; }
   currentTool = tool;
-  dockBtns.forEach(b => {
-    if (b.dataset.tool === tool) b.classList.add('active');
-    else if (b.dataset.tool !== 'view') b.classList.remove('active');
-  });
+  dockBtns.forEach(b => { if (b.dataset.tool === tool) b.classList.add('active'); else if (b.dataset.tool !== 'view') b.classList.remove('active'); });
   hideAllPopovers();
   if (tool === 'fix') showToast('Кликните по детали — опора. Повторно по маркеру — удалить.');
   if (tool === 'force') showToast('Кликните по грани — стрелка силы. Клик по стрелке — удалить.');
@@ -345,19 +306,19 @@ function setTool(tool) {
 dockBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const tool = btn.dataset.tool;
-    if (tool === 'view') {
-      cycleView();
-      return;
-    }
+    if (tool === 'view') { cycleView(); return; }
     setTool(tool);
   });
 });
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     if (pendingForce) { forcesGroup.remove(pendingForce.previewMesh); pendingForce = null; }
-    setTool(null); hideAllPopovers(); popRelief.classList.remove('show');
+    setTool(null); hideAllPopovers(); popRelief.classList.remove('show'); restorePrompt.classList.remove('show');
     currentTool = null; dockBtns.forEach(b => b.classList.remove('active')); canvas.style.cursor = 'default';
   }
+  // хоткеи проекта
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); handleSaveProject(); }
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'o') { e.preventDefault(); handleOpenProject(); }
 });
 
 // ——— Undo ———
@@ -376,8 +337,7 @@ function handleUndo() {
     if (last.kind === 'keep') { state.keepZones.push(last.snapshot); const m = createKeepZoneMarker(last.snapshot.id, last.snapshot.position, last.snapshot.normal, last.snapshot.radiusMm); keepZonesGroup.add(m); }
     showToast('Восстановлено');
   }
-  updateMetrics();
-  // если уже оптимизировано — подскажем что нужен пересчёт
+  updateMetrics(); scheduleAutosave();
   if (state.optimized) showToast('Условия изменились — перезапустите оптимизацию');
 }
 document.getElementById('btnUndo').addEventListener('click', handleUndo);
@@ -388,43 +348,51 @@ btnMaterial.addEventListener('click', (e) => { e.stopPropagation(); if (popMater
 popMaterial.querySelectorAll('[data-mat]').forEach(chip => {
   chip.addEventListener('click', () => {
     popMaterial.querySelectorAll('[data-mat]').forEach(c => c.classList.remove('active')); chip.classList.add('active');
-    setMaterial(chip.dataset.mat); updateMetrics(); showToast('Материал: ' + MATERIAL_LABELS[chip.dataset.mat]);
+    setMaterial(chip.dataset.mat); updateMetrics(); showToast('Материал: ' + MATERIAL_LABELS[chip.dataset.mat]); scheduleAutosave();
   });
 });
 popMaterial.querySelectorAll('[data-proc]').forEach(chip => {
   chip.addEventListener('click', () => {
     popMaterial.querySelectorAll('[data-proc]').forEach(c => c.classList.remove('active')); chip.classList.add('active');
-    setProcess(chip.dataset.proc); showToast('Процесс: ' + (chip.dataset.proc === 'cnc' ? 'ЧПУ' : '3D-печать'));
+    setProcess(chip.dataset.proc); showToast('Процесс: ' + (chip.dataset.proc === 'cnc' ? 'ЧПУ' : '3D-печать')); scheduleAutosave();
   });
 });
 const btnMore = document.getElementById('btnMore');
-btnMore.addEventListener('click', (e) => { e.stopPropagation(); if (popSettings.classList.contains('show')) popSettings.classList.remove('show'); else { positionPopoverNearElement(popSettings, btnMore, 'bottom'); showPopover(popSettings); } });
+btnMore.addEventListener('click', (e) => { e.stopPropagation(); if (popSettings.classList.contains('show')) popSettings.classList.remove('show'); else { positionPopoverNearElement(popSettings, btnMore, 'bottom'); refreshRecent(); showPopover(popSettings); } });
 document.getElementById('btnBack').addEventListener('click', () => showToast('Проекты — скоро'));
+// ——— экспорт STL ———
 document.getElementById('btnExport').addEventListener('click', () => {
   if (!state.optimized) { showToast('Сначала оптимизируйте — демо-режим'); return; }
-  const exporter = new STLExporter();
-  const toExport = getLightGroup(state.currentRelief).group;
-  const result = exporter.parse(toExport, { binary: false });
-  const blob = new Blob([result], { type: 'model/stl' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = 'optimized.stl'; a.click();
-  URL.revokeObjectURL(url);
-  showToast('Сохранено: optimized.stl');
-  console.log('STL exported', result.length);
-});
-document.getElementById('btnExport').addEventListener('contextmenu', (e) => {
-  // правый клик — отчёт
-  e.preventDefault(); showToast('Отчёт будет в Этапе 6');
-});
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.popover') && !e.target.closest('#btnMaterial') && !e.target.closest('#btnMore') && !e.target.closest('#btnOptimize')) {
-    if (!e.target.closest('#scene')) {
-      popMaterial.classList.remove('show'); popSettings.classList.remove('show');
+  try {
+    const exporter = new STLExporter();
+    const toExport = (currentLightGroup && currentLightGroup.visible) ? currentLightGroup : getLightGroup(state.currentRelief).group;
+    const result = exporter.parse(toExport, { binary: false });
+    // отдаем через Python если есть api
+    if (window.pywebview && window.pywebview.api && window.pywebview.api.save_stl) {
+      const b64 = btoa(unescape(encodeURIComponent(result)));
+      window.pywebview.api.save_stl(b64, 'optimized.stl').then(r => {
+        if (r && r.error) showWarning(r.error);
+        else if (r && r.ok) showToast('Сохранено: ' + (r.path || 'optimized.stl'));
+        else if (r && r.cancelled) showToast('Отменено');
+      }).catch(e => showWarning('Ошибка сохранения: ' + e));
+    } else {
+      const blob = new Blob([result], { type: 'model/stl' });
+      const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'optimized.stl'; a.click(); URL.revokeObjectURL(url);
+      showToast('Сохранено: optimized.stl (браузер)');
     }
-  }
-  // клик по документу вне relief поповера — скрыть только если клик не по optimize
-  if (!e.target.closest('#popoverRelief') && !e.target.closest('#btnOptimize')) {
-    // оставляем relief открытым только если в режиме split/light? скрываем через 3с? просто не автоскрываем
+  } catch (e) { showWarning('Ошибка экспорта: ' + e.message); console.error(e); }
+});
+document.getElementById('btnExport').addEventListener('contextmenu', (e) => { e.preventDefault(); showToast('Отчёт будет в Этапе 6'); });
+
+// клик вне поповеров
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.popover') && !e.target.closest('#btnMaterial') && !e.target.closest('#btnMore') && !e.target.closest('#btnOptimize') && !e.target.closest('#restorePrompt')) {
+    if (!e.target.closest('#scene') || e.target.id !== 'scene') {
+      // не закрывать force/keep которые привязаны к точке — они скрываются кликом по сцене
+      if (!e.target.closest('#popoverForce') && !e.target.closest('#popoverKeep')) {
+        popMaterial.classList.remove('show'); popSettings.classList.remove('show');
+      }
+    }
   }
 });
 
@@ -438,7 +406,7 @@ function confirmForce() {
   state.forces.push(rec);
   const mesh = pendingForce.previewMesh; mesh.userData.id = id; mesh.userData.valueN = v; mesh.userData.kind = 'force';
   pushHistory({ action: 'add', kind: 'force', id, snapshot: rec });
-  pendingForce = null; hideAllPopovers(); showToast('Сила ' + v + ' Н установлена'); updateMetrics();
+  pendingForce = null; hideAllPopovers(); showToast('Сила ' + v + ' Н установлена'); updateMetrics(); scheduleAutosave();
 }
 document.getElementById('forceOk').addEventListener('click', confirmForce);
 forceInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') confirmForce(); });
@@ -468,11 +436,11 @@ popKeep.querySelectorAll('[data-r]').forEach(chip => {
         }
       }
     }
-    showToast('Радиус зоны: ' + r + ' мм');
+    showToast('Радиус зоны: ' + r + ' мм'); scheduleAutosave();
   });
 });
 
-// ——— relief поповер ———
+// ——— relief ———
 popRelief.querySelectorAll('[data-relief]').forEach(chip => {
   chip.addEventListener('click', () => {
     const rel = parseFloat(chip.dataset.relief);
@@ -480,52 +448,29 @@ popRelief.querySelectorAll('[data-relief]').forEach(chip => {
     popRelief.querySelectorAll('[data-relief]').forEach(c => c.classList.remove('active')); chip.classList.add('active');
     if (state.optimized) {
       updateMetrics();
-      // мгновенное переключение если в режиме облегчённой/шторки
-      if (viewMode === 'light' || viewMode === 'split') {
-        switchLight(rel);
-        // если split — обновить видимость
-        if (viewMode === 'split') {
-          Object.values(lightCache).forEach(v => v.group.visible = false);
-          getLightGroup(rel).group.visible = true;
-          currentLightGroup = getLightGroup(rel).group;
-        }
-      }
-      showToast('Облегчение: ' + Math.round(rel * 100) + ' %');
-      checkSafetyWarning();
+      if (viewMode === 'light' || viewMode === 'split') { switchLight(rel); if (viewMode === 'split') { Object.values(lightCache).forEach(v => v.group.visible = false); getLightGroup(rel).group.visible = true; currentLightGroup = getLightGroup(rel).group; } }
+      showToast('Облегчение: ' + Math.round(rel * 100) + ' %'); checkSafetyWarning(); scheduleAutosave();
     } else {
       showToast('Выбрано облегчение ' + Math.round(rel * 100) + ' % — нажмите Оптимизировать ещё раз');
     }
   });
 });
-function showReliefPopover() {
-  positionPopoverNearElement(popRelief, btnOptimize, 'top');
-  showPopover(popRelief);
-  // подсветить активный
-  popRelief.querySelectorAll('[data-relief]').forEach(c => c.classList.toggle('active', parseFloat(c.dataset.relief) === state.currentRelief));
-}
+function showReliefPopover() { positionPopoverNearElement(popRelief, btnOptimize, 'top'); showPopover(popRelief); popRelief.querySelectorAll('[data-relief]').forEach(c => c.classList.toggle('active', parseFloat(c.dataset.relief) === state.currentRelief)); }
 
-// ——— оптимизация ———
+// ——— оптимизация (демо) ———
 const phases = ['Анализ закреплений…', 'Построение сетки…', 'Расчёт напряжений…', 'Удаление ненагруженного материала…', 'Проверка…'];
 let isOptimizing = false;
 let splitRatio = 0.5;
-
 function checkWarningsBefore() {
   if (state.supports.length === 0) { showWarning('Нет закрепления: деталь улетит. Добавьте опору.'); return false; }
-  // проверка PLA >4000 Н
-  if (state.material === 'pla') {
-    const over = state.forces.some(f => f.valueN > 4000);
-    if (over) showWarning('Превышена типичная нагрузка для PLA — проверьте материал или сечение.');
-  }
+  if (state.material === 'pla') { const over = state.forces.some(f => f.valueN > 4000); if (over) showWarning('Превышена типичная нагрузка для PLA — проверьте материал или сечение.'); }
   return true;
 }
 function checkSafetyWarning() {
   if (!state.optimized) return;
   const safety = computeSafety(state.currentRelief);
-  if (state.currentRelief >= 0.6 && safety < 1.5) {
-    showWarning('Переоптимизация: снизьте облегчение до 40 %.');
-  }
+  if (state.currentRelief >= 0.6 && safety < 1.5) showWarning('Переоптимизация: снизьте облегчение до 40 %.');
 }
-
 function startOptimization() {
   if (state.supports.length === 0 || state.forces.length === 0) {
     showWarning('Добавьте опору и нагрузку, чтобы рассчитать');
@@ -534,127 +479,80 @@ function startOptimization() {
   }
   if (isOptimizing) return;
   isOptimizing = true;
-  btnOptimize.classList.add('optimizing');
-  btnOptimize.classList.add('haptic-pulse');
+  btnOptimize.classList.add('optimizing'); btnOptimize.classList.add('haptic-pulse');
   setTimeout(() => btnOptimize.classList.remove('haptic-pulse'), 500);
   hideAllPopovers();
-  let phaseIdx = 0;
-  showPhase(phases[0]);
-  optBarFill.style.width = '0%';
-  const start = performance.now();
-  const total = 3800 + Math.random() * 800; // 3.8-4.6с
+  let phaseIdx = 0; showPhase(phases[0]); optBarFill.style.width = '0%';
+  const start = performance.now(); const total = 3800 + Math.random() * 800;
   const interval = setInterval(() => {
-    phaseIdx = (phaseIdx + 1) % phases.length;
-    showPhase(phases[phaseIdx]);
-    const elapsed = performance.now() - start;
-    const pct = Math.min(92, (elapsed / total) * 100);
-    optBarFill.style.width = pct + '%';
+    phaseIdx = (phaseIdx + 1) % phases.length; showPhase(phases[phaseIdx]);
+    const elapsed = performance.now() - start; const pct = Math.min(92, (elapsed / total) * 100); optBarFill.style.width = pct + '%';
   }, 600);
-
   setTimeout(() => {
-    clearInterval(interval);
-    hidePhase();
-    optBarFill.style.width = '100%';
-    // вычислить детерминированное поле
+    clearInterval(interval); hidePhase(); optBarFill.style.width = '100%';
     state.stressField = computeStressField();
-    // сгенерировать кэш трёх облегчений (для мгновенного переключения <300 мс)
     [0.2, 0.4, 0.6].forEach(r => getLightGroup(r));
-    const rel = state.targetRelief || 0.4;
-    state.currentRelief = rel;
-    state.optimized = true;
+    const rel = state.targetRelief || 0.4; state.currentRelief = rel; state.optimized = true;
     updateMetrics();
-    // остаёмся в исходном виде — пользователь сам переключит на облегчённую/карту/шторку
-    // но подготовить цвета для будущего стресс-режима
     applyStressToGroup(bracket, state.stressField);
     Object.values(lightCache).forEach(v => applyStressToGroup(v.group, state.stressField));
-    // проверка предупреждений автопилота
-    checkWarningsBefore(); // может уже показать PLA warning
-    checkSafetyWarning();
-
-    // сбросить прогресс
+    // если есть импортированная модель — применить поле и к ней
+    if (importedGroup) applyStressToGroup(importedGroup, state.stressField);
+    checkWarningsBefore(); checkSafetyWarning();
     setTimeout(() => {
-      btnOptimize.classList.remove('optimizing');
-      optBarFill.style.width = '0%';
-      isOptimizing = false;
-      // пульс кнопки
-      btnOptimize.classList.add('haptic-pulse');
-      setTimeout(() => btnOptimize.classList.remove('haptic-pulse'), 450);
-      // показать relief поповер для мгновенного переключения
-      showReliefPopover();
-      showToast('Оптимизация готова — демонстрационный режим');
-      console.log('optimize done', { relief: rel, safety: state.safetyFactor });
+      btnOptimize.classList.remove('optimizing'); optBarFill.style.width = '0%'; isOptimizing = false;
+      btnOptimize.classList.add('haptic-pulse'); setTimeout(() => btnOptimize.classList.remove('haptic-pulse'), 450);
+      showReliefPopover(); showToast('Оптимизация готова — демонстрационный режим'); console.log('optimize done', { relief: rel, safety: state.safetyFactor }); scheduleAutosave();
     }, 400);
   }, total);
 }
 
-// ——— синтетическое поле напряжений ———
+// ——— синтетическое поле ———
 function computeStressField() {
-  // собираем точки пиков: опоры, силы, отверстия
   const peaks = [];
-  // опоры — вес 1.0 sigma 12
   state.supports.forEach(s => peaks.push({ pos: s.position.clone(), weight: 1.0, sigma: 13 }));
-  // силы — вес 1.35 sigma 10, интенсивность зависит от valueN (500→1, 2000→1.3)
-  state.forces.forEach(f => {
-    const w = 1.2 + Math.min(0.6, f.valueN / 4000);
-    peaks.push({ pos: f.position.clone(), weight: w, sigma: 11 });
-  });
-  // отверстия — фиксированные в мировых координатах
-  // vert отверстия мировая позиция: vertPlate position + local hole offset
+  state.forces.forEach(f => { const w = 1.2 + Math.min(0.6, f.valueN / 4000); peaks.push({ pos: f.position.clone(), weight: w, sigma: 11 }); });
   const holeWorld = [];
-  // vert holes local (0,26) и (0,-26) в плоскости верта, преобразуем
-  const vPos = vertPlate.position; // (0,29,-5) в группе bracket (группа в 0)
-  // вертикальная пластина локально в XY, отверстия по Y
+  const vPos = vertPlate.position;
   holeWorld.push(new THREE.Vector3(0, vPos.y + 26, vPos.z));
   holeWorld.push(new THREE.Vector3(0, vPos.y - 26, vPos.z));
-  const hPos = horizPlate.position; // (0,-5,30) с поворотом -90 вокруг X
-  // горизонтальная: отверстие (0,22) в локальных XY верта, после поворота Y->Z?
-  // для простоты берём (0, -5, 30+22) = (0,-5,52)
+  const hPos = horizPlate.position;
   holeWorld.push(new THREE.Vector3(0, -5, hPos.z + 22));
+  // для импортированной модели — добавить её bbox центр как пик
+  if (importedGroup) {
+    const box = new THREE.Box3().setFromObject(importedGroup);
+    const center = new THREE.Vector3(); box.getCenter(center);
+    holeWorld.push(center);
+  }
   holeWorld.forEach(p => peaks.push({ pos: p, weight: 0.85, sigma: 9 }));
-
-  // функция сбора вершин всех геометрий (оригинал + лайт кэш уже есть?) — считаем только оригинал, потом применим к лайтам
-  // для простоты вычислим поле как функцию от расстояния, кэшируем нормализацию
-  // найдём все вершины оригинала для нормализации
+  const geometries = getActiveGeometriesForStress();
   const allPos = [];
-  [vertPlate, horizPlate].forEach(mesh => {
-    const geo = mesh.geometry;
-    const posAttr = geo.attributes.position;
+  geometries.forEach(mesh => {
+    const geo = mesh.geometry; const posAttr = geo.attributes.position;
     for (let i = 0; i < posAttr.count; i++) {
       const v = new THREE.Vector3().fromBufferAttribute(posAttr, i);
       v.applyMatrix4(mesh.matrixWorld);
-      // bracket группа без трансформации
       allPos.push(v);
     }
   });
-  // вычислим сырые значения и найдём min/max
   let min = Infinity, max = -Infinity;
   const raw = allPos.map(p => {
     let sum = 0;
-    // гауссовы пики
-    for (const peak of peaks) {
-      const d = p.distanceTo(peak.pos);
-      sum += peak.weight * Math.exp(-(d * d) / (2 * peak.sigma * peak.sigma));
-    }
-    // градиент вдоль ребра кронштейна — добавить линейный рост к стыку (0,0,0)
-    const distToOrigin = p.distanceTo(new THREE.Vector3(0, 0, 0));
-    sum += 0.18 * Math.exp(-distToOrigin / 28);
-    // keepZones — слегка снижают напряжение (запретная зона — не трогать, напряжение ниже)
-    for (const kz of state.keepZones) {
-      const d = p.distanceTo(kz.position);
-      if (d < kz.radiusMm + 4) sum *= 0.92;
-    }
-    if (sum < min) min = sum;
-    if (sum > max) max = sum;
+    for (const peak of peaks) { const d = p.distanceTo(peak.pos); sum += peak.weight * Math.exp(-(d * d) / (2 * peak.sigma * peak.sigma)); }
+    sum += 0.18 * Math.exp(-p.distanceTo(new THREE.Vector3(0, 0, 0)) / 28);
+    for (const kz of state.keepZones) { const d = p.distanceTo(kz.position); if (d < kz.radiusMm + 4) sum *= 0.92; }
+    if (sum < min) min = sum; if (sum > max) max = sum;
     return sum;
   });
-  // нормализуем 0-1
-  const range = max - min || 1;
-  return { peaks, min, max, range, allPosRaw: raw };
+  return { peaks, min, max, range: max - min || 1, allPosRaw: raw };
 }
-
-// градиент цветов
+function getActiveGeometriesForStress() {
+  // оригинал или импорт
+  if (importedGroup && importedGroup.visible) return importedGroup.children.filter(m => m.isMesh);
+  // иначе — кронштейн
+  return [vertPlate, horizPlate];
+}
 function stressColor(t) {
-  // t 0-1: синий #2F7CF6 → зелёный #34C759 → янтарный #FFCC00 → коралловый #FF6B4A
   const c1 = new THREE.Color(0x2F7CF6), c2 = new THREE.Color(0x34C759), c3 = new THREE.Color(0xFFCC00), c4 = new THREE.Color(0xFF6B4A);
   let c = new THREE.Color();
   if (t < 0.33) c.lerpColors(c1, c2, t / 0.33);
@@ -663,247 +561,530 @@ function stressColor(t) {
   return c;
 }
 function applyStressToMesh(mesh, field) {
-  const geo = mesh.geometry;
-  const posAttr = geo.attributes.position;
-  const colors = [];
-  const color = new THREE.Color();
+  const geo = mesh.geometry; const posAttr = geo.attributes.position;
+  const colors = []; const color = new THREE.Color();
   for (let i = 0; i < posAttr.count; i++) {
-    const v = new THREE.Vector3().fromBufferAttribute(posAttr, i);
-    v.applyMatrix4(mesh.matrixWorld);
+    const v = new THREE.Vector3().fromBufferAttribute(posAttr, i); v.applyMatrix4(mesh.matrixWorld);
     let sum = 0;
-    for (const peak of field.peaks) {
-      const d = v.distanceTo(peak.pos);
-      sum += peak.weight * Math.exp(-(d * d) / (2 * peak.sigma * peak.sigma));
-    }
+    for (const peak of field.peaks) { const d = v.distanceTo(peak.pos); sum += peak.weight * Math.exp(-(d * d) / (2 * peak.sigma * peak.sigma)); }
     sum += 0.18 * Math.exp(-v.distanceTo(new THREE.Vector3(0, 0, 0)) / 28);
-    for (const kz of state.keepZones) {
-      const d = v.distanceTo(kz.position);
-      if (d < kz.radiusMm + 4) sum *= 0.92;
-    }
+    for (const kz of state.keepZones) { const d = v.distanceTo(kz.position); if (d < kz.radiusMm + 4) sum *= 0.92; }
     const t = (sum - field.min) / field.range;
     color.copy(stressColor(Math.max(0, Math.min(1, t))));
     colors.push(color.r, color.g, color.b);
   }
   geo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 }
-function applyStressToGroup(group, field) {
-  group.children.forEach(m => {
-    if (m.isMesh) applyStressToMesh(m, field);
-  });
-}
+function applyStressToGroup(group, field) { group.children.forEach(m => { if (m.isMesh) applyStressToMesh(m, field); }); }
 function enableStressMaterial(group, enable) {
   group.children.forEach(m => {
     if (m.isMesh) {
       if (enable) {
         if (!m.userData.origMat) m.userData.origMat = m.material;
-        const mat = stressMatPrototype.clone();
-        // сохранить shadow
-        m.material = mat;
-        // vertexColors уже через атрибут
+        const mat = stressMatPrototype.clone(); m.material = mat;
       } else {
-        if (m.userData.origMat) m.material = m.userData.origMat;
-        else m.material = bracketMat;
+        if (m.userData.origMat) m.material = m.userData.origMat; else m.material = bracketMat;
       }
     }
   });
 }
-
-// ——— переключение облегчённой ———
 function switchLight(relief) {
-  // скрыть оригинал, показать нужный лайт
   const target = getLightGroup(relief);
-  // скрыть все лайты
   Object.values(lightCache).forEach(v => v.group.visible = false);
+  // скрыть оригинал или импорт
   bracket.visible = false;
+  if (importedGroup) importedGroup.visible = false;
   target.group.visible = true;
   currentLightGroup = target.group;
-  // если в режиме stress — применить стресс цвета к лайту
-  if (viewMode === 'stress' && state.stressField) {
-    enableStressMaterial(target.group, true);
-  }
+  if (viewMode === 'stress' && state.stressField) enableStressMaterial(target.group, true);
 }
-
-// восстановление оригинала
 function showOriginal() {
-  bracket.visible = true;
-  Object.values(lightCache).forEach(v => v.group.visible = false);
-  currentLightGroup = null;
-  if (viewMode === 'stress' && state.stressField) {
-    enableStressMaterial(bracket, true);
+  // показать либо встроенный кронштейн, либо импорт
+  if (importedGroup) {
+    importedGroup.visible = true;
+    bracket.visible = false;
+    Object.values(lightCache).forEach(v => v.group.visible = false);
+    currentLightGroup = null;
+    // стресс
+    if (viewMode === 'stress' && state.stressField) enableStressMaterial(importedGroup, true); else enableStressMaterial(importedGroup, false);
   } else {
-    enableStressMaterial(bracket, false);
+    bracket.visible = true;
+    Object.values(lightCache).forEach(v => v.group.visible = false);
+    currentLightGroup = null;
+    if (viewMode === 'stress' && state.stressField) enableStressMaterial(bracket, true); else enableStressMaterial(bracket, false);
   }
 }
-
-// ——— режимы вида ———
+let viewMode = 'original';
 function setView(mode) {
-  viewMode = mode;
-  state.viewMode = mode;
-  // сбросить видимость шторки/легенды
-  legendEl.classList.remove('show');
-  splitDivider.classList.remove('show');
-
+  viewMode = mode; state.viewMode = mode;
+  legendEl.classList.remove('show'); splitDivider.classList.remove('show');
   if (mode === 'original') {
     showOriginal();
     enableStressMaterial(bracket, false);
+    if (importedGroup) enableStressMaterial(importedGroup, false);
     Object.values(lightCache).forEach(v => enableStressMaterial(v.group, false));
-    legendEl.classList.remove('show');
-    splitDivider.classList.remove('show');
     renderer.setScissorTest(false);
   } else if (mode === 'stress') {
     if (!state.optimized) { showToast('Сначала оптимизируйте — демо-режим'); viewMode = 'original'; return; }
-    showOriginal();
-    // подготовить стресс-атрибуты если нет
-    if (!bracket.children[0].geometry.attributes.color) {
-      if (!state.stressField) state.stressField = computeStressField();
-      applyStressToGroup(bracket, state.stressField);
+    // для импорта тоже показать его
+    if (importedGroup) {
+      importedGroup.visible = true; bracket.visible = false;
+      Object.values(lightCache).forEach(v => v.group.visible = false);
+      if (!importedGroup.children[0].geometry.attributes.color) { if (!state.stressField) state.stressField = computeStressField(); applyStressToGroup(importedGroup, state.stressField); }
+      enableStressMaterial(importedGroup, true);
+    } else {
+      showOriginal();
+      if (!bracket.children[0].geometry.attributes.color) { if (!state.stressField) state.stressField = computeStressField(); applyStressToGroup(bracket, state.stressField); }
+      enableStressMaterial(bracket, true);
     }
-    enableStressMaterial(bracket, true);
-    // скрыть лайты, убрать их стресс
-    Object.values(lightCache).forEach(v => { v.group.visible = false; enableStressMaterial(v.group, false); });
-    currentLightGroup = null;
-    legendEl.classList.add('show');
-    splitDivider.classList.remove('show');
-    renderer.setScissorTest(false);
+    legendEl.classList.add('show'); renderer.setScissorTest(false);
   } else if (mode === 'light') {
     if (!state.optimized) { showToast('Сначала оптимизируйте'); viewMode = 'original'; return; }
+    // если импорт — облегчённая недоступна
+    if (importedGroup) { showToast('Облегчение доступно только для тестового кронштейна в демо-режиме'); viewMode = 'original'; return; }
     switchLight(state.currentRelief);
-    // облегчённая — обычный материал, без карты
-    enableStressMaterial(currentLightGroup, false);
-    legendEl.classList.remove('show');
-    splitDivider.classList.remove('show');
-    renderer.setScissorTest(false);
+    enableStressMaterial(currentLightGroup, false); legendEl.classList.remove('show'); splitDivider.classList.remove('show'); renderer.setScissorTest(false);
   } else if (mode === 'split') {
     if (!state.optimized) { showToast('Сначала оптимизируйте'); viewMode = 'original'; return; }
-    // оба видимы, рендер через scissor
+    if (importedGroup) { showToast('До/После доступно только для тестового кронштейна'); viewMode = 'original'; return; }
+    // оба видимы через scissor
     bracket.visible = true;
     if (!currentLightGroup) getLightGroup(state.currentRelief);
     Object.values(lightCache).forEach(v => v.group.visible = false);
     getLightGroup(state.currentRelief).group.visible = true;
     currentLightGroup = getLightGroup(state.currentRelief).group;
-    // в split — обычные материалы без карты
-    enableStressMaterial(bracket, false);
-    enableStressMaterial(currentLightGroup, false);
-    legendEl.classList.remove('show');
-    splitDivider.classList.add('show');
-    updateSplitDividerPos();
-    renderer.setScissorTest(false);
+    enableStressMaterial(bracket, false); enableStressMaterial(currentLightGroup, false);
+    legendEl.classList.remove('show'); splitDivider.classList.add('show'); updateSplitDividerPos(); renderer.setScissorTest(false);
   }
-  // подсветить активную кнопку вида
-  dockBtns.forEach(b => {
-    if (b.dataset.tool === 'view') {
-      if (mode === 'original') b.classList.remove('active');
-      else b.classList.add('active');
-    }
-  });
+  dockBtns.forEach(b => { if (b.dataset.tool === 'view') { if (mode === 'original') b.classList.remove('active'); else b.classList.add('active'); } });
+  scheduleAutosave();
 }
 function cycleView() {
   const order = ['original', 'stress', 'light', 'split'];
-  let idx = order.indexOf(viewMode);
-  idx = (idx + 1) % order.length;
-  const next = order[idx];
-  // если не оптимизировано и next не original — показать тост и не переключать (как в этапе 3)
-  if (!state.optimized && next !== 'original') {
-    // показать тост как раньше, но для этапа 4 — показываем «Сначала оптимизируйте»
-    setView(next);
-    return;
-  }
+  let idx = order.indexOf(viewMode); idx = (idx + 1) % order.length; const next = order[idx];
+  if (!state.optimized && next !== 'original') { setView(next); return; }
   setView(next);
   const labels = { original: 'Вид: Исходная', stress: 'Вид: Карта напряжений', light: 'Вид: Облегчённая', split: 'Вид: До/После' };
   showToast(labels[next] || next);
 }
-
-// ——— шторка split ———
-function updateSplitDividerPos() {
-  const pct = splitRatio * 100;
-  splitDivider.style.left = pct + '%';
-}
+let splitRatio = 0.5;
+function updateSplitDividerPos() { splitDivider.style.left = (splitRatio * 100) + '%'; }
 let splitDragging = false;
-splitDivider.addEventListener('pointerdown', (e) => {
-  splitDragging = true;
-  splitDivider.setPointerCapture(e.pointerId);
-  e.preventDefault();
-});
-window.addEventListener('pointermove', (e) => {
-  if (!splitDragging) return;
-  splitRatio = e.clientX / window.innerWidth;
-  splitRatio = Math.max(0.05, Math.min(0.95, splitRatio));
-  updateSplitDividerPos();
-});
+splitDivider.addEventListener('pointerdown', (e) => { splitDragging = true; splitDivider.setPointerCapture(e.pointerId); e.preventDefault(); });
+window.addEventListener('pointermove', (e) => { if (!splitDragging) return; splitRatio = e.clientX / window.innerWidth; splitRatio = Math.max(0.05, Math.min(0.95, splitRatio)); updateSplitDividerPos(); });
 window.addEventListener('pointerup', () => { splitDragging = false; });
 window.addEventListener('resize', () => { if (viewMode === 'split') updateSplitDividerPos(); });
-
-// ——— Optimize кнопка ———
 btnOptimize.addEventListener('click', (e) => {
   e.stopPropagation();
   if (isOptimizing) return;
   if (!state.optimized) {
-    // до старта — показать поповер выбора облегчения, второй клик запустит
-    if (!popRelief.classList.contains('show')) {
-      showReliefPopover();
-      showToast('Выберите облегчение и нажмите Оптимизировать ещё раз');
-      return;
-    } else {
-      // если поповер открыт — запустить
-      popRelief.classList.remove('show');
-      startOptimization();
-      return;
-    }
+    if (!popRelief.classList.contains('show')) { showReliefPopover(); showToast('Выберите облегчение и нажмите Оптимизировать ещё раз'); return; }
+    else { popRelief.classList.remove('show'); startOptimization(); return; }
   } else {
-    // после — показать поповер для мгновенного переключения
-    if (popRelief.classList.contains('show')) popRelief.classList.remove('show');
-    else showReliefPopover();
+    if (popRelief.classList.contains('show')) popRelief.classList.remove('show'); else showReliefPopover();
     return;
   }
 });
 
-// ——— Raycaster и маркеры (этап 3 логика сохранена) ———
+// ——— импорт STL ———
+const stlLoader = new STLLoader();
+const objLoader = new OBJLoader();
+let useImported = false;
+
+function computeVolumeCm3(geometry) {
+  // объём через тетраэдры — для замкнутой сетки
+  const pos = geometry.attributes.position;
+  const idx = geometry.index;
+  let vol = 0;
+  if (idx) {
+    for (let i = 0; i < idx.count; i += 3) {
+      const a = idx.getX(i), b = idx.getX(i + 1), c = idx.getX(i + 2);
+      const pA = new THREE.Vector3().fromBufferAttribute(pos, a);
+      const pB = new THREE.Vector3().fromBufferAttribute(pos, b);
+      const pC = new THREE.Vector3().fromBufferAttribute(pos, c);
+      vol += pA.dot(pB.clone().cross(pC)) / 6;
+    }
+  } else {
+    for (let i = 0; i < pos.count; i += 3) {
+      const pA = new THREE.Vector3().fromBufferAttribute(pos, i);
+      const pB = new THREE.Vector3().fromBufferAttribute(pos, i + 1);
+      const pC = new THREE.Vector3().fromBufferAttribute(pos, i + 2);
+      vol += pA.dot(pB.clone().cross(pC)) / 6;
+    }
+  }
+  return Math.abs(vol) / 1000; // мм³ → см³
+}
+
+function replaceWithImportedMesh(mesh, name) {
+  // удалить старый импорт
+  if (importedGroup) { scene.remove(importedGroup); importedGroup = null; }
+  // центрировать и масштабировать
+  mesh.geometry.computeBoundingBox();
+  const box = mesh.geometry.boundingBox;
+  const size = new THREE.Vector3(); box.getSize(size);
+  const maxDim = Math.max(size.x, size.y, size.z);
+  const target = 70; // целевой размер в мм
+  const scale = maxDim > 0 ? target / maxDim : 1;
+  mesh.geometry.scale(scale, scale, scale);
+  mesh.geometry.computeBoundingBox();
+  const box2 = mesh.geometry.boundingBox;
+  const center = new THREE.Vector3(); box2.getCenter(center);
+  mesh.geometry.translate(-center.x, -center.y, -center.z);
+  // поднять над полом
+  mesh.position.set(0, 10, 0);
+  mesh.castShadow = true; mesh.receiveShadow = true;
+  mesh.material = bracketMat.clone();
+  importedGroup = new THREE.Group();
+  importedGroup.add(mesh);
+  importedGroup.name = 'imported';
+  scene.add(importedGroup);
+  importedName = name;
+  useImported = true;
+  // скрыть встроенный
+  bracket.visible = false;
+  Object.values(lightCache).forEach(v => v.group.visible = false);
+  currentLightGroup = null;
+  viewMode = 'original'; state.viewMode = 'original';
+  // пересчитать объём для веса
+  try { importedVolumeCm3 = computeVolumeCm3(mesh.geometry); } catch { importedVolumeCm3 = BRACKET_VOLUME_CM3 * 0.9; }
+  updateMetrics();
+  // сбросить оптимизацию — для новой модели нужно заново
+  state.optimized = false; state.stressField = null;
+  legendEl.classList.remove('show'); splitDivider.classList.remove('show');
+  // очистить маркеры
+  state.supports.forEach(s => { const m = supportsGroup.children.find(c => c.userData.id === s.id); if (m) supportsGroup.remove(m); });
+  state.forces.forEach(f => { const m = forcesGroup.children.find(c => c.userData.id === f.id); if (m) forcesGroup.remove(m); });
+  state.keepZones.forEach(k => { const m = keepZonesGroup.children.find(c => c.userData.id === k.id); if (m) keepZonesGroup.remove(m); });
+  state.supports.length = 0; state.forces.length = 0; state.keepZones.length = 0; state.history.length = 0;
+  // камера — приблизить к модели
+  controls.target.set(0, 10, 0); camera.position.set(110, 90, 110); controls.update();
+  document.getElementById('centerHint').classList.add('hidden');
+  showToast('Модель загружена: ' + name);
+  scheduleAutosave();
+}
+
+function handleOpenModelViaApi() {
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.open_model) {
+    window.pywebview.api.open_model().then(res => {
+      if (!res) return; // отмена
+      if (res.error) { showWarning(res.error); return; }
+      const ext = (res.ext || '').toLowerCase();
+      const b64 = res.data;
+      const name = res.name || 'model.stl';
+      try {
+        const binary = atob(b64);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        const buffer = bytes.buffer;
+        let geometry = null;
+        if (ext === '.stl') {
+          geometry = stlLoader.parse(buffer);
+        } else if (ext === '.obj') {
+          const text = new TextDecoder().decode(bytes);
+          const obj = objLoader.parse(text);
+          // взять первую Mesh геометрию
+          let found = null;
+          obj.traverse(c => { if (c.isMesh && !found) found = c.geometry; });
+          if (found) geometry = found;
+          else { showWarning('OBJ без геометрии'); return; }
+        } else if (ext === '.step' || ext === '.stp') {
+          showWarning('STEP пока не поддерживается в демо-режиме'); return;
+        } else {
+          // попробовать как STL ASCII
+          try { geometry = stlLoader.parse(buffer); } catch { showWarning('Неизвестный формат'); return; }
+        }
+        if (!geometry) { showWarning('Не удалось прочитать геометрию'); return; }
+        const mesh = new THREE.Mesh(geometry, bracketMat);
+        replaceWithImportedMesh(mesh, name);
+      } catch (e) {
+        showWarning('Ошибка импорта: ' + e.message);
+        console.error(e);
+      }
+    }).catch(e => { showWarning('Ошибка диалога: ' + e); console.error(e); });
+  } else {
+    // fallback для браузера — input файл
+    const input = document.createElement('input'); input.type = 'file'; input.accept = '.stl,.obj,.step,.stp';
+    input.onchange = (ev) => {
+      const file = ev.target.files[0]; if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const buffer = e.target.result;
+          let geometry = null;
+          if (file.name.toLowerCase().endsWith('.stl')) geometry = stlLoader.parse(buffer);
+          else if (file.name.toLowerCase().endsWith('.obj')) {
+            const text = new TextDecoder().decode(buffer);
+            const obj = objLoader.parse(text);
+            let found = null; obj.traverse(c => { if (c.isMesh && !found) found = c.geometry; });
+            geometry = found;
+          } else { showWarning('STEP не поддерживается'); return; }
+          const mesh = new THREE.Mesh(geometry, bracketMat);
+          replaceWithImportedMesh(mesh, file.name);
+        } catch (err) { showWarning('Ошибка импорта: ' + err.message); }
+      };
+      if (file.name.toLowerCase().endsWith('.obj')) reader.readAsArrayBuffer(file);
+      else reader.readAsArrayBuffer(file);
+    };
+    input.click();
+  }
+}
+document.getElementById('btnOpen').addEventListener('click', (e) => { e.stopPropagation(); handleOpenModelViaApi(); });
+
+// ——— проекты ———
+function serializeProject() {
+  const data = {
+    version: '0.5.0',
+    material: state.material,
+    process: state.process,
+    targetRelief: state.targetRelief,
+    currentRelief: state.currentRelief,
+    optimized: state.optimized,
+    supports: state.supports.map(s => ({ id: s.id, position: s.position.toArray(), normal: s.normal.toArray() })),
+    forces: state.forces.map(f => ({ id: f.id, position: f.position.toArray(), direction: f.direction.toArray(), valueN: f.valueN })),
+    keepZones: state.keepZones.map(k => ({ id: k.id, position: k.position.toArray(), normal: k.normal.toArray(), radiusMm: k.radiusMm })),
+    cameraPosition: camera.position.toArray(),
+    cameraTarget: controls.target.toArray(),
+    viewMode,
+    importedName,
+  };
+  return JSON.stringify(data, null, 2);
+}
+function applyProjectData(obj) {
+  try {
+    // материал/процесс
+    if (obj.material) { setMaterial(obj.material); popMaterial.querySelectorAll('[data-mat]').forEach(c => c.classList.toggle('active', c.dataset.mat === obj.material)); }
+    if (obj.process) { setProcess(obj.process); popMaterial.querySelectorAll('[data-proc]').forEach(c => c.classList.toggle('active', c.dataset.proc === obj.process)); }
+    if (obj.targetRelief) { state.targetRelief = obj.targetRelief; state.currentRelief = obj.currentRelief || obj.targetRelief; popRelief.querySelectorAll('[data-relief]').forEach(c => c.classList.toggle('active', parseFloat(c.dataset.relief) === state.currentRelief)); }
+    // очистить текущие маркеры
+    [...supportsGroup.children].forEach(m => supportsGroup.remove(m));
+    [...forcesGroup.children].forEach(m => forcesGroup.remove(m));
+    [...keepZonesGroup.children].forEach(m => keepZonesGroup.remove(m));
+    state.supports.length = 0; state.forces.length = 0; state.keepZones.length = 0; state.history.length = 0;
+    // восстановить опоры
+    (obj.supports || []).forEach(s => {
+      const pos = new THREE.Vector3().fromArray(s.position);
+      const nor = new THREE.Vector3().fromArray(s.normal);
+      const id = s.id || genId();
+      state.supports.push({ id, position: pos, normal: nor });
+      const mesh = createSupportMarker(id, pos, nor); supportsGroup.add(mesh);
+    });
+    (obj.forces || []).forEach(f => {
+      const pos = new THREE.Vector3().fromArray(f.position);
+      const dir = new THREE.Vector3().fromArray(f.direction);
+      const id = f.id || genId();
+      state.forces.push({ id, position: pos, direction: dir, valueN: f.valueN });
+      const mesh = createForceMarker(id, pos, dir, f.valueN); forcesGroup.add(mesh);
+    });
+    (obj.keepZones || []).forEach(k => {
+      const pos = new THREE.Vector3().fromArray(k.position);
+      const nor = new THREE.Vector3().fromArray(k.normal);
+      const id = k.id || genId();
+      state.keepZones.push({ id, position: pos, normal: nor, radiusMm: k.radiusMm });
+      const mesh = createKeepZoneMarker(id, pos, nor, k.radiusMm); keepZonesGroup.add(mesh);
+    });
+    // камера
+    if (obj.cameraPosition) camera.position.fromArray(obj.cameraPosition);
+    if (obj.cameraTarget) controls.target.fromArray(obj.cameraTarget);
+    controls.update();
+    // вид
+    if (obj.viewMode) setView(obj.viewMode);
+    // оптимизация — если была, пересоздать синтетику? Для проекта сохраняем флаг, но синтетика пересчитается при следующей оптимизации
+    state.optimized = !!obj.optimized;
+    if (state.optimized && !state.stressField) {
+      // пересчитать поле
+      state.stressField = computeStressField();
+      [0.2, 0.4, 0.6].forEach(r => getLightGroup(r));
+      applyStressToGroup(bracket, state.stressField);
+      Object.values(lightCache).forEach(v => applyStressToGroup(v.group, state.stressField));
+      if (importedGroup) applyStressToGroup(importedGroup, state.stressField);
+    }
+    updateMetrics();
+    importedName = obj.importedName || null;
+    showToast('Проект загружен');
+    scheduleAutosave();
+  } catch (e) {
+    showWarning('Ошибка проекта: ' + e.message);
+    console.error(e);
+  }
+}
+function handleSaveProject() {
+  const json = serializeProject();
+  const suggested = 'project.olight.json';
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.save_project) {
+    window.pywebview.api.save_project(json, suggested).then(res => {
+      if (!res) return;
+      if (res.error) showWarning(res.error);
+      else if (res.ok) showToast('Проект сохранён: ' + (res.path || ''));
+    }).catch(e => showWarning('Ошибка сохранения: ' + e));
+  } else {
+    // fallback — скачать как файл
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = suggested; a.click(); URL.revokeObjectURL(url);
+    showToast('Проект скачан (браузер)');
+  }
+}
+function handleOpenProject() {
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.open_project) {
+    window.pywebview.api.open_project().then(res => {
+      if (!res) return;
+      if (res.error) { showWarning(res.error); return; }
+      try { const obj = JSON.parse(res.data); applyProjectData(obj); } catch (e) { showWarning('Невалидный проект'); }
+    }).catch(e => showWarning('Ошибка открытия: ' + e));
+  } else {
+    const input = document.createElement('input'); input.type = 'file'; input.accept = '.olight.json,.json';
+    input.onchange = (ev) => {
+      const file = ev.target.files[0]; if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => { try { const obj = JSON.parse(e.target.result); applyProjectData(obj); } catch (err) { showWarning('Невалидный проект'); } };
+      reader.readAsText(file);
+    };
+    input.click();
+  }
+}
+document.getElementById('btnSaveProject').addEventListener('click', (e) => { e.stopPropagation(); handleSaveProject(); popSettings.classList.remove('show'); });
+document.getElementById('btnOpenProject').addEventListener('click', (e) => { e.stopPropagation(); handleOpenProject(); popSettings.classList.remove('show'); });
+
+// ——— последние проекты ———
+function refreshRecent() {
+  const listEl = document.getElementById('recentList');
+  if (!listEl) return;
+  listEl.innerHTML = '<div style="font-size:11px; color:#9AA0AA; padding:4px 0;">Последние:</div>';
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.get_recent) {
+    window.pywebview.api.get_recent().then(lst => {
+      if (!lst || !lst.length) { listEl.innerHTML += '<div style="font-size:12px; color:#6E6E73; padding:6px;">— пусто</div>'; return; }
+      lst.slice(0, 5).forEach(item => {
+        const div = document.createElement('div'); div.className = 'recent-item';
+        div.innerHTML = `<div><div class="rname">${item.name || item.path.split(/[\\/]/).pop()}</div><div class="rpath">${item.path}</div></div>`;
+        div.addEventListener('click', (e) => {
+          e.stopPropagation();
+          window.pywebview.api.open_project_path(item.path).then(res => {
+            if (res && res.error) showWarning(res.error);
+            else if (res && res.data) { try { const obj = JSON.parse(res.data); applyProjectData(obj); popSettings.classList.remove('show'); } catch { showWarning('Невалидный проект'); } }
+          });
+        });
+        listEl.appendChild(div);
+      });
+    }).catch(() => { listEl.innerHTML += '<div style="font-size:12px; color:#6E6E73;">—</div>'; });
+  } else {
+    // fallback localStorage
+    try {
+      const lst = JSON.parse(localStorage.getItem('openlight_recent') || '[]');
+      if (!lst.length) { listEl.innerHTML += '<div style="font-size:12px; color:#6E6E73; padding:6px;">— пусто (браузер)</div>'; return; }
+      lst.slice(0, 5).forEach(item => {
+        const div = document.createElement('div'); div.className = 'recent-item';
+        div.innerHTML = `<div><div class="rname">${item.name}</div><div class="rpath">${item.path}</div></div>`;
+        listEl.appendChild(div);
+      });
+    } catch { }
+  }
+}
+
+// ——— автосейв ———
+let autosaveTimer = null;
+function scheduleAutosave() {
+  clearTimeout(autosaveTimer);
+  autosaveTimer = setTimeout(() => {
+    const json = serializeProject();
+    if (window.pywebview && window.pywebview.api && window.pywebview.api.autosave) {
+      window.pywebview.api.autosave(json).then(r => { if (r && r.error) console.warn('autosave error', r.error); });
+    } else {
+      try { localStorage.setItem('openlight_autosave', json); localStorage.setItem('openlight_autosave_ts', Date.now().toString()); } catch {}
+    }
+  }, 800);
+}
+function checkAutosaveOnStart() {
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.get_autosave_info) {
+    window.pywebview.api.get_autosave_info().then(info => {
+      if (info && info.exists && !info.tooOld) {
+        // показать промпт
+        restorePrompt.style.left = '50%'; restorePrompt.style.top = '50%'; restorePrompt.style.transform = 'translate(-50%,-50%)'; restorePrompt.classList.add('show');
+      }
+    }).catch(() => {});
+  } else {
+    // localStorage fallback
+    try {
+      const ts = parseInt(localStorage.getItem('openlight_autosave_ts') || '0', 10);
+      const age = Date.now() - ts;
+      if (ts && age < 7 * 24 * 3600 * 1000) {
+        restorePrompt.style.left = '50%'; restorePrompt.style.top = '50%'; restorePrompt.style.transform = 'translate(-50%,-50%)'; restorePrompt.classList.add('show');
+      }
+    } catch {}
+  }
+}
+document.getElementById('restoreYes').addEventListener('click', () => {
+  restorePrompt.classList.remove('show');
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.get_autosave_info) {
+    window.pywebview.api.get_autosave_info().then(info => {
+      if (info && info.data) { try { const obj = JSON.parse(info.data); applyProjectData(obj); showToast('Восстановлено'); } catch {} }
+    });
+  } else {
+    try { const data = localStorage.getItem('openlight_autosave'); if (data) { const obj = JSON.parse(data); applyProjectData(obj); showToast('Восстановлено (браузер)'); } } catch {}
+  }
+});
+document.getElementById('restoreNo').addEventListener('click', () => {
+  restorePrompt.classList.remove('show');
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.clear_autosave) window.pywebview.api.clear_autosave();
+  else try { localStorage.removeItem('openlight_autosave'); localStorage.removeItem('openlight_autosave_ts'); } catch {}
+});
+
+// ——— app_info ———
+function loadAppInfo() {
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.get_app_info) {
+    window.pywebview.api.get_app_info().then(info => {
+      if (info) {
+        document.getElementById('appVersion').textContent = info.version || '0.5.0';
+        document.getElementById('appDataPath').textContent = info.appData || '';
+      }
+    }).catch(() => {});
+  } else {
+    document.getElementById('appVersion').textContent = '0.5.0 (браузер)';
+  }
+}
+window.addEventListener('pywebviewready', () => { loadAppInfo(); checkAutosaveOnStart(); refreshRecent(); });
+setTimeout(() => { loadAppInfo(); checkAutosaveOnStart(); }, 800);
+
+// экспорт уже определён выше через pywebview api
+
+// ——— Raycaster и маркеры ———
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 let hovered = false;
 let edgeLine = null;
 function setHover(h) {
-  if (hovered === h) return;
-  hovered = h;
+  if (hovered === h) return; hovered = h;
   if (h) {
     bracketMat.emissive = new THREE.Color(0x224466); bracketMat.emissiveIntensity = 0.18;
-    // также для лайт материалов если видны
     canvas.style.cursor = currentTool ? 'crosshair' : 'pointer';
     if (!edgeLine) {
       const edges = new THREE.EdgesGeometry(vertPlate.geometry, 18);
       const lineMat = new THREE.LineBasicMaterial({ color: 0x5aa0ff, transparent: true, opacity: 0.55 });
-      edgeLine = new THREE.LineSegments(edges, lineMat);
-      edgeLine.position.copy(vertPlate.position); edgeLine.rotation.copy(vertPlate.rotation);
-      bracket.add(edgeLine);
+      edgeLine = new THREE.LineSegments(edges, lineMat); edgeLine.position.copy(vertPlate.position); edgeLine.rotation.copy(vertPlate.rotation); bracket.add(edgeLine);
     }
     edgeLine.visible = true;
   } else {
     bracketMat.emissive = new THREE.Color(0x000000); bracketMat.emissiveIntensity = 0;
     if (edgeLine) edgeLine.visible = false;
-    if (!currentTool) canvas.style.cursor = 'default';
-    else canvas.style.cursor = 'crosshair';
+    if (!currentTool) canvas.style.cursor = 'default'; else canvas.style.cursor = 'crosshair';
   }
 }
 let dragStart = null; let isDragging = false;
 canvas.addEventListener('pointerdown', (e) => { dragStart = { x: e.clientX, y: e.clientY }; isDragging = false; });
 canvas.addEventListener('pointermove', (e) => {
   if (dragStart) { const dx = e.clientX - dragStart.x, dy = e.clientY - dragStart.y; if (Math.hypot(dx, dy) > 6) isDragging = true; }
-  const rect = canvas.getBoundingClientRect();
-  mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1; mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+  const rect = canvas.getBoundingClientRect(); mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1; mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
   raycaster.setFromCamera(mouse, camera);
   const hitsBracket = raycaster.intersectObjects(bracket.children, true);
+  const hitsImported = importedGroup ? raycaster.intersectObjects(importedGroup.children, true) : [];
   const hitsLight = currentLightGroup ? raycaster.intersectObjects(currentLightGroup.children, true) : [];
   const hitsMarkers = raycaster.intersectObjects([supportsGroup, forcesGroup, keepZonesGroup], true);
-  if (hitsMarkers.length > 0 || hitsBracket.length > 0 || hitsLight.length > 0) setHover(true); else setHover(false);
+  if (hitsMarkers.length > 0 || hitsBracket.length > 0 || hitsLight.length > 0 || hitsImported.length > 0) setHover(true); else setHover(false);
 });
 canvas.addEventListener('pointerup', () => { setTimeout(() => { dragStart = null; isDragging = false; }, 50); });
 function getWorldNormal(hit) { const n = hit.face.normal.clone(); const m = new THREE.Matrix3().getNormalMatrix(hit.object.matrixWorld); n.applyMatrix3(m).normalize(); return n; }
 function findMarkerAncestor(obj) { let cur = obj; while (cur) { if (cur.userData && cur.userData.kind) return cur; cur = cur.parent; } return null; }
-
 canvas.addEventListener('click', (e) => {
   if (isDragging) return;
-  const rect = canvas.getBoundingClientRect();
-  mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1; mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+  const rect = canvas.getBoundingClientRect(); mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1; mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
   raycaster.setFromCamera(mouse, camera);
   const hitsMarkers = raycaster.intersectObjects([supportsGroup, forcesGroup, keepZonesGroup], true);
   if (hitsMarkers.length > 0) {
@@ -918,36 +1099,26 @@ canvas.addEventListener('click', (e) => {
         if (kind === 'support') { _removeWithoutHistory(id, supportsGroup, state.supports); pushHistory({ action: 'remove', kind: 'support', id, snapshot: rec }); }
         if (kind === 'force') { _removeWithoutHistory(id, forcesGroup, state.forces); pushHistory({ action: 'remove', kind: 'force', id, snapshot: rec }); }
         if (kind === 'keep') { _removeWithoutHistory(id, keepZonesGroup, state.keepZones); pushHistory({ action: 'remove', kind: 'keep', id, snapshot: rec }); }
-        showToast('Удалено'); console.log('pick', { point: hit.point, normal: hit.face ? hit.face.normal : null });
-        if (state.optimized) showToast('Условия изменились — перезапустите оптимизацию');
-        return;
+        showToast('Удалено'); console.log('pick', { point: hit.point, normal: hit.face ? hit.face.normal : null }); scheduleAutosave(); if (state.optimized) showToast('Условия изменились — перезапустите оптимизацию'); return;
       }
     }
   }
-  // клик по детали — зависит от режима вида: в split/light используем видимую геометрию
   let candidates = [];
   if (viewMode === 'light' && currentLightGroup) candidates = currentLightGroup.children;
   else if (viewMode === 'split') {
-    // в split — выбирать ту сторону где клик (по splitRatio)
-    const isLeft = (e.clientX / window.innerWidth) < splitRatio;
-    // но для простоты — тестируем обе, берём первую
-    candidates = [...bracket.children, ...(currentLightGroup ? currentLightGroup.children : [])];
+    candidates = [...(importedGroup ? importedGroup.children : bracket.children), ...(currentLightGroup ? currentLightGroup.children : [])];
   } else {
-    candidates = bracket.children;
-    // если после оптимизации в original — всё равно оригинал
+    if (importedGroup && importedGroup.visible) candidates = importedGroup.children;
+    else candidates = bracket.children;
   }
   const hits = raycaster.intersectObjects(candidates, true);
-  if (hits.length === 0) {
-    if (!e.target.closest('.popover')) { popForce.classList.remove('show'); popKeep.classList.remove('show'); }
-    return;
-  }
+  if (hits.length === 0) { if (!e.target.closest('.popover')) { popForce.classList.remove('show'); popKeep.classList.remove('show'); } return; }
   const hit = hits[0]; const pos = hit.point.clone(); const normal = getWorldNormal(hit);
   console.log('pick', { point: pos, normal });
   if (!currentTool) { showToast(`Клик: ${pos.x.toFixed(1)}, ${pos.y.toFixed(1)}, ${pos.z.toFixed(1)}`); return; }
   if (currentTool === 'fix') {
     const id = genId(); const rec = { kind: 'support', id, position: pos.clone(), normal: normal.clone() }; state.supports.push(rec);
-    const mesh = createSupportMarker(id, pos, normal); supportsGroup.add(mesh); pushHistory({ action: 'add', kind: 'support', id, snapshot: rec }); showToast('Опора установлена');
-    if (state.optimized) showToast('Условия изменились — перезапустите оптимизацию');
+    const mesh = createSupportMarker(id, pos, normal); supportsGroup.add(mesh); pushHistory({ action: 'add', kind: 'support', id, snapshot: rec }); showToast('Опора установлена'); scheduleAutosave(); if (state.optimized) showToast('Условия изменились — перезапустите оптимизацию');
   } else if (currentTool === 'force') {
     if (pendingForce) forcesGroup.remove(pendingForce.previewMesh);
     const dir = normal.clone().negate();
@@ -959,51 +1130,34 @@ canvas.addEventListener('click', (e) => {
     const mesh = createKeepZoneMarker(id, pos, normal, currentKeepRadius); keepZonesGroup.add(mesh); pushHistory({ action: 'add', kind: 'keep', id, snapshot: rec });
     popKeep._targetId = id; positionPopoverAt(popKeep, pos, 18); showPopover(popKeep);
     popKeep.querySelectorAll('[data-r]').forEach(c => c.classList.toggle('active', parseInt(c.dataset.r, 10) === currentKeepRadius));
-    showToast('Зона ' + currentKeepRadius + ' мм — можно изменить');
-    if (state.optimized) showToast('Условия изменились — перезапустите оптимизацию');
+    showToast('Зона ' + currentKeepRadius + ' мм — можно изменить'); scheduleAutosave(); if (state.optimized) showToast('Условия изменились — перезапустите оптимизацию');
   }
 });
 function _removeWithoutHistory(id, group, arr) { const idx = arr.findIndex(x => x.id === id); if (idx >= 0) arr.splice(idx, 1); const mesh = group.children.find(m => m.userData.id === id); if (mesh) group.remove(mesh); }
 document.addEventListener('click', (e) => { if (pendingForce && !e.target.closest('#popoverForce') && !e.target.closest('#scene')) {} });
-
-// ——— ресайз ———
 function onResize() { const w = window.innerWidth, h = window.innerHeight; camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h, false); if (viewMode === 'split') updateSplitDividerPos(); }
 window.addEventListener('resize', onResize); onResize();
-
-// ——— анимация ———
 function animate() {
   requestAnimationFrame(animate);
   const now = performance.now();
   supportsGroup.children.forEach(m => {
     if (m.userData.pulse) {
       const t = (now - m.userData.pulseStart) / 620;
-      if (t < 1) {
-        const s = 1 + t * 0.65; const o = 1 - t * 0.75;
-        m.userData.rings.forEach((ring, i) => { const k = i === 0 ? s : s * 0.85; ring.scale.set(k, k, 1); ring.material.opacity = o * (i === 0 ? 0.85 : 0.55); });
-      } else { m.userData.pulse = false; m.userData.rings.forEach((ring, i) => { ring.scale.set(1, 1, 1); ring.material.opacity = i === 0 ? 0.55 : 0.35; }); }
+      if (t < 1) { const s = 1 + t * 0.65; const o = 1 - t * 0.75; m.userData.rings.forEach((ring, i) => { const k = i === 0 ? s : s * 0.85; ring.scale.set(k, k, 1); ring.material.opacity = o * (i === 0 ? 0.85 : 0.55); }); }
+      else { m.userData.pulse = false; m.userData.rings.forEach((ring, i) => { ring.scale.set(1, 1, 1); ring.material.opacity = i === 0 ? 0.55 : 0.35; }); }
     }
   });
   controls.update();
-
   if (viewMode === 'split' && state.optimized && currentLightGroup) {
-    // scissor рендер
-    const w = window.innerWidth, h = window.innerHeight;
-    const leftW = Math.round(w * splitRatio);
-    const rightW = w - leftW;
+    const w = window.innerWidth, h = window.innerHeight; const leftW = Math.round(w * splitRatio); const rightW = w - leftW;
     renderer.setScissorTest(true);
-    // левая — оригинал
+    // левая — оригинал/импорт
+    const leftGroup = importedGroup && importedGroup.visible ? importedGroup : bracket;
     renderer.setViewport(0, 0, leftW, h); renderer.setScissor(0, 0, leftW, h);
-    bracket.visible = true; currentLightGroup.visible = false;
-    // скрыть лайт материалы временно
-    renderer.render(scene, camera);
-    // правая — облегчённая
+    leftGroup.visible = true; currentLightGroup.visible = false; renderer.render(scene, camera);
     renderer.setViewport(leftW, 0, rightW, h); renderer.setScissor(leftW, 0, rightW, h);
-    bracket.visible = false; currentLightGroup.visible = true;
-    renderer.render(scene, camera);
-    // восстановить
-    bracket.visible = true; currentLightGroup.visible = true;
-    renderer.setScissorTest(false);
-    renderer.setViewport(0, 0, w, h);
+    leftGroup.visible = false; currentLightGroup.visible = true; renderer.render(scene, camera);
+    leftGroup.visible = true; currentLightGroup.visible = true; renderer.setScissorTest(false); renderer.setViewport(0, 0, w, h);
   } else {
     renderer.render(scene, camera);
   }
@@ -1011,9 +1165,5 @@ function animate() {
 animate();
 const hint = document.getElementById('centerHint');
 if (hint) setTimeout(() => hint.classList.add('hidden'), 600);
-console.log('%cOpenLight Этап 4 — демо-оптимизация готова', 'color:#007AFF;font-weight:600');
-console.log('Подсказка: поставьте опоры/силу → Оптимизировать → Вид/шторка → слайдер 20/40/60 → Экспорт STL');
-
-// экспорт для отладки
-window._state = state;
-window._scene = scene;
+console.log('%cOpenLight Этап 5 — js_api, импорт STL, проекты, автосейв', 'color:#007AFF;font-weight:600');
+window._state = state; window._scene = scene;

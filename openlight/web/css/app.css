@@ -187,5 +187,15 @@ body {
 #splitDivider .handle::before { content: "⇔"; font-size: 14px; font-weight: 600; }
 #popoverRelief { min-width: 240px; }
 #popoverRelief .section-label { margin-top: 8px; }
+#recentList { max-height: 140px; overflow-y: auto; }
+.recent-item {
+  display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 10px; cursor: pointer; transition: background 150ms;
+  font-size: 12.5px; color: #1D1D1F; border: 1px solid transparent;
+}
+.recent-item:hover { background: rgba(0,0,0,0.05); }
+.recent-item .rname { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; }
+.recent-item .rpath { font-size: 10px; color: #9AA0AA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; }
+#restorePrompt { min-width: 280px; }
+#restorePrompt .chip { min-height: 32px; }
 @media (max-width: 720px) { .bottom-right { display: none; } .bottom-center { padding: 5px 6px; gap: 2px; } .dock-btn { width: 40px; height: 40px; } .dock-btn.accent { width: 48px; height: 48px; } #legend { display: none; } }
 @media (max-width: 520px) { .top-right .icon-btn span { display: none; } }

@@ -24,6 +24,12 @@
   </div>
 
   <div class="top-right" role="toolbar" aria-label="Действия">
+    <button class="icon-btn" id="btnOpen" title="Открыть модель" aria-label="Открыть">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H10L12 7H17.5A2.5 2.5 0 0 1 20 9.5V16.5A2.5 2.5 0 0 1 17.5 19H6.5A2.5 2.5 0 0 1 4 16.5V7.5Z" />
+        <path d="M4 9.5H20" />
+      </svg>
+    </button>
     <button class="icon-btn" id="btnUndo" title="Отменить" aria-label="Отменить">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8H5V5" /><path d="M5 8A8 8 0 1 0 9 4.5" /></svg>
     </button>
@@ -31,7 +37,7 @@
     <button class="icon-btn" id="btnExport" title="Экспорт STL" aria-label="Экспорт">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4" /><path d="M8 8L12 4L16 8" /><path d="M4 12V19A1 1 0 0 0 5 20H19A1 1 0 0 0 20 19V12" /></svg>
     </button>
-    <button class="icon-btn" id="btnMore" title="Настройки" aria-label="Ещё">
+    <button class="icon-btn" id="btnMore" title="Настройки и последние" aria-label="Ещё">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="19.2" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="4.8" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
     </button>
   </div>
@@ -42,7 +48,7 @@
         <svg viewBox="0 0 24 24"><path d="M12 3L19.5 7.5V16.5L12 21L4.5 16.5V7.5L12 3Z"/><path d="M4.5 7.5L12 12L19.5 7.5"/><path d="M12 12V21"/></svg>
       </div>
       <p><strong>Полотно пусто</strong> — перетащите .STL или выберите тест-деталь</p>
-      <p style="margin-top:4px; font-size:12px; opacity:0.8">3D-сцена появится на Этапе 2</p>
+      <p style="margin-top:4px; font-size:12px; opacity:0.8">Нажмите <strong>папку</strong> чтобы открыть модель</p>
     </div>
   </div>
 
@@ -92,6 +98,15 @@
   <div id="warningToast" class="warning-toast" role="alert"></div>
   <div id="phaseToast" class="phase-toast" role="status"><span class="dot"></span><span id="phaseText">Анализ</span></div>
 
+  <div id="restorePrompt" class="popover" role="dialog" aria-label="Восстановление">
+    <div class="popover-title">Восстановить прошлую работу?</div>
+    <div style="font-size:12.5px; color:#6E6E73; line-height:1.4; margin-bottom:12px;">Найден автосейв, свежее 7 дней.</div>
+    <div style="display:flex; gap:8px;">
+      <button class="chip active" id="restoreYes" style="flex:1; justify-content:center;">Да</button>
+      <button class="chip" id="restoreNo" style="flex:1; justify-content:center;">Нет</button>
+    </div>
+  </div>
+
   <div id="popoverForce" class="popover has-arrow" role="dialog" aria-label="Сила">
     <div class="popover-title">Сила</div>
     <div class="popover-row">
@@ -130,12 +145,19 @@
     </div>
   </div>
 
-  <div id="popoverSettings" class="popover settings-popover" role="dialog" aria-label="Настройки">
-    <div class="popover-title">Настройки</div>
+  <div id="popoverSettings" class="popover settings-popover" role="dialog" aria-label="Настройки и проекты">
+    <div class="popover-title">Проект</div>
+    <div style="display:flex; gap:6px; margin-bottom:10px;">
+      <button class="chip" id="btnSaveProject" style="flex:1; justify-content:center;">Сохранить…</button>
+      <button class="chip" id="btnOpenProject" style="flex:1; justify-content:center;">Открыть…</button>
+    </div>
+    <div id="recentList" style="margin-bottom:10px;"></div>
+    <div class="section-label">Настройки</div>
     <div class="settings-row"><span class="label">Единицы</span><span>Н, мм</span></div>
     <div class="settings-row muted">Сетка: 24 мм</div>
     <div class="settings-row muted">Точность: 0.1 мм</div>
     <div class="settings-row muted">Оптимизация: демо-режим</div>
+    <div class="settings-row" style="margin-top:6px;"><span class="label" style="font-size:11px; color:#9AA0AA;">Версия <span id="appVersion">0.5.0</span> · <span id="appDataPath" style="font-size:10px;"></span></span></div>
   </div>
 
   <div id="popoverRelief" class="popover" role="dialog" aria-label="Облегчение">
