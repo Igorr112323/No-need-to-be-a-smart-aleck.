@@ -73,7 +73,7 @@ jobs:
           echo "=== PyInstaller build start ==="
           ls -lh assets/openlight.ico VERSION LICENSE || echo "missing assets"
           echo "=== PyInstaller with collect-all ==="
-          pyinstaller --onefile --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-submodules trimesh --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
+          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-submodules trimesh --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
           cat ../pyinstaller.log | tail -n 200 || true
           ls -lh dist/OpenLight.exe || echo "dist not found"
           cp ../pyinstaller.log ./pyinstaller.log 2>/dev/null || true

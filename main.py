@@ -35,9 +35,17 @@ def get_version() -> str:
     return "0.9.3-test"
 APP_VERSION = get_version()
 
-# --selftest флаг (без окна) для CI проверки exe
+# --selftest флаг (без окна) для CI проверки exe — работает и в --windowed (без консоли)
 if "--selftest" in sys.argv:
+    # в windowed-сборке консоли нет — пробуем AllocConsole, иначе пишем в stderr
+    try:
+        if os.name == 'nt':
+            import ctypes
+            ctypes.windll.kernel32.AllocConsole()
+    except:
+        pass
     print(f"OpenLight {APP_VERSION}")
+    sys.stdout.flush()
     sys.exit(0)
 
 def get_app_data_dir() -> pathlib.Path:
@@ -372,6 +380,7 @@ class Api:
 
 
 def main():
+    # двойной запуск из exe не открывает второе окно — только один инстанс
     try:
         import webview
     except ImportError:
@@ -383,6 +392,8 @@ def main():
         return
     url = get_web_path()
     api = Api()
+    # Фаза A: системную плашку скрываем — frameless окно (дизайн web/* не менялся)
+    # На Windows frameless убирает чёрную системную плашку, оставляя только dot-grid пилюли
     window = webview.create_window(
         "OpenLight",
         url=url,
@@ -390,7 +401,11 @@ def main():
         height=900,
         min_size=(1100, 700),
         resizable=True,
-        js_api=api
+        frameless=True,
+        easy_drag=True,
+        focus=True,
+        js_api=api,
+        background_color="#F9F9FB"
     )
     webview.start(debug=False)
 
