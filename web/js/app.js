@@ -7,16 +7,43 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { STLExporter } from 'three/addons/exporters/STLExporter.js';
 import { state, DENSITIES, MATERIAL_LABELS, BRACKET_VOLUME_CM3, computeWeightGram, computeWeightAfter, computeSafety, pushHistory, popHistory, genId, setMaterial, setProcess } from './state.js';
 
-// ——— управление окном (frameless) + лоадер ———
+// ——— управление окном (frameless) + лоадер + защита от зависания ———
 const appLoader = document.getElementById('appLoader');
+const loaderSub = document.getElementById('loaderSub');
+const loaderFill = document.getElementById('loaderFill');
+let _loaderProgress = 0;
+function setLoaderProgress(pct, text){
+  _loaderProgress = pct;
+  if(loaderFill) loaderFill.style.width = Math.min(100,pct) + '%';
+  loaderFill.style.animation = 'none';
+  if(loaderSub && text) loaderSub.textContent = text;
+}
 function hideLoader(){
-  if(appLoader){
+  if(appLoader && !appLoader.classList.contains('hidden')){
+    setLoaderProgress(100, 'Готово');
     appLoader.classList.add('hidden');
     setTimeout(()=>{ appLoader.style.display='none'; }, 500);
   }
 }
-window.addEventListener('load', ()=> setTimeout(hideLoader, 900));
-setTimeout(hideLoader, 2500); // фолбэк
+// убираем лоадер максимально агрессивно: DOMContentLoaded + load + таймеры + pywebviewready
+document.addEventListener('DOMContentLoaded', ()=> setTimeout(hideLoader, 600));
+window.addEventListener('load', ()=> setTimeout(hideLoader, 400));
+window.addEventListener('pywebviewready', ()=> setTimeout(hideLoader, 300));
+// анимация фейк-прогресса пока грузится pywebview (не 86/100 корпуса!)
+let _loaderFake = setInterval(()=>{
+  if(!appLoader || appLoader.classList.contains('hidden')){ clearInterval(_loaderFake); return; }
+  _loaderProgress = Math.min(92, _loaderProgress + (Math.random()*6+2));
+  if(loaderFill){ loaderFill.style.width = _loaderProgress + '%'; loaderFill.style.animation='none'; }
+  if(loaderSub){
+    if(_loaderProgress<30) loaderSub.textContent='Загрузка интерфейса…';
+    else if(_loaderProgress<65) loaderSub.textContent='Подготовка сцены…';
+    else if(_loaderProgress<90) loaderSub.textContent='Инициализация…';
+    else loaderSub.textContent='Почти готово…';
+  }
+  if(_loaderProgress>=92) clearInterval(_loaderFake);
+}, 180);
+setTimeout(hideLoader, 1800); // жёсткий фолбэк 1.8с, а не 5 минут
+setTimeout(()=>{ clearInterval(_loaderFake); hideLoader(); }, 4000);
 
 const winClose = document.getElementById('winClose');
 const winMin = document.getElementById('winMin');
