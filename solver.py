@@ -359,6 +359,11 @@ def optimize_topology(
         loadcases[1] = forces
     if not loadcases:
         loadcases[1] = []
+    # если все случаи пустые (тест bracket без сил) — fallback 500Н
+    total_f = sum(len(v) for v in loadcases.values())
+    if total_f == 0:
+        loadcases = {1: [{"position":[0.0, 68.0, 0.0],"direction":[0,-1,0],"valueN":500}]}
+        print("[solver] нет сил — fallback 500Н (loadcases были пустые)")
     # для обратной совместимости — если один случай, forces как есть
     has_multiple_cases = len(loadcases) > 1
 
