@@ -73,16 +73,28 @@ jobs:
         run: |
           echo "=== PyInstaller build start ==="
           ls -lh assets/openlight.ico VERSION LICENSE || echo "missing assets"
-          ls -lh web/vendor/*.js | head || true
-          # try with verbose, collect logs
-          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --hidden-import=webview --log-level INFO main.py 2>&1 | tee ../pyinstaller.log; echo "PYINSTALLER_EXIT=${PIPESTATUS[0]}" >> ../pyinstaller.log; cat ../pyinstaller.log | tail -n 300 || true
-          ls -lh dist/OpenLight.exe || echo "dist not found"
-          # show errors
-          grep -i "error\|failed\|Traceback" ../pyinstaller.log | head -n 50 || true
-          # keep log for artifact
-          cp ../pyinstaller.log ./pyinstaller.log || true
-          # fail if no exe
-          test -f dist/OpenLight.exe && echo "BUILD OK" || (echo "BUILD FAILED — no exe"; cat ../pyinstaller.log | tail -n 100; exit 1)
+          echo "=== pip list ==="; pip list | grep -i pyinstaller
+          echo "=== python version ==="; python --version
+          # simple build without windowed/icon first to test
+          echo "=== Try simple pyinstaller without windowed/icon ==="
+          pyinstaller --onefile --name OpenLightSimple --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." main.py --log-level INFO 2>&1 | tee ../pyinstaller_simple.log | tail -n 50; echo "SIMPLE_EXIT=${PIPESTATUS[0]}" >> ../pyinstaller_simple.log
+          if [ -f dist/OpenLightSimple.exe ]; then
+            echo "Simple build OK — $(ls -lh dist/OpenLightSimple.exe)"
+            # now try full windowed
+            echo "=== Now full windowed build ==="
+            pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --hidden-import=webview --log-level INFO main.py 2>&1 | tee ../pyinstaller.log | tail -n 100
+            ls -lh dist/OpenLight.exe && echo "FULL BUILD OK" || echo "FULL BUILD FAILED"
+          else
+            echo "Simple build failed — show log"
+            cat ../pyinstaller_simple.log | tail -n 200
+            echo "=== Try with hidden imports ==="
+            pyinstaller --onefile --name OpenLightSimple2 --hidden-import=trimesh --hidden-import=scipy --hidden-import=numpy --add-data "web;web" main.py 2>&1 | tee ../pyinstaller2.log | tail -n 100
+            ls -lh dist/OpenLightSimple2.exe || true
+            cat ../pyinstaller2.log | tail -n 100
+            exit 1
+          fi
+          cp ../pyinstaller.log ./pyinstaller.log || cp ../pyinstaller_simple.log ./pyinstaller.log || true
+          test -f dist/OpenLight.exe && echo "BUILD OK" || (echo "BUILD FAILED — no exe"; exit 1)
 
       - name: Size
         working-directory: repo
