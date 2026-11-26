@@ -1,0 +1,272 @@
+[
+  {
+    "file": "openlight_bracket_proc.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "bracket",
+    "notes": "Процедурный L-кронштейн OpenLight"
+  },
+  {
+    "file": "openlight_uav_arm.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "uav_bracket",
+    "notes": "Процедурный кронштейн БПЛА"
+  },
+  {
+    "file": "openlight_thin_plate.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "thinwall",
+    "notes": "Тонкая пластина"
+  },
+  {
+    "file": "openlight_gear_12t.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "gear",
+    "notes": "Шестерня 12 зубьев"
+  },
+  {
+    "file": "openlight_housing_box.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "housing",
+    "notes": "Корпус коробка"
+  },
+  {
+    "file": "openlight_hinge_simple.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "hinge",
+    "notes": "Петля простая"
+  },
+  {
+    "file": "openlight_lattice.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "thinwall",
+    "notes": "Решётка"
+  },
+  {
+    "file": "openlight_bracket_v2.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "bracket",
+    "notes": "Кронштейн v2"
+  },
+  {
+    "file": "openlight_uav_frame.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "uav_bracket",
+    "notes": "Рама БПЛА"
+  },
+  {
+    "file": "openlight_bracket_heavy.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "bracket",
+    "notes": "Усиленный кронштейн"
+  },
+  {
+    "file": "cow.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/cow.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models) — Alec Jacobson",
+    "sha256": "69afce548640bc2beb0c44894d1a24d5766cc9cd3fd74f3ec55b4e229104b23f",
+    "category": "organic",
+    "notes": "Stanford Cow (2903 вершин) — MIT"
+  },
+  {
+    "file": "spot.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/spot.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models) — Alec Jacobson",
+    "sha256": "0738b5e8608fed74e5e8c7aa8dd0af97b4b74f9f6cbf7aac84cd7e40b2e44a75",
+    "category": "organic",
+    "notes": "Spot cow — MIT"
+  },
+  {
+    "file": "stanford-bunny.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/stanford-bunny.obj",
+    "origin": "external",
+    "license": "CC0 (Stanford 3D Scan Repository)",
+    "sha256": "1eb35d1e21ce99e5ce911353b6be278990713448dd9e8f5c9387f9de39b32205",
+    "category": "organic",
+    "notes": "Stanford Bunny — public domain CC0"
+  },
+  {
+    "file": "nefertiti.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/nefertiti.obj",
+    "origin": "external",
+    "license": "CC0 (Stanford/Thingi10K)",
+    "sha256": "19e39748b145092878cc4faafd050505eb5991c5d3e497be2b4575673fa87968",
+    "category": "organic",
+    "notes": "Nefertiti scan — CC0"
+  },
+  {
+    "file": "armadillo.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/armadillo.obj",
+    "origin": "external",
+    "license": "CC0 (Stanford)",
+    "sha256": "d2fd040334c12b16804fbcb9962391232cc24708244617f931baaa871210563e",
+    "category": "organic",
+    "notes": "Armadillo — CC0"
+  },
+  {
+    "file": "happy.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/happy.obj",
+    "origin": "external",
+    "license": "CC0 (Stanford)",
+    "sha256": "8ce5a4a7161efd97dabc8eeb281824fac1b17c9ba2cb0c2c6f350cd05982058c",
+    "category": "organic",
+    "notes": "Happy Buddha — CC0"
+  },
+  {
+    "file": "teapot.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/teapot.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models) — CC0 Utah",
+    "sha256": "1b5396fedd74b577e32cef41146582c2f2e1a050d5b4915193c0ac1ad4187ed4",
+    "category": "housing",
+    "notes": "Utah Teapot — MIT/CC0"
+  },
+  {
+    "file": "beetle.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "46ee9dcbec84b8d1b8f0d743ab1c91b1ed81378672fc0516e7afff5172d7c9b7",
+    "category": "thinwall",
+    "notes": "Beetle car — MIT"
+  },
+  {
+    "file": "alligator.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/alligator.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "108a1f4319e4a069b2bfbee3b5f278551501d75c473bb705c62e2bef872ad544",
+    "category": "organic",
+    "notes": "Alligator — MIT"
+  },
+  {
+    "file": "homer.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/homer.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "b20b1391fd62964f65703d748514d86d747d1202d38e55e0f1addac7a5a10e8b",
+    "category": "organic",
+    "notes": "Homer — MIT"
+  },
+  {
+    "file": "trimesh_20mm_cube.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/20mm-xyz-cube.stl",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "22605742d8305430f1d803fc74cbe222333a9a6903339572171cd6b8b16c4d6c",
+    "category": "thinwall",
+    "notes": "20mm calibration cube — BSD"
+  },
+  {
+    "file": "trimesh_angle_block.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/angle_block.STL",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "512bf110ef9f181e33b1006467a0637f3a0ae2c89e02bca943526a574440c4c9",
+    "category": "bracket",
+    "notes": "Angle block — BSD"
+  },
+  {
+    "file": "trimesh_featuretype.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "bracket",
+    "notes": "Featuretype — BSD"
+  },
+  {
+    "file": "trimesh_box.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/box.STL",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "196ea36c66e96d56997af8a9a9effac779aac95d43b0bce49cf5a2befdec6b80",
+    "category": "housing",
+    "notes": "Box — BSD"
+  },
+  {
+    "file": "trimesh_busted.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/busted.STL",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "ec9d11fd0db249f1e40b737d07227cfc2f06bbd033e3dcc9e785b5ec25b8d024",
+    "category": "organic",
+    "notes": "Busted — BSD"
+  },
+  {
+    "file": "trimesh_plate_holes.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/plate_holes.STL",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "318f92206dd20b2cede5b70eb5e686d3627c6b157b91e9ed383314329dcff209",
+    "category": "thinwall",
+    "notes": "Plate with holes — BSD"
+  },
+  {
+    "file": "trimesh_counter.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/counter.unitsmm.STL",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "770c966cd97988375f8429fe9dea5c0aef7bc0ffaa3db0cf3a0ea4749ab90774",
+    "category": "housing",
+    "notes": "Counter — BSD"
+  },
+  {
+    "file": "trimesh_adis.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/ADIS16480.STL",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "04986531c03907943985378e66f5ca45731b2d7c07a3635886be7d9e7ac9e0e4",
+    "category": "housing",
+    "notes": "ADIS16480 — BSD"
+  },
+  {
+    "file": "trimesh_oct_pocket.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/octagonal_pocket.stl",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "5dcb9243f154cdd2bb50842bc7bee8bd38dad6c8033aa4399a0d231211c6947e",
+    "category": "thinwall",
+    "notes": "Octagonal pocket — BSD"
+  },
+  {
+    "file": "trimesh_tray.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/1002_tray_bottom.STL",
+    "origin": "external",
+    "license": "BSD (trimesh) — CC0",
+    "sha256": "9700c0df2263904f44101a456b27aefd5d8d733ef297d3a80566de2903c8fd67",
+    "category": "thinwall",
+    "notes": "Tray bottom — BSD"
+  }
+]

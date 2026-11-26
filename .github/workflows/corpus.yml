@@ -1,0 +1,48 @@
+name: Corpus stress-test
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Limit models (0=all)'
+        required: false
+        default: '30'
+  schedule:
+    - cron: '0 3 * * 1'  # weekly Monday 03:00 UTC
+  push:
+    branches: [ main, "arena/**" ]
+    paths:
+      - 'tests/corpus/manifest.json'
+      - 'tools/fetch_corpus.py'
+      - 'tools/make_stress_report.py'
+      - 'solver.py'
+
+jobs:
+  corpus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - name: Cache corpus
+        uses: actions/cache@v4
+        with:
+          path: tests/corpus/cache
+          key: corpus-${{ hashFiles('tests/corpus/manifest.json') }}
+          restore-keys: corpus-
+      - name: Install deps
+        run: pip install -r requirements.txt && pip install pytest
+      - name: Fetch corpus
+        run: python tools/fetch_corpus.py --limit ${{ github.event.inputs.limit || '30' }}
+      - name: Make stress report
+        run: python tools/make_stress_report.py --limit ${{ github.event.inputs.limit || '30' }}
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: corpus-report
+          path: |
+            report.json
+            report.html
+            tests/corpus/cache/
+          retention-days: 14

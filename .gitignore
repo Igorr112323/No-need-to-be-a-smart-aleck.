@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+
+# PyInstaller — build оставляем для vendor.py
+# build/
+dist/
+*.spec
+*.exe
+*.manifest
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Vendor (three.js качается скриптом, но коммитим)
+# web/vendor/three.min.js — оставить в git
+
+# Логи
+*.log
+
+# Corpus cache — не коммитим, качается в CI
+tests/corpus/cache/
+report.json
+report.html
+openlight.bundle
+
+# Bundle
+*.bundle
