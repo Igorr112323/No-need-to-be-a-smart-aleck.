@@ -1,6 +1,6 @@
 """
-OpenLight — точка входа (Этап 5).
-Окно pywebview 1400x900, офлайн, js_api для файлов/проектов/автосейва.
+OpenLight — точка входа (Этап 7, фаза B).
+Окно pywebview 1400x900, офлайн, js_api: файлы + реальное ядро МКЭ/SIMP.
 """
 import os
 import sys
@@ -8,15 +8,14 @@ import pathlib
 import json
 import base64
 import time
+import threading
+import traceback
 from datetime import datetime
 
-APP_VERSION = "0.5.0"
+APP_VERSION = "0.7.0"
 APP_NAME = "OpenLight"
 
 def get_app_data_dir() -> pathlib.Path:
-    # Windows: %APPDATA%\OpenLight
-    # macOS: ~/Library/Application Support/OpenLight
-    # Linux: $XDG_DATA_HOME/OpenLight или ~/.config/OpenLight
     if os.name == 'nt':
         base = os.environ.get('APPDATA', os.path.expanduser('~'))
         return pathlib.Path(base) / APP_NAME
@@ -35,7 +34,6 @@ def ensure_app_data():
         APP_DATA_DIR.mkdir(parents=True, exist_ok=True)
     except Exception:
         pass
-
 ensure_app_data()
 
 def load_recent():
@@ -57,10 +55,8 @@ def save_recent(lst):
 def add_recent(path_str):
     try:
         lst = load_recent()
-        # убрать дубли
         lst = [p for p in lst if p.get('path') != path_str]
         lst.insert(0, {'path': path_str, 'name': os.path.basename(path_str), 'ts': int(time.time())})
-        # оставить 5
         lst = lst[:5]
         save_recent(lst)
     except Exception as e:
@@ -79,85 +75,78 @@ def get_web_path() -> str:
             return p.resolve().as_uri()
     return (base / "web" / "index.html").resolve().as_uri()
 
+# ——— оптимизация: фоновые задачи ———
+_jobs = {}
+_jobs_lock = threading.Lock()
+_job_counter = 0
+
+def _next_job_id():
+    global _job_counter
+    with _jobs_lock:
+        _job_counter += 1
+        return f"job-{_job_counter}-{int(time.time())}"
+
 class Api:
     """Методы доступны в JS как window.pywebview.api.*"""
 
+    # —— базовые ——
     def get_app_info(self):
         ensure_app_data()
-        return {
-            'version': APP_VERSION,
-            'appData': str(APP_DATA_DIR),
-            'name': APP_NAME
-        }
+        return {'version': APP_VERSION, 'appData': str(APP_DATA_DIR), 'name': APP_NAME}
 
     def get_recent(self):
         return load_recent()
 
     def open_model(self):
-        """Нативный диалог STL/OBJ/STEP, возвращает {name, data(base64), size} или None"""
         try:
             import webview
             win = webview.windows[0] if webview.windows else None
             if not win:
                 return {'error': 'Нет окна'}
             file_types = ('3D модели (*.stl;*.obj;*.step;*.stp)', 'Все файлы (*.*)')
-            # pywebview API: create_file_dialog(dialog_type, allow_multiple, file_types, save_filename)
             result = win.create_file_dialog(webview.OPEN_DIALOG, allow_multiple=False, file_types=file_types)
             if not result:
                 return None
-            # result может быть tuple/list или строка
             path = result[0] if isinstance(result, (list, tuple)) else result
             if not path or not os.path.exists(path):
                 return None
-            # проверка расширения
             ext = os.path.splitext(path)[1].lower()
-            if ext not in ('.stl', '.obj', '.step', '.stp'):
-                # всё равно попробуем прочитать
-                pass
             with open(path, 'rb') as f:
                 data = f.read()
-            # ограничим 50 МБ
             if len(data) > 50 * 1024 * 1024:
                 return {'error': 'Файл слишком большой (>50 МБ)'}
             b64 = base64.b64encode(data).decode('ascii')
             return {'name': os.path.basename(path), 'size': len(data), 'data': b64, 'path': path, 'ext': ext}
         except Exception as e:
+            traceback.print_exc()
             return {'error': str(e)}
 
     def save_stl(self, b64_data, suggested_name="optimized.stl"):
-        """Сохранить как STL: b64_data — base64, suggested_name — имя по умолчанию"""
         try:
             import webview
             win = webview.windows[0] if webview.windows else None
             if not win:
                 return {'error': 'Нет окна'}
-            # диалог сохранения
             file_types = ('STL (*.stl)', 'Все файлы (*.*)')
-            # webview SAVE_DIALOG возвращает путь
-            # второй аргумент: save_filename — подсказка
             result = win.create_file_dialog(webview.SAVE_DIALOG, allow_multiple=False, file_types=file_types, save_filename=suggested_name)
             if not result:
                 return {'cancelled': True}
             path = result[0] if isinstance(result, (list, tuple)) else result
             if not path:
                 return {'cancelled': True}
-            # если нет расширения — добавить .stl
             if not os.path.splitext(path)[1]:
                 path += '.stl'
-            # декодировать
-            # b64_data может быть с префиксом data:?
             if isinstance(b64_data, str) and b64_data.startswith('data:'):
-                # извлечь после запятой
                 b64_data = b64_data.split(',', 1)[-1]
             raw = base64.b64decode(b64_data)
             with open(path, 'wb') as f:
                 f.write(raw)
             return {'ok': True, 'path': path}
         except Exception as e:
+            traceback.print_exc()
             return {'error': str(e)}
 
     def save_project(self, json_str, suggested_name=None):
-        """Сохранить проект .olight.json — json_str из JS"""
         try:
             import webview
             win = webview.windows[0] if webview.windows else None
@@ -165,7 +154,6 @@ class Api:
                 return {'error': 'Нет окна'}
             if not suggested_name:
                 suggested_name = 'project.olight.json'
-            # если нет расширения
             if not suggested_name.endswith('.olight.json'):
                 if not os.path.splitext(suggested_name)[1]:
                     suggested_name += '.olight.json'
@@ -178,20 +166,16 @@ class Api:
                 return {'cancelled': True}
             if not path.endswith('.olight.json') and not path.endswith('.json'):
                 path += '.olight.json'
-            # валидировать JSON
-            try:
-                json.loads(json_str)
-            except Exception:
-                return {'error': 'Невалидный JSON'}
+            json.loads(json_str)
             with open(path, 'w', encoding='utf-8') as f:
                 f.write(json_str)
             add_recent(path)
             return {'ok': True, 'path': path}
         except Exception as e:
+            traceback.print_exc()
             return {'error': str(e)}
 
     def open_project(self):
-        """Открыть проект — диалог + чтение"""
         try:
             import webview
             win = webview.windows[0] if webview.windows else None
@@ -206,18 +190,14 @@ class Api:
                 return None
             with open(path, 'r', encoding='utf-8') as f:
                 data = f.read()
-            # валидация
-            try:
-                json.loads(data)
-            except Exception as e:
-                return {'error': f'Невалидный проект: {e}'}
+            json.loads(data)
             add_recent(path)
             return {'ok': True, 'path': path, 'data': data, 'name': os.path.basename(path)}
         except Exception as e:
+            traceback.print_exc()
             return {'error': str(e)}
 
     def open_project_path(self, path):
-        """Открыть конкретный путь (из последних)"""
         try:
             if not path or not os.path.exists(path):
                 return {'error': 'Файл не найден'}
@@ -230,10 +210,8 @@ class Api:
             return {'error': str(e)}
 
     def autosave(self, json_str):
-        """Дебаунс 800мс с JS стороны, пишет autosave"""
         try:
             ensure_app_data()
-            # добавить метку времени
             payload = json.loads(json_str)
             payload['_autosave_ts'] = int(time.time())
             with open(AUTOSAVE_PATH, 'w', encoding='utf-8') as f:
@@ -243,17 +221,14 @@ class Api:
             return {'error': str(e)}
 
     def get_autosave_info(self):
-        """Проверить автосейв свежее 7 дней"""
         try:
             if not AUTOSAVE_PATH.exists():
                 return {'exists': False}
             mtime = AUTOSAVE_PATH.stat().st_mtime
             age = time.time() - mtime
-            # 7 дней = 604800 сек
             if age > 7 * 24 * 3600:
                 return {'exists': False, 'tooOld': True}
             data = AUTOSAVE_PATH.read_text(encoding='utf-8')
-            # проверить что валидный
             json.loads(data)
             return {'exists': True, 'mtime': mtime, 'age': age, 'data': data}
         except Exception as e:
@@ -267,6 +242,108 @@ class Api:
         except Exception as e:
             return {'error': str(e)}
 
+    # —— реальное ядро Этапа 7 ——
+    def start_optimization(self, payload_json: str):
+        """
+        Запуск воксельного МКЭ+SIMP в фоне.
+        payload: {stl_b64, supports, forces, keepZones, material, relief, resolution}
+        Возвращает {job_id}
+        """
+        try:
+            payload = json.loads(payload_json) if isinstance(payload_json, str) else payload_json
+        except Exception as e:
+            return {'error': f'Невалидный payload: {e}'}
+        job_id = _next_job_id()
+        with _jobs_lock:
+            _jobs[job_id] = {
+                'status': 'running',
+                'progress': 0,
+                'phase': 'Вокселизация',
+                'msg': 'Подготовка...',
+                'iteration': 0,
+                'total_iter': 20,
+                'result': None,
+                'error': None,
+                'start': time.time(),
+            }
+        def run():
+            try:
+                # ленивый импорт — чтобы не падать если нет зависимостей
+                try:
+                    # пробуем из openlight.solver или solver
+                    try:
+                        from openlight.solver import optimize_topology
+                    except ImportError:
+                        from solver import optimize_topology
+                except Exception as e:
+                    with _jobs_lock:
+                        _jobs[job_id].update({'status': 'error', 'error': f'Модуль solver не найден: {e}'})
+                    return
+
+                def cb(info):
+                    # info: {phase, pct, msg, elapsed, iteration}
+                    with _jobs_lock:
+                        if job_id in _jobs and _jobs[job_id]['status'] == 'running':
+                            _jobs[job_id].update({
+                                'phase': info.get('phase', ''),
+                                'progress': float(info.get('pct', 0)),
+                                'msg': info.get('msg', ''),
+                                'iteration': info.get('iteration', 0),
+                            })
+
+                # вызов оптимизатора
+                result = optimize_topology(
+                    stl_b64=payload.get('stl_b64'),
+                    supports=payload.get('supports', []),
+                    forces=payload.get('forces', []),
+                    keep_zones=payload.get('keepZones', payload.get('keep_zones', [])),
+                    material=payload.get('material', 'steel'),
+                    relief=float(payload.get('relief', payload.get('targetRelief', 0.4))),
+                    resolution=int(payload.get('resolution', 64)),
+                    progress_cb=cb,
+                    timeout=float(payload.get('timeout', 45)),
+                )
+                with _jobs_lock:
+                    _jobs[job_id].update({'status': 'done', 'progress': 100, 'phase': 'Готово', 'result': result})
+            except TimeoutError as te:
+                with _jobs_lock:
+                    _jobs[job_id].update({'status': 'timeout', 'error': str(te), 'phase': 'Тайм-аут'})
+            except Exception as e:
+                traceback.print_exc()
+                with _jobs_lock:
+                    _jobs[job_id].update({'status': 'error', 'error': str(e), 'phase': 'Ошибка'})
+
+        t = threading.Thread(target=run, daemon=True)
+        t.start()
+        return {'job_id': job_id, 'ok': True}
+
+    def get_optimization_progress(self, job_id: str):
+        with _jobs_lock:
+            job = _jobs.get(job_id)
+            if not job:
+                return {'error': 'Задача не найдена'}
+            # вернуть копию без тяжёлого result (но если done — с result)
+            out = {k: v for k, v in job.items() if k != 'result'}
+            if job['status'] == 'done' and job.get('result'):
+                out['result'] = job['result']
+            return out
+
+    def get_optimization_result(self, job_id: str):
+        with _jobs_lock:
+            job = _jobs.get(job_id)
+            if not job:
+                return {'error': 'Задача не найдена'}
+            if job['status'] != 'done':
+                return {'error': 'Ещё не готово', 'status': job['status']}
+            return {'ok': True, 'result': job['result']}
+
+    def cancel_optimization(self, job_id: str):
+        with _jobs_lock:
+            if job_id in _jobs:
+                _jobs[job_id]['status'] = 'cancelled'
+                return {'ok': True}
+        return {'error': 'Не найдено'}
+
 
 def main():
     try:
@@ -278,7 +355,6 @@ def main():
         print(f"Открываю {url} в браузере...")
         webbrowser.open(url)
         return
-
     url = get_web_path()
     api = Api()
     window = webview.create_window(
