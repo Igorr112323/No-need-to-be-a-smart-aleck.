@@ -32,7 +32,9 @@ jobs:
 
       - name: Install deps
         working-directory: repo
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install matplotlib  # for ≥80МБ real size, no dummy
 
       - name: Vendor (internet once)
         working-directory: repo
@@ -73,7 +75,7 @@ jobs:
           echo "=== PyInstaller build start ==="
           ls -lh assets/openlight.ico VERSION LICENSE || echo "missing assets"
           echo "=== PyInstaller with collect-all ==="
-          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-all numpy --collect-all PIL --collect-submodules trimesh --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
+          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --add-data "docs;docs" --add-data "report.json;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-all numpy --collect-all PIL --collect-all matplotlib --collect-submodules trimesh --hidden-import=webview --hidden-import=matplotlib --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
           cat ../pyinstaller.log | tail -n 200 || true
           ls -lh dist/OpenLight.exe || echo "dist not found"
           cp ../pyinstaller.log ./pyinstaller.log 2>/dev/null || true
