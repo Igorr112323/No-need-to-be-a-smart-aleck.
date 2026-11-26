@@ -24,14 +24,15 @@ jobs:
       - name: List
         run: ls -lh ./dist || ls -lh .
       - name: Upload to Release
-        shell: bash
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./dist/OpenLight.exe
+          asset_name: OpenLight.exe
+          tag: ${{ inputs.tag }}
+          overwrite: true
+      - name: Verify
         run: |
-          for i in 1 2 3; do
-            echo "Attempt $i"
-            gh release upload "${{ inputs.tag }}" ./dist/OpenLight.exe --clobber && break
-            echo "Retry $i failed"
-            sleep 5
-          done
           ls -lh ./dist/OpenLight.exe
           gh release view "${{ inputs.tag }}" --json assets --jq '.assets[].name'
         env:
