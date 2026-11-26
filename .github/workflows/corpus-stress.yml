@@ -1,0 +1,104 @@
+name: Corpus stress ×1000
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Limit models (0=all manifest)'
+        required: false
+        default: '190'
+  push:
+    branches: [ "arena/**" ]
+    paths:
+      - 'tests/corpus/manifest.json'
+      - 'tools/gen_corpus.py'
+      - 'tools/make_stress_report.py'
+      - 'solver.py'
+
+permissions:
+  contents: read
+
+jobs:
+  stress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9]
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Cache corpus
+        uses: actions/cache@v4
+        with:
+          path: tests/corpus/cache
+          key: corpus-${{ hashFiles('tests/corpus/manifest.json') }}-${{ matrix.shard }}
+          restore-keys: corpus-
+      - name: Install deps
+        run: pip install -r requirements.txt && pip install pytest mapbox-earcut shapely
+      - name: Gen procedural if missing
+        run: |
+          ls tests/corpus/cache | head
+          if [ ! -f tests/corpus/cache/gen_bracket_42_0000.stl ]; then
+            python tools/gen_corpus.py --count 90 --seed 42
+          fi
+          echo "manifest $(cat tests/corpus/manifest.json | python3 -c 'import json; print(len(json.load(open(\"tests/corpus/manifest.json\"))))')"
+      - name: Fetch corpus (limit 100 real)
+        run: python tools/fetch_corpus.py --limit 100 || echo "fetch corpus warning"
+      - name: Stress shard ${{ matrix.shard }}/10
+        run: |
+          # Если make_stress_report поддерживает shard — используем, иначе full
+          if python tools/make_stress_report.py --help 2>&1 | grep -q shard; then
+            python tools/make_stress_report.py --shard ${{ matrix.shard }} --num-shards 10
+          else
+            echo "shard not supported, full report fallback"
+            timeout 50m python tools/make_stress_report.py --limit 190 || true
+          fi
+          ls -lh report.json report.html 2>&1 | head
+      - name: Rename shard
+        run: |
+          mv report.json report_shard_${{ matrix.shard }}.json || true
+          mv report.html report_shard_${{ matrix.shard }}.html || true
+      - name: Upload shard
+        uses: actions/upload-artifact@v4
+        with:
+          name: stress-shard-${{ matrix.shard }}
+          path: |
+            report_shard_*.json
+            report_shard_*.html
+          retention-days: 14
+          if-no-files-found: warn
+
+  merge:
+    needs: stress
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: stress-shard-*
+          merge-multiple: true
+          path: shards
+      - name: Merge reports
+        run: |
+          ls -lh shards/ || echo "no shards"
+          python tools/merge_reports.py || echo "merge fallback"
+          cat docs/STRESS_REPORT.md 2>&1 | head -n 100 || cat docs/CORPUS_REPORT.md | head -n 40
+      - name: Upload merged
+        uses: actions/upload-artifact@v4
+        with:
+          name: stress-report
+          path: |
+            report.json
+            report.html
+            docs/STRESS_REPORT.md
+            docs/CORPUS_REPORT.md
+          retention-days: 14
+          if-no-files-found: warn

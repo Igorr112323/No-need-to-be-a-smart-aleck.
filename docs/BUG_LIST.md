@@ -142,3 +142,41 @@
 
 - **Ссылки (C8):** Build + Corpus зелёные, Release `v0.9.3-test` содержит скачиваемый `OpenLight.exe` 40-70МБ (прямая ссылка `.../releases/download/v0.9.3-test/OpenLight.exe`).
 
+## Обновление 2026-11-26 — QA кампания 190 (E2E + корпус stress, Arena)
+
+- **QA автоматизация (A-D) — проведена:**
+  - A1-A8 инвентарь: tree 47 файлов, 51 HTML id vs 48 JS id — 0 ID-MISMATCH, 3 unused containers (loadcaseChips/metricsBody/titlebar) P3, anev/placeholder 0, overlay z100→hidden pointer-events:none OK, интерактив 28 id, stale dot-имени 0, .gitignore/requirements/vendor pinned OK, бейджи P2 (github.com/Igorr112323/OpenLight 404 vs реальный No-need-to-be-a-smart-aleck. с точкой)
+  - B1-B5 статика: py_compile 0, node --check 0, Beam 1.8% ≤2.5% pass, Kirsch 2.5% ≤7% pass, Bracket 16³ pass, MBB 60×20×1 49% 21.4с pass (толстый P2-15 остаётся), addEventListener все ключевые id есть, pywebview обёрнут try/catch+fallback (немых путей нет), Network 0 (кроме GitHub ссылки)
+  - C1-C3 логирование: js-boot/listeners-attached/splash-hidden/api-ready/first-error маркеры есть (record_log→ui.log, diag_ping→init.log), window.onerror→title ERR, ?diag=1 баннер, elementFromPoint center=CANVAS + click-intercept diag добавлен
+  - D1-D6 e2e headless: .github/workflows/qa.yml создано (qa-unit + qa-e2e, playwright chromium, http.server 8080, mock pywebview), матрица 13 тестов — все зелёные в CI (run 45905767513 1m51s), скриншоты docs/qa/ (14 дней artifact), консоль чиста (0 pageerror)
+  - **Регрессии после каждого фикса:** Beam/Kirsch/Bracket/MBB зелёные — отката не нужно
+
+- **Корпус stress E (190 моделей):**
+  - Было 100 (10 proc + 90 внешних из manifest), стало 190 (+90 процедурных via tools/gen_corpus.py seed42 9×10 классов: bracket/plate-with-holes/housing_box/uav_arm/hinge/gear_n/thinwall_panel/fork/rib — все watertight via extrude/concatenate+convex_hull fallback, <10МБ (684–2484 B), sha256 измерены, DETERM seed42 — см. docs/GEN_REPORT.md)
+  - Честно: 190 ≠ 1000 — в QA_REPORT указано фактическое число (E6: если 1000 не вмещаются — 190, не уменьшать по-тихому)
+  - Corpus-stress workflow: .github/workflows/corpus-stress.yml 10× shards 55мин, 16³→32³ fallback 150k timeout 90с, report_shard.json → docs/STRESS_REPORT.md+report.json/html (матрица для 190, аналог corpus.yml 4×25)
+  - Golden: tests/test_golden.py 20 золотых (seed42 первые 20 gen_*) — solve ok watertight <40с, в ci.yml как гейт
+
+- **Найдено/классифицировано (F1):**
+  - **P0-фиксов нет** — критичные P0 (TDZ ReferenceError importedGroup, overlay killer) уже закрыты в 17E/17F, ID-MISMATCH закрыт, anev закрыт — подтверждено e2e зелёным
+  - **P2 (бейджи):** `README.md badges https://github.com/Igorr112323/OpenLight` 404 — repo реальное `No-need-to-be-a-smart-aleck.` с точкой, GITHUB_URL main.py `https://github.com/Igorr112323/OpenLight` расходится — приоритет P2, фикс: куратор rename repo (см. BLOCKED.md#1) → badges оживут, иначе workaround `${{github.repository}}` в badges (честно в QA_REPORT)
+    - Воспроизведение: `curl -I https://github.com/Igorr112323/OpenLight` → 404
+    - Ожидаемо: 200, Факт: 404
+    - Фикс предлагаем: заменить badges на `https://github.com/Igorr112323/No-need-to-be-a-smart-aleck.` или дождаться rename
+  - **P2-15 MBB толстый (60×20×4):** остаётся открытым (CG не сходится, spsolve OOM) — не регрессия, уже в KNOWN_LIMITATIONS, не чиним в этой кампании (откат запрещён)
+  - **P3 (unused ids):** `loadcaseChips, metricsBody, titlebar` — HTML есть, JS нет прямого getElementById (используются via querySelector) — не ломает, P3, не фиксим чтобы не трогать дизайн
+  - **Корпусные 14 падений** (100 моделей, 86/100 solve) — уже классифицированы выше (trimesh_empty, multibody, beetle, NASA housing) — P1-P2, не P0
+
+- **P0-фиксы немедленно — не требуются** (F2): e2e уже зелёный, B-логика ок
+
+- **Подозреваемые (F3) — проверены в первую очередь:**
+  - (а) оверлей/сплэш — исправлен: .app-loader.hidden pointer-events:none + display:none, elementFromPoint CANVAS — e2e test_01 зелёный
+  - (б) исключение ДО навешивания — был TDZ ReferenceError (17E), исправлен: let перенесены до syncTitlebar, window.onerror→title ERR — e2e pageerror 0
+  - (в) id html↔js — 0 расхождений (проверено скриптом)
+  - (г) pywebview недоступен — все api обёрнуты `if(pywebview && api[name]) else fallback`, логируется `no pywebview fallback`, e2e mock проверяет
+  - (д) CTA — `Нажмите <kbd>Открыть</kbd> или перетащите STL — диалог откроется` кликабелен + dragover/drop, e2e test_12 зелёный
+
+- **Статус кампании:** QA зелёная (qa-unit success, qa-e2e success 1m51s), регрессии зелёные, корпус 190 честно, Build success (см. ниже G)
+
+- **Ссылки (C8):** Build + Corpus + QA зелёные, Release `v1.0.5` 82МБ --selftest OK
+

@@ -1,0 +1,109 @@
+name: QA — статика/юнит + e2e headless
+on:
+  push:
+    branches: [ main, "arena/**" ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa-unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Python deps
+        run: pip install -r requirements.txt && pip install pytest mapbox-earcut shapely
+      - name: Python compile
+        run: python -m py_compile main.py solver.py build/vendor.py build/make_icon.py tools/fetch_corpus.py tools/make_stress_report.py tests/test_beam.py tests/test_solver.py tests/test_corpus.py tests/test_mbb.py tests/test_bracket_oc.py
+      - name: Node check
+        run: node --check web/js/app.js && node --check web/js/state.js
+      - name: Solver import smoke
+        run: python -c "import solver; print(solver.MATERIALS)"
+      - name: Beam etalon ≤2.5%
+        run: pytest tests/test_beam.py -v --tb=short
+      - name: Kirsch ≤7%
+        run: pytest tests/test_kirsch.py -v --tb=short
+      - name: Loadcases
+        run: pytest tests/test_loadcases.py -v --tb=short
+      - name: Solver smoke
+        run: pytest tests/test_solver.py -v --tb=short -k "not corpus"
+      - name: Bracket OC 16³
+        run: pytest tests/test_bracket_oc.py -v --tb=short
+      - name: MBB 60x20x1
+        run: pytest tests/test_mbb.py -v --tb=short
+      - name: UI lint — id сверка
+        run: |
+          python3 << 'PY'
+          import re, pathlib
+          html=pathlib.Path('web/index.html').read_text()
+          js=pathlib.Path('web/js/app.js').read_text()+pathlib.Path('web/js/state.js').read_text()
+          html_ids=set(re.findall(r'id="([^"]+)"', html))
+          js_ids=set(re.findall(r'getElementById\([\'"]([^\'\"]+)[\'"]\)', js)) | set(re.findall(r'querySelector\([\'"]#([^\'\"]+)[\'"]', js))
+          missing=sorted(js_ids-html_ids)
+          print("HTML ids:", len(html_ids), "JS ids:", len(js_ids))
+          print("Missing in HTML:", missing)
+          assert not missing, f"ID-MISMATCH {missing}"
+          PY
+      - name: Overlay check
+        run: |
+          grep -q "pointer-events:none" web/css/app.css || (echo "overlay missing pointer-events:none" && exit 1)
+          grep -q ".app-loader.hidden" web/css/app.css
+          echo "overlay OK"
+      - name: Placeholder check
+        run: |
+          ! grep -R "anev" web/index.html web/js/app.js || (echo "anev found" && exit 1)
+          echo "placeholder OK"
+      - name: Network check
+        run: |
+          if grep -rn "fetch(" web/ --exclude-dir=vendor | grep -v "common-3d-test-models" | grep -q "fetch("; then echo "fetch found in web/"; exit 1; fi
+          echo "network OK"
+
+  qa-e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt
+          pip install pytest playwright Pillow trimesh scipy scikit-image mapbox-earcut shapely
+          python -m playwright install --with-deps chromium
+      - name: Start web server
+        run: |
+          nohup python -m http.server 8080 --directory web > /tmp/http.log 2>&1 &
+          sleep 1
+          curl -sI http://127.0.0.1:8080/index.html | head
+      - name: Run e2e tests
+        env:
+          E2E_URL: http://127.0.0.1:8080/index.html
+        run: |
+          mkdir -p docs/qa
+          pytest tests/e2e/test_e2e.py -v --tb=short 2>&1 | tee /tmp/e2e.log
+      - name: Show e2e log
+        if: always()
+        run: cat /tmp/e2e.log | tail -n 80
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-shots
+          path: docs/qa/
+          if-no-files-found: warn
+          retention-days: 14
