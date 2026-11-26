@@ -11,46 +11,43 @@ jobs:
   build-windows:
     runs-on: windows-latest
     steps:
-      - name: Checkout via git (workaround for repo name ending with dot)
-        shell: bash
-        run: |
-          git clone --depth 1 "https://github.com/Igorr112323/No-need-to-be-a-smart-aleck." repo
-          # если имя папки с точкой — git создаст без точки на Windows, проверим
-          ls -la repo || ls -la
-          echo "cloned"
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
-          cache-dependency-path: repo/requirements.txt
+      - name: Runner version
+        run: |
+          python --version
+          pip --version
+          pyinstaller --version || echo "pyinstaller not yet installed"
+        shell: bash
       - name: Install deps
-        working-directory: repo
         run: pip install -r requirements.txt
       - name: Vendor (internet once)
-        working-directory: repo
         run: python build/vendor.py
       - name: Make icon
-        working-directory: repo
         run: python build/make_icon.py
       - name: Install pyinstaller
-        working-directory: repo
         run: pip install pyinstaller
+      - name: PyInstaller version
+        run: pyinstaller --version
+        shell: bash
       - name: Build exe
-        working-directory: repo
         shell: cmd
         run: build_exe.bat
       - name: Size
         shell: bash
-        run: ls -lh repo/dist/OpenLight.exe || dir repo/dist/OpenLight.exe
+        run: ls -lh dist/OpenLight.exe || dir dist/OpenLight.exe
       - uses: actions/upload-artifact@v4
         with:
           name: OpenLight.exe
-          path: repo/dist/OpenLight.exe
+          path: dist/OpenLight.exe
           retention-days: 14
       - name: Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
         with:
-          files: repo/dist/OpenLight.exe
+          files: dist/OpenLight.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

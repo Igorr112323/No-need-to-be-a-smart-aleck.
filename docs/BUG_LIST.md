@@ -67,3 +67,18 @@
 - **P1-6 (dist) — открыт частично**: build.yml исправлен (path: repo), ждёт зелёного run-а на main + тег v0.9.0-test для Releases.
 - **Корпус**: 10 проц + 20 внешних sha256 измерены via gh api (cow 69afce…, spot 0738b5…, bunny 1eb35d…, etc. — см. manifest.json), ≥20 CC0/CC-BY/MIT/BSD — критерий выполнен, ждёт прогона corpus.yml на GitHub.
 - **Beam**: 32×8×8 1.8% <2.5% — закрыт, CI зелёный (`pytest tests/test_beam.py -v` в ci.yml).
+
+## Обновление 2026-11-26 (Этап 12) — MBB и кронштейн
+
+- **P0-1 (OC коллапс) — остаётся открыт, детализация по ТЗ 12:**
+  - Логирование каждой SIMP: `it target mean_rho achieved dc_max eta n_active n_comp` (см. `solver.py: [SIMP it=..]`)
+  - MBB 60×20 volfrac 0.5 p=3 rmin 1.5: 22 итерации, `mean_rho 0.5→0.303→0.158→0.01`, `dc_max 9.7e-06→1.8e-06`, `n_active 21→143→29`, `n_comp 1→17`, finale `29<50` → `marching cubes: слишком мало активных 29 (мин 50)` (см. `docs/mbb.png`, `tests/test_mbb.py` SKIPPED).
+  - Вывод: MBB не сходится в [0.48,0.52], доля активных падает <10% (29/3042=0.9%), связная область одна в конце но объём потерян — **ОСТАНОВИСЬ, к кронштейну не переходить** (п.5 ТЗ 12).
+  - Типовые баги исключены частично: dc нормализация по max|dc| с защитой /0, target от солид-вокселей (n_elem), OC l1/l2 move 0.2 eta 0.5, keep_connected по rho>1e-2 не более 5% (в логе [keep_connected 5it] не срабатывал т.к. threshold 1e-2), p=3 фикс — но volfrac mismatch `target 0.5 achieved 0.303` остаётся.
+  - Кронштейн 16³ 20/40/60% — не тестировался после MBB (останов), предыдущие измерения 16³ mean 0.6→0.019 active 17<50 (см. Этап 11).
+  - Статус: P0-1 открыт.
+
+- **Build (A) — остаётся красный:** `gh repo rename OpenLight --yes` → `403 Resource not accessible`, прав нет. Curator должен вручную Settings→General→Rename (убрать точку). Workaround удалён, `build.yml` возвращён к `checkout@v4` + шаги `Runner version`/`pyinstaller --version`. Последний run `Build OpenLight.exe` на arena/main — `failure checkout@v4 ~10с` (Windows NTFS точка).
+
+- **Beam:** 32×8×8 1.8% ≤2.5% — закрыт, CI зелёный.
+

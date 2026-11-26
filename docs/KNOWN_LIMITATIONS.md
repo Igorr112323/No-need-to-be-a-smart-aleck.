@@ -25,3 +25,10 @@
 
 - Полностью офлайн после `python build/vendor.py` (three.min.js локально). Network 0, кроме кнопки проверки Releases.
 
+
+## Этап 12 (2026-11-26) — MBB и кронштейн (измерено)
+
+- MBB 60×20 volfrac 0.5: mean_rho 0.303→0.01, dc_max 9.7e-06→1.8e-06, n_active 21→29 (<10% от 3042), n_comp 1→17→1, 22 итерации cходимость ch 0.0048 но marching cubes 29<50 — **не сошёлся**, карта `docs/mbb.png` заглушка (PIL, не matplotlib), тест `test_mbb.py` SKIPPED.
+- Кронштейн 16³→32³ 20/40/60% <60с watertight — не подтверждено (MBB не прошёл, переход запрещён по п.5).
+- Build: Windows точка — блок, artefact отсутствует.
+

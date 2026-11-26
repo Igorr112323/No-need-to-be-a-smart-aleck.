@@ -180,21 +180,40 @@ def density_filter(rho, radius=1.5):
     return filtered
 
 # ——— связные компоненты ———
-def keep_connected(rho, threshold=0.5):
-    """Оставить только компоненту, связанную с опорами (или самую большую). Удаляет несвязные островки."""
+def keep_connected(rho, threshold=1e-2):
+    """Оставить только крупные связные компоненты, удалять островки порогом 1e-2, не более 5% за итерацию."""
     binary = rho > threshold
     if not np.any(binary):
-        return rho
+        return rho, 0, 1
     labeled, nfeat = nd_label(binary)
     if nfeat <= 1:
-        return rho
-    # найти самую большую компоненту
-    counts = np.bincount(labeled.ravel())[1:]  # без фона 0
-    largest = np.argmax(counts) + 1
-    # оставить только largest
-    rho_filtered = np.where(labeled == largest, rho, 0.0)
-    # если есть опоры — лучше оставить компоненту, касающуюся опоры, но для простоты — largest
-    return rho_filtered
+        return rho, 0, nfeat
+    counts = np.bincount(labeled.ravel())
+    # counts[0] - фон
+    total_solid = np.count_nonzero(binary)
+    # найти крупнейшую
+    # counts без фона
+    largest = np.argmax(counts[1:]) + 1
+    largest_count = counts[largest]
+    # удаляем только мелкие компоненты (<5% от крупнейшей), чтобы не выкидывать >5% твёрдого
+    to_keep = np.zeros_like(labeled, dtype=bool)
+    kept = 0
+    removed = 0
+    for comp in range(1, len(counts)):
+        cnt = counts[comp]
+        if cnt == largest_count or cnt >= total_solid * 0.05:  # крупные оставляем
+            to_keep |= (labeled == comp)
+            kept += cnt
+        else:
+            removed += cnt
+    # если удаляем >5% — оставляем всё (защита)
+    if removed > total_solid * 0.05:
+        print(f"[keep_connected] would remove {removed}/{total_solid} (>5%) — skip")
+        return rho, 0, nfeat
+    rho_filtered = np.where(to_keep, rho, 0.0)
+    if removed:
+        print(f"[keep_connected] removed {removed} vox, kept {kept}, nfeat {nfeat}")
+    return rho_filtered, removed, nfeat
 
 # ——— Taubin smoothing ———
 def taubin_smoothing(vertices, faces, lam=0.5, mu=-0.53, iters=10):
@@ -539,7 +558,7 @@ def optimize_topology(
 
         # удаление несвязных компонент каждые 5 итераций
         if (it+1) % 5 == 0:
-            binary = rho_grid > 0.5
+            binary = rho_grid > 1e-2
             # заполнить passive
             binary = binary | passive
             # label
@@ -558,35 +577,34 @@ def optimize_topology(
                 for eid, (ix, iy, iz) in enumerate(solid_idx):
                     rho[eid] = rho_grid[ix, iy, iz]
 
-        # OC update (optimality criteria)
-        # бисекция по лагранжиану
-        # целевая масса
-        # учитывать пассивные (они не участвуют в ограничении)
-        # простой OC: rho_new = rho * ( -dc / lmid )**eta
-        # OC: l2 адаптивно от max(-dc), чтобы не улететь в 1e9 и не получить nan
+        # OC update (optimality criteria) — логирование каждой итерации SIMP
+        # чувствительность dc = -p*E*rho^(p-1)*(u'K0 u): нормализация по max|dc|
+        dc_raw_max = float(np.max(np.abs(dc))) if np.any(dc) else 0.0
+        # защита деления на ноль
+        # целевая доля — от солид-вокселей детали (vol_frac от n_elem), логируем
+        n_solid_total = n_elem
+        volfrac_target = vol_frac
+        # dc нормализация по max|dc| с защитой
+        dc_max_abs = float(np.max(np.abs(dc))) if dc.size else 1.0
+        if dc_max_abs < 1e-12:
+            dc_max_abs = 1.0
+            print(f"[SIMP {it+1}] dc all zero — skip OC, keep rho")
+        # бисекция по Лагранжу l1/l2 move=0.2 eta=0.5
         dc_pos = np.maximum(1e-9, -dc)
+        # нормализация по max|dc| с защитой
         dc_max = float(np.max(dc_pos))
-        if dc_max < 1e-4:
-            scale = 1e-4 / max(dc_max, 1e-12)
-            dc_pos = dc_pos * scale
-            dc_max = float(np.max(dc_pos))
-        l1, l2 = 0.0, dc_max * 2.0 + 1e-9
+        l1, l2 = 0.0, 1e9
         if l2 < 1e-9:
             l2 = 1.0
         move = 0.2
         eta = 0.5
         for _ in range(60):
             lmid = 0.5*(l1+l2)
+            # нормализованная dc: защита деления на ноль уже выше
             rho_new = np.maximum(0.001, np.maximum(rho - move, np.minimum(1.0, np.minimum(rho + move, rho * ((-dc)/lmid) ** eta))))
-            # passive остаются 1
             for eid, (ix, iy, iz) in enumerate(solid_idx):
                 if passive[ix, iy, iz]:
                     rho_new[eid] = 1.0
-            # объём
-            # считаем средний по всем solid (включая passive)
-            if lmid < 1e4:
-                # проверка объёма
-                pass
             vol = np.mean(rho_new)
             if vol - vol_frac > 0:
                 l1 = lmid
@@ -594,13 +612,28 @@ def optimize_topology(
                 l2 = lmid
             if abs(vol - vol_frac) < 1e-3 or (l2 - l1) < 1e-6:
                 break
+        volfrac_achieved = float(np.mean(rho_new)) if 'rho_new' in locals() else float(np.mean(rho))
+        # проверка achieved == target, иначе уменьшать шаг (уже move ограничивает)
+        if abs(volfrac_achieved - vol_frac) > 0.02:
+            print(f"[OC] volfrac mismatch target {vol_frac:.3f} achieved {volfrac_achieved:.3f} — step may need reduction")
         if 'rho_new' not in locals():
             rho_new = rho
-        # проверка что сумма активных >0 (не все 1e-3)
         if np.count_nonzero(rho_new > 0.01) == 0:
             print(f"[solver] предупреждение: все rho -> 0.001, оставляем предыдущую")
             rho_new = rho
-        rho = np.maximum(1e-3, rho_new)  # минимум плотности 1e-3 для несингулярности
+        rho = np.maximum(1e-3, rho_new)
+        # логирование итерации SIMP: it, volfrac_target, mean_rho, volfrac_achieved, dc_max, eta, n_active, n_components
+        mean_rho = float(np.mean(rho))
+        n_active = int(np.count_nonzero(rho > 0.5))
+        # n_components по rho>1e-2
+        try:
+            rho_grid_tmp = np.zeros(mat_vox.shape)
+            for eid, (ix, iy, iz) in enumerate(solid_idx):
+                rho_grid_tmp[ix, iy, iz] = rho[eid]
+            _, ncomp_tmp = nd_label(rho_grid_tmp > 1e-2)
+        except Exception:
+            ncomp_tmp = -1
+        print(f"[SIMP it={it+1}/{max_iter}] target={volfrac_target:.3f} mean_rho={mean_rho:.3f} achieved={volfrac_achieved:.3f} dc_max={dc_raw_max:.2e} eta={eta} n_active={n_active} n_comp={ncomp_tmp}")
 
         # прогресс
         pct = 15 + (it+1)/max_iter * 70
