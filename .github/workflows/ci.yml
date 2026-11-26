@@ -34,4 +34,4 @@ jobs:
       - name: Bracket OC 16³ (no collapse)
         run: pytest tests/test_bracket_oc.py -v --tb=short
       - name: All tests (beam must be present)
-        run: pytest tests/ -v --tb=short
+        run: pytest tests/ -v --tb=short --ignore=tests/e2e

@@ -5,7 +5,10 @@ OpenLight e2e headless — Task D
 """
 import pathlib, time, os
 import pytest
-from playwright.sync_api import Page, expect
+try:
+    from playwright.sync_api import Page, expect
+except ImportError:
+    pytest.skip("playwright not installed — e2e only in qa.yml", allow_module_level=True)
 
 # helper to start server is in qa.yml; here we assume http://127.0.0.1:8080/index.html
 
