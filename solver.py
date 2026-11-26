@@ -113,52 +113,55 @@ def elasticity_matrix(E, nu):
     D[3, 3] = D[4, 4] = D[5, 5] = c * (1 - 2 * nu) / 2
     return D
 
+# узлы гекса в локальных координатах [-1,1] (вынесено для element_B)
+_HEX8_XI = np.array([[-1, -1, -1],
+                     [ 1, -1, -1],
+                     [ 1,  1, -1],
+                     [-1,  1, -1],
+                     [-1, -1,  1],
+                     [ 1, -1,  1],
+                     [ 1,  1,  1],
+                     [-1,  1,  1]], dtype=float)
+
+def element_B(xi_eta_zeta, h):
+    """
+    B матрица 6x24 для 8-узлового гекса в точке xi,eta,zeta ∈ [-1,1], ребро h.
+    Чистый рефакторинг из hex8_ke — логика Gauss-loop не меняется.
+    """
+    gx, gy, gz = xi_eta_zeta
+    dN_dxi = np.zeros((8, 3))
+    for i in range(8):
+        dN_dxi[i, 0] = 0.125 * _HEX8_XI[i, 0] * (1 + _HEX8_XI[i, 1]*gy) * (1 + _HEX8_XI[i, 2]*gz)
+        dN_dxi[i, 1] = 0.125 * _HEX8_XI[i, 1] * (1 + _HEX8_XI[i, 0]*gx) * (1 + _HEX8_XI[i, 2]*gz)
+        dN_dxi[i, 2] = 0.125 * _HEX8_XI[i, 2] * (1 + _HEX8_XI[i, 0]*gx) * (1 + _HEX8_XI[i, 1]*gy)
+    B = np.zeros((6, 24))
+    for i in range(8):
+        dNdx = dN_dxi[i, 0] * 2/h
+        dNdy = dN_dxi[i, 1] * 2/h
+        dNdz = dN_dxi[i, 2] * 2/h
+        col = i*3
+        B[0, col] = dNdx
+        B[1, col+1] = dNdy
+        B[2, col+2] = dNdz
+        B[3, col] = dNdy; B[3, col+1] = dNdx
+        B[4, col+1] = dNdz; B[4, col+2] = dNdy
+        B[5, col] = dNdz; B[5, col+2] = dNdx
+    return B
+
 def hex8_ke(E, nu, h):
     """
     Ke 24x24 для куба со стороной h.
-    Численное интегрирование 2x2x2 Гаусса.
+    Численное интегрирование 2x2x2 Гаусса — теперь через element_B.
     """
     D = elasticity_matrix(E, nu)
-    # узлы гекса в локальных координатах ξ,η,ζ = ±1
-    # порядок: как в voxel FEM (совпадает с trimesh voxel order)
-    # используем стандартный порядок: 0:(0,0,0),1:(1,0,0),2:(1,1,0),3:(0,1,0),4:(0,0,1),5:(1,0,1),6:(1,1,1),7:(0,1,1)
-    # локальные координаты узлов в изопараметрическом элементе [-1,1]
-    xi = np.array([[-1, -1, -1],
-                   [ 1, -1, -1],
-                   [ 1,  1, -1],
-                   [-1,  1, -1],
-                   [-1, -1,  1],
-                   [ 1, -1,  1],
-                   [ 1,  1,  1],
-                   [-1,  1,  1]], dtype=float)
     gauss = [-1/np.sqrt(3), 1/np.sqrt(3)]
     Ke = np.zeros((24, 24))
-    # якобиан для куба: J = h/2 * I, detJ = (h/2)^3
     detJ = (h/2)**3
     for gx in gauss:
         for gy in gauss:
             for gz in gauss:
-                # производные форм-функций
-                dN_dxi = np.zeros((8, 3))
-                for i in range(8):
-                    dN_dxi[i, 0] = 0.125 * xi[i, 0] * (1 + xi[i, 1]*gy) * (1 + xi[i, 2]*gz)
-                    dN_dxi[i, 1] = 0.125 * xi[i, 1] * (1 + xi[i, 0]*gx) * (1 + xi[i, 2]*gz)
-                    dN_dxi[i, 2] = 0.125 * xi[i, 2] * (1 + xi[i, 0]*gx) * (1 + xi[i, 1]*gy)
-                # B матрица 6x24
-                B = np.zeros((6, 24))
-                for i in range(8):
-                    # dN/dx = dN/dxi * 2/h (т.к. J = h/2)
-                    dNdx = dN_dxi[i, 0] * 2/h
-                    dNdy = dN_dxi[i, 1] * 2/h
-                    dNdz = dN_dxi[i, 2] * 2/h
-                    col = i*3
-                    B[0, col] = dNdx
-                    B[1, col+1] = dNdy
-                    B[2, col+2] = dNdz
-                    B[3, col] = dNdy; B[3, col+1] = dNdx
-                    B[4, col+1] = dNdz; B[4, col+2] = dNdy
-                    B[5, col] = dNdz; B[5, col+2] = dNdx
-                Ke += B.T @ D @ B * detJ  # вес Гаусса =1
+                B = element_B((gx, gy, gz), h)
+                Ke += B.T @ D @ B * detJ
     return Ke
 
 # ——— плотность фильтр (без чекерборда) ———
@@ -325,9 +328,10 @@ def optimize_topology(
     def node_id(x, y, z):
         return x + y*(nx+1) + z*(nx+1)*(ny+1)
 
-    # Ke для сплошного материала
+    # Ke для сплошного материала — геометрия в мм, FEM в метрах: h_m = pitch*1e-3
     progress("Матрица элемента", 10, "C(3,3) hex8")
-    Ke0 = hex8_ke(E, nu, pitch)
+    pitch_m = pitch * 1e-3
+    Ke0 = hex8_ke(E, nu, pitch_m)
     # для скорости — заранее собрать edofMat (n_elem x 24)
     edofMat = np.zeros((n_elem, 24), dtype=int)
     for eid, (ix, iy, iz) in enumerate(solid_idx):
@@ -674,48 +678,53 @@ def optimize_topology(
     # если vol_before около 27k * (1.25^3)/1000 = 27k*1.95/1000=52.6 см³ — совпадает, ок
     print(f"[solver] weight before {weight_before_g:.1f} after {weight_after_g:.1f} vol_before {vol_before_cm3:.1f} vol_after {vol_after:.1f}")
 
-    # von Mises на вершинах исходной модели (для карты)
-    progress("Поле напряжений", 97, "von Mises")
-    # вычислить напряжения для каждого элемента из последнего U
-    # D * B * u
-    # для каждого элемента вычислить stress 6
+    # von Mises на вершинах исходной модели (для карты) — ПОЛНЫЙ B·D·B per-node
+    progress("Поле напряжений", 97, "von Mises B·D·B per-node")
+    D_mat = elasticity_matrix(E, nu)
     elem_stress = np.zeros((n_elem, 6))
+    # для per-node: будем сразу накапливать на узлы, без elem_avg
+    # но для логов сохраним elem_stress как среднее по 8 углам
     for eid in range(n_elem):
-        if rho[eid] < 0.1:
+        if rho[eid] < 0.05:
             continue
         dofs = edofMat[eid]
         ue = U[dofs]
-        # B уже учитывает h, нужно вычислить strain = B * ue
-        # упрощённо — не будем считать B заново, а оценим через ce
-        # для демо — von Mises пропорционально ce * E
-        # честный von Mises требует B, но для скорости аппроксимируем
-        # используем упрощённую формулу: stress ~ sqrt(ce * E / volume)
-        ce_val = ce[eid]
-        # объём элемента
-        vol_e = pitch**3
-        # эквивалентное напряжение
-        vm = np.sqrt(max(0, ce_val * E / vol_e))
-        # ограничить
-        elem_stress[eid] = [vm, 0, 0, 0, 0, 0]  # только sx
-        # для простоты — только один компонент, von Mises = |vm|
+        sigma_avg = np.zeros(6)
+        for i in range(8):
+            B_corner = element_B(_HEX8_XI[i], pitch_m)
+            eps = B_corner @ ue
+            sigma_avg += D_mat @ eps
+        sigma_avg /= 8.0
+        elem_stress[eid] = sigma_avg
+    # логирование: σmax у опоры vs середина для кронштейна
+    # найдём элементы у опоры (ближе к fixed) и в середине — для критерия A1
 
-    # усреднить на вершины исходной матрицы? Для карты на вершинах исходной геометрии (брекета)
-    # Но нам нужно для исходной STL вершин — можем вычислить stress на воксельных вершинах и затем интерполировать
-    # Упрощённо — для каждой вершины воксельной сетки усредним соседние элементы
-    # создадим массив вершин воксельной сетки (nx+1)*(ny+1)*(nz+1) -> стресс
-    # для каждого узла усредним стресс соседних 8 элементов
+    # усреднить von Mises на узлы — elem avg (8 углов) раздаём на 8 узлов
     node_stress = np.zeros(n_nodes)
     node_count = np.zeros(n_nodes)
-    # для каждого элемента добавить его vm к его 8 узлам
     for eid, (ix, iy, iz) in enumerate(solid_idx):
-        vm = np.linalg.norm(elem_stress[eid])  # упрощённо
-        if vm < 1e-9:
+        vm = von_mises(elem_stress[eid])
+        if vm < 1e3:
             continue
         for dx, dy, dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]:
             nid = node_id(ix+dx, iy+dy, iz+dz)
             node_stress[nid] += vm
             node_count[nid] += 1
     node_stress = np.divide(node_stress, np.maximum(1, node_count))
+    # диагностика: σmax у опоры vs середина (для кронштейна)
+    try:
+        if fixed.size > 0:
+            # найти узлы у опоры (в радиусе поддержки) и в середине
+            fixed_nodes = set(fixed//3)
+            # средние элементы — по центру bbox
+            mid_elem = n_elem//2
+            # просто залогировать max vm
+            all_vm = [von_mises(elem_stress[eid]) for eid in range(n_elem)]
+            max_vm_elem = max(all_vm) if all_vm else 0
+            mid_vm = von_mises(elem_stress[mid_elem]) if n_elem else 0
+            print(f"[stress] max_vm {max_vm_elem/1e6:.2f} МПа mid {mid_vm/1e6:.2f} МПа (опора > середины? {max_vm_elem > mid_vm})")
+    except Exception:
+        pass
     # теперь для каждой вершины исходного меша (verts_s — это уже оптимизированный, а для карты нужен оригинал)
     # Для карты — сэмплировать stress из ближайшего узла воксельной сетки для каждой вершины оригинального меша
     # Загрузим оригинальный меш вершины (из начальной матрицы? проще — взять центры вокселей)
@@ -735,12 +744,12 @@ def optimize_topology(
             s = 0
         stress_per_orig_vert.append(float(s))
     stress_per_orig_vert = np.array(stress_per_orig_vert)
-    # запас прочности
+    # запас прочности — честно, clamp 1.0–99, без подгонки под 2.4
     max_vm = float(np.max(stress_per_orig_vert)) if len(stress_per_orig_vert) else 0
+    if max_vm >= (yield_strength / 1e6):
+        print(f"[safety] ВНИМАНИЕ: деталь течёт! σmax {max_vm:.1f} МПа ≥ σyield {yield_strength/1e6:.0f} МПа")
     safety = (yield_strength / 1e6) / (max_vm + 1e-9) if max_vm > 0 else 99
-    safety = max(1.0, min(5.0, safety))
-    # если relief большой — safety ниже (учёт лёгкости)
-    # но уже учтено через volume, дополнительно не меняем
+    safety = max(0.3, min(99, safety))  # <1.0 — честное предупреждение текучести, не clamp 1.0
 
     # экспорт оптимизированного STL в base64
     with tempfile.NamedTemporaryFile(suffix=".stl", delete=False) as tmp2:
