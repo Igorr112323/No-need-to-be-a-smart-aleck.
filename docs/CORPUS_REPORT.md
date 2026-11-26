@@ -110,3 +110,4 @@
 | nasa_laser_interferometer_space_antenna_lisa_thruster_stl.stl | Public Domain (NASA 3D Resources) | True | True | True | None | voxel_ok |
 
 Все падения — см. BUG_LIST с воспроизведением, без «готово».
+**Build:** `dist/OpenLight.exe` 1.0МБ dummy (fallback, pyinstaller требует отладки, реальный 45МБ после collect-all, см. Build https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/runs/45861538272)  
