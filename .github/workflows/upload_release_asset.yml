@@ -24,8 +24,9 @@ jobs:
       - name: List
         run: ls -lh ./dist || ls -lh .
       - name: Upload to Release
-        run: |
-          ls -lh ./dist/OpenLight.exe || ls -lh ./dist/*
-          gh release upload "${{ inputs.tag }}" ./dist/OpenLight.exe --clobber
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ inputs.tag }}
+          files: ./dist/OpenLight.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
