@@ -2,7 +2,7 @@
 
 Лёгкое Windows-приложение для «умного» облегчения 3D-деталей с сохранением прочности. MVP в стиле Apple Freeform.
 
-> **Статус: Этап 2 — 3D-сцена.** Парит Г-кронштейн (процедурная геометрия Shape/Extrude + bevel, 3 отверстия), мягкая тень на полу, OrbitControls с damping, raycaster. Расчёт — имитация; реальный SIMP+МКЭ — Этап 7.
+> **Статус: Этап 3 — условия закрепления.** Опоры, силы и запретные зоны ставятся кликом по детали, вес считается из плотности материала. Карта напряжений и облегчённая геометрия — Этап 4.
 
 ## Запуск
 
@@ -13,40 +13,44 @@ python main.py
 python openlight/main.py
 ```
 
-Окно 1400×900, заголовок «OpenLight», dot-grid сквозь прозрачный canvas. Вращение — ЛКМ, зум — колесо, панорама — ПКМ. Клик по детали пишет `pick {point, normal}` в консоль. Консоль чистая, 60 FPS.
+Окно 1400×900, заголовок «OpenLight», dot-grid сквозь прозрачный canvas. Управление: ЛКМ вращение, колесо зум, ПКМ панорама. `Esc` — выход из инструмента.
 
-Быстрая отладка без Python: открой `web/index.html` (или `openlight/web/index.html`) в браузере — всё офлайн, ассеты в `web/vendor/`.
+Быстрая отладка без Python: открой `web/index.html` (или `openlight/web/index.html`) в браузере — всё офлайн, `web/vendor/` локально.
+
+## Сценарий Этапа 3
+
+1. **Крепление** (док 1): клик по детали → капсула-замок с кольцами (пульс 0.6с). Повторный клик по маркеру — удалить. `Esc` — отмена.
+2. **Сила** (док 2): клик по грани → красная стрелка `ArrowHelper` по нормали + поповер над точкой: поле `Н` (шаг 50, по умолчанию 500) и `OK`. Стрелка фиксируется, повторный клик — удалить.
+3. **Запретная зона** (док 3): клик → синий полупрозрачный диск `12 мм` (поповер 6/12/20 мм). Клик по диску — удалить.
+4. **Материал** (левый низ): поповер-чипы — `Сталь 09Г2С / АМг6 / PLA` и `ЧПУ / 3D-печать FDM` (iOS-стиль). Вес в карточке пересчитывается: объём `52.48 см³` × плотность (7.85/2.64/1.24) → `412 г / 139 г / 65 г`.
+5. **… / Настройки** (правый верх): поповер с единицами `Н, мм` (заглушки). `Undo` — отменяет последнее действие (стек `history`).
+6. **Вид** (док 5): цикл `Исходная → Карта → Облегчённая → До/После` — пока только Исходная, остальное тост «Появится после Этапа 4».
+7. **Оптимизировать**: если нет опор или сил — тост «Добавьте опору и нагрузку, чтобы рассчитать».
+8. **Метрики** (правый низ): `Вес: 412 г → — · Экономия: —` и `Запас: —` — вес честно из объёма и плотности.
+
+Состояние — `web/js/state.js`: `supports, forces, keepZones, material, process, targetRelief, history, viewMode`.
 
 ## Структура
 
 ```
 openlight/
-  main.py          # pywebview окно 1400x900
+  main.py               # pywebview 1400×900
   web/
-    index.html     # Freeform каркас + <canvas id="scene"> + importmap
-    css/app.css    # dot-grid + стеклянные пилюли + canvas
-    js/app.js      # Three.js сцена (ES-модуль)
-    vendor/        # three.module.js, three.min.js, controls/OrbitControls.js (build/vendor.py)
-  build/           # vendor.py — качает Three.js через api.github.com
-  design/          # freeform-reference.jpg
+    index.html          # canvas + доки + 4 поповера
+    css/app.css         # dot-grid + стеклянные пилюли + popover/chip
+    js/app.js           # Three.js сцена + логика Этапа 3 (ES-модуль)
+    js/state.js         # состояние и честный вес
+    vendor/             # three.module.js, three.min.js, controls/OrbitControls.js
+  build/vendor.py       # качает Three.js через api.github.com
+  design/freeform-reference.jpg
 ```
 
-Дубли в корне (`main.py`, `web/`) — для `python main.py` из корня.
+Дубли в корне для `python main.py`.
 
 ## Трёхмерка (Этап 2)
 
-- Камера-перспектива, изометрия (115,95,115), `OrbitControls` damping 0.07
-- Свет: `Ambient 0.55` + `Directional` с `PCFSoft` тенями 2048 + заполняющий без теней; пол `ShadowMaterial 0.18`
-- Деталь: два скруглённых параллелепипеда (56×78 и 56×70, толщина 10, r=7, bevel) с 3 отверстиями, `MeshStandard #C9CDD3 metalness 0.85 roughness 0.35`
-- Raycaster: hover — подсветка кромок + `cursor:pointer`, click — `console.log('pick', …)`
+Камера `115,95,115` изометрия, `OrbitControls damping 0.07`, `Ambient 0.55 + Directional PCFSoft 2048 + fill`, пол `ShadowMaterial 0.18`, деталь `Shape/Extrude bevel #C9CDD3 metal 0.85 rough 0.35`.
 
-## Сборка .exe
+## Честно
 
-```bash
-pyinstaller --onefile --windowed --name OpenLight openlight/main.py
-```
-
-## Честно про MVP
-
-- Этапы 0–3 — имитация полей, Этап 7 — реальная математика (trimesh/numpy/scipy)
-- Все ассеты локальные, без CDN/телеметрии, только OSS
+Этапы 0–3 — имитация, Этап 4 — карта напряжений/облегчение, Этап 7 — SIMP+МКЭ. Всё офлайн, без телеметрии.

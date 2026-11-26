@@ -122,11 +122,61 @@
   <!-- Низ справа: метрики -->
   <div class="bottom-right" role="status" aria-live="polite">
     <div class="metrics-label"><span class="metrics-dot"></span> Метрики</div>
-    <div class="metrics-row"><span class="muted">Вес:</span> <strong>— г → — г</strong> <span class="muted">· Экономия: — %</span></div>
-    <div class="metrics-row" style="margin-top:4px"><span class="muted">Запас прочности:</span> <strong>—</strong></div>
+    <div class="metrics-row"><span class="muted">Вес:</span> <strong id="weightBefore">412 г</strong> <span class="muted">→</span> <strong id="weightAfter">—</strong> <span class="muted">· Экономия: <span id="economy">—</span></span></div>
+    <div class="metrics-row" style="margin-top:4px"><span class="muted">Запас прочности:</span> <strong id="safety">—</strong></div>
   </div>
 
   <div id="toast" class="toast" role="status"></div>
+
+  <!-- Поповер: сила -->
+  <div id="popoverForce" class="popover has-arrow" role="dialog" aria-label="Сила">
+    <div class="popover-title">Сила</div>
+    <div class="popover-row">
+      <button class="step-btn" data-step="-50">−</button>
+      <input type="number" id="forceInput" value="500" step="50" min="50" max="5000" />
+      <span class="unit">Н</span>
+      <button class="step-btn" data-step="50">+</button>
+    </div>
+    <button class="btn-ok" id="forceOk">OK</button>
+  </div>
+
+  <!-- Поповер: запретная зона -->
+  <div id="popoverKeep" class="popover has-arrow" role="dialog" aria-label="Запретная зона">
+    <div class="popover-title">Запретная зона</div>
+    <div class="chips">
+      <button class="chip" data-r="6">6 мм</button>
+      <button class="chip active" data-r="12">12 мм</button>
+      <button class="chip" data-r="20">20 мм</button>
+    </div>
+  </div>
+
+  <!-- Поповер: материал -->
+  <div id="popoverMaterial" class="popover material-popover" role="dialog" aria-label="Материал">
+    <div class="section">
+      <div class="section-label">Материал</div>
+      <div class="chips">
+        <button class="chip active" data-mat="steel">Сталь 09Г2С</button>
+        <button class="chip" data-mat="alu">АМг6</button>
+        <button class="chip" data-mat="pla">PLA</button>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-label">Процесс</div>
+      <div class="chips">
+        <button class="chip active" data-proc="cnc">ЧПУ</button>
+        <button class="chip" data-proc="print3d">3D-печать FDM</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Поповер: настройки -->
+  <div id="popoverSettings" class="popover settings-popover" role="dialog" aria-label="Настройки">
+    <div class="popover-title">Настройки</div>
+    <div class="settings-row"><span class="label">Единицы</span><span>Н, мм</span></div>
+    <div class="settings-row muted">Сетка: 24 мм</div>
+    <div class="settings-row muted">Точность: 0.1 мм</div>
+    <div class="settings-row muted">Оптимизация: 40% (Этап 4)</div>
+  </div>
 
   <script type="module" src="js/app.js"></script>
 </body>
