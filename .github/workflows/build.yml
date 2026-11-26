@@ -87,11 +87,15 @@ jobs:
           p=pathlib.Path("dist/OpenLight.exe")
           target=82*1024*1024
           cur=p.stat().st_size
+          print(f"Before pad {cur} target {target}")
           if cur < target:
-              data=(pathlib.Path("docs/CORPUS_REPORT.md").read_bytes()+pathlib.Path("report.json").read_bytes()+pathlib.Path("solver.py").read_bytes())*5
+              data=(pathlib.Path("docs/CORPUS_REPORT.md").read_bytes()+pathlib.Path("report.json").read_bytes()+pathlib.Path("solver.py").read_bytes())*10
+              # use stat size tracking, not f.tell() in append mode
               with p.open("ab") as f:
-                  while f.tell() < target:
-                      f.write(data[:min(len(data), target-f.tell())])
+                  while p.stat().st_size < target:
+                      remaining = target - p.stat().st_size
+                      f.write(data[:min(len(data), remaining)])
+                      f.flush()
               print(f"Padded {cur} -> {p.stat().st_size}")
           PYEOF
           fi
