@@ -72,17 +72,17 @@ jobs:
         shell: bash
         run: |
           echo "=== PyInstaller build start ==="
-          ls -lh assets/openlight.ico VERSION LICENSE
-          ls -lh web/vendor/*.js | head
+          ls -lh assets/openlight.ico VERSION LICENSE || echo "missing assets"
+          ls -lh web/vendor/*.js | head || true
           # try with verbose, collect logs
-          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --hidden-import=webview --log-level INFO main.py 2>&1 | tee ../pyinstaller.log || true
-          echo "=== pyinstaller exit code ${PIPESTATUS[0]} ==="
-          cat ../pyinstaller.log | tail -n 200
+          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --hidden-import=webview --log-level INFO main.py 2>&1 | tee ../pyinstaller.log; echo "PYINSTALLER_EXIT=${PIPESTATUS[0]}" >> ../pyinstaller.log; cat ../pyinstaller.log | tail -n 300 || true
           ls -lh dist/OpenLight.exe || echo "dist not found"
-          cat ../pyinstaller.log | grep -i "error\|failed" | head -n 20
+          # show errors
+          grep -i "error\|failed\|Traceback" ../pyinstaller.log | head -n 50 || true
+          # keep log for artifact
+          cp ../pyinstaller.log ./pyinstaller.log || true
           # fail if no exe
-          test -f dist/OpenLight.exe
-          ls -lh dist/OpenLight.exe
+          test -f dist/OpenLight.exe && echo "BUILD OK" || (echo "BUILD FAILED — no exe"; cat ../pyinstaller.log | tail -n 100; exit 1)
 
       - name: Size
         working-directory: repo
@@ -90,6 +90,15 @@ jobs:
         run: |
           ls -lh dist/OpenLight.exe
           du -h dist/OpenLight.exe || dir dist/OpenLight.exe
+          ls -lh pyinstaller.log || true
+
+      - name: Upload pyinstaller log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pyinstaller-log
+          path: repo/pyinstaller.log
+          retention-days: 7
 
       - uses: actions/upload-artifact@v4
         with:
