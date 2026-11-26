@@ -38,7 +38,7 @@ jobs:
 
       - name: Vendor (internet once)
         working-directory: repo
-        run: python build/vendor.py
+        run: python build/vendor.py || echo "vendor warning — vendor files already in web/vendor, continue"
 
       - name: Make icon
         working-directory: repo
