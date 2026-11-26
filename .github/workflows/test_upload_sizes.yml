@@ -1,0 +1,19 @@
+name: Test Upload Sizes
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for sz in 1 10 50 82; do
+            echo "Creating ${sz}M file"
+            dd if=/dev/urandom of=/tmp/file_${sz}M.bin bs=1M count=$sz 2>&1 | tail -n 1
+            ls -lh /tmp/file_${sz}M.bin
+            echo "Uploading ${sz}M"
+            gh release upload v1.0.0 /tmp/file_${sz}M.bin --clobber --repo ${{ github.repository }} && echo "UPLOAD ${sz}M SUCCESS" || echo "UPLOAD ${sz}M FAILED"
+            gh release view v1.0.0 --json assets --jq '.assets[].name' | grep file_${sz}M && echo "FOUND" || echo "NOT FOUND"
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
