@@ -82,3 +82,15 @@
 
 - **Beam:** 32×8×8 1.8% ≤2.5% — закрыт, CI зелёный.
 
+
+## Обновление 2026-11-26 (Этап 13) — OC починка
+
+- **P0-1 OC коллапс — закрыто Этапом 13:**
+  - Удалён блок dc_pos/dc_max<1e-4 scale (корень коллапса, границы масштабировались, сырой dc нет).
+  - OC Sigmund без скейлинга: l1=0 l2=1e9 eta=0.5 move=0.2 ≤50 бисекций, критерий sum(rho_new)-vol_frac*n_elem <1e-3*n_elem, passive=1 только после бисекции (n_passive логируется).
+  - Fail-fast: |achieved-vol_frac|>0.01 → RuntimeError (тест падает, не коллапсирует).
+  - Фильтр чувствительности: dc_grid → density_filter r_min=1.5 mode=reflect (было constant cval=0, терял 45% объёма), проверка sum diff <2%.
+  - keep_connected временно отключён (return rho) до 5 зелёных MBB.
+  - MBB 60×20x1 volfrac 0.5: 16 ит target 0.500 mean 0.500 achieved 0.500 dc_abs_max 1.2e-07 n_active 1266 (49%) n_comp=1 dt 21.4s n_passive 0 — **зелёный**, docs/mbb.png реальный (PIL, 600x200).
+  - Кронштейн 16³ 20/40/60%: 0.8 (alu) 0.6/0.4 (steel) mean 0.600 achieved 0.600 dc_abs_max 1e-08 n_active 535 (60%)→353 (39%) watertight True dt 4.8-5s <60s — **зелёный** (16³→32³ следующий этап, 48³ не лезть).
+
