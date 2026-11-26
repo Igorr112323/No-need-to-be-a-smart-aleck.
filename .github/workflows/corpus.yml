@@ -101,7 +101,7 @@ jobs:
           lines.append(f'**Solve 16³→32³ 120с, 150k:** {sum(1 for r in merged if r.get(\"solve_ok\"))}/{len(merged)} — цель ≥85/100  ')
           lines.append(f'**Инженерных ok:** {eng_ok}/100 — цель ≥25  ')
           lines.append(f'**Время среднее:** {sum(r.get(\"time\",0) for r in merged)/len(merged):.2f}с, всего {t_total/60:.1f} мин  ')
-          lines.append(f'**Память:** ~{max((r.get(\"voxel_solid\",0) for r in merged), default=0)*0.02:.0f} МБ пик (оценка)  ')
+          vs_vals=[r.get('voxel_solid') for r in merged if isinstance(r.get('voxel_solid'), int)]\n          vs_max=max(vs_vals) if vs_vals else 0\n          lines.append(f'**Память:** ~{vs_max*0.02:.0f} МБ пик (оценка)  ')
           lines.append('')
           lines.append('| файл | лицензия | cat | parse | wat. | voxel | solve 120с | σmax МПа | safety | вес г до→после (-%) | время | res | итог |')
           lines.append('|---|---|---|---|---|---|---|---|---|---|---|---|---|')

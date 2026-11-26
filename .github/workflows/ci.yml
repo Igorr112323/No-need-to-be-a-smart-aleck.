@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '20'
       - name: Install Python deps
-        run: pip install -r requirements.txt && pip install pytest
+        run: pip install -r requirements.txt && pip install pytest mapbox-earcut shapely
       - name: Python compile
         run: python -m py_compile main.py solver.py build/vendor.py build/make_icon.py tools/fetch_corpus.py tools/make_stress_report.py tests/test_beam.py tests/test_solver.py tests/test_corpus.py tests/test_mbb.py tests/test_bracket_oc.py
       - name: Node check
