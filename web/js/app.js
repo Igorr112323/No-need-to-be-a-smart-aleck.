@@ -474,8 +474,24 @@ dockBtns.forEach(btn => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     if (pendingForce) { forcesGroup.remove(pendingForce.previewMesh); pendingForce = null; }
+    // если все поповеры закрыты — Escape закрывает окно (гарантированный выход)
+    const anyPopoverOpen = document.querySelector('.popover.show');
+    if (!anyPopoverOpen) {
+      try{ window.__diag && window.__diag('ui: Escape close'); }catch(_){}
+      if(window.pywebview && window.pywebview.api && window.pywebview.api.close_window){
+        window.pywebview.api.close_window();
+        return;
+      }
+    }
     setTool(null); hideAllPopovers(); popRelief.classList.remove('show'); restorePrompt.classList.remove('show');
     currentTool = null; dockBtns.forEach(b => b.classList.remove('active')); canvas.style.cursor = 'default';
+  }
+  // Ctrl+W / Ctrl+Q — закрыть окно
+  if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'w' || e.key.toLowerCase() === 'q')) {
+    e.preventDefault();
+    try{ window.__diag && window.__diag('ui: Ctrl+W close'); }catch(_){}
+    if(window.pywebview && window.pywebview.api && window.pywebview.api.close_window) window.pywebview.api.close_window();
+    else window.close();
   }
   // хоткеи проекта
   if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); handleSaveProject(); }
@@ -1616,16 +1632,28 @@ document.addEventListener('drop', (e)=>{
     }
   }
 });
-// проверка overlay-убийцы
+// проверка оверлея-убийцы (p.3) — центр экрана
 setTimeout(()=>{
   try{
     const el=document.elementFromPoint(window.innerWidth/2, window.innerHeight/2);
-    window.__diag && window.__diag('elementFromPoint center: '+(el ? (el.id||el.className||el.tagName) : 'null'));
-    if(el && (el.id==='appLoader' || el.closest && el.closest('#appLoader'))){
+    const name=el ? (el.id||el.className||el.tagName) : 'null';
+    window.__diag && window.__diag('elementFromPoint center: '+name);
+    // p.4 pywebview-мост
+    const hasPv=!!window.pywebview;
+    const hasApi=!!(window.pywebview && window.pywebview.api);
+    const hasGetInfo=typeof (window.pywebview && window.pywebview.api && window.pywebview.api.get_app_info) === 'function';
+    window.__diag && window.__diag('pywebview bridge: window.pywebview='+hasPv+' api='+hasApi+' get_app_info='+hasGetInfo);
+    if(el && (el.id==='appLoader' || (el.closest && el.closest('#appLoader')))){
       window.__diag('OVERLAY KILLER appLoader intercepts clicks!');
       document.title='ERR: overlay blocks clicks';
     }
-  }catch(e){}
+    // p.5 список всех навешанных обработчиков
+    const ids=['btnBack','btnOpen','btnUndo','btnExport','btnMore','btnMaterial','btnOptimize','btnSaveProject','btnOpenProject','winClose','winMin','winMax','metricsToggle','forceOk','centerHint','scene'];
+    const have=ids.filter(function(id){ return !!document.getElementById(id); });
+    const missing=ids.filter(function(id){ return !document.getElementById(id); });
+    window.__diag && window.__diag('listeners-attached have='+have.length+' missing=['+missing.join(',')+']');
+    if(missing.length) window.__diag('first-error: missing ids '+missing.join(','));
+  }catch(e){ window.__diag && window.__diag('first-error: check failed '+e); }
 }, 1000);
 // listeners-attached маркер
 try{ window.__diag && window.__diag('listeners-attached'); }catch(e){}

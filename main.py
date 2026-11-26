@@ -206,10 +206,41 @@ class Api:
 
     def diag_log_js(self, msg: str):
         diag_log(f"JS: {msg}")
+        # также в ui.log для 17F
+        try:
+            path = _diag_log_path().parent / "ui.log"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+            with open(path, "a", encoding="utf-8") as f:
+                f.write(f"[{ts}] {msg}\n")
+        except Exception:
+            pass
         return {'ok': True}
 
     def diag_ping(self, marker: str):
         diag_log(f"marker {marker}")
+        # дублируем в ui.log
+        try:
+            path = _diag_log_path().parent / "ui.log"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+            with open(path, "a", encoding="utf-8") as f:
+                f.write(f"[{ts}] {marker}\n")
+        except Exception:
+            pass
+        return {'ok': True}
+
+    def record_log(self, msg: str):
+        # 17F: js_api.record_log(str) → ui.log
+        diag_log(f"record_log {msg}")
+        try:
+            path = _diag_log_path().parent / "ui.log"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+            with open(path, "a", encoding="utf-8") as f:
+                f.write(f"[{ts}] {msg}\n")
+        except Exception as e:
+            diag_log(f"record_log failed {e}")
         return {'ok': True}
 
     # —— базовые ——
