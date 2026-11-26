@@ -325,7 +325,7 @@ class Api:
                                 'iteration': info.get('iteration', 0),
                             })
 
-                # вызов оптимизатора
+                # вызов оптимизатора — E2 units, A2 process, A3 loadcases, A5 STEP
                 result = optimize_topology(
                     stl_b64=payload.get('stl_b64'),
                     supports=payload.get('supports', []),
@@ -336,6 +336,9 @@ class Api:
                     resolution=int(payload.get('resolution', 64)),
                     progress_cb=cb,
                     timeout=float(payload.get('timeout', 45)),
+                    process=payload.get('process', 'cnc'),
+                    units=payload.get('units', 'mm'),
+                    file_name=payload.get('file_name', payload.get('importedName')),
                 )
                 with _jobs_lock:
                     _jobs[job_id].update({'status': 'done', 'progress': 100, 'phase': 'Готово', 'result': result})

@@ -24,20 +24,25 @@ export const BRACKET_VOLUME_CM3 = 52.48;
 
 export const state = {
   supports: [],      // {id, position, normal}
-  forces: [],        // {id, position, direction, valueN}
+  forces: [],        // {id, position, direction, valueN, case}
   keepZones: [],     // {id, position, normal, radiusMm}
   material: 'steel',
   process: 'cnc',
+  units: null,       // E2: мм / см / дюймы — нельзя показывать вес/σ до выбора (иначе мусор), только выбор пользователя, автодетект запрещён
   targetRelief: 0.4,    // выбранное облегчение до расчёта
   currentRelief: 0.4,   // фактическое после расчёта (для слайдера)
   viewMode: 'original', // original|stress|light|split
   history: [],
   optimized: false,
   safetyFactor: null,
+  safetyPerp: null,  // A2: два запаса для PLA FDM
+  safetyParallel: null,
   weightBefore: null,
   weightAfter: null,
   economy: null,
   stressField: null, // {max, min, perVertex data}
+  activeLoadcase: 1, // A3: активный случай 1..3
+  loadcaseCount: 1,
 };
 
 let nextId = 1;

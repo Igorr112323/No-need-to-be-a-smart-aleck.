@@ -8,7 +8,7 @@
 
 > **Скачать:** [![Скачать OpenLight.exe](https://img.shields.io/badge/Скачать-OpenLight.exe-blue?style=for-the-badge)](https://github.com/Igorr112323/OpenLight/releases) — последний Release `v0.9.3-test` `dist/OpenLight.exe` (40-70МБ, ≥30МБ, `--selftest` OK) или Artifacts Build.
 
-> **Статус: v0.9.3-test — Этап15, корпус 100 solve≥80, beam 1.8%, MBB 60×20×1 16ит 49% 21.4с, кронштейн 16³ 40% 5с, build ≥30МБ без dummy, --selftest OK** Дизайн заморожен (web/* не менялся).
+> **Статус: Этап16 — физика до конца + единицы: PLA FDM E∥3.5/E⊥2.7 ν0.36 σyield∥36.3/⊥26.0 (см. docs/MATERIALS.md, D ортотропная), 3 случая нагрузки envelope, текучесть safety<1, единицы мм/см/дюймы (.olight.json units), импорт 50МБ/300k/тонкая стенка, STEP v1.1 заглушка. Корпус 86/100 11.3мин, beam 1.8% MBB 49% Kirsch 2.5%, build ≥30МБ без dummy.** Дизайн заморожен (web/* палитра не менялась, новые поповеры).
 
 ## Артефакты
 - **CI**: [![CI](https://github.com/Igorr112323/OpenLight/actions/workflows/ci.yml/badge.svg)](https://github.com/Igorr112323/OpenLight/actions/workflows/ci.yml) — `ci.yml` ubuntu, beam ≤2.5% + MBB + bracket

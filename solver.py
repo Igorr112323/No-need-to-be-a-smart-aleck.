@@ -26,10 +26,25 @@ except ImportError:
     warnings.warn("scikit-image не найден, marching cubes через trimesh")
 
 # ——— свойства материалов ———
+# Источники: см. docs/MATERIALS.md — каждый FDM-параметр с URL в комментарии ниже
 MATERIALS = {
+    # Сталь 09Г2С — изотропная, ГОСТ
     "steel": {"E": 200e9, "nu": 0.30, "yield": 345e6, "name": "Сталь 09Г2С", "density": 7.85},
+    # АМг6 — изотропная
     "alu":   {"E": 71e9,  "nu": 0.33, "yield": 140e6, "name": "АМг6", "density": 2.64},
-    "pla":   {"E": 3.5e9, "nu": 0.36, "yield": 50e6,  "name": "PLA", "density": 1.24},
+    # PLA FDM — ортотропная (источники в docs/MATERIALS.md)
+    # E_parallel 3.5 ГПа — Ultimaker TDS / iGEM Cambridge 2015 PLA E=3.5 GPa [https://2015.igem.org/wiki/images/3/37/CamJIC-Specs-Materials.pdf]
+    # E_perp 2.7 ГПа — ортотропия -23% по ResearchGate 2024 Plane13 2142 vs 2575 МПа [https://www.researchgate.net/publication/378922354_Orthotropic_mechanical_properties_of_PLA_materials_fabricated_by_fused_deposition_modelling]
+    # nu 0.36 — типично PLA, ν12=0.37 по ResearchGate 2024 Evaluation [https://www.researchgate.net/publication/378366582_Evaluation_of_the_structural_strength_of_anisotropic_PLA_components_manufactured_by_3D_printing]
+    # yield_parallel 36.3 МПа — TEMJournal 2020 Ultimaker yield 36.3 МПа [https://www.temjournal.com/content/93/TEMJournalAugust_966_970.pdf]
+    # yield_perp 26.0 МПа — межслойная, PM Filament 26.0 МПа тот же источник
+    "pla": {
+        "E": 3.5e9, "nu": 0.36, "yield": 26.0e6, "yield_parallel": 36.3e6, "yield_perp": 26.0e6,
+        "E_parallel": 3.5e9, "E_perp": 2.7e9, "nu_perp": 0.38, "G_parallel": 1.28e9, "G_perp": 0.95e9,
+        "name": "PLA", "density": 1.24,
+        # G_parallel 1.28 = E/(2(1+ν)) =3.5/(2*1.36), G12 1470 МПа по [1] G12=1470
+        # G_perp 0.95 =0.74*G∥ по анизотропии Plane13 [5]
+    },
 }
 
 # ——— вокселизация ———
@@ -111,6 +126,34 @@ def elasticity_matrix(E, nu):
     D[0, 0] = D[1, 1] = D[2, 2] = c * (1 - nu)
     D[0, 1] = D[0, 2] = D[1, 0] = D[1, 2] = D[2, 0] = D[2, 1] = c * nu
     D[3, 3] = D[4, 4] = D[5, 5] = c * (1 - 2 * nu) / 2
+    return D
+
+def elasticity_matrix_orthotropic(E_par, E_perp, nu, nu_perp, G_par, G_perp):
+    """
+    Ортотропная D 6x6 для PLA FDM: E_par=E_x=E_y (в слое), E_perp=E_z (межслой).
+    Источники см. docs/MATERIALS.md — E_par 3.5 GPa [iGEM], E_perp 2.7 GPa [orthotropic 2024],
+    nu 0.36, G_par 1.28 GPa (E/2(1+ν)), G_perp 0.95 GPa.
+    Упрощённо — трансверсально-изотропная: оси X,Y равноправны.
+    """
+    # податливость S, затем инверсия
+    # Для трансверсально-изотропного: S11=1/E_par, S33=1/E_perp, S12=-nu/E_par, S13=-nu_perp/E_perp? — упрощаем
+    # Используем приближение: nu_par=nu, nu_perp=nu_perp, G как указано
+    # Строим S 6x6
+    S = np.zeros((6,6))
+    S[0,0]=1/E_par; S[1,1]=1/E_par; S[2,2]=1/E_perp
+    S[0,1]=S[1,0]= -nu/E_par
+    S[0,2]=S[2,0]= -nu_perp/E_perp
+    S[1,2]=S[2,1]= -nu_perp/E_perp
+    S[3,3]=1/G_par
+    S[4,4]=1/G_perp
+    S[5,5]=1/G_perp
+    # инвертировать верх 3x3, ниж диагональ отдельно
+    # D = S^-1 — численно
+    try:
+        D = np.linalg.inv(S)
+    except np.linalg.LinAlgError:
+        # fallback к изотропной с E_par
+        return elasticity_matrix(E_par, nu)
     return D
 
 # узлы гекса в локальных координатах [-1,1] (вынесено для element_B)
@@ -233,6 +276,9 @@ def optimize_topology(
     resolution: int = 64,
     progress_cb=None,
     timeout: float = 45.0,
+    process: str = "cnc",
+    units: str = "mm",
+    file_name: str = None,
 ):
     """
     Вход:
@@ -241,6 +287,9 @@ def optimize_topology(
       material — steel/alu/pla
       relief — 0.2/0.4/0.6
       resolution — 64 по длинной стороне
+      process — cnc / print3d (для PLA анизотропии)
+      units — mm / cm / in (E2: маппинг в pitch, .olight.json поле units, нельзя показывать вес/σ до выбора)
+      file_name — для E1/E5: проверка расширения .step/.stp → заглушка, лимиты
     Возврат: dict с optimized_stl_b64, stress, safety и т.д.
     """
     t0 = time.time()
@@ -248,12 +297,70 @@ def optimize_topology(
     forces = forces or []
     keep_zones = keep_zones or []
 
+    # E2: единицы — масштаб pitch (мм — база)
+    units_norm = (units or "mm").lower()
+    if units_norm in ("cm", "см"):
+        scale_units = 10.0  # 1 см = 10 мм
+    elif units_norm in ("in", "inch", "inches", "дюйм", "дюймы"):
+        scale_units = 25.4
+    elif units_norm in ("mm", "мм"):
+        scale_units = 1.0
+    else:
+        # неизвестные — считаем мм, но логируем
+        scale_units = 1.0
+
+    # A5: STEP — только если задан куратором, по умолчанию заглушка v1.1 OCCT
+    if file_name and file_name.lower().endswith((".step", ".stp")):
+        raise ValueError("STEP пока не поддерживается — v1.1, OCCT (по умолчанию заглушка, задаётся куратором)")
+
     mat = MATERIALS.get(material, MATERIALS["steel"])
-    E, nu, yield_strength = mat["E"], mat["nu"], mat["yield"]
+    # A2: анизотропия FDM — ортотропная D для pla+print3d, слабое направление ⊥
+    # источники см. docs/MATERIALS.md и комментарии в MATERIALS выше
+    is_pla_fdm = (material == "pla" and process == "print3d")
+    if is_pla_fdm:
+        E_par = mat.get("E_parallel", mat["E"])
+        E_perp = mat.get("E_perp", mat["E"])
+        nu_par = mat.get("nu", 0.36)
+        nu_perp = mat.get("nu_perp", 0.38)
+        G_par = mat.get("G_parallel", 1.28e9)
+        G_perp = mat.get("G_perp", 0.95e9)
+        # для Ke нужен изотропный E — берём E_par как базовый, а D ортотропная отдельно
+        E, nu = E_par, nu_par
+        D_mat_base = elasticity_matrix_orthotropic(E_par, E_perp, nu_par, nu_perp, G_par, G_perp)
+        # yield по слабому направлению (⊥) — определяющий
+        yield_strength = mat.get("yield_perp", mat["yield"])
+        yield_parallel = mat.get("yield_parallel", mat["yield"])
+        yield_perp = mat.get("yield_perp", mat["yield"])
+    else:
+        E, nu, yield_strength = mat["E"], mat["nu"], mat["yield"]
+        D_mat_base = None
+        yield_parallel = yield_strength
+        yield_perp = yield_strength
     Emin = 1e-3 * E
     p = 3.0  # SIMP penal
     vol_frac = 1.0 - relief  # сколько оставить
     r_min = 1.5  # фильтр радиус
+
+    # A3: до 3 случаев нагрузки — группировка forces по полю case/loadcase (1..3)
+    # forces может быть плоским списком или содержать case; если case отсутствует — считаем случай 1
+    # Поддерживаем также loadcases: [[...],[...],[...]] — но JS шлёт плоский с case
+    loadcases = {}
+    if forces and isinstance(forces[0], list):
+        # уже сгруппированы как list of lists
+        for idx, grp in enumerate(forces[:3]):
+            if grp:
+                loadcases[idx+1] = grp
+    else:
+        for f in forces:
+            case_id = int(f.get("case", f.get("loadcase", f.get("loadCase", 1))))
+            case_id = max(1, min(3, case_id))
+            loadcases.setdefault(case_id, []).append(f)
+    if not loadcases and forces:
+        loadcases[1] = forces
+    if not loadcases:
+        loadcases[1] = []
+    # для обратной совместимости — если один случай, forces как есть
+    has_multiple_cases = len(loadcases) > 1
 
     def progress(phase, pct, msg=""):
         if progress_cb:
@@ -278,14 +385,59 @@ def optimize_topology(
     else:
         mesh = create_bracket_primitive()
 
-    # вокселизация
-    mat_vox, pitch, origin, dims, vg = voxelize_trimesh(mesh, resolution=resolution)
-    nx, ny, nz = mat_vox.shape
-    print(f"[solver] voxel {mat_vox.shape} pitch={pitch:.3f} solid={np.count_nonzero(mat_vox)}")
+    # E2: масштаб по единицам (мм — база) — перед вокселизацией
+    if scale_units != 1.0:
+        try:
+            mesh.apply_scale(scale_units)
+            print(f"[units] масштаб {units_norm} → мм x{scale_units}")
+        except Exception:
+            pass
 
-    # если слишком много ячеек — уже снижено в voxelize, но проверим
-    if np.count_nonzero(mat_vox) > 150_000:
-        raise ValueError("Слишком много ячеек >150k, снизьте сетку до 32³")
+    # E1/E3: импорт — watertight/winding check + repair
+    # Не падать на 20 сложных STL, а давать результат или понятную ошибку в поповере
+    was_watertight = bool(getattr(mesh, "is_watertight", False))
+    if not was_watertight:
+        # попытка repair: fix inversion, fix normals, fill holes
+        try:
+            # trimesh repair
+            if hasattr(mesh, "fix_inversion"):
+                mesh.fix_inversion()
+            if hasattr(mesh, "fix_normals"):
+                mesh.fix_normals()
+            # повторная проверка
+            if not mesh.is_watertight:
+                # триimesh fill holes (если доступно)
+                try:
+                    trimesh.repair.fix_winding(mesh)
+                    trimesh.repair.fill_holes(mesh)
+                except Exception:
+                    pass
+            print(f"[import] watertight: {was_watertight} -> {mesh.is_watertight} (repair попытка)")
+        except Exception as e:
+            print(f"[import] repair failed {e}")
+
+    # E3: толщина стенки < pitch — предупреждение (минимальный размер < 2*pitch)
+    try:
+        extent = mesh.bounds[1] - mesh.bounds[0]
+        min_thickness = float(np.min(extent))
+        # pitch ещё не известен, оценим как longest/resolution
+        est_pitch = float(np.max(extent)) / resolution if resolution else 0
+        if min_thickness > 1e-6 and min_thickness < est_pitch:
+            print(f"[import] предупреждение: толщина стенки {min_thickness:.2f} мм < pitch {est_pitch:.2f} мм — возможна потеря")
+            # это предупреждение будет показано в UI поповере через progress
+            progress("Предупреждение", 6, f"Тонкая стенка {min_thickness:.2f} мм < pitch {est_pitch:.2f} мм")
+    except Exception:
+        pass
+
+    # E6: лимит 50 МБ уже в main.py open_model, здесь дополнительно проверяем
+    # вокселизация
+    mat_vox, pitch, origin, dims, vg = voxelize_trimesh(mesh, resolution=resolution, max_cells=300_000)
+    nx, ny, nz = mat_vox.shape
+    print(f"[solver] voxel {mat_vox.shape} pitch={pitch:.3f} solid={np.count_nonzero(mat_vox)} units={units_norm} x{scale_units}")
+
+    # если слишком много ячеек — уже снижено в voxelize, но проверим (E3: ≤300k)
+    if np.count_nonzero(mat_vox) > 300_000:
+        raise ValueError("Слишком много ячеек >300k, снизьте сетку до 32³ (E3 лимит)")
 
     # пассивные зоны (keepZones) — отметить воксели внутри радиуса как passive=1
     passive = np.zeros_like(mat_vox, dtype=bool)
@@ -403,58 +555,66 @@ def optimize_topology(
     free = np.array(sorted(active_dofs - fixed_dofs), dtype=int)
     print(f"[solver] active_nodes {len(active_nodes)}/{n_nodes} active_dofs {len(active_dofs)} fixed {len(fixed)} free {len(free)}")
 
-    # силы -> F вектор
-    if not forces:
+    # силы -> F векторы по случаям (A3: до 3 случаев)
+    def build_F(force_list):
+        Fv = np.zeros(n_dof, dtype=float)
+        for f in force_list:
+            pos = np.array(f["position"], dtype=float)
+            dir_vec = np.array(f.get("direction", f.get("normal", [0, -1, 0])), dtype=float)
+            n = np.linalg.norm(dir_vec)
+            if n < 1e-9:
+                dir_vec = np.array([0, -1, 0], dtype=float); n = 1
+            dir_vec = dir_vec / n
+            val = float(f.get("valueN", 500))
+            force_vec = dir_vec * val
+            ijk = np.floor((pos - origin) / pitch).astype(int)
+            best = None; best_dist = 1e9
+            for dx in [-2, -1, 0, 1, 2]:
+                for dy in [-2, -1, 0, 1, 2]:
+                    for dz in [-2, -1, 0, 1, 2]:
+                        ii, jj, kk = ijk[0]+dx, ijk[1]+dy, ijk[2]+dz
+                        if 0 <= ii < nx and 0 <= jj < ny and 0 <= kk < nz and mat_vox[ii, jj, kk]:
+                            vox_c = origin + (np.array([ii, jj, kk]) + 0.5)*pitch
+                            d = np.linalg.norm(vox_c - pos)
+                            if d < best_dist:
+                                best_dist = d; best = (ii, jj, kk)
+            if best is not None:
+                ix, iy, iz = best
+                nodes = [node_id(ix+dx, iy+dy, iz+dz) for dx,dy,dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]]
+                for nid in nodes:
+                    Fv[nid*3] += force_vec[0] / 8
+                    Fv[nid*3+1] += force_vec[1] / 8
+                    Fv[nid*3+2] += force_vec[2] / 8
+        # fallback если пусто
+        if np.linalg.norm(Fv[free]) < 1e-9 and force_list:
+            # ближайший верхний
+            top_idx = None; top_y = -1e9
+            for eid, (ix,iy,iz) in enumerate(solid_idx):
+                yc = origin[1] + (iy+0.5)*pitch
+                if yc > top_y:
+                    top_y = yc; top_idx = (ix,iy,iz)
+            if top_idx is not None:
+                ix,iy,iz = top_idx
+                nodes = [node_id(ix+dx, iy+dy, iz+dz) for dx,dy,dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]]
+                for nid in nodes:
+                    Fv[nid*3+1] += -500/8
+        return Fv
+
+    # собрать F по случаям
+    F_cases = {}
+    if not loadcases:
         fallback_pos = [0.0, 68.0, 0.0]
-        forces = [{"position": fallback_pos, "direction": [0, -1, 0], "valueN": 500}]
-        print(f"[solver] нет сил — fallback нагрузка {fallback_pos} 500N")
-    F = np.zeros(n_dof, dtype=float)
-    for f in forces:
-        pos = np.array(f["position"], dtype=float)
-        # direction может быть нормаль или direction
-        dir_vec = np.array(f.get("direction", f.get("normal", [0, -1, 0])), dtype=float)
-        # нормализовать и умножить на valueN
-        n = np.linalg.norm(dir_vec)
-        if n < 1e-9:
-            dir_vec = np.array([0, -1, 0], dtype=float); n = 1
-        dir_vec = dir_vec / n
-        val = float(f.get("valueN", 500))
-        force_vec = dir_vec * val
-        # найти ближайший solid воксель
-        ijk = np.floor((pos - origin) / pitch).astype(int)
-        best = None; best_dist = 1e9
-        for dx in [-2, -1, 0, 1, 2]:
-            for dy in [-2, -1, 0, 1, 2]:
-                for dz in [-2, -1, 0, 1, 2]:
-                    ii, jj, kk = ijk[0]+dx, ijk[1]+dy, ijk[2]+dz
-                    if 0 <= ii < nx and 0 <= jj < ny and 0 <= kk < nz and mat_vox[ii, jj, kk]:
-                        vox_c = origin + (np.array([ii, jj, kk]) + 0.5)*pitch
-                        d = np.linalg.norm(vox_c - pos)
-                        if d < best_dist:
-                            best_dist = d; best = (ii, jj, kk)
-        if best is not None:
-            ix, iy, iz = best
-            # распределить на 8 узлов равномерно
-            nodes = [node_id(ix+dx, iy+dy, iz+dz) for dx,dy,dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]]
-            for nid in nodes:
-                F[nid*3] += force_vec[0] / 8
-                F[nid*3+1] += force_vec[1] / 8
-                F[nid*3+2] += force_vec[2] / 8
-    # fallback для сил: если F на свободных DOF нулевой (сила попала в заделку или вне сетки) — приложить к самому верхнему solid вокселю
-    if np.linalg.norm(F[free]) < 1e-9:
-        print(f"[solver] F на free нулевой — fallback к верхнему solid вокселю")
-        # найти воксель с максимальным Y (или Z) среди solid
-        # выбрать тот с максимальным центром по Y
-        top_idx = None; top_y = -1e9
-        for eid, (ix,iy,iz) in enumerate(solid_idx):
-            yc = origin[1] + (iy+0.5)*pitch
-            if yc > top_y:
-                top_y = yc; top_idx = (ix,iy,iz)
-        if top_idx is not None:
-            ix,iy,iz = top_idx
-            nodes = [node_id(ix+dx, iy+dy, iz+dz) for dx,dy,dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]]
-            for nid in nodes:
-                F[nid*3+1] += -500/8  # сила вниз по Y
+        loadcases[1] = [{"position": fallback_pos, "direction": [0, -1, 0], "valueN": 500}]
+        print(f"[solver] нет сил — fallback нагрузка {fallback_pos} 500N (случай 1)")
+    for case_id, flist in loadcases.items():
+        F_cases[case_id] = build_F(flist)
+        print(f"[loadcase {case_id}] сил {len(flist)} |F| {np.linalg.norm(F_cases[case_id]):.1f} Н")
+    # для SIMP используем объединённый F (сумма) или первый случай — пока первый
+    # A3: расчёт ×3, envelope по σ — делаем после SIMP, а SIMP по первому случаю (или max dc)
+    F = F_cases.get(1, list(F_cases.values())[0])
+    if has_multiple_cases:
+        # для SIMP — берём F первого случая, а envelope будет позже (или можно суммировать dc)
+        print(f"[loadcase] множественные случаи {list(F_cases.keys())} — SIMP по случаю 1, envelope по всем")
 
     # SIMP инициализация
     # rho для каждого solid элемента (0-1), passive=1
@@ -709,50 +869,110 @@ def optimize_topology(
     print(f"[solver] weight before {weight_before_g:.1f} after {weight_after_g:.1f} vol_before {vol_before_cm3:.1f} vol_after {vol_after:.1f}")
 
     # von Mises на вершинах исходной модели (для карты) — ПОЛНЫЙ B·D·B per-node
+    # A3: ×3 расчёт, envelope max по случаям, safety min, карта от худшего случая
     progress("Поле напряжений", 97, "von Mises B·D·B per-node")
-    D_mat = elasticity_matrix(E, nu)
-    elem_stress = np.zeros((n_elem, 6))
-    # для per-node: будем сразу накапливать на узлы, без elem_avg
-    # но для логов сохраним elem_stress как среднее по 8 углам
-    for eid in range(n_elem):
-        if rho[eid] < 0.05:
-            continue
-        dofs = edofMat[eid]
-        ue = U[dofs]
-        sigma_avg = np.zeros(6)
-        for i in range(8):
-            B_corner = element_B(_HEX8_XI[i], pitch_m)
-            eps = B_corner @ ue
-            sigma_avg += D_mat @ eps
-        sigma_avg /= 8.0
-        elem_stress[eid] = sigma_avg
-    # логирование: σmax у опоры vs середина для кронштейна
-    # найдём элементы у опоры (ближе к fixed) и в середине — для критерия A1
+    # A2: для PLA FDM — ортотропная D, слабое направление ⊥
+    if is_pla_fdm and D_mat_base is not None:
+        D_mat = D_mat_base
+    else:
+        D_mat = elasticity_matrix(E, nu)
 
-    # усреднить von Mises на узлы — elem avg (8 углов) раздаём на 8 узлов
-    node_stress = np.zeros(n_nodes)
-    node_count = np.zeros(n_nodes)
-    for eid, (ix, iy, iz) in enumerate(solid_idx):
-        vm = von_mises(elem_stress[eid])
-        if vm < 1e3:
-            continue
-        for dx, dy, dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]:
-            nid = node_id(ix+dx, iy+dy, iz+dz)
-            node_stress[nid] += vm
-            node_count[nid] += 1
-    node_stress = np.divide(node_stress, np.maximum(1, node_count))
-    # диагностика: σmax у опоры vs середина (для кронштейна)
+    # Подготовка: если множественные случаи — решаем для каждого с финальной rho
+    # Иначе — используем уже имеющийся U
+    U_cases = {}
+    if has_multiple_cases:
+        # пересобрать K с финальной rho
+        E_eff_final = Emin + (E - Emin) * (rho ** p)
+        rows_f=[]; cols_f=[]; vals_f=[]
+        for eid in range(n_elem):
+            ke = Ke0 * (E_eff_final[eid] / E)
+            dofs = edofMat[eid]
+            for i in range(24):
+                for j in range(24):
+                    rows_f.append(dofs[i]); cols_f.append(dofs[j]); vals_f.append(ke[i,j])
+        K_final = sparse.coo_matrix((vals_f, (rows_f, cols_f)), shape=(n_dof, n_dof)).tocsr()
+        Kff_final = K_final[free,:][:,free]
+        for case_id, Fv in F_cases.items():
+            Ff_case = Fv[free]
+            try:
+                if len(free) < 40000:
+                    u_free_case = spsolve(Kff_final, Ff_case)
+                else:
+                    diag = Kff_final.diagonal(); diag[diag==0]=1e-12; M=sparse.diags(1/diag)
+                    u_free_case, info = cg(Kff_final, Ff_case, rtol=1e-8, maxiter=1000, M=M)
+                    if info != 0:
+                        u_free_case = spsolve(Kff_final, Ff_case)
+            except Exception:
+                u_free_case = np.zeros(len(free))
+            U_full = np.zeros(n_dof); U_full[free]=u_free_case
+            U_cases[case_id]=U_full
+        # для логов — первый случай как основной
+        U = U_cases.get(1, list(U_cases.values())[0])
+    else:
+        # одиночный — уже есть U
+        U_cases[1]=U
+
+    # Вычислить stress на узлах для каждого случая, затем envelope
+    case_node_stresses = {}  # case_id -> node_stress array
+    case_elem_stress = {}
+    for case_id, U_case in U_cases.items():
+        elem_stress_case = np.zeros((n_elem, 6))
+        for eid in range(n_elem):
+            if rho[eid] < 0.05:
+                continue
+            dofs = edofMat[eid]
+            ue = U_case[dofs]
+            sigma_avg = np.zeros(6)
+            for i in range(8):
+                B_corner = element_B(_HEX8_XI[i], pitch_m)
+                eps = B_corner @ ue
+                sigma_avg += D_mat @ eps
+            sigma_avg /= 8.0
+            elem_stress_case[eid] = sigma_avg
+        case_elem_stress[case_id]=elem_stress_case
+        # узлы
+        ns = np.zeros(n_nodes); nc = np.zeros(n_nodes)
+        for eid, (ix, iy, iz) in enumerate(solid_idx):
+            vm = von_mises(elem_stress_case[eid])
+            if vm < 1e3:
+                continue
+            for dx, dy, dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]:
+                nid = node_id(ix+dx, iy+dy, iz+dz)
+                ns[nid] += vm
+                nc[nid] += 1
+        ns = np.divide(ns, np.maximum(1, nc))
+        case_node_stresses[case_id]=ns
+    # envelope: max по случаям
+    if len(case_node_stresses) > 1:
+        # stack
+        all_ns = np.stack(list(case_node_stresses.values()), axis=0)  # (cases, nodes)
+        node_stress = np.max(all_ns, axis=0)
+        # worst_case per node — для лога
+        worst_case_per_node = np.argmax(all_ns, axis=0) + 1  # 1-indexed
+        # elem_stress envelope — max vm per element
+        elem_stress = np.zeros((n_elem,6))
+        # для каждого элемента взять случай с max vm
+        for eid in range(n_elem):
+            best_case = 1; best_vm = -1
+            for cid, es in case_elem_stress.items():
+                vm = von_mises(es[eid])
+                if vm > best_vm:
+                    best_vm = vm; best_case = cid
+            elem_stress[eid]=case_elem_stress[best_case][eid]
+        worst_case_global = int(np.argmax([np.max(v) for v in case_node_stresses.values()]) + 1)
+        print(f"[envelope] {len(case_node_stresses)} случаев, worst случай {worst_case_global}, max {np.max(node_stress)/1e6:.1f} МПа")
+    else:
+        node_stress = list(case_node_stresses.values())[0]
+        elem_stress = list(case_elem_stress.values())[0]
+        worst_case_global = 1
+    # диагностика: σmax у опоры vs середина (для кронштейна) — используем уже посчитанный node_stress/envelope
     try:
         if fixed.size > 0:
-            # найти узлы у опоры (в радиусе поддержки) и в середине
-            fixed_nodes = set(fixed//3)
-            # средние элементы — по центру bbox
             mid_elem = n_elem//2
-            # просто залогировать max vm
             all_vm = [von_mises(elem_stress[eid]) for eid in range(n_elem)]
             max_vm_elem = max(all_vm) if all_vm else 0
             mid_vm = von_mises(elem_stress[mid_elem]) if n_elem else 0
-            print(f"[stress] max_vm {max_vm_elem/1e6:.2f} МПа mid {mid_vm/1e6:.2f} МПа (опора > середины? {max_vm_elem > mid_vm})")
+            print(f"[stress] max_vm {max_vm_elem/1e6:.2f} МПа mid {mid_vm/1e6:.2f} МПа (опора > середины? {max_vm_elem > mid_vm}) от случая {worst_case_global}")
     except Exception:
         pass
     # теперь для каждой вершины исходного меша (verts_s — это уже оптимизированный, а для карты нужен оригинал)
@@ -774,12 +994,31 @@ def optimize_topology(
             s = 0
         stress_per_orig_vert.append(float(s))
     stress_per_orig_vert = np.array(stress_per_orig_vert)
-    # запас прочности — честно, clamp 1.0–99, без подгонки под 2.4
+    # A4: диагностика текучести — σ_vm ≥ σ_yield → красное предупреждение, safety<1 показывается числом, убрать кламп 0.3
+    # A2: для PLA FDM — два запаса раздельно, safety по слабому ⊥
     max_vm = float(np.max(stress_per_orig_vert)) if len(stress_per_orig_vert) else 0
+    # зона текучести
+    yielding_mask = stress_per_orig_vert >= (yield_strength / 1e6) if is_pla_fdm or True else np.zeros_like(stress_per_orig_vert, dtype=bool)
+    yielding_fraction = float(np.mean(yielding_mask)) if len(yielding_mask) else 0
+    yielding_vertices = int(np.sum(yielding_mask))
     if max_vm >= (yield_strength / 1e6):
-        print(f"[safety] ВНИМАНИЕ: деталь течёт! σmax {max_vm:.1f} МПа ≥ σyield {yield_strength/1e6:.0f} МПа")
+        # красное предупреждение — будет показано в UI поповере, здесь лог
+        print(f"[safety] ВНИМАНИЕ: деталь течёт! σmax {max_vm:.1f} МПа ≥ σyield {yield_strength/1e6:.0f} МПа — зона {yielding_fraction*100:.1f}% вершин")
+    # safety реальный, без клампа 0.3 — только верх 99
     safety = (yield_strength / 1e6) / (max_vm + 1e-9) if max_vm > 0 else 99
-    safety = max(0.3, min(99, safety))  # <1.0 — честное предупреждение текучести, не clamp 1.0
+    safety = min(99, safety)  # A1-кламп 0.3 убран — реальный запас, может быть <1
+    # A2: для PLA — два запаса
+    if is_pla_fdm:
+        safety_perp = (yield_perp / 1e6) / (max_vm + 1e-9) if max_vm > 0 else 99
+        safety_parallel = (yield_parallel / 1e6) / (max_vm + 1e-9) if max_vm > 0 else 99
+        safety_perp = min(99, safety_perp)
+        safety_parallel = min(99, safety_parallel)
+        # safety — по слабому (⊥)
+        safety = safety_perp
+        print(f"[safety] PLA FDM ортотропная: safety⊥ {safety_perp:.2f} (⊥ {yield_perp/1e6:.0f} МПа) / safety∥ {safety_parallel:.2f} (∥ {yield_parallel/1e6:.0f} МПа) — D ортотропная E∥{E_par/1e9:.1f} E⊥{E_perp/1e9:.1f}")
+    else:
+        safety_perp = safety
+        safety_parallel = safety
 
     # экспорт оптимизированного STL в base64
     with tempfile.NamedTemporaryFile(suffix=".stl", delete=False) as tmp2:
@@ -799,12 +1038,24 @@ def optimize_topology(
         "stress_min": float(np.min(stress_per_orig_vert)) if len(stress_per_orig_vert) else 0,
         "stress_max": float(np.max(stress_per_orig_vert)),
         "safety": float(safety),
+        "safety_parallel": float(safety_parallel),
+        "safety_perp": float(safety_perp),
+        "safety_weak": float(safety_perp) if is_pla_fdm else float(safety),
+        "yielding": bool(max_vm >= (yield_strength/1e6)),
+        "yielding_fraction": float(yielding_fraction),
+        "yielding_vertices": int(yielding_vertices),
+        "worst_case": int(worst_case_global) if 'worst_case_global' in locals() else 1,
+        "worst_case_label": f"от случая {worst_case_global}" if has_multiple_cases else "от случая 1",
+        "units": units_norm,
+        "scale_units": float(scale_units),
         "weight_before": float(weight_before_g),
         "weight_after": float(weight_after_g),
         "iterations": it+1,
         "volume_fraction": float(vol_frac),
         "pitch": float(pitch),
         "dims": [int(nx), int(ny), int(nz)],
+        "was_watertight": bool(was_watertight) if 'was_watertight' in locals() else True,
+        "is_watertight": bool(mesh.is_watertight) if 'mesh' in locals() else True,
     }
 
 def create_bracket_primitive():

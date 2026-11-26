@@ -7,6 +7,7 @@
 **Solve 16³→32³ 120с, 150k:** 86/100 — цель ≥85/100 (F2), иначе BUG_LIST  
 **Инженерных ok:** 75/100 — цель ≥25 (корпуса/кронштейны/пластины с отв.)  
 **Время среднее:** 6.76с, всего 11.3 мин  
+**Единицы:** мм (E2) — вес >20 кг → >20кг* (проверьте см/дюймы)  
 **Память:** ~676 МБ пик (оценка)  
 
 | файл | лицензия | cat | parse | wat. | voxel | solve 120с | σmax МПа | safety | вес г до→после (-%) | время | res | итог |
@@ -14,51 +15,51 @@
 | openlight_bracket_proc.stl | MIT (OpenLight) | bracket | True | True | True | True 4.58 | 0.0 | 99.0 | 452.9→254.5 (43.8%) | 4.701 | 16 | ok |
 | openlight_uav_arm.stl | MIT (OpenLight) | uav_bracket | True | True | True | True 0.27 | 0.0 | 99.0 | 135.4→75.6 (44.2%) | 0.312 | 16 | ok |
 | openlight_thin_plate.stl | MIT (OpenLight) | thinwall | True | True | True | True 1.2 | 0.0 | 99.0 | 119.6→66.1 (44.8%) | 1.332 | 16 | ok |
-| openlight_gear_12t.stl | MIT (OpenLight) | gear | True | True | True | True 13.69 | 12829.03 | 0.3 | 0.0→0.0 (48.0%) | 13.745 | 16 | ok |
+| openlight_gear_12t.stl | MIT (OpenLight) | gear | True | True | True | True 13.69 | 12829.03 | 0.3 | 0.000→0.000 (48.0%) | 13.745 | 16 | ok |
 | openlight_housing_box.stl | MIT (OpenLight) | housing | True | True | True | True 15.05 | 7.98 | 43.25 | 125.8→70.0 (44.4%) | 15.268 | 16 | ok |
 | openlight_hinge_simple.stl | MIT (OpenLight) | hinge | True | True | True | True 3.54 | 68.11 | 5.07 | 9.5→5.4 (43.5%) | 3.946 | 16 | ok |
 | openlight_lattice.stl | MIT (OpenLight) | thinwall | True | True | True | True 0.98 | 0.0 | 99.0 | 119.6→66.1 (44.8%) | 1.102 | 16 | ok |
 | openlight_bracket_v2.stl | MIT (OpenLight) | bracket | True | True | True | True 4.32 | 0.0 | 99.0 | 452.9→254.5 (43.8%) | 4.416 | 16 | ok |
 | openlight_uav_frame.stl | MIT (OpenLight) | uav_bracket | True | True | True | True 0.35 | 0.0 | 99.0 | 135.4→75.6 (44.2%) | 0.395 | 16 | ok |
 | openlight_bracket_heavy.stl | MIT (OpenLight) | bracket | True | True | True | True 4.08 | 0.0 | 99.0 | 452.9→254.5 (43.8%) | 4.164 | 16 | ok |
-| trimesh_1002_tray_bottom.STL | BSD (trimesh) | thinwall | True | True | True | True 1.28 | 1.64 | 99.0 | 21458.3→11950.0 (44.3%) | 1.504 | 16 | ok |
+| trimesh_1002_tray_bottom.STL | BSD (trimesh) | thinwall | True | True | True | True 1.28 | 1.64 | 99.0 | >20кг*→11.95 кг (44.3%) | 1.504 | 16 | ok |
 | trimesh_20mm_cube.stl | BSD (trimesh) | thinwall | True | True | True | True 23.25 | 81.18 | 4.25 | 24.5→13.9 (43.4%) | 23.885 | 16 | ok |
 | trimesh_7_8ths_cube.stl | BSD (trimesh) | thinwall | True | True | True | True 23.57 | 19.33 | 17.85 | 188.6→105.6 (44.0%) | 23.986 | 16 | ok |
-| trimesh_ADIS16480.STL | BSD (trimesh) | housing | True | True | True | True 7.22 | 15009076.08 | 0.3 | 0.0→0.0 (43.2%) | 9.164 | 16 | ok |
-| trimesh_angle_block.STL | BSD (trimesh) | bracket | True | True | True | True 15.38 | 25172.5 | 0.3 | 0.0→0.0 (42.0%) | 16.212 | 16 | ok |
+| trimesh_ADIS16480.STL | BSD (trimesh) | housing | True | True | True | True 7.22 | 15009076.08 | 0.3 | 0.000→0.000 (43.2%) | 9.164 | 16 | ok |
+| trimesh_angle_block.STL | BSD (trimesh) | bracket | True | True | True | True 15.38 | 25172.5 | 0.3 | 0.000→0.000 (42.0%) | 16.212 | 16 | ok |
 | trimesh_box.STL | BSD (trimesh) | housing | True | True | True | True 9.79 | 1001.61 | 0.34 | 0.6→0.3 (44.0%) | 10.846 | 16 | ok |
 | trimesh_busted.STL | BSD (trimesh) | organic | True | True | True | True 10.7 | 1293.96 | 0.3 | 2.5→1.3 (47.1%) | 10.836 | 16 | ok |
-| trimesh_counter.STL | BSD (trimesh) | housing | True | True | True | True 2.7 | 0.21 | 99.0 | 25669.4→14664.0 (42.9%) | 3.473 | 16 | ok |
+| trimesh_counter.STL | BSD (trimesh) | housing | True | True | True | True 2.7 | 0.21 | 99.0 | >20кг*→14.66 кг (42.9%) | 3.473 | 16 | ok |
 | trimesh_cylinder.stl | BSD (trimesh) | housing | True | True | True | True 0.95 | 0.0 | 99.0 | 0.3→0.2 (45.0%) | 1.303 | 16 | ok |
 | trimesh_empty.stl | BSD (trimesh) | thinwall | True | False | None | None  | - | - | -→- (-%) | 0.0 |  | parse_ok |
 | trimesh_featuretype.STL | BSD (trimesh) | bracket | True | True | True | True 2.8 | 602.69 | 0.57 | 0.1→0.1 (42.0%) | 3.313 | 16 | ok |
-| trimesh_idler_riser.STL | BSD (trimesh) | bracket | True | True | True | True 4.92 | 4455.98 | 0.3 | 0.0→0.0 (44.8%) | 5.399 | 16 | ok |
-| trimesh_large_block.STL | BSD (trimesh) | housing | True | True | True | True 2.37 | 0.0 | 99.0 | 71065710.0→40478149.3 (43.0%) | 2.435 | 16 | ok |
-| trimesh_large_block_obb.STL | BSD (trimesh) | housing | True | True | True | True 1.69 | 0.0 | 99.0 | 13341159.5→7444913.1 (44.2%) | 1.753 | 16 | ok |
+| trimesh_idler_riser.STL | BSD (trimesh) | bracket | True | True | True | True 4.92 | 4455.98 | 0.3 | 0.000→0.000 (44.8%) | 5.399 | 16 | ok |
+| trimesh_large_block.STL | BSD (trimesh) | housing | True | True | True | True 2.37 | 0.0 | 99.0 | >20кг*→>20кг* (43.0%) | 2.435 | 16 | ok |
+| trimesh_large_block_obb.STL | BSD (trimesh) | housing | True | True | True | True 1.69 | 0.0 | 99.0 | >20кг*→>20кг* (44.2%) | 1.753 | 16 | ok |
 | trimesh_multibody.stl | BSD (trimesh) | thinwall | True | True | True | False 0.32 | - | - | -→- (-%) | 0.316 |  | voxel_ok |
-| trimesh_octagonal_pocket.stl | BSD (trimesh) | thinwall | True | True | True | True 2.2 | 2771663.49 | 0.3 | 0.0→0.0 (44.8%) | 2.647 | 16 | ok |
-| trimesh_origin_inside.STL | BSD (trimesh) | thinwall | True | True | True | True 25.53 | 12793.63 | 0.3 | 0.0→0.0 (43.3%) | 25.938 | 16 | ok |
-| trimesh_plate_holes.STL | BSD (trimesh) | thinwall | True | True | True | True 2.21 | 0.3 | 99.0 | 21924.8→12382.5 (43.5%) | 2.566 | 16 | ok |
+| trimesh_octagonal_pocket.stl | BSD (trimesh) | thinwall | True | True | True | True 2.2 | 2771663.49 | 0.3 | 0.000→0.000 (44.8%) | 2.647 | 16 | ok |
+| trimesh_origin_inside.STL | BSD (trimesh) | thinwall | True | True | True | True 25.53 | 12793.63 | 0.3 | 0.000→0.000 (43.3%) | 25.938 | 16 | ok |
+| trimesh_plate_holes.STL | BSD (trimesh) | thinwall | True | True | True | True 2.21 | 0.3 | 99.0 | >20кг*→12.38 кг (43.5%) | 2.566 | 16 | ok |
 | trimesh_round.stl | BSD (trimesh) | housing | True | True | True | True 0.39 | 2.38 | 99.0 | 36.9→19.0 (48.6%) | 0.471 | 16 | ok |
-| trimesh_shared.STL | BSD (trimesh) | thinwall | True | False | True | True 4.46 | 2176.06 | 0.3 | 0.0→0.0 (42.5%) | 4.711 | 16 | ok |
-| trimesh_soup.stl | BSD (trimesh) | thinwall | True | False | True | True 26.2 | 9709.88 | 0.3 | 0.0→0.0 (40.5%) | 27.213 | 16 | ok |
+| trimesh_shared.STL | BSD (trimesh) | thinwall | True | False | True | True 4.46 | 2176.06 | 0.3 | 0.000→0.000 (42.5%) | 4.711 | 16 | ok |
+| trimesh_soup.stl | BSD (trimesh) | thinwall | True | False | True | True 26.2 | 9709.88 | 0.3 | 0.000→0.000 (40.5%) | 27.213 | 16 | ok |
 | trimesh_teapot.stl | BSD (trimesh) | housing | True | False | True | True 4.39 | 16.73 | 20.62 | 197.6→108.9 (44.9%) | 4.545 | 16 | ok |
-| trimesh_torus.STL | BSD (trimesh) | housing | True | True | True | True 5.77 | 3817.4 | 0.3 | 0.0→0.0 (43.8%) | 5.913 | 16 | ok |
+| trimesh_torus.STL | BSD (trimesh) | housing | True | True | True | True 5.77 | 3817.4 | 0.3 | 0.000→0.000 (43.8%) | 5.913 | 16 | ok |
 | trimesh_two_objects_mixed.stl | BSD (trimesh) | housing | True | True | True | False 0.22 | - | - | -→- (-%) | 0.221 |  | voxel_ok |
-| trimesh_unit_cube.STL | BSD (trimesh) | housing | True | True | True | True 22.93 | 15359.83 | 0.3 | 0.0→0.0 (43.5%) | 23.261 | 16 | ok |
-| trimesh_unit_sphere.STL | BSD (trimesh) | housing | True | True | True | True 15.65 | 18805.23 | 0.3 | 0.0→0.0 (47.3%) | 15.703 | 16 | ok |
+| trimesh_unit_cube.STL | BSD (trimesh) | housing | True | True | True | True 22.93 | 15359.83 | 0.3 | 0.000→0.000 (43.5%) | 23.261 | 16 | ok |
+| trimesh_unit_sphere.STL | BSD (trimesh) | housing | True | True | True | True 15.65 | 18805.23 | 0.3 | 0.000→0.000 (47.3%) | 15.703 | 16 | ok |
 | cow.obj | MIT (common-3d-test-models) | organic | True | True | True | True 10.8 | 8385.3 | 0.3 | 0.3→0.2 (41.9%) | 11.053 | 32 | ok |
-| spot.obj | MIT (common-3d-test-models) | organic | True | False | True | True 3.79 | 10093.45 | 0.3 | 0.0→0.0 (42.3%) | 3.888 | 16 | ok |
-| stanford-bunny.obj | CC0 (Stanford 3D Scan Repository) | organic | True | False | True | True 10.25 | 4086212.43 | 0.3 | 0.0→0.0 (45.8%) | 10.63 | 16 | ok |
-| nefertiti.obj | CC0 (Stanford/Thingi10K) | organic | True | True | True | True 5.66 | 0.74 | 99.0 | 119656.1→68920.2 (42.4%) | 6.078 | 16 | ok |
-| armadillo.obj | CC0 (Stanford) | organic | True | True | True | True 3.92 | 0.96 | 99.0 | 3970.0→2245.6 (43.4%) | 4.421 | 16 | ok |
-| happy.obj | CC0 (Stanford) | organic | True | False | True | True 3.45 | 681935.59 | 0.3 | 0.0→0.0 (42.2%) | 3.933 | 16 | ok |
-| alligator.obj | MIT (common-3d-test-models) | organic | True | False | True | True 0.73 | 0.16 | 99.0 | 32101.4→16749.4 (47.8%) | 0.896 | 32 | ok |
-| homer.obj | MIT (common-3d-test-models) | organic | True | True | True | True 2.23 | 69267.79 | 0.3 | 0.0→0.0 (43.8%) | 2.36 | 16 | ok |
-| beast.obj | MIT (common-3d-test-models) | organic | True | False | True | True 1.71 | 1.15 | 99.0 | 12506.1→6800.4 (45.6%) | 2.147 | 16 | ok |
-| bimba.obj | MIT (common-3d-test-models) | organic | True | True | True | True 7.07 | 225994.24 | 0.3 | 0.0→0.0 (42.4%) | 7.931 | 16 | ok |
+| spot.obj | MIT (common-3d-test-models) | organic | True | False | True | True 3.79 | 10093.45 | 0.3 | 0.000→0.000 (42.3%) | 3.888 | 16 | ok |
+| stanford-bunny.obj | CC0 (Stanford 3D Scan Repository) | organic | True | False | True | True 10.25 | 4086212.43 | 0.3 | 0.000→0.000 (45.8%) | 10.63 | 16 | ok |
+| nefertiti.obj | CC0 (Stanford/Thingi10K) | organic | True | True | True | True 5.66 | 0.74 | 99.0 | >20кг*→>20кг* (42.4%) | 6.078 | 16 | ok |
+| armadillo.obj | CC0 (Stanford) | organic | True | True | True | True 3.92 | 0.96 | 99.0 | 3.97 кг→2.25 кг (43.4%) | 4.421 | 16 | ok |
+| happy.obj | CC0 (Stanford) | organic | True | False | True | True 3.45 | 681935.59 | 0.3 | 0.000→0.000 (42.2%) | 3.933 | 16 | ok |
+| alligator.obj | MIT (common-3d-test-models) | organic | True | False | True | True 0.73 | 0.16 | 99.0 | >20кг*→16.75 кг (47.8%) | 0.896 | 32 | ok |
+| homer.obj | MIT (common-3d-test-models) | organic | True | True | True | True 2.23 | 69267.79 | 0.3 | 0.000→0.000 (43.8%) | 2.36 | 16 | ok |
+| beast.obj | MIT (common-3d-test-models) | organic | True | False | True | True 1.71 | 1.15 | 99.0 | 12.51 кг→6.80 кг (45.6%) | 2.147 | 16 | ok |
+| bimba.obj | MIT (common-3d-test-models) | organic | True | True | True | True 7.07 | 225994.24 | 0.3 | 0.000→0.000 (42.4%) | 7.931 | 16 | ok |
 | fandisk.obj | MIT (common-3d-test-models) | bracket | True | True | True | True 4.78 | 2365.05 | 0.3 | 0.2→0.1 (43.3%) | 4.905 | 16 | ok |
-| rocker-arm.obj | MIT (common-3d-test-models) | bracket | True | True | True | True 1.58 | 24377.52 | 0.3 | 0.0→0.0 (42.8%) | 1.73 | 16 | ok |
+| rocker-arm.obj | MIT (common-3d-test-models) | bracket | True | True | True | True 1.58 | 24377.52 | 0.3 | 0.000→0.000 (42.8%) | 1.73 | 16 | ok |
 | beetle.obj | MIT (common-3d-test-models) | housing | True | False | True | False 0.68 | - | - | -→- (-%) | 0.681 |  | voxel_ok |
 | beetle-alt.obj | MIT (common-3d-test-models) | housing | True | False | True | False 0.73 | - | - | -→- (-%) | 0.728 |  | voxel_ok |
 | nasa_international_space_station_tools_003_column_stl.stl | Public Domain (NASA 3D Resources) | housing | True | True | True | True 1.71 | 0.0 | 99.0 | 23.7→13.7 (42.4%) | 1.795 | 16 | ok |
@@ -102,7 +103,7 @@
 | nasa_hubble_25th_anniversary_model_base_stl.stl | Public Domain (NASA 3D Resources) | housing | True | True | True | True 7.36 | 1765.5 | 0.3 | 255.3→148.5 (41.8%) | 8.116 | 16 | ok |
 | nasa_hubble_space_telescope_base_stl.stl | Public Domain (NASA 3D Resources) | housing | True | True | True | True 18.78 | 160.05 | 2.16 | 31.6→16.6 (47.5%) | 19.491 | 16 | ok |
 | nasa_laser_interferometer_space_antenna_lisa_charge_management_system_stl.stl | Public Domain (NASA 3D Resources) | housing | True | True | True | True 3.42 | 77.74 | 4.44 | 7.1→4.0 (43.0%) | 3.654 | 16 | ok |
-| nasa_galileo_galileo_probe_stl.stl | Public Domain (NASA 3D Resources) | housing | True | False | True | True 8.48 | 31322.11 | 0.3 | 0.0→0.0 (48.3%) | 8.614 | 16 | ok |
+| nasa_galileo_galileo_probe_stl.stl | Public Domain (NASA 3D Resources) | housing | True | False | True | True 8.48 | 31322.11 | 0.3 | 0.000→0.000 (48.3%) | 8.614 | 16 | ok |
 | nasa_laser_interferometer_space_antenna_lisa_grs_unit_stl.stl | Public Domain (NASA 3D Resources) | housing | True | True | True | True 13.78 | 158.47 | 2.18 | 11.6→6.3 (45.7%) | 14.14 | 16 | ok |
 | nasa_viking_lander_tool2_stl.stl | Public Domain (NASA 3D Resources) | housing | True | True | True | False 0.64 | - | - | -→- (-%) | 0.638 |  | voxel_ok |
 | nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_arm_stl.stl | Public Domain (NASA 3D Resources) | housing | True | True | True | False 1.75 | - | - | -→- (-%) | 1.751 |  | voxel_ok |

@@ -30,8 +30,24 @@ lines.append(f'**Память:** ~{vs_max*0.02:.0f} МБ пик (оценка)  
 lines.append('')
 lines.append('| файл | лицензия | cat | parse | wat. | voxel | solve 120с | σmax МПа | safety | вес г до→после (-%) | время | res | итог |')
 lines.append('|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+def fmt_w(w):
+    if w is None: return "-"
+    try:
+        w=float(w)
+    except: return str(w)
+    if w < 0.05: return f"{w:.3f}"
+    if w < 0.1: return f"{w:.2f}"
+    if w >= 20000: return ">20кг*"
+    if w >= 1000: return f"{w/1000:.2f} кг"
+    return f"{w:.1f}"
 for r in merged:
-    lines.append(f'| {r["file"]} | {r.get("license","")} | {r.get("category","")} | {r.get("parse")} | {r.get("watertight")} | {r.get("voxel_ok")} | {r.get("solve_ok")} {r.get("solve_time","") or ""} | {r.get("sigma_max","-")} | {r.get("safety","-")} | {r.get("weight_before","-")}→{r.get("weight_after","-")} ({r.get("weight_save","-")}%) | {r.get("time")} | {r.get("resolution","") or ""} | {r.get("итог")} |')
+    wb=r.get("weight_before"); wa=r.get("weight_after")
+    # E2: не показывать 0.0→0.0 и 71 тонну — форматируем
+    wb_f=fmt_w(wb) if wb is not None else "-"
+    wa_f=fmt_w(wa) if wa is not None else "-"
+    lines.append(f'| {r["file"]} | {r.get("license","")} | {r.get("category","")} | {r.get("parse")} | {r.get("watertight")} | {r.get("voxel_ok")} | {r.get("solve_ok")} {r.get("solve_time","") or ""} | {r.get("sigma_max","-")} | {r.get("safety","-")} | {wb_f}→{wa_f} ({r.get("weight_save","-")}%) | {r.get("time")} | {r.get("resolution","") or ""} | {r.get("итог")} |')
+    # также патчим report.json на лету для консистентности — оставляем числовые g
+
 lines.append('')
 lines.append(f'**Критерий F2:** solve_ok {sum(1 for r in merged if r.get("solve_ok"))}/{len(merged)} ≥85 — {"ПРОЙДЕН" if sum(1 for r in merged if r.get("solve_ok"))>=85 else "НЕ ПРОЙДЕН → BUG_LIST"}  ')
 lines.append(f'**Инженерных:** {eng_ok} ≥25 — {"ПРОЙДЕН" if eng_ok>=25 else "НЕ ПРОЙДЕН"}  ')

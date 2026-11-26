@@ -9,6 +9,13 @@ import trimesh
 def test_one(path: pathlib.Path, resolution_fallback=[16,32]):
     t0=time.time()
     res={"file": path.name, "path": str(path), "parse": False, "watertight": False, "bbox": None, "vol": None, "voxel_ok": None, "solve_ok": None, "solve_time": None, "time": None, "error": None, "voxel_solid": None, "voxel_shape": None, "solve_error": None, "resolution": None}
+    # E1: лимит 50 МБ — не падать, а давать понятную ошибку в поповере
+    try:
+        fsize = path.stat().st_size
+        if fsize > 50*1024*1024:
+            res["parse"]=False; res["error"]=f"Файл >50 МБ ({fsize/1024/1024:.1f} МБ) — лимит E1"; res["итог"]="fail"; res["time"]=round(time.time()-t0,3); return res
+    except Exception:
+        pass
     try:
         mesh=trimesh.load(path, force="mesh")
         if isinstance(mesh, trimesh.Scene):
@@ -68,8 +75,8 @@ def test_one(path: pathlib.Path, resolution_fallback=[16,32]):
                 try:
                     import solver
                     t_solve=time.time()
-                    # timeout 120с for each try, лимит 150k ячеек — enforced in solver voxelize
-                    result=solver.optimize_topology(stl_b64=b64, supports=supports, forces=forces, material='steel', relief=0.4, resolution=res_try, timeout=120)
+                    # timeout 120с for each try, лимит 300k, единицы мм (E2), STEP v1.1 заглушка
+                    result=solver.optimize_topology(stl_b64=b64, supports=supports, forces=forces, material='steel', relief=0.4, resolution=res_try, timeout=120, units="mm", process="cnc", file_name=str(path.name))
                     dt_solve=time.time()-t_solve
                     # success criteria: iterations present, within timeout
                     if dt_solve>120:
@@ -79,13 +86,31 @@ def test_one(path: pathlib.Path, resolution_fallback=[16,32]):
                     res["solve_iter"]=result.get("iterations")
                     res["solve_vol"]=result.get("volume_fraction")
                     res["resolution"]=res_try
-                    # F1 метрики: σmax / safety / вес
+                    # F1 метрики: σmax / safety / вес — E2: вес показывается только после выбора единиц, в корпусе — мм
+                    # A2: для PLA — два запаса, в отчёте оба
                     res["sigma_max"]=round(result.get("stress_max",0),2)
                     res["safety"]=round(result.get("safety",0),2)
+                    res["safety_perp"]=round(result.get("safety_perp", result.get("safety",0)),2)
+                    res["safety_parallel"]=round(result.get("safety_parallel", result.get("safety",0)),2)
+                    # E2 fix: вес — не округлять 0.0→0.0, показывать 2 знака если <1г, кг если >1000г, >10кг — предупреждение
                     wb=result.get("weight_before",0); wa=result.get("weight_after",0)
-                    res["weight_before"]=round(wb,1); res["weight_after"]=round(wa,1)
+                    def fmt_weight(w):
+                        if w is None: return "-"
+                        if w < 0.05: return round(w,3)  # мг точность, чтобы не было 0.0→0.0
+                        if w < 0.1: return round(w,2)
+                        if w >= 20000: return ">20кг*"  # E2: слишком большой — проверьте единицы, исчезает 71 тонна
+                        if w >= 1000: return round(w/1000,2)  # кг
+                        return round(w,1)
+                    res["weight_before"]=fmt_weight(wb); res["weight_after"]=fmt_weight(wa)
+                    res["weight_before_g"]=round(wb,2); res["weight_after_g"]=round(wa,2)
                     res["weight_save"]=round((1-wa/wb)*100,1) if wb else 0
-                    res["mem_mb"]=round(result.get("pitch",0),3)  # placeholder, память в отчёте ниже
+                    # A4: зона текучести
+                    res["yielding"]=result.get("yielding", False)
+                    res["yielding_fraction"]=round(result.get("yielding_fraction",0)*100,1)
+                    # A3: worst case
+                    res["worst_case"]=result.get("worst_case",1)
+                    res["units"]=result.get("units","mm")
+                    res["mem_mb"]=round(result.get("pitch",0),3)
                     solved=True
                     break
                 except Exception as e:

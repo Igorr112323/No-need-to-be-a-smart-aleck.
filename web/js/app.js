@@ -40,9 +40,18 @@ function getCurrentWeightBefore() {
   return Math.round(vol * dens);
 }
 function updateMetrics() {
+  // E2: нельзя показывать вес/σ до выбора единиц — иначе мусор
+  const unitsOk = !!state.units;
+  const beforeEl = document.getElementById('weightBefore');
+  if (!unitsOk && importedGroup) {
+    if (beforeEl) beforeEl.textContent = '—';
+    document.getElementById('weightAfter').textContent = '—';
+    document.getElementById('economy').textContent = '—';
+    document.getElementById('safety').textContent = '—';
+    return;
+  }
   const before = getCurrentWeightBefore();
   state.weightBefore = before;
-  const beforeEl = document.getElementById('weightBefore');
   if (beforeEl) beforeEl.textContent = before + ' г';
   if (!state.optimized) {
     document.getElementById('weightAfter').textContent = '—';
@@ -58,9 +67,76 @@ function updateMetrics() {
   state.safetyFactor = safety;
   document.getElementById('weightAfter').textContent = after + ' г';
   document.getElementById('economy').textContent = '−' + Math.round(relief * 100) + ' %';
-  document.getElementById('safety').textContent = formatRu(safety);
+  // A2: для PLA FDM — два запаса, A4: safety<1 показывается числом
+  if (state.material === 'pla' && state.safetyPerp) {
+    document.getElementById('safety').textContent = formatRu(state.safetyPerp) + ' / ' + formatRu(state.safetyParallel);
+    document.getElementById('safety').title = 'Запас ⊥ (слабый) / ∥';
+  } else {
+    document.getElementById('safety').textContent = formatRu(safety);
+  }
+  // A4: деталь течёт — красное
+  const safetyEl = document.getElementById('safety');
+  if (safety < 1) {
+    safetyEl.style.color = '#FF3B30';
+    safetyEl.title = 'Деталь течёт! σmax ≥ σyield';
+  } else {
+    safetyEl.style.color = '';
+    safetyEl.title = '';
+  }
 }
 updateMetrics();
+
+// E2: единицы — диалог
+const popUnits = document.getElementById('popoverUnits');
+let pendingImport = null;
+function showUnitsDialog(mesh, name, onSelect) {
+  popUnits.classList.add('show');
+  positionPopoverNearElement(popUnits, document.getElementById('btnOpen'), 'units');
+  showPopover(popUnits);
+  popUnits.querySelectorAll('[data-units]').forEach(btn => {
+    btn.onclick = () => {
+      const u = btn.dataset.units;
+      state.units = u;
+      popUnits.classList.remove('show');
+      hideAllPopovers();
+      if (onSelect) onSelect(u);
+      updateMetrics();
+      scheduleAutosave();
+      showToast('Единицы: ' + (u==='mm'?'мм':u==='cm'?'см':'дюймы'));
+    };
+  });
+}
+
+// A3: случаи нагрузки
+const popLoadcase = document.getElementById('popoverLoadcase');
+let activeLoadcase = 1;
+function updateLoadcaseUI() {
+  state.activeLoadcase = activeLoadcase;
+  document.querySelectorAll('#loadcaseChips [data-case]').forEach(c => {
+    c.classList.toggle('active', parseInt(c.dataset.case) === activeLoadcase);
+  });
+}
+if (popLoadcase) {
+  popLoadcase.querySelectorAll('[data-case]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const c = btn.dataset.case;
+      if (c === 'add') {
+        if (state.loadcaseCount < 3) {
+          state.loadcaseCount++;
+          activeLoadcase = state.loadcaseCount;
+          updateLoadcaseUI();
+          showToast('Добавлен Случай ' + activeLoadcase);
+        } else {
+          showWarning('Макс. 3 случая');
+        }
+      } else {
+        activeLoadcase = parseInt(c);
+        updateLoadcaseUI();
+        showToast('Случай ' + activeLoadcase);
+      }
+    });
+  });
+}
 
 // ——— сцена ———
 const canvas = document.getElementById('scene');
@@ -307,6 +383,13 @@ dockBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const tool = btn.dataset.tool;
     if (tool === 'view') { cycleView(); return; }
+    if (tool === 'loadcase') {
+      // A3: поповер Случай 1..3 +
+      const lcBtn = document.querySelector('.dock-btn[data-tool=\"loadcase\"]');
+      positionPopoverNearElement(popLoadcase, lcBtn, 'loadcase');
+      showPopover(popLoadcase);
+      return;
+    }
     setTool(tool);
   });
 });
@@ -402,11 +485,11 @@ function confirmForce() {
   const val = parseInt(forceInput.value, 10);
   const v = Math.max(50, Math.min(5000, isNaN(val) ? 500 : val));
   const id = genId();
-  const rec = { kind: 'force', id, position: pendingForce.position.clone(), direction: pendingForce.direction.clone(), valueN: v };
+  const rec = { kind: 'force', id, position: pendingForce.position.clone(), direction: pendingForce.direction.clone(), valueN: v, case: activeLoadcase };
   state.forces.push(rec);
-  const mesh = pendingForce.previewMesh; mesh.userData.id = id; mesh.userData.valueN = v; mesh.userData.kind = 'force';
+  const mesh = pendingForce.previewMesh; mesh.userData.id = id; mesh.userData.valueN = v; mesh.userData.kind = 'force'; mesh.userData.case = activeLoadcase;
   pushHistory({ action: 'add', kind: 'force', id, snapshot: rec });
-  pendingForce = null; hideAllPopovers(); showToast('Сила ' + v + ' Н установлена'); updateMetrics(); scheduleAutosave();
+  pendingForce = null; hideAllPopovers(); showToast('Сила ' + v + ' Н установлена (случай ' + activeLoadcase + ')'); updateMetrics(); scheduleAutosave();
 }
 document.getElementById('forceOk').addEventListener('click', confirmForce);
 forceInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') confirmForce(); });
@@ -494,9 +577,12 @@ function startRealOptimization() {
   const payload = {
     stl_b64: stl_b64,
     supports: state.supports.map(s => ({ position: s.position.toArray(), normal: s.normal.toArray() })),
-    forces: state.forces.map(f => ({ position: f.position.toArray(), direction: f.direction.toArray(), valueN: f.valueN })),
+    forces: state.forces.map(f => ({ position: f.position.toArray(), direction: f.direction.toArray(), valueN: f.valueN, case: f.case || 1 })),
     keepZones: state.keepZones.map(k => ({ position: k.position.toArray(), normal: k.normal.toArray(), radiusMm: k.radiusMm })),
     material: state.material,
+    process: state.process,
+    units: state.units || 'mm', // E2
+    file_name: importedName || 'model.stl',
     relief: state.targetRelief || 0.4,
     resolution: 64,
     timeout: 45,
@@ -955,6 +1041,38 @@ function replaceWithImportedMesh(mesh, name) {
   scheduleAutosave();
 }
 
+function checkImportWarnings(geometry, fileName) {
+  // E1/E3: watertight/winding + толщина стенки < pitch
+  try {
+    geometry.computeBoundingBox();
+    const box = geometry.boundingBox;
+    const size = new THREE.Vector3(); box.getSize(size);
+    const minDim = Math.min(size.x, size.y, size.z);
+    const maxDim = Math.max(size.x, size.y, size.z);
+    const estPitch = maxDim / 64;
+    if (minDim > 0 && minDim < estPitch) {
+      showWarning('Тонкая стенка: толщина ' + minDim.toFixed(2) + ' мм < pitch ' + estPitch.toFixed(2) + ' мм — возможна потеря');
+    }
+    // проверка объёма — если индекс отсутствует, считаем что не watertight
+    const posCount = geometry.attributes.position.count;
+    if (posCount > 900000) {
+      showWarning('Сложная модель: много вершин — возможен лимит 300k вокселей');
+    }
+  } catch {}
+}
+
+function finalizeImport(geometry, name) {
+  // проверки перед заменой
+  if (!geometry) { showWarning('Не удалось прочитать геометрию'); return; }
+  // лимит 50 МБ уже в main.py, здесь дополнительно проверяем вершины
+  if (geometry.attributes.position.count > 800000) {
+    showWarning('Слишком большая модель — снизьте детализацию');
+  }
+  checkImportWarnings(geometry, name);
+  const mesh = new THREE.Mesh(geometry, bracketMat);
+  replaceWithImportedMesh(mesh, name);
+}
+
 function handleOpenModelViaApi() {
   if (window.pywebview && window.pywebview.api && window.pywebview.api.open_model) {
     window.pywebview.api.open_model().then(res => {
@@ -963,6 +1081,16 @@ function handleOpenModelViaApi() {
       const ext = (res.ext || '').toLowerCase();
       const b64 = res.data;
       const name = res.name || 'model.stl';
+      // E1: STEP заглушка v1.1 OCCT
+      if (ext === '.step' || ext === '.stp') {
+        showWarning('STEP пока не поддерживается — v1.1, OCCT');
+        return;
+      }
+      // E2: лимит 50 МБ — уже в main.py, но проверим размер
+      if (res.size && res.size > 50*1024*1024) {
+        showWarning('Файл слишком большой (>50 МБ)');
+        return;
+      }
       try {
         const binary = atob(b64);
         const bytes = new Uint8Array(binary.length);
@@ -974,20 +1102,23 @@ function handleOpenModelViaApi() {
         } else if (ext === '.obj') {
           const text = new TextDecoder().decode(bytes);
           const obj = objLoader.parse(text);
-          // взять первую Mesh геометрию
           let found = null;
           obj.traverse(c => { if (c.isMesh && !found) found = c.geometry; });
           if (found) geometry = found;
           else { showWarning('OBJ без геометрии'); return; }
-        } else if (ext === '.step' || ext === '.stp') {
-          showWarning('STEP пока не поддерживается'); return;
         } else {
-          // попробовать как STL ASCII
           try { geometry = stlLoader.parse(buffer); } catch { showWarning('Неизвестный формат'); return; }
         }
         if (!geometry) { showWarning('Не удалось прочитать геометрию'); return; }
-        const mesh = new THREE.Mesh(geometry, bracketMat);
-        replaceWithImportedMesh(mesh, name);
+        // E2: единицы — при первом импорте диалог, автодетект запрещён
+        if (!state.units) {
+          showUnitsDialog(geometry, name, (u) => {
+            state.units = u;
+            finalizeImport(geometry, name);
+          });
+        } else {
+          finalizeImport(geometry, name);
+        }
       } catch (e) {
         showWarning('Ошибка импорта: ' + e.message);
         console.error(e);
@@ -998,6 +1129,11 @@ function handleOpenModelViaApi() {
     const input = document.createElement('input'); input.type = 'file'; input.accept = '.stl,.obj,.step,.stp';
     input.onchange = (ev) => {
       const file = ev.target.files[0]; if (!file) return;
+      if (file.size > 50*1024*1024) { showWarning('Файл слишком большой (>50 МБ)'); return; }
+      if (file.name.toLowerCase().endsWith('.step') || file.name.toLowerCase().endsWith('.stp')) {
+        showWarning('STEP пока не поддерживается — v1.1, OCCT');
+        return;
+      }
       const reader = new FileReader();
       reader.onload = (e) => {
         try {
@@ -1009,13 +1145,17 @@ function handleOpenModelViaApi() {
             const obj = objLoader.parse(text);
             let found = null; obj.traverse(c => { if (c.isMesh && !found) found = c.geometry; });
             geometry = found;
-          } else { showWarning('STEP не поддерживается'); return; }
-          const mesh = new THREE.Mesh(geometry, bracketMat);
-          replaceWithImportedMesh(mesh, file.name);
+          } else { showWarning('STEP не поддерживается — v1.1, OCCT'); return; }
+          if (!state.units) {
+            showUnitsDialog(geometry, file.name, () => {
+              finalizeImport(geometry, file.name);
+            });
+          } else {
+            finalizeImport(geometry, file.name);
+          }
         } catch (err) { showWarning('Ошибка импорта: ' + err.message); }
       };
-      if (file.name.toLowerCase().endsWith('.obj')) reader.readAsArrayBuffer(file);
-      else reader.readAsArrayBuffer(file);
+      reader.readAsArrayBuffer(file);
     };
     input.click();
   }
@@ -1028,11 +1168,14 @@ function serializeProject() {
     version: (document.getElementById('appVersion')?.textContent || '0.9.2'),
     material: state.material,
     process: state.process,
+    units: state.units, // E2: поле units в .olight.json
     targetRelief: state.targetRelief,
     currentRelief: state.currentRelief,
     optimized: state.optimized,
+    loadcaseCount: state.loadcaseCount,
+    activeLoadcase: state.activeLoadcase,
     supports: state.supports.map(s => ({ id: s.id, position: s.position.toArray(), normal: s.normal.toArray() })),
-    forces: state.forces.map(f => ({ id: f.id, position: f.position.toArray(), direction: f.direction.toArray(), valueN: f.valueN })),
+    forces: state.forces.map(f => ({ id: f.id, position: f.position.toArray(), direction: f.direction.toArray(), valueN: f.valueN, case: f.case || 1 })),
     keepZones: state.keepZones.map(k => ({ id: k.id, position: k.position.toArray(), normal: k.normal.toArray(), radiusMm: k.radiusMm })),
     cameraPosition: camera.position.toArray(),
     cameraTarget: controls.target.toArray(),
@@ -1043,9 +1186,11 @@ function serializeProject() {
 }
 function applyProjectData(obj) {
   try {
-    // материал/процесс
+    // материал/процесс/единицы
     if (obj.material) { setMaterial(obj.material); popMaterial.querySelectorAll('[data-mat]').forEach(c => c.classList.toggle('active', c.dataset.mat === obj.material)); }
     if (obj.process) { setProcess(obj.process); popMaterial.querySelectorAll('[data-proc]').forEach(c => c.classList.toggle('active', c.dataset.proc === obj.process)); }
+    if (obj.units) { state.units = obj.units; } // E2
+    if (obj.loadcaseCount) { state.loadcaseCount = obj.loadcaseCount; activeLoadcase = obj.activeLoadcase || 1; updateLoadcaseUI(); }
     if (obj.targetRelief) { state.targetRelief = obj.targetRelief; state.currentRelief = obj.currentRelief || obj.targetRelief; popRelief.querySelectorAll('[data-relief]').forEach(c => c.classList.toggle('active', parseFloat(c.dataset.relief) === state.currentRelief)); }
     // очистить текущие маркеры
     [...supportsGroup.children].forEach(m => supportsGroup.remove(m));
