@@ -14,7 +14,7 @@ from datetime import datetime
 
 APP_NAME = "OpenLight"
 GITHUB_URL = "https://github.com/Igorr112323/OpenLight"
-LICENSE_NAME = "MIT (ожидает выбора куратора)"
+LICENSE_NAME = "MIT"
 
 def get_version() -> str:
     # версия из build (нет хардкода) — читаем VERSION, иначе git describe, иначе fallback
@@ -32,7 +32,7 @@ def get_version() -> str:
         if out:
             return out.lstrip("v")
     except: pass
-    return "0.9.3-test"
+    return "1.0.0"
 APP_VERSION = get_version()
 
 # --selftest флаг (без окна) для CI проверки exe — работает и в --windowed (без консоли)

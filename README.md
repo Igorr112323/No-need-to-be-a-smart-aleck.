@@ -6,21 +6,21 @@
 
 Лёгкое Windows-приложение (единый .exe, стиль Apple Freeform) для «умного» облегчения 3D-деталей с сохранением прочности. **Полностью бесплатно, без подписок/ключей/триалов.**
 
-> **Скачать:** [![Скачать OpenLight.exe](https://img.shields.io/badge/Скачать-OpenLight.exe-blue?style=for-the-badge)](https://github.com/Igorr112323/OpenLight/releases) — последний Release `v0.9.3-test` `dist/OpenLight.exe` (40-70МБ, ≥30МБ, `--selftest` OK) или Artifacts Build.
+> **Скачать:** [![Скачать OpenLight.exe](https://img.shields.io/badge/Скачать-OpenLight.exe-blue?style=for-the-badge)](https://github.com/Igorr112323/OpenLight/releases/tag/v1.0.0) — `OpenLight.exe` из Release `v1.0.0` (≥80 МБ, `--selftest` → `OpenLight 1.0.0`) или Artifacts Build.
 
-> **Статус: Этап16 — физика до конца + единицы: PLA FDM E∥3.5/E⊥2.7 ν0.36 σyield∥36.3/⊥26.0 (см. docs/MATERIALS.md, D ортотропная), 3 случая нагрузки envelope, текучесть safety<1, единицы мм/см/дюймы (.olight.json units), импорт 50МБ/300k/тонкая стенка, STEP v1.1 заглушка. Корпус 86/100 11.3мин, beam 1.8% MBB 49% Kirsch 2.5%, build ≥30МБ без dummy.** Дизайн заморожен (web/* палитра не менялась, новые поповеры).
+> **Статус: v1.0.0** — ядро МКЭ/SIMP: корпус 86/100 (16³→32³ 120с, 150k), эталон балки ошибка 1.8% (≤2%), Кирш Kt 2.5%, CalculiX 4.2%, MBB 60×20×1 16ит 49% 21.4с; бесплатно, офлайн, Windows 10/11 x64 WebView2. См. `docs/CORPUS_REPORT.md`, `docs/VERIFICATION.md`, `ccx_report.md`.
 
 ## Артефакты
-- **CI**: [![CI](https://github.com/Igorr112323/OpenLight/actions/workflows/ci.yml/badge.svg)](https://github.com/Igorr112323/OpenLight/actions/workflows/ci.yml) — `ci.yml` ubuntu, beam ≤2.5% + MBB + bracket
-- **Build**: [![Build](https://github.com/Igorr112323/OpenLight/actions/workflows/build.yml/badge.svg)](https://github.com/Igorr112323/OpenLight/actions/workflows/build.yml) — `build.yml` windows, `dist/OpenLight.exe` в [Releases](https://github.com/Igorr112323/OpenLight/releases) / Artifacts (тег `v*` → Release)
-- **Corpus**: [![Corpus](https://github.com/Igorr112323/OpenLight/actions/workflows/corpus.yml/badge.svg)](https://github.com/Igorr112323/OpenLight/actions/workflows/corpus.yml) — `corpus.yml` weekly + dispatch, `tests/corpus/cache` + `report.json/html` + `docs/CORPUS_REPORT.md` (100 моделей, ≥90% parse)
+- **CI**: `ci.yml` ubuntu — lint, `import solver`, `pytest` балка ≤2% + MBB + bracket
+- **Build**: `build.yml` windows — `vendor.py → make_icon → make_version → pyinstaller --collect-all ... → dist/OpenLight.exe ≥80 МБ --selftest OK` (Artifact + Release на тег `v*`)
+- **Corpus**: `corpus.yml` weekly + dispatch — `report.json/html` + `docs/CORPUS_REPORT.md` (100 моделей, ≥90% parse)
 
 ## Требования
 
 * **Windows 10/11 x64**, **WebView2** (Win11 встроен; Win10 → [Evergreen Bootstrapper](https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section))
 * Для сборки: Python 3.10+ + pip
 
-> Интернет нужен только один раз, для вендора — `python build/vendor.py`. Дальше полностью офлайн (Network 0).
+> Интернет нужен только один раз, для вендора — `python build/vendor.py`. Дальше полностью офлайн.
 
 ## Быстрый старт (локально)
 
@@ -32,28 +32,24 @@ python main.py
 
 ## Сборка и тесты — через GitHub Actions
 
-Все сборки и стресс-тесты — только на GitHub, не в песочнице:
-
 | Workflow | Раннер | Что делает |
 |---|---|---|
-| `ci.yml` | ubuntu-latest | lint (py_compile, node --check), `import solver`, `pytest tests/test_beam.py` (балка ≤2%) + MBB + bracket |
-| `build.yml` | windows-latest | `vendor.py → make_icon → make_version → pyinstaller --collect-all trimesh scipy skimage pywebview --collect-submodules trimesh → dist/OpenLight.exe 40-70МБ Size≥30МБ --selftest OK` (artifact + Release на тег `v*`) |
-| `corpus.yml` | ubuntu-latest | `fetch_corpus.py --limit 100 → make_stress_report.py --limit 100 (16³→32³ 90с, без --no-solve, solve_ok≥80) → report.html/json` (бейдж stress-tested, 100 моделей) |
+| `ci.yml` | ubuntu-latest | lint, `pytest tests/test_beam.py` + MBB + bracket |
+| `build.yml` | windows-latest | `pyinstaller --collect-all trimesh scipy skimage pywebview numpy PIL → dist/OpenLight.exe ≥80 МБ Size≥80МБ --selftest OK` |
+| `corpus.yml` | ubuntu-latest | `fetch_corpus.py --limit 100 → make_stress_report.py --limit 100 (16³→32³ 120с) → report.json/html` |
 
 **Как получить .exe:**
-- **Через CI:** Actions → Build → Artifacts `OpenLight.exe` (14 дней) или Releases `v*` → скачать `OpenLight.exe` <60МБ
-- **Локально:** `build_exe.bat` → `dist\OpenLight.exe` <60МБ (см. TESTING.md строго по шагам)
+- **Через CI:** Actions → Build → Artifacts `OpenLight.exe` (14 дней) или Releases `v1.0.0` → `OpenLight.exe`
+- **Локально:** `build_exe.bat` → `dist\OpenLight.exe`
 - **Bundle:** `openlight.bundle` (git bundle --all)
 
 ## Корпус тестовых моделей
 
-Только открытые лицензии: NASA 3D Resources (public domain), common-3d-test-models MIT/CC0, trimesh BSD, собственные процедурные MIT. Не берём APM/Fidesys/KOMPAS/nTop/Ansys.
+Только открытые лицензии: NASA 3D Resources (public domain), common-3d-test-models MIT/CC0, trimesh BSD, собственные процедурные MIT.
 
-`tests/corpus/manifest.json` — **100 записей**, каждая `{file, source_url, license, sha256, category, origin}`, ≤15МБ. Графических (bunny и т.п.) ≤20% (факт 11%), остальные — инженерные CAD-подобные (кронштейны, корпуса, механика).
+`tests/corpus/manifest.json` — **100 записей**, каждая `{file, source_url, license, sha256, category, origin}`, ≤15МБ.
 
-Скачивание: `python tools/fetch_corpus.py [--limit N]` → `tests/corpus/cache/` (не в git), проверка sha256, детерминирован/идемпотентен, кэш `actions/cache`.
-
-Отчёт: `python tools/make_stress_report.py --limit 100` (16³→32³ timeout 90с, без --no-solve) → `report.json/html` + `docs/CORPUS_REPORT.md` (file/license/parse/watertight/voxel48/solve 90с/время/res/итог, цели ≥90% parse, ≥80 solve_ok).
+Отчёт: `python tools/make_stress_report.py --limit 100` → `report.json/html` + `docs/CORPUS_REPORT.md`.
 
 ## Структура
 
@@ -68,21 +64,20 @@ VERSION LICENSE docs/CORPUS_REPORT.md
 
 ## Известные ограничения (честно)
 
-См. [docs/KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md) — MBB 1.8%, 16³ время/объём, пределы 32/48³, STEP заглушка, и т.д.
+См. [docs/KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md) — измеренные числа: балка 1.8%, MBB 49%, 86/100, STEP заглушка, buckling/усталость/контакт/пластика — нет; пригодность — оценочная.
 
-## Чек-лист релиза (Release)
+## Чек-лист релиза v1.0.0
 
-- [x] `git tag v0.9.3-test` → push → `Build OpenLight.exe` Success (windows-latest, pyinstaller --collect-all, Size≥30МБ --selftest OK)
-- [x] Artifacts: `dist/OpenLight.exe` 40-70МБ, `Size` шаг ≥30МБ иначе fail → Release не создаётся (без dummy)
-- [x] Release: этот же `dist/OpenLight.exe` в Releases (softprops/action-gh-release) + тег — не 1МБ dummy
-- [x] `VERSION` из `git describe --tags` (нет хардкода) + `main.py --selftest` → `OpenLight 0.9.3-test` + CI шаг проверки
-- [x] `LICENSE` MIT + `GITHUB_URL` https://github.com/Igorr112323/OpenLight в «О программе»
-- [x] `docs/CORPUS_REPORT.md` 100 моделей (≥90% parse, ≥80 solve_ok 16³→32³ 90с) + BUG_LIST fallback статистика
-- [x] `docs/TESTING.md` строгий прогон на Windows из Release (Network 0, версия 0.9.3-test)
+- [x] `VERSION` из `git describe --tags` (нет хардкода) + `main.py --selftest` → `OpenLight 1.0.0`
+- [x] `LICENSE` MIT, `GITHUB_URL` https://github.com/Igorr112323/OpenLight — в окне «О программе»
+- [x] `Build OpenLight.exe` на теге `v1.0.0` Success (windows-latest, pyinstaller --collect-all, Size≥80МБ --selftest OK) → Release с реальным `dist/OpenLight.exe`
+- [x] `docs/CORPUS_REPORT.md` 100 моделей (parse 100%, 86/100 solve 16³→32³ 120с) + `docs/VERIFICATION.md` Кирш 2.5% + `ccx_report.md` CalculiX 4.2% + балка 1.8%
+- [x] `docs/KNOWN_LIMITATIONS.md` финальные измеренные числа, `docs/TESTING.md` прогон из Release
+- [x] `CHANGELOG.md` [1.0.0] — что есть / чего нет (честно)
 
 ## Лицензия
 
-Пока не выбрана куратором: рекомендуется MIT/Apache-2.0 для кода (бесплатно для всех) или proprietary freeware — от этого зависит страница «О программе». Текущая: `LICENSE` MIT, окно «О программе» берёт версию из `VERSION` (нет хардкода) + лицензия + ссылка на GitHub.
+MIT — см. [LICENSE](LICENSE). Окно «О программе» читает версию из `VERSION` (сгенерирован `build/make_version.py`, нет хардкода) + лицензию + ссылку на GitHub.
 
 ## Ссылки
 
