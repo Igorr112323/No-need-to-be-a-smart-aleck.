@@ -71,7 +71,17 @@ jobs:
         working-directory: repo
         shell: bash
         run: |
-          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." main.py
+          echo "=== PyInstaller build start ==="
+          ls -lh assets/openlight.ico VERSION LICENSE
+          ls -lh web/vendor/*.js | head
+          # try with verbose, collect logs
+          pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --hidden-import=webview --log-level INFO main.py 2>&1 | tee ../pyinstaller.log || true
+          echo "=== pyinstaller exit code ${PIPESTATUS[0]} ==="
+          cat ../pyinstaller.log | tail -n 200
+          ls -lh dist/OpenLight.exe || echo "dist not found"
+          cat ../pyinstaller.log | grep -i "error\|failed" | head -n 20
+          # fail if no exe
+          test -f dist/OpenLight.exe
           ls -lh dist/OpenLight.exe
 
       - name: Size
