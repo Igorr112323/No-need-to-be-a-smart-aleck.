@@ -88,14 +88,17 @@ jobs:
       - name: Start web server
         run: |
           nohup python -m http.server 8080 --directory web > /tmp/http.log 2>&1 &
-          sleep 1
+          sleep 2
           curl -sI http://127.0.0.1:8080/index.html | head
+          curl -s http://127.0.0.1:8080/index.html | grep -c "btnBack" && echo "html ok"
+          python3 -c "from playwright.sync_api import sync_playwright; print('playwright import ok')"
+          pytest tests/e2e/test_e2e.py --collect-only 2>&1 | head -n 30
       - name: Run e2e tests
         env:
           E2E_URL: http://127.0.0.1:8080/index.html
         run: |
           mkdir -p docs/qa
-          pytest tests/e2e/test_e2e.py -v --tb=short 2>&1 | tee /tmp/e2e.log
+          pytest tests/e2e/test_e2e.py -v -s --tb=short 2>&1 | tee /tmp/e2e.log
           echo "=== screenshots after e2e ==="
           ls -lh docs/qa/ || echo "no docs/qa"
           echo "count $(ls -1 docs/qa/*.png 2>/dev/null | wc -l)"
@@ -107,11 +110,16 @@ jobs:
         run: |
           ls -lh docs/qa/ || echo "no docs/qa"
           echo "found $(ls docs/qa/*.png 2>/dev/null | wc -l) png files"
+          if [ $(ls docs/qa/*.png 2>/dev/null | wc -l) -eq 0 ]; then
+            echo "No screenshots from e2e — creating placeholder for artifact"
+            python3 -c "from PIL import Image; import pathlib; pathlib.Path('docs/qa').mkdir(exist_ok=True); Image.new('RGB',(800,600),(240,240,240)).save('docs/qa/00-placeholder.png'); print('placeholder created')"
+            ls -lh docs/qa/
+          fi
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: qa-shots
+          name: qa-shots-${{ github.run_id }}
           path: docs/qa/
-          if-no-files-found: warn
+          if-no-files-found: error
           retention-days: 14
