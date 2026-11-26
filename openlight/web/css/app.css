@@ -1,0 +1,334 @@
+/* OpenLight — app.css | Этап 0+2 | стиль Apple Freeform */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  font-family: "SF Pro Display", "Inter", "Segoe UI Variable", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #F9F9FB;
+  /* dot-grid: шаг 24px, точки ~2px, цвет rgba(0,0,0,0.10) */
+  background-image: radial-gradient(circle, rgba(0,0,0,0.10) 1px, transparent 1.4px);
+  background-size: 24px 24px;
+  background-position: -1px -1px;
+  color: #1D1D1F;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ——— canvas 3D — прозрачный, сквозь него виден dot-grid ——— */
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  outline: none;
+}
+
+/* ——— общий стеклянный стиль ——— */
+.glass {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px rgba(17,24,39,0.10);
+}
+
+/* ——— верхняя панель ——— */
+.top-left {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+}
+.circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(17,24,39,0.10);
+  cursor: pointer;
+  color: #1D1D1F;
+  transition: background 150ms cubic-bezier(0.2,0,0,1), transform 150ms cubic-bezier(0.2,0,0,1), box-shadow 150ms;
+  animation: enter 220ms cubic-bezier(0.2,0,0,1);
+}
+.circle-btn:hover { background: rgba(255,255,255,0.95); }
+.circle-btn:active { transform: scale(0.96); background: rgba(240,242,245,0.95); }
+.circle-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.75; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+.top-right {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px rgba(17,24,39,0.10);
+  animation: enter 220ms cubic-bezier(0.2,0,0,1);
+}
+.top-right .icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #1D1D1F;
+  transition: background 150ms;
+}
+.top-right .icon-btn:hover { background: rgba(0,0,0,0.05); }
+.top-right .icon-btn:active { background: rgba(0,0,0,0.08); }
+.top-right .icon-btn svg { width: 18px; height: 18px; stroke-width: 1.75; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.top-right .divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(0,0,0,0.08);
+  margin: 0 2px;
+}
+
+/* ——— нижний левый ——— */
+.bottom-left {
+  position: fixed;
+  left: 24px;
+  bottom: 28px;
+  z-index: 10;
+  animation: enter 220ms cubic-bezier(0.2,0,0,1) 60ms both;
+}
+.bottom-left .circle-btn.large {
+  width: 56px;
+  height: 56px;
+}
+.bottom-left .circle-btn.large svg { width: 22px; height: 22px; }
+
+/* ——— нижний центр — главный док ——— */
+.bottom-center {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px rgba(17,24,39,0.10);
+  animation: enterDock 280ms cubic-bezier(0.2,0,0,1);
+}
+@keyframes enterDock {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dock-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #1D1D1F;
+  transition: background 150ms, color 150ms, transform 150ms;
+  flex-shrink: 0;
+}
+.dock-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.dock-btn:hover { background: rgba(0,0,0,0.05); }
+.dock-btn:active { transform: scale(0.96); }
+.dock-btn.active {
+  background: #ffffff;
+  color: #007AFF;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+}
+.dock-btn.accent {
+  width: 52px;
+  height: 52px;
+  background: #007AFF;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,122,255,0.35);
+  margin: 0 2px;
+}
+.dock-btn.accent:hover { background: #006fe8; }
+.dock-btn.accent:active { background: #0064d1; transform: scale(0.97); }
+.dock-btn.accent svg { width: 22px; height: 22px; }
+
+/* разделитель в доке (тонкая линия между группой и видом) */
+.dock-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(0,0,0,0.07);
+  margin: 0 4px;
+}
+
+/* тултипы */
+.dock-btn .tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(4px);
+  background: #1D1D1F;
+  color: #fff;
+  font-size: 12.5px;
+  line-height: 1;
+  padding: 7px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms, transform 150ms;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.dock-btn .tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1D1D1F;
+}
+.dock-btn:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ——— нижняя правая карточка метрик ——— */
+.bottom-right {
+  position: fixed;
+  right: 24px;
+  bottom: 28px;
+  z-index: 10;
+  min-width: 228px;
+  padding: 14px 18px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px rgba(17,24,39,0.10);
+  animation: enter 220ms cubic-bezier(0.2,0,0,1) 80ms both;
+}
+.metrics-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6E6E73;
+  margin-bottom: 6px;
+}
+.metrics-row {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #1D1D1F;
+}
+.metrics-row .muted { color: #6E6E73; }
+.metrics-row strong { font-weight: 600; }
+.metrics-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34C759;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* ——— центральная заглушка — прячется когда 3D готово ——— */
+.center-hint {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 300ms;
+}
+.center-hint.hidden { opacity: 0; visibility: hidden; }
+.center-hint-inner {
+  text-align: center;
+  opacity: 0.35;
+  animation: enter 400ms cubic-bezier(0.2,0,0,1) 200ms both;
+}
+.center-hint-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.center-hint-icon svg { width: 28px; height: 28px; stroke: #9AA0AA; stroke-width: 1.5; fill: none; }
+.center-hint p {
+  margin: 0;
+  font-size: 13px;
+  color: #6E6E73;
+}
+.center-hint p strong { color: #1D1D1F; font-weight: 600; }
+
+/* ——— тост ——— */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 96px;
+  transform: translateX(-50%) translateY(8px);
+  background: #1D1D1F;
+  color: #fff;
+  font-size: 13px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms, transform 200ms;
+  z-index: 20;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ——— адаптив ——— */
+@media (max-width: 720px) {
+  .bottom-right { display: none; }
+  .bottom-center { padding: 5px 6px; gap: 2px; }
+  .dock-btn { width: 40px; height: 40px; }
+  .dock-btn.accent { width: 48px; height: 48px; }
+}
+@media (max-width: 520px) {
+  .top-right .icon-btn span { display: none; }
+}
