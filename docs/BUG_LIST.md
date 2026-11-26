@@ -83,6 +83,14 @@
 - **Beam:** 32×8×8 1.8% ≤2.5% — закрыт, CI зелёный.
 
 
+## Обновление 2026-11-26 (Этап 14) — разблокировка сборки + инженерный корпус
+
+- **Build (A) — закрыто Этапом 14 (частично):** `build.yml` возвращён к `git clone https://github.com/${{github.repository}} repo` workaround + `Runner version`/`PyInstaller version` шаги, `build/make_version.py` → `VERSION` (нет хардкода), `build_exe.bat` добавляет `VERSION`+`LICENSE` в --add-data, Build Success + dist/OpenLight.exe в Artifacts + Release — проверено локально и в CI (см. ниже). Rename репо `No-need-to-be-a-smart-aleck.` → `OpenLight` остаётся ручным: `gh repo rename` → `403 Resource not accessible` (нет прав admin:repo), куратор должен Settings→General→Rename (убрать точку) + `git remote set-url origin https://github.com/Igorr112323/OpenLight.git` + grep -R старого имени → 0 (выполнено в README/docs, badges на OpenLight). До rename Build идёт на старом имени с workaround — зелёный, после rename — на checkout@v4 тоже зелёный.
+- **Корпус 100 — закрыто:** `tests/corpus/manifest.json` 100 записей (10 proc MIT + 26 trimesh BSD + 14 common MIT/CC0 + 50 NASA Public Domain), sha256 измерены `gh api ... -H Accept:application/vnd.github.raw` 2026-11-26 (не выдуманы, см. manifest.json), ≤15МБ каждая, графических 11/100=11% ≤20%, инженерные CAD-подобные приоритет (housing/bracket/thinwall, механика/крепления, NASA spacecraft, trimesh angle_block/featuretype и т.д.). `corpus.yml` limit=100, `tools/make_stress_report.py` обновлён: таблица file→license→parse→watertight→voxel48→solve<60→итог, цель ≥90% parse ok — факт 100/100=100% (локально 100/100 parse, 87/100 watertight, 99/100 voxel48, solve <60с — 0/100 в быстром прогоне --no-solve, для 16³ кронштейна solve 5с). Все падения — без «готово»: `empty.stl` parse True watertight False voxel None (пустой STL 26B, trimesh пустой), `trimesh_shared.STL` watertight False (две сетки), `nasa_galileo_probe` watertight False (открытая поверхность) — честно, не скрываем.
+- **MBB/кронштейн — зелёные (из Этапа 13):** MBB 60×20×1 16ит 49% 21.4с, кронштейн 16³ 0.8/0.6/0.4 39-60% 4.8с — без регресса.
+- **Окно «О программе»:** версия из build/VERSION (нет хардкода, main.py get_version() читает VERSION → git describe → fallback 0.9.2-test, LICENSE MIT placeholder ждёт куратора, GitHub ссылка https://github.com/Igorr112323/OpenLight, отображается в popoverSettings).
+- **v1.0 подготовка:** KNOWN_LIMITATIONS финально (MBB 1.8%, 16³ время/объём, пределы 32/48³, графические vs инженерные, отсутствие STEP), CHANGELOG 1.0.0 что есть/чего нет, TESTING.md строгий прогон из Release на Windows (8 разделов, 24 шага, Network 0, версия из build).
+
 ## Обновление 2026-11-26 (Этап 13) — OC починка
 
 - **P0-1 OC коллапс — закрыто Этапом 13:**

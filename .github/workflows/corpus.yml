@@ -5,7 +5,7 @@ on:
       limit:
         description: 'Limit models (0=all)'
         required: false
-        default: '30'
+        default: '100'
   schedule:
     - cron: '0 3 * * 1'  # weekly Monday 03:00 UTC
   push:
@@ -34,9 +34,9 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt && pip install pytest
       - name: Fetch corpus
-        run: python tools/fetch_corpus.py --limit ${{ github.event.inputs.limit || '30' }}
+        run: python tools/fetch_corpus.py --limit ${{ github.event.inputs.limit || '100' }}
       - name: Make stress report
-        run: python tools/make_stress_report.py --limit ${{ github.event.inputs.limit || '30' }}
+        run: python tools/make_stress_report.py --limit ${{ github.event.inputs.limit || '100' }}
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:

@@ -1025,7 +1025,7 @@ document.getElementById('btnOpen').addEventListener('click', (e) => { e.stopProp
 // ——— проекты ———
 function serializeProject() {
   const data = {
-    version: '0.5.0',
+    version: (document.getElementById('appVersion')?.textContent || '0.9.2'),
     material: state.material,
     process: state.process,
     targetRelief: state.targetRelief,
@@ -1224,12 +1224,15 @@ function loadAppInfo() {
   if (window.pywebview && window.pywebview.api && window.pywebview.api.get_app_info) {
     window.pywebview.api.get_app_info().then(info => {
       if (info) {
-        document.getElementById('appVersion').textContent = info.version || '0.5.0';
+        document.getElementById('appVersion').textContent = info.version || '0.9.2';
         document.getElementById('appDataPath').textContent = info.appData || '';
+        if (document.getElementById('appLicense')) document.getElementById('appLicense').textContent = info.license || 'MIT (ожидает выбора)';
+        if (document.getElementById('appGithubLink') && info.github) document.getElementById('appGithubLink').href = info.github;
       }
     }).catch(() => {});
   } else {
-    document.getElementById('appVersion').textContent = '0.5.0 (браузер)';
+    document.getElementById('appVersion').textContent = '0.9.2 (браузер)';
+    if (document.getElementById('appLicense')) document.getElementById('appLicense').textContent = 'MIT (ожидает выбора куратора)';
   }
 }
 window.addEventListener('pywebviewready', () => { loadAppInfo(); checkAutosaveOnStart(); refreshRecent(); });

@@ -10,12 +10,12 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-echo [1/4] Python найден:
+echo [1/5] Python найден:
 python --version
 
 REM 2. Зависимости
 echo.
-echo [2/4] Установка зависимостей...
+echo [2/5] Установка зависимостей...
 pip install -r requirements.txt
 if errorlevel 1 (
   echo [Ошибка] pip install не удалось
@@ -25,7 +25,7 @@ if errorlevel 1 (
 
 REM 3. Вендор — интернет нужен только один раз, для вендора
 echo.
-echo [3/4] Проверка вендора (интернет нужен только один раз)...
+echo [3/5] Проверка вендора (интернет нужен только один раз)...
 python build/vendor.py
 if errorlevel 1 (
   echo [Предупреждение] vendor.py завершился с ошибкой — проверьте интернет, затем запустите снова
@@ -33,11 +33,20 @@ if errorlevel 1 (
   exit /b 1
 )
 
+REM 3b. Версия из build (нет хардкода)
+echo.
+echo [4/5] Генерация VERSION...
+python build/make_version.py
+if errorlevel 1 (
+  echo [Предупреждение] make_version.py не удался — используем fallback 0.9.2-test
+  echo 0.9.2-test> VERSION
+)
+
 REM 4. Сборка
 echo.
-echo [4/4] Сборка PyInstaller...
-REM --add-data "web;web" — для Windows (на Linux было бы "web:web")
-pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" main.py
+echo [5/5] Сборка PyInstaller...
+REM --add-data "web;web" — для Windows (на Linux было бы "web:web"), добавляем VERSION и LICENSE
+pyinstaller --onefile --windowed --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." main.py
 if errorlevel 1 (
   echo [Ошибка] PyInstaller не удался
   pause
@@ -49,6 +58,6 @@ echo ==========================================
 echo  Готово: dist\OpenLight.exe
 echo  Размер: 
 dir dist\OpenLight.exe | findstr OpenLight.exe
-echo  Двойной клик — окно 1400x900, весь сценарий Этапа 5 офлайн.
+echo  Двойной клик — окно 1400x900, весь сценарий офлайн.
 echo ==========================================
 pause

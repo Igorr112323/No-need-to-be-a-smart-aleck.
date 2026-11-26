@@ -90,22 +90,256 @@
     "notes": "Усиленный кронштейн"
   },
   {
+    "file": "trimesh_1002_tray_bottom.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/1002_tray_bottom.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "9700c0df2263904f44101a456b27aefd5d8d733ef297d3a80566de2903c8fd67",
+    "category": "thinwall",
+    "notes": "trimesh_1002_tray_bottom.STL"
+  },
+  {
+    "file": "trimesh_20mm_cube.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/20mm-xyz-cube.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "22605742d8305430f1d803fc74cbe222333a9a6903339572171cd6b8b16c4d6c",
+    "category": "thinwall",
+    "notes": "trimesh_20mm_cube.stl"
+  },
+  {
+    "file": "trimesh_7_8ths_cube.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/7_8ths_cube.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "9f2fb86a919b16c4264ed6164704d5da59137aa6cb0a8af0be55ca77370b8192",
+    "category": "thinwall",
+    "notes": "trimesh_7_8ths_cube.stl"
+  },
+  {
+    "file": "trimesh_ADIS16480.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/ADIS16480.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "04986531c03907943985378e66f5ca45731b2d7c07a3635886be7d9e7ac9e0e4",
+    "category": "housing",
+    "notes": "trimesh_ADIS16480.STL"
+  },
+  {
+    "file": "trimesh_angle_block.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/angle_block.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "512bf110ef9f181e33b1006467a0637f3a0ae2c89e02bca943526a574440c4c9",
+    "category": "bracket",
+    "notes": "trimesh_angle_block.STL"
+  },
+  {
+    "file": "trimesh_box.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/box.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "196ea36c66e96d56997af8a9a9effac779aac95d43b0bce49cf5a2befdec6b80",
+    "category": "housing",
+    "notes": "trimesh_box.STL"
+  },
+  {
+    "file": "trimesh_busted.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/busted.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "ec9d11fd0db249f1e40b737d07227cfc2f06bbd033e3dcc9e785b5ec25b8d024",
+    "category": "organic",
+    "notes": "trimesh_busted.STL"
+  },
+  {
+    "file": "trimesh_counter.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/counter.unitsmm.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "770c966cd97988375f8429fe9dea5c0aef7bc0ffaa3db0cf3a0ea4749ab90774",
+    "category": "housing",
+    "notes": "trimesh_counter.STL"
+  },
+  {
+    "file": "trimesh_cylinder.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/cylinder.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "64cc6af4c1c52ed281313f7eef03bd79cfb75b954912e646391e6564d7f592fa",
+    "category": "housing",
+    "notes": "trimesh_cylinder.stl"
+  },
+  {
+    "file": "trimesh_empty.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/empty.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "8c0d9c30a45b5513769862910bffa9d9f87ea0f7e037197fbc7f41d0adc43f2f",
+    "category": "thinwall",
+    "notes": "trimesh_empty.stl"
+  },
+  {
+    "file": "trimesh_featuretype.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "bracket",
+    "notes": "trimesh_featuretype.STL"
+  },
+  {
+    "file": "trimesh_idler_riser.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/idler_riser.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "8fb9237ab07cdd50b033ade13d79f14ba9ac68cefb0be07cb993a535a344b733",
+    "category": "bracket",
+    "notes": "trimesh_idler_riser.STL"
+  },
+  {
+    "file": "trimesh_large_block.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/large_block.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "4e26b05598ce5e5116be3a8002fe5831ec0683662e2a65ceb72af07df8af02bf",
+    "category": "housing",
+    "notes": "trimesh_large_block.STL"
+  },
+  {
+    "file": "trimesh_large_block_obb.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/large_block_obb.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "1498a887e718af3832f91fe774ec90ed2939ed7ee395da0ed877c117b4605e57",
+    "category": "housing",
+    "notes": "trimesh_large_block_obb.STL"
+  },
+  {
+    "file": "trimesh_multibody.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/multibody.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "d53e9c74e66080959e76297b864d68756a7e881e87ccbaf30cbe96a280a81d0d",
+    "category": "thinwall",
+    "notes": "trimesh_multibody.stl"
+  },
+  {
+    "file": "trimesh_octagonal_pocket.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/octagonal_pocket.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "5dcb9243f154cdd2bb50842bc7bee8bd38dad6c8033aa4399a0d231211c6947e",
+    "category": "thinwall",
+    "notes": "trimesh_octagonal_pocket.stl"
+  },
+  {
+    "file": "trimesh_origin_inside.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/origin_inside.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "a46717ec23672b8cc8d6e4800f94579eb5064fc91cf0f3530210ea2f232bba02",
+    "category": "thinwall",
+    "notes": "trimesh_origin_inside.STL"
+  },
+  {
+    "file": "trimesh_plate_holes.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/plate_holes.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "318f92206dd20b2cede5b70eb5e686d3627c6b157b91e9ed383314329dcff209",
+    "category": "thinwall",
+    "notes": "trimesh_plate_holes.STL"
+  },
+  {
+    "file": "trimesh_round.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/round.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "34e4be62bfc2df9d784e284b0d2e5702bb4cce34c1c778e77c2e2272908ca19c",
+    "category": "housing",
+    "notes": "trimesh_round.stl"
+  },
+  {
+    "file": "trimesh_shared.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/shared.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "589115ad0a6134280922e47934bbbfecd2a73eddabecf703f56fe830be21d92d",
+    "category": "thinwall",
+    "notes": "trimesh_shared.STL"
+  },
+  {
+    "file": "trimesh_soup.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/soup.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "5f3a0cc3c270e0da9f57c677ee14529f1182d799d069af0336b9e6fc0f02d8ca",
+    "category": "thinwall",
+    "notes": "trimesh_soup.stl"
+  },
+  {
+    "file": "trimesh_teapot.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/teapot.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "2c0c36eba0f33d0f10429e9f7e06bf34fa3df0bc9ee1082fd32eb89cd483e9b6",
+    "category": "housing",
+    "notes": "trimesh_teapot.stl"
+  },
+  {
+    "file": "trimesh_torus.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/torus.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "91441a7f60479bda93c59dd88134da3b4f33d1df71729fe71e1b2ae989974da3",
+    "category": "housing",
+    "notes": "trimesh_torus.STL"
+  },
+  {
+    "file": "trimesh_two_objects_mixed.stl",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/two_objects_mixed_case_names.stl",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "67b82d563afa7b2b7e1587e24d8a640f355563c93ffaf314716ed89a2777a28d",
+    "category": "housing",
+    "notes": "trimesh_two_objects_mixed.stl"
+  },
+  {
+    "file": "trimesh_unit_cube.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/unit_cube.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "18b3cb9da5cc8090a17d5d5cea8ef4d1291ff1dd2b861f6776b4427e9ebeb86e",
+    "category": "housing",
+    "notes": "trimesh_unit_cube.STL"
+  },
+  {
+    "file": "trimesh_unit_sphere.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/unit_sphere.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "9d75b416e33887fd791945c2f1e42696ea1bf252a973b2db7c9626002e210d61",
+    "category": "housing",
+    "notes": "trimesh_unit_sphere.STL"
+  },
+  {
     "file": "cow.obj",
     "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/cow.obj",
     "origin": "external",
-    "license": "MIT (common-3d-test-models) — Alec Jacobson",
+    "license": "MIT (common-3d-test-models)",
     "sha256": "69afce548640bc2beb0c44894d1a24d5766cc9cd3fd74f3ec55b4e229104b23f",
     "category": "organic",
-    "notes": "Stanford Cow (2903 вершин) — MIT"
+    "notes": "cow.obj"
   },
   {
     "file": "spot.obj",
     "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/spot.obj",
     "origin": "external",
-    "license": "MIT (common-3d-test-models) — Alec Jacobson",
+    "license": "MIT (common-3d-test-models)",
     "sha256": "0738b5e8608fed74e5e8c7aa8dd0af97b4b74f9f6cbf7aac84cd7e40b2e44a75",
     "category": "organic",
-    "notes": "Spot cow — MIT"
+    "notes": "spot.obj"
   },
   {
     "file": "stanford-bunny.obj",
@@ -114,7 +348,7 @@
     "license": "CC0 (Stanford 3D Scan Repository)",
     "sha256": "1eb35d1e21ce99e5ce911353b6be278990713448dd9e8f5c9387f9de39b32205",
     "category": "organic",
-    "notes": "Stanford Bunny — public domain CC0"
+    "notes": "stanford-bunny.obj"
   },
   {
     "file": "nefertiti.obj",
@@ -123,7 +357,7 @@
     "license": "CC0 (Stanford/Thingi10K)",
     "sha256": "19e39748b145092878cc4faafd050505eb5991c5d3e497be2b4575673fa87968",
     "category": "organic",
-    "notes": "Nefertiti scan — CC0"
+    "notes": "nefertiti.obj"
   },
   {
     "file": "armadillo.obj",
@@ -132,7 +366,7 @@
     "license": "CC0 (Stanford)",
     "sha256": "d2fd040334c12b16804fbcb9962391232cc24708244617f931baaa871210563e",
     "category": "organic",
-    "notes": "Armadillo — CC0"
+    "notes": "armadillo.obj"
   },
   {
     "file": "happy.obj",
@@ -141,25 +375,7 @@
     "license": "CC0 (Stanford)",
     "sha256": "8ce5a4a7161efd97dabc8eeb281824fac1b17c9ba2cb0c2c6f350cd05982058c",
     "category": "organic",
-    "notes": "Happy Buddha — CC0"
-  },
-  {
-    "file": "teapot.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/teapot.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models) — CC0 Utah",
-    "sha256": "1b5396fedd74b577e32cef41146582c2f2e1a050d5b4915193c0ac1ad4187ed4",
-    "category": "housing",
-    "notes": "Utah Teapot — MIT/CC0"
-  },
-  {
-    "file": "beetle.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "46ee9dcbec84b8d1b8f0d743ab1c91b1ed81378672fc0516e7afff5172d7c9b7",
-    "category": "thinwall",
-    "notes": "Beetle car — MIT"
+    "notes": "happy.obj"
   },
   {
     "file": "alligator.obj",
@@ -168,7 +384,7 @@
     "license": "MIT (common-3d-test-models)",
     "sha256": "108a1f4319e4a069b2bfbee3b5f278551501d75c473bb705c62e2bef872ad544",
     "category": "organic",
-    "notes": "Alligator — MIT"
+    "notes": "alligator.obj"
   },
   {
     "file": "homer.obj",
@@ -177,96 +393,510 @@
     "license": "MIT (common-3d-test-models)",
     "sha256": "b20b1391fd62964f65703d748514d86d747d1202d38e55e0f1addac7a5a10e8b",
     "category": "organic",
-    "notes": "Homer — MIT"
+    "notes": "homer.obj"
   },
   {
-    "file": "trimesh_20mm_cube.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/20mm-xyz-cube.stl",
+    "file": "beast.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beast.obj",
     "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "22605742d8305430f1d803fc74cbe222333a9a6903339572171cd6b8b16c4d6c",
-    "category": "thinwall",
-    "notes": "20mm calibration cube — BSD"
-  },
-  {
-    "file": "trimesh_angle_block.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/angle_block.STL",
-    "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "512bf110ef9f181e33b1006467a0637f3a0ae2c89e02bca943526a574440c4c9",
-    "category": "bracket",
-    "notes": "Angle block — BSD"
-  },
-  {
-    "file": "trimesh_featuretype.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
-    "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
-    "category": "bracket",
-    "notes": "Featuretype — BSD"
-  },
-  {
-    "file": "trimesh_box.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/box.STL",
-    "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "196ea36c66e96d56997af8a9a9effac779aac95d43b0bce49cf5a2befdec6b80",
-    "category": "housing",
-    "notes": "Box — BSD"
-  },
-  {
-    "file": "trimesh_busted.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/busted.STL",
-    "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "ec9d11fd0db249f1e40b737d07227cfc2f06bbd033e3dcc9e785b5ec25b8d024",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "74c5fecd883b761bc1b2bb6c82fe94d3b3b450297ab561e83c0e63c7ed46abe8",
     "category": "organic",
-    "notes": "Busted — BSD"
+    "notes": "beast.obj"
   },
   {
-    "file": "trimesh_plate_holes.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/plate_holes.STL",
+    "file": "bimba.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/bimba.obj",
     "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "318f92206dd20b2cede5b70eb5e686d3627c6b157b91e9ed383314329dcff209",
-    "category": "thinwall",
-    "notes": "Plate with holes — BSD"
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "5e2beb15d8f5852383eb44a95f227097e3037b2e7a3e3ea1494931fd7c3b1e72",
+    "category": "organic",
+    "notes": "bimba.obj"
   },
   {
-    "file": "trimesh_counter.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/counter.unitsmm.STL",
+    "file": "fandisk.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/fandisk.obj",
     "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "770c966cd97988375f8429fe9dea5c0aef7bc0ffaa3db0cf3a0ea4749ab90774",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "ea5bab2fbf545b1915f0d9faf6cc61ff8c18e0d8174ad61f8e35de15d8f6e3f8",
+    "category": "bracket",
+    "notes": "fandisk.obj"
+  },
+  {
+    "file": "rocker-arm.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/rocker-arm.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "590257e6d01e689354821d807854306c3bfbb02d9cca73404d5a4924f105c287",
+    "category": "bracket",
+    "notes": "rocker-arm.obj"
+  },
+  {
+    "file": "beetle.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "46ee9dcbec84b8d1b8f0d743ab1c91b1ed81378672fc0516e7afff5172d7c9b7",
     "category": "housing",
-    "notes": "Counter — BSD"
+    "notes": "beetle.obj"
   },
   {
-    "file": "trimesh_adis.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/ADIS16480.STL",
+    "file": "beetle-alt.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle-alt.obj",
     "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "04986531c03907943985378e66f5ca45731b2d7c07a3635886be7d9e7ac9e0e4",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "4528700590e20363b27e8ab77a4af6199a59b94ab6b849c9ba5a4a36f7c5b8cd",
     "category": "housing",
-    "notes": "ADIS16480 — BSD"
+    "notes": "beetle-alt.obj"
   },
   {
-    "file": "trimesh_oct_pocket.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/octagonal_pocket.stl",
+    "file": "nasa_international_space_station_tools_003_column_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/003%20-%20Column.stl",
     "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "5dcb9243f154cdd2bb50842bc7bee8bd38dad6c8033aa4399a0d231211c6947e",
-    "category": "thinwall",
-    "notes": "Octagonal pocket — BSD"
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "83ce68809f242c77e011d26044c05ea65d4db3c6f2b0fd4bee80135b7ecc9c03",
+    "category": "housing",
+    "notes": "International Space Station Tools / 003 - Column.stl"
   },
   {
-    "file": "trimesh_tray.stl",
-    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/1002_tray_bottom.STL",
+    "file": "nasa_international_space_station_tools_006_flexural_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/006%20-%20Flexural.stl",
     "origin": "external",
-    "license": "BSD (trimesh) — CC0",
-    "sha256": "9700c0df2263904f44101a456b27aefd5d8d733ef297d3a80566de2903c8fd67",
-    "category": "thinwall",
-    "notes": "Tray bottom — BSD"
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "24eae9bda7c921d026f3cb40c4d3dbdb3fbd0eeea5b32ccd429633540f33f069",
+    "category": "housing",
+    "notes": "International Space Station Tools / 006 - Flexural.stl"
+  },
+  {
+    "file": "nasa_saturn_v_stage_2_joining_cube_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20-%20Stage%202/joining%20cube.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e8f5829e5e073dd30dc0d13559ade738228b3667f990880fba9db9c0a642f1ad",
+    "category": "housing",
+    "notes": "Saturn V - Stage 2 / joining cube.stl"
+  },
+  {
+    "file": "nasa_saturn_v_rocket_s_ic_joining_cube_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20Rocket/S-IC%20joining%20cube.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "66ad879b02f5dc5e96f697a6425808a351ad970077dfe60eb936c657baf649cc",
+    "category": "housing",
+    "notes": "Saturn V Rocket / S-IC joining cube.stl"
+  },
+  {
+    "file": "nasa_explorer_1_03_connector_abs_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Explorer%201/03_connector_ABS.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "1a5de1e6b2292591f49c05bd306e221207a3fbe51150b8d81e22af8174cf2eb1",
+    "category": "housing",
+    "notes": "Explorer 1 / 03_connector_ABS.stl"
+  },
+  {
+    "file": "nasa_explorer_1_03_connector_pla_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Explorer%201/03_connector_PLA.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "14e7b6a4a45442a4d53dbdbf8ac6dafe078d9928aecfe3cff74d4c674b8ccf90",
+    "category": "housing",
+    "notes": "Explorer 1 / 03_connector_PLA.stl"
+  },
+  {
+    "file": "nasa_saturn_v_rocket_fin_print_4_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20Rocket/fin%20(print%204).stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "89bb87aa90e3cd3e8bba76d177a40219944e6bb020230626bba5c6fd61f6f76e",
+    "category": "housing",
+    "notes": "Saturn V Rocket / fin (print 4).stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_a_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Sub-Reflector%20A.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "57e367a73fa81a4241da04445b7c75083a9bec9e07745d4546c50d17069997fc",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Sub-Reflector A.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_pse_and_battery_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/PSE%20and%20battery.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "bc32001d67e94252a74ed242d2a185057c9dfb9614f1da80290a4c5f10be6d44",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / PSE and battery.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_b_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Sub-Reflector%20B.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e0a841368f260a927f287c477c6f87719c290badb609e8963ba453cc91ed908a",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Sub-Reflector B.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_left_side_panel_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Left%20side%20panel.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "06bdbcb005779638938f68c0585f0fa0c313dc785af75d21ea32e39b44945458",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Left side panel.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_right_side_panel_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Right%20side%20panel.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "9f87dc23ce8342707a1a846cf4e5111c93955b36db20abb6c1145a20c7246800",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Right side panel.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_019_zerog2_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/019%20-%20ZeroG2.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "74a9b968c929bfc0e36e510f43bd255295eeb8380780d5c9abd2dcb24e48f62c",
+    "category": "housing",
+    "notes": "International Space Station Tools / 019 - ZeroG2.stl"
+  },
+  {
+    "file": "nasa_voyager_instrument_01_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_01.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "0ede920bb50440f6eca98ffdb8fe5d704fea03d5db50abb358d34eaccdba236c",
+    "category": "housing",
+    "notes": "Voyager / instrument_01.stl"
+  },
+  {
+    "file": "nasa_voyager_instrument_02_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_02.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "75bec8c381edf3ff56c17f33d0d5a68b40efc20512d85829da61ee10ae931559",
+    "category": "housing",
+    "notes": "Voyager / instrument_02.stl"
+  },
+  {
+    "file": "nasa_sofia_telescope_cavity_closed_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/SOFIA/Telescope%20cavity%20closed.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "568ac2b3e00a5965667908b5bd1b7daf2286234a7b78333e69d76fffa8827dfd",
+    "category": "housing",
+    "notes": "SOFIA / Telescope cavity closed.stl"
+  },
+  {
+    "file": "nasa_voyager_instrument_03_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_03.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "526c15ffee165848f1c2de5e3155ef437e1b50d852ecd93bc2869b3a4528be9c",
+    "category": "housing",
+    "notes": "Voyager / instrument_03.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_combined_bottom_boxes_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Combined%20bottom%20boxes.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "325ff4ccf1ecf0cd8380044a0655c92e470cca695affec84eee1c769ef579c88",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Combined bottom boxes.stl"
+  },
+  {
+    "file": "nasa_viking_lander_tool1_b_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool1%20B.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "8ce10ce24f79e6ab4ed1162aa2b002d8d4a0c476d2567f0125bcfd8a597be803",
+    "category": "housing",
+    "notes": "Viking Lander / Tool1 B.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_base_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Base.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "7cb7ffa4e5987b46a26e8b763c102021cb4af549488e6df7dd4cd69db7883619",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Base.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_001_ftc_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/001%20-%20FTC.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "565fa60813281e482a57052c878c4b94d847937100caf62e9aecbbe0ce5b4608",
+    "category": "housing",
+    "notes": "International Space Station Tools / 001 - FTC.stl"
+  },
+  {
+    "file": "nasa_chandra_x_ray_observatory_chandra_panel_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Chandra%20X-ray%20Observatory/Chandra%20panel.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "2c24524d43fe8c85ec691ff6cc9be1e367638cba10c6d0786bca9fa6ce68e07b",
+    "category": "housing",
+    "notes": "Chandra X-ray Observatory / Chandra panel.stl"
+  },
+  {
+    "file": "nasa_sofia_instrument_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/SOFIA/Instrument.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "f9ed13e917895e2b4cf63d291685211d691a462bedcf26945741506e0e15f9b5",
+    "category": "housing",
+    "notes": "SOFIA / Instrument.stl"
+  },
+  {
+    "file": "nasa_chandra_x_ray_observatory_chandra_top_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Chandra%20X-ray%20Observatory/Chandra%20top.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e6919eecfd59eab95ec3878a4ac5d425ad688d0857dd6ba0d05930abfffac1be",
+    "category": "housing",
+    "notes": "Chandra X-ray Observatory / Chandra top.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_top_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/top.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "f2a6386a77a276d9bea29feb0b5b2768e55b38c1a0f4188fe3b560c26b5999ad",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / top.stl"
+  },
+  {
+    "file": "nasa_viking_lander_tool1_a_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool1%20A.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "782a01cb690bceb4f0558ea044958fd1aad7d63de4e1e88d4b72260bb66bcba4",
+    "category": "housing",
+    "notes": "Viking Lander / Tool1 A.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_004_tensile_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/004%20-%20Tensile.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "6ff8ed24307898095f075f0792fe6e02115e4b8ea432e62e078d04e32ce18591",
+    "category": "housing",
+    "notes": "International Space Station Tools / 004 - Tensile.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_antenna_bottom_01_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/antenna_bottom_01.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "8646e4cb8744a14396851bc619702edb7f4a289861b9ddc62bde52a6449166fc",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / antenna_bottom_01.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_body_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Positioner%20Body.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "4ae05da4c13928416c91536bb8ad4a975f3b7ee1c615e8a57c313792a87737bf",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Positioner Body.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_solar_panel_l_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/solar%20panel_L.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e93ac639520da0d8cb7b21c022d1a0fdd3a898f9964b5087ce681bf06958ed1e",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / solar panel_L.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_solar_panel_r_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/solar%20panel_R.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "7c745c42cf233c59e0a727903e71f6cfd72d5eaf20afe1ee5d918a0e215c6182",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / solar panel_R.stl"
+  },
+  {
+    "file": "nasa_voyager_stand_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/stand.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "ab397ef1571e53878f0785c76d523e9263f075ea00978153dba2e2812e40646e",
+    "category": "housing",
+    "notes": "Voyager / stand.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_005_compression_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/005%20-%20Compression.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "47c3069f35d93f31905a55e05b09db206eb4498676463c81b9bc3ee4ef63b77b",
+    "category": "housing",
+    "notes": "International Space Station Tools / 005 - Compression.stl"
+  },
+  {
+    "file": "nasa_hubble_space_telescope_solar_panels_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Solar%20panels.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "51cb49a2dff8560fdea186ffe80862426f8d588ec5fc59e37903aeba25c0a611",
+    "category": "housing",
+    "notes": "Hubble Space Telescope / Solar panels.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_cmd_and_data_handling_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Cmd%20and%20data%20handling.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "d054da59407b21322acbe7a051a450f82c4d53f9b912b381ca3c374d4aa2fa8a",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Cmd and data handling.stl"
+  },
+  {
+    "file": "nasa_cyclone_global_navigation_satellite_system_cygnss_cyclone_global_navigation.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Cyclone%20Global%20Navigation%20Satellite%20System%20(CYGNSS)/Cyclone%20Global%20Navigation%20Satellite%20System%20(CYGNSS).stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "a6debe3c9af320cbfc202f6abf47d0198f32fb311a0b2e2b62126a101ff335e2",
+    "category": "housing",
+    "notes": "Cyclone Global Navigation Satellite System (CYGNSS) / Cyclone Global Navigation Satellite System (CYGNSS).stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_lisa_control_electronics_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/LISA%20control%20electronics.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e098ba47c20e2f4e921c866f52f05b0f22cb4381444fe1731990c146591db384",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / LISA control electronics.stl"
+  },
+  {
+    "file": "nasa_international_sun_earth_explorer_3_rad_antenna_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Sun-Earth%20Explorer-3/Rad%20antenna.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "2138bbf5ef241014d2a3a345204201476ef121e48788c1fd31897f7a4942fd73",
+    "category": "housing",
+    "notes": "International Sun-Earth Explorer-3 / Rad antenna.stl"
+  },
+  {
+    "file": "nasa_hubble_25th_anniversary_model_base_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%2025th%20Anniversary%20Model/Base.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "2259dd77ac372634fbe3b69063395f8882082da3c4c620b1d59d14cae9b743b0",
+    "category": "housing",
+    "notes": "Hubble 25th Anniversary Model / Base.stl"
+  },
+  {
+    "file": "nasa_hubble_space_telescope_base_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Base.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e4894e4ce7c6319a06d851e2ff9bc23a73f25c0a5dbb00b811d4bae58ef52de9",
+    "category": "housing",
+    "notes": "Hubble Space Telescope / Base.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_charge_management_system_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Charge%20management%20system.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e5a4e7bf104b89051eab84b1f8bc5ab0088d4d2491b1af0583136ad38ea55660",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Charge management system.stl"
+  },
+  {
+    "file": "nasa_galileo_galileo_probe_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Galileo/Galileo%20probe.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "90797ec22d16d13af65d170622f78f5226dc8b5e0b8c9e681b320c2db7714765",
+    "category": "housing",
+    "notes": "Galileo / Galileo probe.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_grs_unit_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/GRS%20unit.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "82447c07ef5699a213d0ddec791ef8f708dd09580dd7c33a22ef46ede4c89efc",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / GRS unit.stl"
+  },
+  {
+    "file": "nasa_viking_lander_tool2_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool2.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "c334499217b5b3f088dcd58550daca7a7490b6f0231914ae32a898eba3fd3939",
+    "category": "housing",
+    "notes": "Viking Lander / Tool2.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_arm_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Positioner%20Arm.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "ca2c70f0d1e6d9c798d33a398d10c15f3404836790a66300252fda2f156c90be",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Positioner Arm.stl"
+  },
+  {
+    "file": "nasa_hubble_space_telescope_radio_dishes_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Radio%20dishes.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "ca16ec95062e89e4f7760834631d7214abdf01919cbda360f85e78d0d8c9d346",
+    "category": "housing",
+    "notes": "Hubble Space Telescope / Radio dishes.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_antenna_bottom_02_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/antenna_bottom_02.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "c7ca86217c0e03342356ca9447b2a651ad7ad261e8f732784ec5f0df6e7f14b7",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / antenna_bottom_02.stl"
+  },
+  {
+    "file": "nasa_viking_lander_dish_part_b_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Dish%20part%20B.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "70ac10da7e804c57e291c526a4719adaeaa07b8e68436fd737c61c488faf62e7",
+    "category": "housing",
+    "notes": "Viking Lander / Dish part B.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_antenna_feed_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Antenna%20Feed.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "9d6cdf7a995d35abcde5b124641031d5d27699e33aa6046497a3555981bd8665",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Antenna Feed.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_thruster_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Thruster.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "f56807967e1fa16454c117edcfb5e33aab5b0ea90d8283b9d3b474b0619fc47f",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Thruster.stl"
   }
 ]

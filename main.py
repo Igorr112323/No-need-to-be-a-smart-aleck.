@@ -12,8 +12,28 @@ import threading
 import traceback
 from datetime import datetime
 
-APP_VERSION = "0.7.0"
 APP_NAME = "OpenLight"
+GITHUB_URL = "https://github.com/Igorr112323/OpenLight"
+LICENSE_NAME = "MIT (ожидает выбора куратора)"
+
+def get_version() -> str:
+    # версия из build (нет хардкода) — читаем VERSION, иначе git describe, иначе fallback
+    for cand in [pathlib.Path(__file__).parent / "VERSION", pathlib.Path(__file__).parent / "build" / "VERSION", pathlib.Path("VERSION"), pathlib.Path("build/VERSION")]:
+        try:
+            if cand.exists():
+                v=cand.read_text(encoding="utf-8").strip()
+                if v:
+                    return v
+        except: pass
+    # try git describe
+    try:
+        import subprocess
+        out=subprocess.check_output(["git","describe","--tags","--always"], text=True, stderr=subprocess.DEVNULL).strip()
+        if out:
+            return out.lstrip("v")
+    except: pass
+    return "0.9.2-test"
+APP_VERSION = get_version()
 
 def get_app_data_dir() -> pathlib.Path:
     if os.name == 'nt':
@@ -92,7 +112,8 @@ class Api:
     # —— базовые ——
     def get_app_info(self):
         ensure_app_data()
-        return {'version': APP_VERSION, 'appData': str(APP_DATA_DIR), 'name': APP_NAME}
+        # версия из build/VERSION, лицензия ждёт куратора, ссылка на GitHub
+        return {'version': APP_VERSION, 'appData': str(APP_DATA_DIR), 'name': APP_NAME, 'license': LICENSE_NAME, 'github': GITHUB_URL}
 
     def get_recent(self):
         return load_recent()
