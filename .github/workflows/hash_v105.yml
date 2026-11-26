@@ -1,0 +1,31 @@
+name: Hash v1.0.5
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  hash:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          gh release download v1.0.5 --repo ${{ github.repository }} --pattern "OpenLight.exe" --dir /tmp --clobber
+          SHA=$(sha256sum /tmp/OpenLight.exe | cut -d' ' -f1)
+          SZ=$(stat -c%s /tmp/OpenLight.exe)
+          SZM=$(numfmt --to=iec-i --suffix=B $SZ)
+          cat > /tmp/body.md <<'EOF'
+          OpenLight 1.0.5 — 17F: кнопки живы, светофор вправо, Escape/Ctrl+W, CTA, diag ui.log.
+
+          **Что нового в 1.0.5 (мёртвые кнопки → живы):**
+          - TDZ fix + светофор 12px вправо (pointer-events:auto, drag не перекрывает)
+          - `js-boot→listeners-attached→splash-hidden→api-ready→first-error` → `%APPDATA%\OpenLight\logs\ui.log` via `record_log`
+          - `window.onerror→title ERR` + `console.*` перехват, `?diag=1` красный баннер, `elementFromPoint`/`pywebview bridge` логи
+          - CTA `центр → Открыть` + `dragover/drop` STL/OBJ, `Escape`/`Ctrl+W` → `api_close` (fallback ctypes)
+
+          **Что есть/чего нет:** как в 1.0.4 (корпус 86/100, МББ 1.8%, Кирш 2.5%, CalculiX 4.2%, офлайн, нет STEP/buckling, MIT).
+
+          См. README, docs/KNOWN_LIMITATIONS.md, LICENSE MIT. Версия из VERSION (`git describe --tags`), `OpenLight.exe --selftest` → `OpenLight 1.0.5`.
+          EOF
+          printf "\n---\n**SHA256:** \`%s\` — \`OpenLight.exe\` (%s, Build #%s)\nRelease: https://github.com/%s/releases/tag/v1.0.5\nПуть к логу: `%%APPDATA%%\\OpenLight\\logs\\ui.log` / `init.log` — `OpenLight.exe --diag`\n" "$SHA" "$SZM" "${{ github.run_id }}" "${{ github.repository }}" >> /tmp/body.md
+          gh release edit v1.0.5 --repo ${{ github.repository }} --notes-file /tmp/body.md
+          cat /tmp/body.md | tail -n 15
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
