@@ -1,0 +1,31 @@
+name: Upload Release Asset
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Run ID with OpenLight.exe artifact'
+        required: true
+        type: string
+      tag:
+        description: 'Tag to upload to'
+        required: true
+        type: string
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: OpenLight.exe
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ./dist
+      - name: List
+        run: ls -lh ./dist || ls -lh .
+      - name: Upload to Release
+        run: |
+          ls -lh ./dist/OpenLight.exe || ls -lh ./dist/*
+          gh release upload "${{ inputs.tag }}" ./dist/OpenLight.exe --clobber
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
