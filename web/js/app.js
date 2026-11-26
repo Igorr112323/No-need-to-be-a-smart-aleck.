@@ -7,6 +7,50 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { STLExporter } from 'three/addons/exporters/STLExporter.js';
 import { state, DENSITIES, MATERIAL_LABELS, BRACKET_VOLUME_CM3, computeWeightGram, computeWeightAfter, computeSafety, pushHistory, popHistory, genId, setMaterial, setProcess } from './state.js';
 
+// ——— управление окном (frameless) + лоадер ———
+const appLoader = document.getElementById('appLoader');
+function hideLoader(){
+  if(appLoader){
+    appLoader.classList.add('hidden');
+    setTimeout(()=>{ appLoader.style.display='none'; }, 500);
+  }
+}
+window.addEventListener('load', ()=> setTimeout(hideLoader, 900));
+setTimeout(hideLoader, 2500); // фолбэк
+
+const winClose = document.getElementById('winClose');
+const winMin = document.getElementById('winMin');
+const winMax = document.getElementById('winMax');
+function callApi(name){
+  if(window.pywebview && window.pywebview.api && window.pywebview.api[name]){
+    window.pywebview.api[name]().catch(()=>{});
+  } else {
+    if(name==='close_window') window.close();
+  }
+}
+if(winClose) winClose.addEventListener('click', ()=> callApi('close_window'));
+if(winMin) winMin.addEventListener('click', ()=> callApi('minimize_window'));
+if(winMax) winMax.addEventListener('click', ()=> callApi('maximize_window'));
+
+// свертывание метрик
+const metricsPanel = document.getElementById('metricsPanel');
+const metricsToggle = document.getElementById('metricsToggle');
+const titlebarSubtitle = document.getElementById('titlebarSubtitle');
+function syncTitlebar(){
+  if(!titlebarSubtitle) return;
+  if(importedName) titlebarSubtitle.textContent = importedName;
+  else if(state && state.optimized) titlebarSubtitle.textContent = 'Оптимизировано · ' + Math.round((state.currentRelief||0.4)*100) + '%';
+  else titlebarSubtitle.textContent = 'Полотно пусто';
+}
+if(metricsToggle && metricsPanel){
+  metricsToggle.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const collapsed = metricsPanel.classList.toggle('collapsed');
+    metricsToggle.textContent = collapsed ? '+' : '−';
+    metricsToggle.title = collapsed ? 'Развернуть' : 'Свернуть';
+  });
+}
+
 // ——— тосты ———
 const toastEl = document.getElementById('toast');
 function showToast(msg) {
@@ -40,6 +84,7 @@ function getCurrentWeightBefore() {
   return Math.round(vol * dens);
 }
 function updateMetrics() {
+  if(typeof syncTitlebar==='function') try{ syncTitlebar(); }catch(e){}
   // E2: нельзя показывать вес/σ до выбора единиц — иначе мусор
   const unitsOk = !!state.units;
   const beforeEl = document.getElementById('weightBefore');

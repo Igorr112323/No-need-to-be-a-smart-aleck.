@@ -381,6 +381,44 @@ class Api:
                 return {'ok': True}
         return {'error': 'Не найдено'}
 
+    # —— управление окном (frameless) ——
+    def minimize_window(self):
+        try:
+            import webview
+            if webview.windows:
+                webview.windows[0].minimize()
+            return {'ok': True}
+        except Exception as e:
+            return {'error': str(e)}
+
+    def maximize_window(self):
+        try:
+            import webview
+            if webview.windows:
+                w = webview.windows[0]
+                try:
+                    # toggle: if maximized → restore
+                    if getattr(w, '_is_maximized', False):
+                        w.restore()
+                        w._is_maximized = False
+                    else:
+                        w.maximize()
+                        w._is_maximized = True
+                except Exception:
+                    w.maximize()
+            return {'ok': True}
+        except Exception as e:
+            return {'error': str(e)}
+
+    def close_window(self):
+        try:
+            import webview
+            if webview.windows:
+                webview.windows[0].destroy()
+            return {'ok': True}
+        except Exception as e:
+            return {'error': str(e)}
+
 
 def main():
     # двойной запуск из exe не открывает второе окно — только один инстанс

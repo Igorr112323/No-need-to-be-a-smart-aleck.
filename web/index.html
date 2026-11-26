@@ -15,6 +15,30 @@
   </script>
 </head>
 <body>
+  <!-- Экран загрузки -->
+  <div id="appLoader" class="app-loader" aria-hidden="true">
+    <div class="loader-card">
+      <div class="loader-logo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L19.5 8.5V15.5L12 21L4.5 15.5V8.5L12 3Z" /><path d="M4.5 8.5L12 13L19.5 8.5" /><path d="M12 13V21" /></svg>
+      </div>
+      <div class="loader-title">OpenLight</div>
+      <div class="loader-sub">Загрузка ядра 86/100…</div>
+      <div class="loader-bar"><span class="loader-fill"></span></div>
+      <div class="loader-dots"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <!-- Титул-бар для frameless окна -->
+  <div class="titlebar" id="titlebar">
+    <div class="traffic" aria-label="Управление окном">
+      <button class="win-dot close" id="winClose" title="Закрыть" aria-label="Закрыть"></button>
+      <button class="win-dot minimize" id="winMin" title="Свернуть" aria-label="Свернуть"></button>
+      <button class="win-dot maximize" id="winMax" title="Развернуть" aria-label="Развернуть"></button>
+    </div>
+    <div class="titlebar-title">OpenLight — <span id="titlebarSubtitle">Полотно пусто</span></div>
+    <div class="titlebar-spacer" aria-hidden="true"></div>
+  </div>
+
   <canvas id="scene" tabindex="0"></canvas>
 
   <div class="top-left">
@@ -92,10 +116,15 @@
     </button>
   </nav>
 
-  <div class="bottom-right" role="status" aria-live="polite">
-    <div class="metrics-label"><span class="metrics-dot"></span> Метрики</div>
-    <div class="metrics-row"><span class="muted">Вес:</span> <strong id="weightBefore">412 г</strong> <span class="muted">→</span> <strong id="weightAfter">—</strong> <span class="muted">· Экономия: <span id="economy">—</span></span></div>
-    <div class="metrics-row" style="margin-top:4px"><span class="muted">Запас прочности:</span> <strong id="safety">—</strong></div>
+  <div class="bottom-right" role="status" aria-live="polite" id="metricsPanel">
+    <div class="metrics-header">
+      <div class="metrics-label"><span class="metrics-dot"></span> Метрики</div>
+      <button class="metrics-toggle" id="metricsToggle" title="Свернуть/развернуть" aria-label="Свернуть">−</button>
+    </div>
+    <div class="metrics-body" id="metricsBody">
+      <div class="metrics-row"><span class="muted">Вес:</span> <strong id="weightBefore">412 г</strong> <span class="muted">→</span> <strong id="weightAfter">—</strong> <span class="muted">· Экономия: <span id="economy">—</span></span></div>
+      <div class="metrics-row" style="margin-top:4px"><span class="muted">Запас прочности:</span> <strong id="safety">—</strong></div>
+    </div>
   </div>
 
   <div id="toast" class="toast" role="status"></div>
