@@ -191,20 +191,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release view "${{ github.ref_name }}" --json tagName > /dev/null 2>&1 && echo "release exists" || {
+          gh release view "${{ github.ref_name }}" --repo "${{ github.repository }}" --json tagName > /dev/null 2>&1 && echo "release exists" || {
             echo "creating release ${{ github.ref_name }}"
             printf '%s\n' "OpenLight 1.0.0 — бесплатный Windows .exe для умного облегчения 3D-деталей, офлайн." "" "**Что есть:**" "- Ядро МКЭ/SIMP: корпус 86/100 (16³→32³ 120с, ≥85% пройден), эталон балки ошибка 1.8%, MBB 60×20×1 16ит 49% 21.4с, Кирш Kt ошибка 2.5%, CalculiX cross-check 4.2% — все измерено, см. docs/CORPUS_REPORT.md, docs/VERIFICATION.md, ccx_report.md" "- Бесплатно для всех, без подписок/ключей/триалов; офлайн после vendor.py; Windows 10/11 x64 WebView2" "- STL/OBJ импорт, материал сталь/alu/PLA (PLA ортотропная), 3 случая нагрузки, единицы мм/см/дюймы, проект .olight.json" "" "**Чего нет:**" "- STEP — заглушка v1.1 (OCCT); buckling/потеря устойчивости, усталость, контактная задача, пластическое течение — не моделируется" "- Инженерная пригодность — оценочная, подтверждать независимым расчётом/испытанием" "" "См. README, docs/KNOWN_LIMITATIONS.md, LICENSE MIT. Версия из VERSION (git describe --tags, без хардкода), OpenLight.exe --selftest → OpenLight 1.0.0." > /tmp/notes.md
-            gh release create "${{ github.ref_name }}" --title "${{ github.ref_name }}" --notes-file /tmp/notes.md
+            gh release create "${{ github.ref_name }}" --repo "${{ github.repository }}" --title "${{ github.ref_name }}" --notes-file /tmp/notes.md
           }
       - name: Upload to Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload "${{ github.ref_name }}" ./out/OpenLight.exe --clobber
+          gh release upload "${{ github.ref_name }}" ./out/OpenLight.exe --clobber --repo "${{ github.repository }}"
       - name: Verify
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release view "${{ github.ref_name }}" --json assets --jq '.assets[].name' | tee /tmp/assets.txt
+          gh release view "${{ github.ref_name }}" --repo "${{ github.repository }}" --json assets --jq '.assets[].name' | tee /tmp/assets.txt
           grep -q OpenLight /tmp/assets.txt || { echo "Upload not found"; cat /tmp/assets.txt; exit 1; }
           echo "Release OK"
