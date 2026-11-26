@@ -1,5 +1,1373 @@
 [
   {
+    "file": "alligator.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/alligator.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "108a1f4319e4a069b2bfbee3b5f278551501d75c473bb705c62e2bef872ad544",
+    "category": "organic",
+    "notes": "alligator.obj"
+  },
+  {
+    "file": "armadillo.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/armadillo.obj",
+    "origin": "external",
+    "license": "CC0 (Stanford)",
+    "sha256": "d2fd040334c12b16804fbcb9962391232cc24708244617f931baaa871210563e",
+    "category": "organic",
+    "notes": "armadillo.obj"
+  },
+  {
+    "file": "beast.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beast.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "74c5fecd883b761bc1b2bb6c82fe94d3b3b450297ab561e83c0e63c7ed46abe8",
+    "category": "organic",
+    "notes": "beast.obj"
+  },
+  {
+    "file": "beetle-alt.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle-alt.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "4528700590e20363b27e8ab77a4af6199a59b94ab6b849c9ba5a4a36f7c5b8cd",
+    "category": "housing",
+    "notes": "beetle-alt.obj"
+  },
+  {
+    "file": "beetle.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "46ee9dcbec84b8d1b8f0d743ab1c91b1ed81378672fc0516e7afff5172d7c9b7",
+    "category": "housing",
+    "notes": "beetle.obj"
+  },
+  {
+    "file": "bimba.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/bimba.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "5e2beb15d8f5852383eb44a95f227097e3037b2e7a3e3ea1494931fd7c3b1e72",
+    "category": "organic",
+    "notes": "bimba.obj"
+  },
+  {
+    "file": "cow.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/cow.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "69afce548640bc2beb0c44894d1a24d5766cc9cd3fd74f3ec55b4e229104b23f",
+    "category": "organic",
+    "notes": "cow.obj"
+  },
+  {
+    "file": "fandisk.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/fandisk.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "ea5bab2fbf545b1915f0d9faf6cc61ff8c18e0d8174ad61f8e35de15d8f6e3f8",
+    "category": "bracket",
+    "notes": "fandisk.obj"
+  },
+  {
+    "file": "gen_bracket_42_0000.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "72b457e85b86bf9b1186b0eff0cdf783cf8c70a06d44ed9a204f1069e05f7561",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 0"
+  },
+  {
+    "file": "gen_bracket_42_0001.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8385509a9cd001056bc6db8bcbb5e0e1bd4754228f2ba6dd8370e83eb75db312",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 1"
+  },
+  {
+    "file": "gen_bracket_42_0002.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3a8c3db040494a35e43030a6128f0b4d8f726db7f4781a1fd29c94a1d0f029f7",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 2"
+  },
+  {
+    "file": "gen_bracket_42_0003.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7ba7793c02ea2408c535abdc016cbac9bc490fa6ba1385686bf3e5ae599c627e",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 3"
+  },
+  {
+    "file": "gen_bracket_42_0004.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a33821e223f5b95f6a946132f766391dbeb564c02155e5c8bc72bfd4d418cf56",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 4"
+  },
+  {
+    "file": "gen_bracket_42_0005.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8078a23ff6cd5318b6efb0baa0ce51f1a6f9b6eee3d226a064f7c98c95772668",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 5"
+  },
+  {
+    "file": "gen_bracket_42_0006.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b2be11b45ad5f157bf2d7f38b1f45c9cc35eea6ceedaf0b30055b9174d59d0d9",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 6"
+  },
+  {
+    "file": "gen_bracket_42_0007.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "66e2f3f6fe36bd77781b6e4f6cd48f1acc8f605c65c25fdb52e5be6ef1b94388",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 7"
+  },
+  {
+    "file": "gen_bracket_42_0008.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a73cad545f5fa4fbe0389ae39f22fafa97c7f5b3711e7a64818adb1533ab1e7e",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 8"
+  },
+  {
+    "file": "gen_bracket_42_0009.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4dc6b8076ca304434c19a476813c9d1c83aa2305ffad91cb206313c26b60084c",
+    "category": "bracket",
+    "notes": "Процедурный bracket seed 42 idx 9"
+  },
+  {
+    "file": "gen_fork_42_0070.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b78dfd6e51e5b384b0359605c3f2a3cdbb76543e4dfdf5d87d6932277b0ce31d",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 70"
+  },
+  {
+    "file": "gen_fork_42_0071.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ec49a45387c7be55b18d2fd74f1ccbeae3949040779549799d5abb9b3923ed8e",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 71"
+  },
+  {
+    "file": "gen_fork_42_0072.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "457f7a06542fb81865ec9e9363b88213f9c0dec6055ea8c66e52e32db0ab49fc",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 72"
+  },
+  {
+    "file": "gen_fork_42_0073.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8f7c05593a28c90bc5e4b159dbaee381b2f686a7ded82386d739af1982684d64",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 73"
+  },
+  {
+    "file": "gen_fork_42_0074.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "179d780994aa4fa7f0334b6e5ba42cb8bb6e72a8bf1bdd93370a7d6df75b6ba5",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 74"
+  },
+  {
+    "file": "gen_fork_42_0075.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "99640d38df7c2663410737a81edd69eeed3848954e07efe521c4fe50600fdd00",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 75"
+  },
+  {
+    "file": "gen_fork_42_0076.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "21fc6421999d92a62448c9727f674897ed7175b6da2c66293e4c084be415457e",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 76"
+  },
+  {
+    "file": "gen_fork_42_0077.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "db338b7c4c9989d62ae99390c79ec2962fa5fc9aba74e1e1483a74a49878fcfd",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 77"
+  },
+  {
+    "file": "gen_fork_42_0078.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cbf67e548056d297151bbf16aa508bb2dbf4f460abcf96df18b7107e43f9d3aa",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 78"
+  },
+  {
+    "file": "gen_fork_42_0079.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "015094adeb55d47b8a7930932ff12848b35d6275a13f26b6841c74e3af28a304",
+    "category": "fork",
+    "notes": "Процедурный fork seed 42 idx 79"
+  },
+  {
+    "file": "gen_gear_n_42_0050.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e2037207dba4c4cd04ffe8ba65635e2a4c9cefb59b479833572576324f187445",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 50"
+  },
+  {
+    "file": "gen_gear_n_42_0051.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "93c06db3c350dba918ca9fbdacc661bc22ea5b2888a70c4ec91c75e5666e2aa0",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 51"
+  },
+  {
+    "file": "gen_gear_n_42_0052.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6d8bb2ef7da959a6fa15c008a99c8fe709050b4c3682a3fecededb2af03b711e",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 52"
+  },
+  {
+    "file": "gen_gear_n_42_0053.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "16bc195336b6768b0924af0bc7dc69af2729e04ec88ad16a41c4143e33957ce7",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 53"
+  },
+  {
+    "file": "gen_gear_n_42_0054.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "88e2758322e8d67fb4a482dd536b7ef5734e0564577c8455c4a4fb60695844ce",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 54"
+  },
+  {
+    "file": "gen_gear_n_42_0055.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a8307c5752ccce3d135482a2d678a205e82d613414f26e00bac64ce667f33a20",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 55"
+  },
+  {
+    "file": "gen_gear_n_42_0056.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "402bbd635e2860910cf96059b2e8480d04a124aa373ec2d7e27e88acd5be55c0",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 56"
+  },
+  {
+    "file": "gen_gear_n_42_0057.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5f22b29c83fb946d08156816c6ffea76ac2a20563cfa29a1c5dc201375f4375f",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 57"
+  },
+  {
+    "file": "gen_gear_n_42_0058.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a608909cf618b9107e2156be305ebfe6e642a7765506667c4a4964be9a6def04",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 58"
+  },
+  {
+    "file": "gen_gear_n_42_0059.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6495e9479d222649edeee342d696487814c9cd0e725bb2ae0c51ef94130a9734",
+    "category": "gear_n",
+    "notes": "Процедурный gear_n seed 42 idx 59"
+  },
+  {
+    "file": "gen_hinge_42_0040.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "42ac600d1f51e51d8f1d11fff317b7ca0a7764e7bba8b75e02dde345e43e516d",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 40"
+  },
+  {
+    "file": "gen_hinge_42_0041.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "96b97528827c7f6ee83ec7bacccedfd561865b4893f3820086b3044de80f12b1",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 41"
+  },
+  {
+    "file": "gen_hinge_42_0042.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0ec7d2b8fd3eba3db45197fe776d69c885f1b9a58c7164a1c8f7f1d01ae5a681",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 42"
+  },
+  {
+    "file": "gen_hinge_42_0043.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c652e7fe95a2fe1441f60e95565745b03ea4efcf4565fdbebcf657ebfc27d228",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 43"
+  },
+  {
+    "file": "gen_hinge_42_0044.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a1afc39e84c3b1c6e0a73e0d14ff6eaaec35201d70883d29f488e355f69d1820",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 44"
+  },
+  {
+    "file": "gen_hinge_42_0045.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "61a71ddf848249de5aca4bc2ca936aec69762b5559dcaee460cead0af3015243",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 45"
+  },
+  {
+    "file": "gen_hinge_42_0046.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "5cf2c66463e2687d2df040cb47b1f5971c145d03338477a6937a8e60d3e8141d",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 46"
+  },
+  {
+    "file": "gen_hinge_42_0047.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "76547a4f16d42118ea5e1e0fd2effa1e3218b28164b93882bc94fe31fed93e38",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 47"
+  },
+  {
+    "file": "gen_hinge_42_0048.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "f0c954670fb7862e464d80ec04c83577a478140b01afa383a54b33dbab077d3e",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 48"
+  },
+  {
+    "file": "gen_hinge_42_0049.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c97625cf6d10138cd7eae03f00cca4b70e0cf716288506b2962fe416b49c37b1",
+    "category": "hinge",
+    "notes": "Процедурный hinge seed 42 idx 49"
+  },
+  {
+    "file": "gen_housing_box_42_0020.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "eb89912e5fe69d2516b07eeb235e2f545d5c0bbcd4164acec4f0b940afac4993",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 20"
+  },
+  {
+    "file": "gen_housing_box_42_0021.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "32fefe491e3b47d8b80f4636798b94b641126a06e3ebef765d9d693f8df94880",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 21"
+  },
+  {
+    "file": "gen_housing_box_42_0022.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "eb074ae53dcb8ed52a37db8ed7f7ba8b2db5202c54baba44dbfda626fa5a6c53",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 22"
+  },
+  {
+    "file": "gen_housing_box_42_0023.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c5b7c2224314c7b34619ce9b81fcf32c99248cf8f580301da0a07149a2e1eedf",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 23"
+  },
+  {
+    "file": "gen_housing_box_42_0024.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "19292742328779c33365f7e96a7a5fdc8ea2c4b82e1f015d810da5995948890b",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 24"
+  },
+  {
+    "file": "gen_housing_box_42_0025.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "ae65d4714fe0828587b17fa9ef71b5be96ed517e0ce11eac0f58c05bcd906775",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 25"
+  },
+  {
+    "file": "gen_housing_box_42_0026.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "1aa720598f47509f6deee71eb784cafcf448bd9b26a0ff7a8fc2802dd356135b",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 26"
+  },
+  {
+    "file": "gen_housing_box_42_0027.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "45bb373c1dc75130978e4d589dfa7d4c7177b0077c169cef2b08626a606587df",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 27"
+  },
+  {
+    "file": "gen_housing_box_42_0028.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cac7de10292c605da520e8acd5c1a68ee17ccb953e9a4b5c7bd41ad8400dfda4",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 28"
+  },
+  {
+    "file": "gen_housing_box_42_0029.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "b4c1d1cf1e3f4ab8a60ad281ee7fd8f5cc6381e5708c3fae63516b28eb197084",
+    "category": "housing_box",
+    "notes": "Процедурный housing_box seed 42 idx 29"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0010.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "06ad78637fb4c79d97405ef78e236028e3b8a03e76ae7afe840d8752599871ff",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 10"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0011.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7f40d9ce5070ed56b8d0ba87c20ebeb9e3992c736cb74846bf2eb3f20ce6a443",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 11"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0012.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3e610cedcfb01b3b4c3e95c409cdec61d94afead8753fc581557864f469eecc5",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 12"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0013.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "4704630ca0fc22be187b8086a0bd91d83229183b92edf3ba53dc053cb29a61f5",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 13"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0014.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "41f1eeb65f0b1d90313a06652aa832171974e0d61774ce49668ea58dc56acf30",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 14"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0015.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "19b14f2234eb59eac4de0535a5000e9c3db5b5d75f277a858a9061c58cf440a0",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 15"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0016.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "9704fa793141fcc5abf952892971407afde9b8406578a6043fee094586becf56",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 16"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0017.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "cf2d96b18070ab5d7eadbe1b505b6b100b5bb4c2fefe8ac302174cc76261104d",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 17"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0018.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d94c1b0d72860cf7656946af8322c0fa2edcd0edce3967168b1d2dbd9b862ff3",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 18"
+  },
+  {
+    "file": "gen_plate-with-holes_42_0019.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "3a1551f49417b2fa5e7537179e6fc25131db969185076b129b82d0d6b0953152",
+    "category": "plate-with-holes",
+    "notes": "Процедурный plate-with-holes seed 42 idx 19"
+  },
+  {
+    "file": "gen_rib_42_0080.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "320a10d9ad685a577d4e820cab37e0d3bb2e6d61c76ea637183b3124810d8c47",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 80"
+  },
+  {
+    "file": "gen_rib_42_0081.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "241a54be0e1d1ead103781bbc9b7b1619249692a17f282b18e525ca248a53976",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 81"
+  },
+  {
+    "file": "gen_rib_42_0082.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a8efd1d75d1e12d78ba10a629b77c56b0b7fe964813e1f5e78970bef6067bae3",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 82"
+  },
+  {
+    "file": "gen_rib_42_0083.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0b168159af45f30683e1fbde21ddf75afe2dafa2f592b20c859c356651283ca9",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 83"
+  },
+  {
+    "file": "gen_rib_42_0084.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "10b0dc7403d47470883dc140b14e86c7dfe70b4305ad9c7ce4a0eab69568f632",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 84"
+  },
+  {
+    "file": "gen_rib_42_0085.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a7941aec4048c85635811efb6d8540d224f6e76591830be6903ede7ba4a49b21",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 85"
+  },
+  {
+    "file": "gen_rib_42_0086.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8d6bbc14649e57a31dd13ffafbc911cb95a2db3d7c3b6f1d9a7505f785458427",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 86"
+  },
+  {
+    "file": "gen_rib_42_0087.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "2b1434ff68bf514694cdd13171046dab2e8208f2e3ec34c3424ad4626fd8e9b1",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 87"
+  },
+  {
+    "file": "gen_rib_42_0088.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7f1b364c0dd89d041d6ecb6058e5155888cc7ef533df016b408806a997247211",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 88"
+  },
+  {
+    "file": "gen_rib_42_0089.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8014c41f2fd2726a66ac5d079ca2076f586b9bee445c6c4a7eb5f49881f2bb3a",
+    "category": "rib",
+    "notes": "Процедурный rib seed 42 idx 89"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0060.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8a5a9d92bb573dc9498d23a60fc50ec48ab3490f6b124b07e5cb8f3c16de4f46",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 60"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0061.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "a8eb2a3fe42df93d343f9eca2abeeebf7114f49dc156aa77185a5e21c632cee5",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 61"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0062.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "784f11469d548b0ed1d823015f35ab40c74feb71e2acbc6f075ccedc8da96775",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 62"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0063.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "fedbdd763dc39c4b49e560287ed92b4218b7cc7c55d420c004fead91a2620a33",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 63"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0064.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "02e02fe1cbae8d40bbe59808a368ebd1acfb0361bae83ba87b41e5b4f86a3a1f",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 64"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0065.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "77e51e60ea5a82fc7fc51cb5dad646a6aa3e26de4a270c839f0bffe8efbf5ed5",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 65"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0066.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "0bb47e29db8a9f7bfd2547c7743c4ae82230dcae19e1be270b50c1e90093d407",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 66"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0067.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "dbc186a7c2b4284eba0c16eeabf292f381b27c77558bc59874ea6690512f3ef8",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 67"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0068.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "9a5c987bb817d93545b216e1bbc5a3339e7d940a669aa76fc9051d6a8297ae3e",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 68"
+  },
+  {
+    "file": "gen_thinwall_panel_42_0069.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "87a967e1f3cb82d4105d653d97a680597691ce205849c2b914b03790d08cffaa",
+    "category": "thinwall_panel",
+    "notes": "Процедурный thinwall_panel seed 42 idx 69"
+  },
+  {
+    "file": "gen_uav_arm_42_0030.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "8bbfef5cf11589ce7f846c8a0981ef900a2e5d864eb61b31a94c52cb83004266",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 30"
+  },
+  {
+    "file": "gen_uav_arm_42_0031.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "083795bb3ae69822659bcd394ff51ba1917507426088beb6fe72835d55905a63",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 31"
+  },
+  {
+    "file": "gen_uav_arm_42_0032.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "85acf10a2844ca28fcad0ebcd90c3c265203281e696102f4589c4db5fde9596a",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 32"
+  },
+  {
+    "file": "gen_uav_arm_42_0033.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "7845afb7a05fce37f4c14715c75afaf21882a2983e43b65f33a228e973f1e4c4",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 33"
+  },
+  {
+    "file": "gen_uav_arm_42_0034.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "d5c9718e9206d85686473a2f22c5e032068280b7fb1ba446148d76a7342de9a7",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 34"
+  },
+  {
+    "file": "gen_uav_arm_42_0035.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "e2b3ff90c64cb38134a486914fc5d80b3407ad91f3b6a4d23e8cd24063f81dc9",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 35"
+  },
+  {
+    "file": "gen_uav_arm_42_0036.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "786c7996b86c4cc270e600e6dac3e9fb1271d72b7f17ee75357bd5984f9525be",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 36"
+  },
+  {
+    "file": "gen_uav_arm_42_0037.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6aa2a9a06c232946ad292d6ca74706a443dd7584e72fa36ab2122596139e208f",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 37"
+  },
+  {
+    "file": "gen_uav_arm_42_0038.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "6665525f391ebd1664559d8479d325bb8d7d1db031b8a0a9e20235f577c2e2c0",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 38"
+  },
+  {
+    "file": "gen_uav_arm_42_0039.stl",
+    "source_url": "generated-procedural (tools/gen_corpus.py)",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "c3746df4b2ed1d0a6b0bbd4422abcd8cb12f5a53b603688a0d42e887bcbed379",
+    "category": "uav_arm",
+    "notes": "Процедурный uav_arm seed 42 idx 39"
+  },
+  {
+    "file": "happy.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/happy.obj",
+    "origin": "external",
+    "license": "CC0 (Stanford)",
+    "sha256": "8ce5a4a7161efd97dabc8eeb281824fac1b17c9ba2cb0c2c6f350cd05982058c",
+    "category": "organic",
+    "notes": "happy.obj"
+  },
+  {
+    "file": "homer.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/homer.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "b20b1391fd62964f65703d748514d86d747d1202d38e55e0f1addac7a5a10e8b",
+    "category": "organic",
+    "notes": "homer.obj"
+  },
+  {
+    "file": "nasa_chandra_x_ray_observatory_chandra_panel_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Chandra%20X-ray%20Observatory/Chandra%20panel.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "2c24524d43fe8c85ec691ff6cc9be1e367638cba10c6d0786bca9fa6ce68e07b",
+    "category": "housing",
+    "notes": "Chandra X-ray Observatory / Chandra panel.stl"
+  },
+  {
+    "file": "nasa_chandra_x_ray_observatory_chandra_top_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Chandra%20X-ray%20Observatory/Chandra%20top.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e6919eecfd59eab95ec3878a4ac5d425ad688d0857dd6ba0d05930abfffac1be",
+    "category": "housing",
+    "notes": "Chandra X-ray Observatory / Chandra top.stl"
+  },
+  {
+    "file": "nasa_cyclone_global_navigation_satellite_system_cygnss_cyclone_global_navigation.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Cyclone%20Global%20Navigation%20Satellite%20System%20(CYGNSS)/Cyclone%20Global%20Navigation%20Satellite%20System%20(CYGNSS).stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "a6debe3c9af320cbfc202f6abf47d0198f32fb311a0b2e2b62126a101ff335e2",
+    "category": "housing",
+    "notes": "Cyclone Global Navigation Satellite System (CYGNSS) / Cyclone Global Navigation Satellite System (CYGNSS).stl"
+  },
+  {
+    "file": "nasa_explorer_1_03_connector_abs_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Explorer%201/03_connector_ABS.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "1a5de1e6b2292591f49c05bd306e221207a3fbe51150b8d81e22af8174cf2eb1",
+    "category": "housing",
+    "notes": "Explorer 1 / 03_connector_ABS.stl"
+  },
+  {
+    "file": "nasa_explorer_1_03_connector_pla_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Explorer%201/03_connector_PLA.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "14e7b6a4a45442a4d53dbdbf8ac6dafe078d9928aecfe3cff74d4c674b8ccf90",
+    "category": "housing",
+    "notes": "Explorer 1 / 03_connector_PLA.stl"
+  },
+  {
+    "file": "nasa_galileo_galileo_probe_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Galileo/Galileo%20probe.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "90797ec22d16d13af65d170622f78f5226dc8b5e0b8c9e681b320c2db7714765",
+    "category": "housing",
+    "notes": "Galileo / Galileo probe.stl"
+  },
+  {
+    "file": "nasa_hubble_25th_anniversary_model_base_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%2025th%20Anniversary%20Model/Base.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "2259dd77ac372634fbe3b69063395f8882082da3c4c620b1d59d14cae9b743b0",
+    "category": "housing",
+    "notes": "Hubble 25th Anniversary Model / Base.stl"
+  },
+  {
+    "file": "nasa_hubble_space_telescope_base_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Base.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e4894e4ce7c6319a06d851e2ff9bc23a73f25c0a5dbb00b811d4bae58ef52de9",
+    "category": "housing",
+    "notes": "Hubble Space Telescope / Base.stl"
+  },
+  {
+    "file": "nasa_hubble_space_telescope_radio_dishes_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Radio%20dishes.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "ca16ec95062e89e4f7760834631d7214abdf01919cbda360f85e78d0d8c9d346",
+    "category": "housing",
+    "notes": "Hubble Space Telescope / Radio dishes.stl"
+  },
+  {
+    "file": "nasa_hubble_space_telescope_solar_panels_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Solar%20panels.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "51cb49a2dff8560fdea186ffe80862426f8d588ec5fc59e37903aeba25c0a611",
+    "category": "housing",
+    "notes": "Hubble Space Telescope / Solar panels.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_001_ftc_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/001%20-%20FTC.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "565fa60813281e482a57052c878c4b94d847937100caf62e9aecbbe0ce5b4608",
+    "category": "housing",
+    "notes": "International Space Station Tools / 001 - FTC.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_003_column_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/003%20-%20Column.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "83ce68809f242c77e011d26044c05ea65d4db3c6f2b0fd4bee80135b7ecc9c03",
+    "category": "housing",
+    "notes": "International Space Station Tools / 003 - Column.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_004_tensile_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/004%20-%20Tensile.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "6ff8ed24307898095f075f0792fe6e02115e4b8ea432e62e078d04e32ce18591",
+    "category": "housing",
+    "notes": "International Space Station Tools / 004 - Tensile.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_005_compression_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/005%20-%20Compression.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "47c3069f35d93f31905a55e05b09db206eb4498676463c81b9bc3ee4ef63b77b",
+    "category": "housing",
+    "notes": "International Space Station Tools / 005 - Compression.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_006_flexural_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/006%20-%20Flexural.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "24eae9bda7c921d026f3cb40c4d3dbdb3fbd0eeea5b32ccd429633540f33f069",
+    "category": "housing",
+    "notes": "International Space Station Tools / 006 - Flexural.stl"
+  },
+  {
+    "file": "nasa_international_space_station_tools_019_zerog2_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/019%20-%20ZeroG2.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "74a9b968c929bfc0e36e510f43bd255295eeb8380780d5c9abd2dcb24e48f62c",
+    "category": "housing",
+    "notes": "International Space Station Tools / 019 - ZeroG2.stl"
+  },
+  {
+    "file": "nasa_international_sun_earth_explorer_3_rad_antenna_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Sun-Earth%20Explorer-3/Rad%20antenna.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "2138bbf5ef241014d2a3a345204201476ef121e48788c1fd31897f7a4942fd73",
+    "category": "housing",
+    "notes": "International Sun-Earth Explorer-3 / Rad antenna.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_antenna_feed_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Antenna%20Feed.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "9d6cdf7a995d35abcde5b124641031d5d27699e33aa6046497a3555981bd8665",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Antenna Feed.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_base_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Base.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "7cb7ffa4e5987b46a26e8b763c102021cb4af549488e6df7dd4cd69db7883619",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Base.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_arm_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Positioner%20Arm.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "ca2c70f0d1e6d9c798d33a398d10c15f3404836790a66300252fda2f156c90be",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Positioner Arm.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_body_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Positioner%20Body.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "4ae05da4c13928416c91536bb8ad4a975f3b7ee1c615e8a57c313792a87737bf",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Positioner Body.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_a_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Sub-Reflector%20A.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "57e367a73fa81a4241da04445b7c75083a9bec9e07745d4546c50d17069997fc",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Sub-Reflector A.stl"
+  },
+  {
+    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_b_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Sub-Reflector%20B.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e0a841368f260a927f287c477c6f87719c290badb609e8963ba453cc91ed908a",
+    "category": "housing",
+    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Sub-Reflector B.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_charge_management_system_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Charge%20management%20system.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e5a4e7bf104b89051eab84b1f8bc5ab0088d4d2491b1af0583136ad38ea55660",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Charge management system.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_cmd_and_data_handling_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Cmd%20and%20data%20handling.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "d054da59407b21322acbe7a051a450f82c4d53f9b912b381ca3c374d4aa2fa8a",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Cmd and data handling.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_combined_bottom_boxes_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Combined%20bottom%20boxes.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "325ff4ccf1ecf0cd8380044a0655c92e470cca695affec84eee1c769ef579c88",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Combined bottom boxes.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_grs_unit_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/GRS%20unit.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "82447c07ef5699a213d0ddec791ef8f708dd09580dd7c33a22ef46ede4c89efc",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / GRS unit.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_left_side_panel_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Left%20side%20panel.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "06bdbcb005779638938f68c0585f0fa0c313dc785af75d21ea32e39b44945458",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Left side panel.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_lisa_control_electronics_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/LISA%20control%20electronics.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e098ba47c20e2f4e921c866f52f05b0f22cb4381444fe1731990c146591db384",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / LISA control electronics.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_pse_and_battery_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/PSE%20and%20battery.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "bc32001d67e94252a74ed242d2a185057c9dfb9614f1da80290a4c5f10be6d44",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / PSE and battery.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_right_side_panel_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Right%20side%20panel.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "9f87dc23ce8342707a1a846cf4e5111c93955b36db20abb6c1145a20c7246800",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Right side panel.stl"
+  },
+  {
+    "file": "nasa_laser_interferometer_space_antenna_lisa_thruster_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Thruster.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "f56807967e1fa16454c117edcfb5e33aab5b0ea90d8283b9d3b474b0619fc47f",
+    "category": "housing",
+    "notes": "Laser Interferometer Space Antenna (LISA) / Thruster.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_antenna_bottom_01_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/antenna_bottom_01.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "8646e4cb8744a14396851bc619702edb7f4a289861b9ddc62bde52a6449166fc",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / antenna_bottom_01.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_antenna_bottom_02_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/antenna_bottom_02.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "c7ca86217c0e03342356ca9447b2a651ad7ad261e8f732784ec5f0df6e7f14b7",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / antenna_bottom_02.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_solar_panel_l_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/solar%20panel_L.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e93ac639520da0d8cb7b21c022d1a0fdd3a898f9964b5087ce681bf06958ed1e",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / solar panel_L.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_solar_panel_r_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/solar%20panel_R.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "7c745c42cf233c59e0a727903e71f6cfd72d5eaf20afe1ee5d918a0e215c6182",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / solar panel_R.stl"
+  },
+  {
+    "file": "nasa_mars_reconnaissance_orbiter_top_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/top.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "f2a6386a77a276d9bea29feb0b5b2768e55b38c1a0f4188fe3b560c26b5999ad",
+    "category": "housing",
+    "notes": "Mars Reconnaissance Orbiter / top.stl"
+  },
+  {
+    "file": "nasa_saturn_v_rocket_fin_print_4_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20Rocket/fin%20(print%204).stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "89bb87aa90e3cd3e8bba76d177a40219944e6bb020230626bba5c6fd61f6f76e",
+    "category": "housing",
+    "notes": "Saturn V Rocket / fin (print 4).stl"
+  },
+  {
+    "file": "nasa_saturn_v_rocket_s_ic_joining_cube_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20Rocket/S-IC%20joining%20cube.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "66ad879b02f5dc5e96f697a6425808a351ad970077dfe60eb936c657baf649cc",
+    "category": "housing",
+    "notes": "Saturn V Rocket / S-IC joining cube.stl"
+  },
+  {
+    "file": "nasa_saturn_v_stage_2_joining_cube_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20-%20Stage%202/joining%20cube.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "e8f5829e5e073dd30dc0d13559ade738228b3667f990880fba9db9c0a642f1ad",
+    "category": "housing",
+    "notes": "Saturn V - Stage 2 / joining cube.stl"
+  },
+  {
+    "file": "nasa_sofia_instrument_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/SOFIA/Instrument.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "f9ed13e917895e2b4cf63d291685211d691a462bedcf26945741506e0e15f9b5",
+    "category": "housing",
+    "notes": "SOFIA / Instrument.stl"
+  },
+  {
+    "file": "nasa_sofia_telescope_cavity_closed_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/SOFIA/Telescope%20cavity%20closed.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "568ac2b3e00a5965667908b5bd1b7daf2286234a7b78333e69d76fffa8827dfd",
+    "category": "housing",
+    "notes": "SOFIA / Telescope cavity closed.stl"
+  },
+  {
+    "file": "nasa_viking_lander_dish_part_b_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Dish%20part%20B.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "70ac10da7e804c57e291c526a4719adaeaa07b8e68436fd737c61c488faf62e7",
+    "category": "housing",
+    "notes": "Viking Lander / Dish part B.stl"
+  },
+  {
+    "file": "nasa_viking_lander_tool1_a_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool1%20A.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "782a01cb690bceb4f0558ea044958fd1aad7d63de4e1e88d4b72260bb66bcba4",
+    "category": "housing",
+    "notes": "Viking Lander / Tool1 A.stl"
+  },
+  {
+    "file": "nasa_viking_lander_tool1_b_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool1%20B.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "8ce10ce24f79e6ab4ed1162aa2b002d8d4a0c476d2567f0125bcfd8a597be803",
+    "category": "housing",
+    "notes": "Viking Lander / Tool1 B.stl"
+  },
+  {
+    "file": "nasa_viking_lander_tool2_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool2.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "c334499217b5b3f088dcd58550daca7a7490b6f0231914ae32a898eba3fd3939",
+    "category": "housing",
+    "notes": "Viking Lander / Tool2.stl"
+  },
+  {
+    "file": "nasa_voyager_instrument_01_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_01.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "0ede920bb50440f6eca98ffdb8fe5d704fea03d5db50abb358d34eaccdba236c",
+    "category": "housing",
+    "notes": "Voyager / instrument_01.stl"
+  },
+  {
+    "file": "nasa_voyager_instrument_02_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_02.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "75bec8c381edf3ff56c17f33d0d5a68b40efc20512d85829da61ee10ae931559",
+    "category": "housing",
+    "notes": "Voyager / instrument_02.stl"
+  },
+  {
+    "file": "nasa_voyager_instrument_03_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_03.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "526c15ffee165848f1c2de5e3155ef437e1b50d852ecd93bc2869b3a4528be9c",
+    "category": "housing",
+    "notes": "Voyager / instrument_03.stl"
+  },
+  {
+    "file": "nasa_voyager_stand_stl.stl",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/stand.stl",
+    "origin": "external",
+    "license": "Public Domain (NASA 3D Resources)",
+    "sha256": "ab397ef1571e53878f0785c76d523e9263f075ea00978153dba2e2812e40646e",
+    "category": "housing",
+    "notes": "Voyager / stand.stl"
+  },
+  {
+    "file": "nefertiti.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/nefertiti.obj",
+    "origin": "external",
+    "license": "CC0 (Stanford/Thingi10K)",
+    "sha256": "19e39748b145092878cc4faafd050505eb5991c5d3e497be2b4575673fa87968",
+    "category": "organic",
+    "notes": "nefertiti.obj"
+  },
+  {
+    "file": "openlight_bracket_heavy.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "bracket",
+    "notes": "Усиленный кронштейн"
+  },
+  {
     "file": "openlight_bracket_proc.stl",
     "source_url": "generated-procedural",
     "origin": "openlight-proc",
@@ -7,60 +1375,6 @@
     "sha256": "proc-generated",
     "category": "bracket",
     "notes": "Процедурный L-кронштейн OpenLight"
-  },
-  {
-    "file": "openlight_uav_arm.stl",
-    "source_url": "generated-procedural",
-    "origin": "openlight-proc",
-    "license": "MIT (OpenLight)",
-    "sha256": "proc-generated",
-    "category": "uav_bracket",
-    "notes": "Процедурный кронштейн БПЛА"
-  },
-  {
-    "file": "openlight_thin_plate.stl",
-    "source_url": "generated-procedural",
-    "origin": "openlight-proc",
-    "license": "MIT (OpenLight)",
-    "sha256": "proc-generated",
-    "category": "thinwall",
-    "notes": "Тонкая пластина"
-  },
-  {
-    "file": "openlight_gear_12t.stl",
-    "source_url": "generated-procedural",
-    "origin": "openlight-proc",
-    "license": "MIT (OpenLight)",
-    "sha256": "proc-generated",
-    "category": "gear",
-    "notes": "Шестерня 12 зубьев"
-  },
-  {
-    "file": "openlight_housing_box.stl",
-    "source_url": "generated-procedural",
-    "origin": "openlight-proc",
-    "license": "MIT (OpenLight)",
-    "sha256": "proc-generated",
-    "category": "housing",
-    "notes": "Корпус коробка"
-  },
-  {
-    "file": "openlight_hinge_simple.stl",
-    "source_url": "generated-procedural",
-    "origin": "openlight-proc",
-    "license": "MIT (OpenLight)",
-    "sha256": "proc-generated",
-    "category": "hinge",
-    "notes": "Петля простая"
-  },
-  {
-    "file": "openlight_lattice.stl",
-    "source_url": "generated-procedural",
-    "origin": "openlight-proc",
-    "license": "MIT (OpenLight)",
-    "sha256": "proc-generated",
-    "category": "thinwall",
-    "notes": "Решётка"
   },
   {
     "file": "openlight_bracket_v2.stl",
@@ -72,6 +1386,60 @@
     "notes": "Кронштейн v2"
   },
   {
+    "file": "openlight_gear_12t.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "gear",
+    "notes": "Шестерня 12 зубьев"
+  },
+  {
+    "file": "openlight_hinge_simple.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "hinge",
+    "notes": "Петля простая"
+  },
+  {
+    "file": "openlight_housing_box.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "housing",
+    "notes": "Корпус коробка"
+  },
+  {
+    "file": "openlight_lattice.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "thinwall",
+    "notes": "Решётка"
+  },
+  {
+    "file": "openlight_thin_plate.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "thinwall",
+    "notes": "Тонкая пластина"
+  },
+  {
+    "file": "openlight_uav_arm.stl",
+    "source_url": "generated-procedural",
+    "origin": "openlight-proc",
+    "license": "MIT (OpenLight)",
+    "sha256": "proc-generated",
+    "category": "uav_bracket",
+    "notes": "Процедурный кронштейн БПЛА"
+  },
+  {
     "file": "openlight_uav_frame.stl",
     "source_url": "generated-procedural",
     "origin": "openlight-proc",
@@ -81,13 +1449,31 @@
     "notes": "Рама БПЛА"
   },
   {
-    "file": "openlight_bracket_heavy.stl",
-    "source_url": "generated-procedural",
-    "origin": "openlight-proc",
-    "license": "MIT (OpenLight)",
-    "sha256": "proc-generated",
+    "file": "rocker-arm.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/rocker-arm.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "590257e6d01e689354821d807854306c3bfbb02d9cca73404d5a4924f105c287",
     "category": "bracket",
-    "notes": "Усиленный кронштейн"
+    "notes": "rocker-arm.obj"
+  },
+  {
+    "file": "spot.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/spot.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "0738b5e8608fed74e5e8c7aa8dd0af97b4b74f9f6cbf7aac84cd7e40b2e44a75",
+    "category": "organic",
+    "notes": "spot.obj"
+  },
+  {
+    "file": "stanford-bunny.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/stanford-bunny.obj",
+    "origin": "external",
+    "license": "CC0 (Stanford 3D Scan Repository)",
+    "sha256": "1eb35d1e21ce99e5ce911353b6be278990713448dd9e8f5c9387f9de39b32205",
+    "category": "organic",
+    "notes": "stanford-bunny.obj"
   },
   {
     "file": "trimesh_1002_tray_bottom.STL",
@@ -322,581 +1708,5 @@
     "sha256": "9d75b416e33887fd791945c2f1e42696ea1bf252a973b2db7c9626002e210d61",
     "category": "housing",
     "notes": "trimesh_unit_sphere.STL"
-  },
-  {
-    "file": "cow.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/cow.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "69afce548640bc2beb0c44894d1a24d5766cc9cd3fd74f3ec55b4e229104b23f",
-    "category": "organic",
-    "notes": "cow.obj"
-  },
-  {
-    "file": "spot.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/spot.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "0738b5e8608fed74e5e8c7aa8dd0af97b4b74f9f6cbf7aac84cd7e40b2e44a75",
-    "category": "organic",
-    "notes": "spot.obj"
-  },
-  {
-    "file": "stanford-bunny.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/stanford-bunny.obj",
-    "origin": "external",
-    "license": "CC0 (Stanford 3D Scan Repository)",
-    "sha256": "1eb35d1e21ce99e5ce911353b6be278990713448dd9e8f5c9387f9de39b32205",
-    "category": "organic",
-    "notes": "stanford-bunny.obj"
-  },
-  {
-    "file": "nefertiti.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/nefertiti.obj",
-    "origin": "external",
-    "license": "CC0 (Stanford/Thingi10K)",
-    "sha256": "19e39748b145092878cc4faafd050505eb5991c5d3e497be2b4575673fa87968",
-    "category": "organic",
-    "notes": "nefertiti.obj"
-  },
-  {
-    "file": "armadillo.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/armadillo.obj",
-    "origin": "external",
-    "license": "CC0 (Stanford)",
-    "sha256": "d2fd040334c12b16804fbcb9962391232cc24708244617f931baaa871210563e",
-    "category": "organic",
-    "notes": "armadillo.obj"
-  },
-  {
-    "file": "happy.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/happy.obj",
-    "origin": "external",
-    "license": "CC0 (Stanford)",
-    "sha256": "8ce5a4a7161efd97dabc8eeb281824fac1b17c9ba2cb0c2c6f350cd05982058c",
-    "category": "organic",
-    "notes": "happy.obj"
-  },
-  {
-    "file": "alligator.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/alligator.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "108a1f4319e4a069b2bfbee3b5f278551501d75c473bb705c62e2bef872ad544",
-    "category": "organic",
-    "notes": "alligator.obj"
-  },
-  {
-    "file": "homer.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/homer.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "b20b1391fd62964f65703d748514d86d747d1202d38e55e0f1addac7a5a10e8b",
-    "category": "organic",
-    "notes": "homer.obj"
-  },
-  {
-    "file": "beast.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beast.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "74c5fecd883b761bc1b2bb6c82fe94d3b3b450297ab561e83c0e63c7ed46abe8",
-    "category": "organic",
-    "notes": "beast.obj"
-  },
-  {
-    "file": "bimba.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/bimba.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "5e2beb15d8f5852383eb44a95f227097e3037b2e7a3e3ea1494931fd7c3b1e72",
-    "category": "organic",
-    "notes": "bimba.obj"
-  },
-  {
-    "file": "fandisk.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/fandisk.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "ea5bab2fbf545b1915f0d9faf6cc61ff8c18e0d8174ad61f8e35de15d8f6e3f8",
-    "category": "bracket",
-    "notes": "fandisk.obj"
-  },
-  {
-    "file": "rocker-arm.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/rocker-arm.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "590257e6d01e689354821d807854306c3bfbb02d9cca73404d5a4924f105c287",
-    "category": "bracket",
-    "notes": "rocker-arm.obj"
-  },
-  {
-    "file": "beetle.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "46ee9dcbec84b8d1b8f0d743ab1c91b1ed81378672fc0516e7afff5172d7c9b7",
-    "category": "housing",
-    "notes": "beetle.obj"
-  },
-  {
-    "file": "beetle-alt.obj",
-    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/beetle-alt.obj",
-    "origin": "external",
-    "license": "MIT (common-3d-test-models)",
-    "sha256": "4528700590e20363b27e8ab77a4af6199a59b94ab6b849c9ba5a4a36f7c5b8cd",
-    "category": "housing",
-    "notes": "beetle-alt.obj"
-  },
-  {
-    "file": "nasa_international_space_station_tools_003_column_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/003%20-%20Column.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "83ce68809f242c77e011d26044c05ea65d4db3c6f2b0fd4bee80135b7ecc9c03",
-    "category": "housing",
-    "notes": "International Space Station Tools / 003 - Column.stl"
-  },
-  {
-    "file": "nasa_international_space_station_tools_006_flexural_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/006%20-%20Flexural.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "24eae9bda7c921d026f3cb40c4d3dbdb3fbd0eeea5b32ccd429633540f33f069",
-    "category": "housing",
-    "notes": "International Space Station Tools / 006 - Flexural.stl"
-  },
-  {
-    "file": "nasa_saturn_v_stage_2_joining_cube_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20-%20Stage%202/joining%20cube.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "e8f5829e5e073dd30dc0d13559ade738228b3667f990880fba9db9c0a642f1ad",
-    "category": "housing",
-    "notes": "Saturn V - Stage 2 / joining cube.stl"
-  },
-  {
-    "file": "nasa_saturn_v_rocket_s_ic_joining_cube_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20Rocket/S-IC%20joining%20cube.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "66ad879b02f5dc5e96f697a6425808a351ad970077dfe60eb936c657baf649cc",
-    "category": "housing",
-    "notes": "Saturn V Rocket / S-IC joining cube.stl"
-  },
-  {
-    "file": "nasa_explorer_1_03_connector_abs_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Explorer%201/03_connector_ABS.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "1a5de1e6b2292591f49c05bd306e221207a3fbe51150b8d81e22af8174cf2eb1",
-    "category": "housing",
-    "notes": "Explorer 1 / 03_connector_ABS.stl"
-  },
-  {
-    "file": "nasa_explorer_1_03_connector_pla_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Explorer%201/03_connector_PLA.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "14e7b6a4a45442a4d53dbdbf8ac6dafe078d9928aecfe3cff74d4c674b8ccf90",
-    "category": "housing",
-    "notes": "Explorer 1 / 03_connector_PLA.stl"
-  },
-  {
-    "file": "nasa_saturn_v_rocket_fin_print_4_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Saturn%20V%20Rocket/fin%20(print%204).stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "89bb87aa90e3cd3e8bba76d177a40219944e6bb020230626bba5c6fd61f6f76e",
-    "category": "housing",
-    "notes": "Saturn V Rocket / fin (print 4).stl"
-  },
-  {
-    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_a_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Sub-Reflector%20A.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "57e367a73fa81a4241da04445b7c75083a9bec9e07745d4546c50d17069997fc",
-    "category": "housing",
-    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Sub-Reflector A.stl"
-  },
-  {
-    "file": "nasa_laser_interferometer_space_antenna_lisa_pse_and_battery_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/PSE%20and%20battery.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "bc32001d67e94252a74ed242d2a185057c9dfb9614f1da80290a4c5f10be6d44",
-    "category": "housing",
-    "notes": "Laser Interferometer Space Antenna (LISA) / PSE and battery.stl"
-  },
-  {
-    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_sub_reflector_b_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Sub-Reflector%20B.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "e0a841368f260a927f287c477c6f87719c290badb609e8963ba453cc91ed908a",
-    "category": "housing",
-    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Sub-Reflector B.stl"
-  },
-  {
-    "file": "nasa_laser_interferometer_space_antenna_lisa_left_side_panel_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Left%20side%20panel.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "06bdbcb005779638938f68c0585f0fa0c313dc785af75d21ea32e39b44945458",
-    "category": "housing",
-    "notes": "Laser Interferometer Space Antenna (LISA) / Left side panel.stl"
-  },
-  {
-    "file": "nasa_laser_interferometer_space_antenna_lisa_right_side_panel_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Right%20side%20panel.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "9f87dc23ce8342707a1a846cf4e5111c93955b36db20abb6c1145a20c7246800",
-    "category": "housing",
-    "notes": "Laser Interferometer Space Antenna (LISA) / Right side panel.stl"
-  },
-  {
-    "file": "nasa_international_space_station_tools_019_zerog2_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/019%20-%20ZeroG2.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "74a9b968c929bfc0e36e510f43bd255295eeb8380780d5c9abd2dcb24e48f62c",
-    "category": "housing",
-    "notes": "International Space Station Tools / 019 - ZeroG2.stl"
-  },
-  {
-    "file": "nasa_voyager_instrument_01_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_01.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "0ede920bb50440f6eca98ffdb8fe5d704fea03d5db50abb358d34eaccdba236c",
-    "category": "housing",
-    "notes": "Voyager / instrument_01.stl"
-  },
-  {
-    "file": "nasa_voyager_instrument_02_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_02.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "75bec8c381edf3ff56c17f33d0d5a68b40efc20512d85829da61ee10ae931559",
-    "category": "housing",
-    "notes": "Voyager / instrument_02.stl"
-  },
-  {
-    "file": "nasa_sofia_telescope_cavity_closed_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/SOFIA/Telescope%20cavity%20closed.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "568ac2b3e00a5965667908b5bd1b7daf2286234a7b78333e69d76fffa8827dfd",
-    "category": "housing",
-    "notes": "SOFIA / Telescope cavity closed.stl"
-  },
-  {
-    "file": "nasa_voyager_instrument_03_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/instrument_03.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "526c15ffee165848f1c2de5e3155ef437e1b50d852ecd93bc2869b3a4528be9c",
-    "category": "housing",
-    "notes": "Voyager / instrument_03.stl"
-  },
-  {
-    "file": "nasa_laser_interferometer_space_antenna_lisa_combined_bottom_boxes_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Combined%20bottom%20boxes.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "325ff4ccf1ecf0cd8380044a0655c92e470cca695affec84eee1c769ef579c88",
-    "category": "housing",
-    "notes": "Laser Interferometer Space Antenna (LISA) / Combined bottom boxes.stl"
-  },
-  {
-    "file": "nasa_viking_lander_tool1_b_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool1%20B.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "8ce10ce24f79e6ab4ed1162aa2b002d8d4a0c476d2567f0125bcfd8a597be803",
-    "category": "housing",
-    "notes": "Viking Lander / Tool1 B.stl"
-  },
-  {
-    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_base_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Base.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "7cb7ffa4e5987b46a26e8b763c102021cb4af549488e6df7dd4cd69db7883619",
-    "category": "housing",
-    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Base.stl"
-  },
-  {
-    "file": "nasa_international_space_station_tools_001_ftc_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/001%20-%20FTC.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "565fa60813281e482a57052c878c4b94d847937100caf62e9aecbbe0ce5b4608",
-    "category": "housing",
-    "notes": "International Space Station Tools / 001 - FTC.stl"
-  },
-  {
-    "file": "nasa_chandra_x_ray_observatory_chandra_panel_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Chandra%20X-ray%20Observatory/Chandra%20panel.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "2c24524d43fe8c85ec691ff6cc9be1e367638cba10c6d0786bca9fa6ce68e07b",
-    "category": "housing",
-    "notes": "Chandra X-ray Observatory / Chandra panel.stl"
-  },
-  {
-    "file": "nasa_sofia_instrument_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/SOFIA/Instrument.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "f9ed13e917895e2b4cf63d291685211d691a462bedcf26945741506e0e15f9b5",
-    "category": "housing",
-    "notes": "SOFIA / Instrument.stl"
-  },
-  {
-    "file": "nasa_chandra_x_ray_observatory_chandra_top_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Chandra%20X-ray%20Observatory/Chandra%20top.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "e6919eecfd59eab95ec3878a4ac5d425ad688d0857dd6ba0d05930abfffac1be",
-    "category": "housing",
-    "notes": "Chandra X-ray Observatory / Chandra top.stl"
-  },
-  {
-    "file": "nasa_mars_reconnaissance_orbiter_top_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/top.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "f2a6386a77a276d9bea29feb0b5b2768e55b38c1a0f4188fe3b560c26b5999ad",
-    "category": "housing",
-    "notes": "Mars Reconnaissance Orbiter / top.stl"
-  },
-  {
-    "file": "nasa_viking_lander_tool1_a_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool1%20A.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "782a01cb690bceb4f0558ea044958fd1aad7d63de4e1e88d4b72260bb66bcba4",
-    "category": "housing",
-    "notes": "Viking Lander / Tool1 A.stl"
-  },
-  {
-    "file": "nasa_international_space_station_tools_004_tensile_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/004%20-%20Tensile.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "6ff8ed24307898095f075f0792fe6e02115e4b8ea432e62e078d04e32ce18591",
-    "category": "housing",
-    "notes": "International Space Station Tools / 004 - Tensile.stl"
-  },
-  {
-    "file": "nasa_mars_reconnaissance_orbiter_antenna_bottom_01_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/antenna_bottom_01.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "8646e4cb8744a14396851bc619702edb7f4a289861b9ddc62bde52a6449166fc",
-    "category": "housing",
-    "notes": "Mars Reconnaissance Orbiter / antenna_bottom_01.stl"
-  },
-  {
-    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_body_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Positioner%20Body.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "4ae05da4c13928416c91536bb8ad4a975f3b7ee1c615e8a57c313792a87737bf",
-    "category": "housing",
-    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Positioner Body.stl"
-  },
-  {
-    "file": "nasa_mars_reconnaissance_orbiter_solar_panel_l_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/solar%20panel_L.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "e93ac639520da0d8cb7b21c022d1a0fdd3a898f9964b5087ce681bf06958ed1e",
-    "category": "housing",
-    "notes": "Mars Reconnaissance Orbiter / solar panel_L.stl"
-  },
-  {
-    "file": "nasa_mars_reconnaissance_orbiter_solar_panel_r_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/solar%20panel_R.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "7c745c42cf233c59e0a727903e71f6cfd72d5eaf20afe1ee5d918a0e215c6182",
-    "category": "housing",
-    "notes": "Mars Reconnaissance Orbiter / solar panel_R.stl"
-  },
-  {
-    "file": "nasa_voyager_stand_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Voyager/stand.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "ab397ef1571e53878f0785c76d523e9263f075ea00978153dba2e2812e40646e",
-    "category": "housing",
-    "notes": "Voyager / stand.stl"
-  },
-  {
-    "file": "nasa_international_space_station_tools_005_compression_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Space%20Station%20Tools/005%20-%20Compression.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "47c3069f35d93f31905a55e05b09db206eb4498676463c81b9bc3ee4ef63b77b",
-    "category": "housing",
-    "notes": "International Space Station Tools / 005 - Compression.stl"
-  },
-  {
-    "file": "nasa_hubble_space_telescope_solar_panels_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Solar%20panels.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "51cb49a2dff8560fdea186ffe80862426f8d588ec5fc59e37903aeba25c0a611",
-    "category": "housing",
-    "notes": "Hubble Space Telescope / Solar panels.stl"
-  },
-  {
-    "file": "nasa_laser_interferometer_space_antenna_lisa_cmd_and_data_handling_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Cmd%20and%20data%20handling.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "d054da59407b21322acbe7a051a450f82c4d53f9b912b381ca3c374d4aa2fa8a",
-    "category": "housing",
-    "notes": "Laser Interferometer Space Antenna (LISA) / Cmd and data handling.stl"
-  },
-  {
-    "file": "nasa_cyclone_global_navigation_satellite_system_cygnss_cyclone_global_navigation.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Cyclone%20Global%20Navigation%20Satellite%20System%20(CYGNSS)/Cyclone%20Global%20Navigation%20Satellite%20System%20(CYGNSS).stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "a6debe3c9af320cbfc202f6abf47d0198f32fb311a0b2e2b62126a101ff335e2",
-    "category": "housing",
-    "notes": "Cyclone Global Navigation Satellite System (CYGNSS) / Cyclone Global Navigation Satellite System (CYGNSS).stl"
-  },
-  {
-    "file": "nasa_laser_interferometer_space_antenna_lisa_lisa_control_electronics_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/LISA%20control%20electronics.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "e098ba47c20e2f4e921c866f52f05b0f22cb4381444fe1731990c146591db384",
-    "category": "housing",
-    "notes": "Laser Interferometer Space Antenna (LISA) / LISA control electronics.stl"
-  },
-  {
-    "file": "nasa_international_sun_earth_explorer_3_rad_antenna_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/International%20Sun-Earth%20Explorer-3/Rad%20antenna.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "2138bbf5ef241014d2a3a345204201476ef121e48788c1fd31897f7a4942fd73",
-    "category": "housing",
-    "notes": "International Sun-Earth Explorer-3 / Rad antenna.stl"
-  },
-  {
-    "file": "nasa_hubble_25th_anniversary_model_base_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%2025th%20Anniversary%20Model/Base.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "2259dd77ac372634fbe3b69063395f8882082da3c4c620b1d59d14cae9b743b0",
-    "category": "housing",
-    "notes": "Hubble 25th Anniversary Model / Base.stl"
-  },
-  {
-    "file": "nasa_hubble_space_telescope_base_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Base.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "e4894e4ce7c6319a06d851e2ff9bc23a73f25c0a5dbb00b811d4bae58ef52de9",
-    "category": "housing",
-    "notes": "Hubble Space Telescope / Base.stl"
-  },
-  {
-    "file": "nasa_laser_interferometer_space_antenna_lisa_charge_management_system_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Charge%20management%20system.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "e5a4e7bf104b89051eab84b1f8bc5ab0088d4d2491b1af0583136ad38ea55660",
-    "category": "housing",
-    "notes": "Laser Interferometer Space Antenna (LISA) / Charge management system.stl"
-  },
-  {
-    "file": "nasa_galileo_galileo_probe_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Galileo/Galileo%20probe.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "90797ec22d16d13af65d170622f78f5226dc8b5e0b8c9e681b320c2db7714765",
-    "category": "housing",
-    "notes": "Galileo / Galileo probe.stl"
-  },
-  {
-    "file": "nasa_laser_interferometer_space_antenna_lisa_grs_unit_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/GRS%20unit.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "82447c07ef5699a213d0ddec791ef8f708dd09580dd7c33a22ef46ede4c89efc",
-    "category": "housing",
-    "notes": "Laser Interferometer Space Antenna (LISA) / GRS unit.stl"
-  },
-  {
-    "file": "nasa_viking_lander_tool2_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Tool2.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "c334499217b5b3f088dcd58550daca7a7490b6f0231914ae32a898eba3fd3939",
-    "category": "housing",
-    "notes": "Viking Lander / Tool2.stl"
-  },
-  {
-    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_positioner_arm_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Positioner%20Arm.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "ca2c70f0d1e6d9c798d33a398d10c15f3404836790a66300252fda2f156c90be",
-    "category": "housing",
-    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Positioner Arm.stl"
-  },
-  {
-    "file": "nasa_hubble_space_telescope_radio_dishes_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Hubble%20Space%20Telescope/Radio%20dishes.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "ca16ec95062e89e4f7760834631d7214abdf01919cbda360f85e78d0d8c9d346",
-    "category": "housing",
-    "notes": "Hubble Space Telescope / Radio dishes.stl"
-  },
-  {
-    "file": "nasa_mars_reconnaissance_orbiter_antenna_bottom_02_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Mars%20Reconnaissance%20Orbiter/antenna_bottom_02.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "c7ca86217c0e03342356ca9447b2a651ad7ad261e8f732784ec5f0df6e7f14b7",
-    "category": "housing",
-    "notes": "Mars Reconnaissance Orbiter / antenna_bottom_02.stl"
-  },
-  {
-    "file": "nasa_viking_lander_dish_part_b_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Viking%20Lander/Dish%20part%20B.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "70ac10da7e804c57e291c526a4719adaeaa07b8e68436fd737c61c488faf62e7",
-    "category": "housing",
-    "notes": "Viking Lander / Dish part B.stl"
-  },
-  {
-    "file": "nasa_ka_band_satellite_beacon_receiver_alphasat_terminal_antenna_feed_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Ka-Band%20Satellite%20Beacon%20Receiver/Alphasat%20Terminal%20-%20Antenna%20Feed.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "9d6cdf7a995d35abcde5b124641031d5d27699e33aa6046497a3555981bd8665",
-    "category": "housing",
-    "notes": "Ka-Band Satellite Beacon Receiver / Alphasat Terminal - Antenna Feed.stl"
-  },
-  {
-    "file": "nasa_laser_interferometer_space_antenna_lisa_thruster_stl.stl",
-    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Laser%20Interferometer%20Space%20Antenna%20(LISA)/Thruster.stl",
-    "origin": "external",
-    "license": "Public Domain (NASA 3D Resources)",
-    "sha256": "f56807967e1fa16454c117edcfb5e33aab5b0ea90d8283b9d3b474b0619fc47f",
-    "category": "housing",
-    "notes": "Laser Interferometer Space Antenna (LISA) / Thruster.stl"
   }
 ]
