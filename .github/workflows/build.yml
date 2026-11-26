@@ -104,13 +104,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pyinstaller-log
-          path: |
-            repo/pyinstaller.log
-            repo/pyinstaller_min.log
-            ../pyinstaller.log
-            ../pyinstaller_min.log
+          path: repo/pyinstaller.log
           retention-days: 7
-          include-hidden-files: true
+          if-no-files-found: warn
 
       - uses: actions/upload-artifact@v4
         with:
