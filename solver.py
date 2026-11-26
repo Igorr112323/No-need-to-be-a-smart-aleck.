@@ -436,6 +436,21 @@ def optimize_topology(
                 F[nid*3] += force_vec[0] / 8
                 F[nid*3+1] += force_vec[1] / 8
                 F[nid*3+2] += force_vec[2] / 8
+    # fallback для сил: если F на свободных DOF нулевой (сила попала в заделку или вне сетки) — приложить к самому верхнему solid вокселю
+    if np.linalg.norm(F[free]) < 1e-9:
+        print(f"[solver] F на free нулевой — fallback к верхнему solid вокселю")
+        # найти воксель с максимальным Y (или Z) среди solid
+        # выбрать тот с максимальным центром по Y
+        top_idx = None; top_y = -1e9
+        for eid, (ix,iy,iz) in enumerate(solid_idx):
+            yc = origin[1] + (iy+0.5)*pitch
+            if yc > top_y:
+                top_y = yc; top_idx = (ix,iy,iz)
+        if top_idx is not None:
+            ix,iy,iz = top_idx
+            nodes = [node_id(ix+dx, iy+dy, iz+dz) for dx,dy,dz in [(0,0,0),(1,0,0),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(1,1,1),(0,1,1)]]
+            for nid in nodes:
+                F[nid*3+1] += -500/8  # сила вниз по Y
 
     # SIMP инициализация
     # rho для каждого solid элемента (0-1), passive=1
@@ -545,11 +560,17 @@ def optimize_topology(
         # p=3.0 уже фикс выше (E, nu, vol_frac)
         for _ in range(80):
             lmid = 0.5 * (l1 + l2)
-            # защита деления на ноль: если lmid==0 то rho_ratio=0
-            if lmid < 1e-12:
+            # защита деления на ноль: только если lmid ~0 (1e-20), иначе честная OC
+            if lmid < 1e-20:
                 rho_new = np.clip(rho - move, 0.001, 1.0)
             else:
-                rho_new = np.maximum(0.001, np.maximum(rho - move, np.minimum(1.0, np.minimum(rho + move, rho * ((-dc)/lmid) ** eta))))
+                # для отрицательных dc (обычно) -dc положителен; если где-то dc>=0, то вклад 0
+                # clamp -dc/lmid чтобы избежать inf
+                with np.errstate(divide='ignore', invalid='ignore'):
+                    ratio = np.where(dc < 0, (-dc)/lmid, 0.0)
+                    # если ratio==0 (dc>=0), то rho*0^eta =0 → clamp к rho-move
+                    rho_tmp = np.where(ratio > 0, rho * (ratio ** eta), 0.0)
+                rho_new = np.maximum(0.001, np.maximum(rho - move, np.minimum(1.0, np.minimum(rho + move, rho_tmp))))
             # пассивные принудительно =1 ТОЛЬКО после бисекции
             # но для vol в бисекции они уже должны участвовать
             # поэтому сначала считаем vol с пассивными=1

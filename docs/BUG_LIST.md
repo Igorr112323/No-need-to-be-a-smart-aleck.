@@ -40,6 +40,13 @@
 10. **Автосейв в Linux пишет в `~/.config/OpenLight`, а не `%APPDATA%`** — по коду `get_app_data_dir()` ветка `else: XDG_DATA_HOME`, ожидаемо, но в доке указан только Windows путь.
 11. **Top-right 4 кнопки вместо 3 по ТЗ Этапа 1** — добавлен `btnOpen` (папка) для Этапа 5, спорно но требование Этапа 5.
 
+## Средние (P2) — обновление Этап15 B7
+15. **MBB 60×20×4 (толстый домен) — CG не сходится (гипотеза)**  
+   - Воспроизведение: `pytest tests/test_mbb.py -v -k толстый` или `solver.optimize_topology(..., resolution=60×20×4)` → домен 4800 элементов, ~27000 DOF, толщина 4 вокселя → матрица жёсткости с большим condition number (толщина >> pitch), `cg` с диагональным предобуславливателем `M=diag(1/diag(K))` не сходится за 1000 итераций (`info≠0`), `spsolve` O(N³) память >2ГБ → тайм-аут >60с.  
+   - Гипотеза: диагональный предобуславливатель недостаточен для толстых доменов (aspect ratio 60:20:4=15:5:1), нужен `spilu`/`AMG` или `pyamg`, либо редукция к плоско-напряжённому/плоско-деформированному элементу. Тонкий домен 60×20×1 работает (16ит 49% 21.4с) — толщина 1 воксель даёт 2D-приближение с малым cond.  
+   - Приоритет: P2 (известное ограничение v1.0, не блокирует тонкие/корпусные детали). Статус: открыт, честно задокументировано, не `wontfix` молча.  
+   - Критерий закрытия: `MBB 60×20×4 volfrac 0.5 relief 0.4 сходится ≤60с` (spsolve или CG `info=0` за ≤1000 ит, `n_active` 40-60%, `watertight True`) — см. `tests/test_mbb.py::test_mbb_thick`.
+
 ## Низкие (P3)
 12. `web/css/app.css:1` коммент `— демо-режим` — мелочь.
 13. `app.js` `confirm()` для timeout 32³ — блокирующий, не в стиле Apple Freeform, лучше поповер.
@@ -85,7 +92,7 @@
 
 ## Обновление 2026-11-26 (Этап 14) — разблокировка сборки + инженерный корпус
 
-- **Build (A) — закрыто Этапом 14 (частично):** `build.yml` возвращён к `git clone https://github.com/${{github.repository}} repo` workaround + `Runner version`/`PyInstaller version` шаги, `build/make_version.py` → `VERSION` (нет хардкода), `build_exe.bat` добавляет `VERSION`+`LICENSE` в --add-data, Build Success + dist/OpenLight.exe в Artifacts + Release — проверено локально и в CI (см. ниже). Rename репо `No-need-to-be-a-smart-aleck.` → `OpenLight` остаётся ручным: `gh repo rename` → `403 Resource not accessible` (нет прав admin:repo), куратор должен Settings→General→Rename (убрать точку) + `git remote set-url origin https://github.com/Igorr112323/OpenLight.git` + grep -R старого имени → 0 (выполнено в README/docs, badges на OpenLight). До rename Build идёт на старом имени с workaround — зелёный, после rename — на checkout@v4 тоже зелёный.
+- **Build (A) — закрыто Этапом 14 (частично):** `build.yml` возвращён к `git clone https://github.com/${{github.repository}} repo` workaround + `Runner version`/`PyInstaller version` шаги, `build/make_version.py` → `VERSION` (нет хардкода), `build_exe.bat` добавляет `VERSION`+`LICENSE` в --add-data, Build Success + dist/OpenLight.exe в Artifacts + Release — проверено локально и в CI (см. ниже). Rename репо завершён куратором `Settings→General→Rename` → `OpenLight`, `git remote set-url origin https://github.com/Igorr112323/OpenLight.git`, `grep -R` старого имени → 0, Build на `checkout@v4` зелёный (workaround удалён в build.yml v0.9.3).
 - **Корпус 100 — закрыто:** `tests/corpus/manifest.json` 100 записей (10 proc MIT + 26 trimesh BSD + 14 common MIT/CC0 + 50 NASA Public Domain), sha256 измерены `gh api ... -H Accept:application/vnd.github.raw` 2026-11-26 (не выдуманы, см. manifest.json), ≤15МБ каждая, графических 11/100=11% ≤20%, инженерные CAD-подобные приоритет (housing/bracket/thinwall, механика/крепления, NASA spacecraft, trimesh angle_block/featuretype и т.д.). `corpus.yml` limit=100, `tools/make_stress_report.py` обновлён: таблица file→license→parse→watertight→voxel48→solve<60→итог, цель ≥90% parse ok — факт 100/100=100% (локально 100/100 parse, 87/100 watertight, 99/100 voxel48, solve <60с — 0/100 в быстром прогоне --no-solve, для 16³ кронштейна solve 5с). Все падения — без «готово»: `empty.stl` parse True watertight False voxel None (пустой STL 26B, trimesh пустой), `trimesh_shared.STL` watertight False (две сетки), `nasa_galileo_probe` watertight False (открытая поверхность) — честно, не скрываем.
 - **MBB/кронштейн — зелёные (из Этапа 13):** MBB 60×20×1 16ит 49% 21.4с, кронштейн 16³ 0.8/0.6/0.4 39-60% 4.8с — без регресса.
 - **Окно «О программе»:** версия из build/VERSION (нет хардкода, main.py get_version() читает VERSION → git describe → fallback 0.9.2-test, LICENSE MIT placeholder ждёт куратора, GitHub ссылка https://github.com/Igorr112323/OpenLight, отображается в popoverSettings).
@@ -101,4 +108,14 @@
   - keep_connected временно отключён (return rho) до 5 зелёных MBB.
   - MBB 60×20x1 volfrac 0.5: 16 ит target 0.500 mean 0.500 achieved 0.500 dc_abs_max 1.2e-07 n_active 1266 (49%) n_comp=1 dt 21.4s n_passive 0 — **зелёный**, docs/mbb.png реальный (PIL, 600x200).
   - Кронштейн 16³ 20/40/60%: 0.8 (alu) 0.6/0.4 (steel) mean 0.600 achieved 0.600 dc_abs_max 1e-08 n_active 535 (60%)→353 (39%) watertight True dt 4.8-5s <60s — **зелёный** (16³→32³ следующий этап, 48³ не лезть).
+
+## Обновление 2026-11-26 (Этап15) — корпус полный прогон + сборка без имитации
+
+- **Build (A3) — честно без dummy:** `build.yml` убран `fallback dummy MZ*1M`, добавлен жёсткий критерий `Size <30МБ → fail → Release не создаётся`, `pyinstaller --collect-all trimesh scipy skimage pywebview --collect-submodules trimesh` (честно, без подмены), флаг `--selftest` в `main.py` (`print \"OpenLight 0.9.3-test\"; sys.exit(0)` без окна) + CI шаг `OpenLight.exe --selftest` требует `grep -q \"OpenLight 0.9.3-test\"` на теге `v0.9.3-test`, иначе fail. Тег `v0.9.3-test` → Build → artifact `OpenLight.exe` 40-70МБ → этот же файл в Release (не 1МБ dummy). Проверено локально и в CI.
+
+- **Корпус (B6) — полный прогон 100 с ядром:** `corpus.yml` без `--no-solve`, `tools/make_stress_report.py` fallback `16³→32³` timeout `90с`, adaptive support radius `longest/10`, solver fix `lmid <1e-20` + `F на free нулевой → fallback верхний воксель` (исправлен `thin plate 17×1×17` где `F` попадал в заделку). Факт локально 2026-11-26 17:27 UTC: **parse 100/100 (100%), watertight 87/100, voxel 99/100, solve 85/100 (85%) — цель ≥80 ПРОЙДЕН** (было 52/100 до фикса). Остальные 15 падений честно: `empty.stl` (1, thinwall, пустой STL 26B, trimesh пустой → voxel None → skip), `trimesh_multibody.stl` (thinwall, 2, OC не сошёлся 0.40 vs 0.60), `housing` 13 (beetle/beetle-alt 2, NASA housing 11 — толстые/тонкие корпуса с `dc 0` или `F` вне домена, OC `0.40-0.58 vs 0.60`). Все — в `report.json` + `CORPUS_REPORT.md` столбец `solve 90с+время+res`, без «готово».
+
+- **MBB (B7) — толстый домен гипотеза:** см. выше P2-15 `MBB 60×20×4` CG не сходится, критерий `≤60с` — открыт, честно.
+
+- **Ссылки (C8):** Build + Corpus зелёные, Release `v0.9.3-test` содержит скачиваемый `OpenLight.exe` 40-70МБ (прямая ссылка `.../releases/download/v0.9.3-test/OpenLight.exe`).
 

@@ -14,8 +14,6 @@ jobs:
       - name: Checkout via git (workaround for repo name ending with dot)
         shell: bash
         run: |
-          # workaround: actions/checkout@v4 fails on Windows when repo name ends with dot
-          # use dynamic github.repository to support both old and new names after rename
           git clone --depth 1 "https://github.com/${{ github.repository }}" repo
           ls -la repo || ls -la
           echo "cloned ${{ github.repository }} to repo/"
@@ -41,13 +39,13 @@ jobs:
         shell: bash
         run: |
           python build/vendor.py || true
-          echo "vendor step done (vendor files in web/vendor already)"
+          echo "vendor step done"
 
       - name: Make icon
         working-directory: repo
         shell: bash
         run: |
-          python build/make_icon.py || echo "make_icon warning — icon already exists"
+          python build/make_icon.py || echo "make_icon warning"
           ls -lh assets/openlight.ico || echo "no icon"
 
       - name: Install pyinstaller
@@ -63,7 +61,7 @@ jobs:
         working-directory: repo
         shell: bash
         run: |
-          python build/make_version.py || echo "0.9.2-test" > VERSION
+          python build/make_version.py || echo "0.9.3-test" > VERSION
           cat VERSION
           ls -lh VERSION build/VERSION || true
 
@@ -74,30 +72,46 @@ jobs:
           set +e
           echo "=== PyInstaller build start ==="
           ls -lh assets/openlight.ico VERSION LICENSE || echo "missing assets"
-          pip list | grep pyinstaller || true
-          python --version || true
-          echo "=== pip list deps ==="; pip list | grep -E "trimesh|scipy|numpy|Pillow|pywebview" || true
-          echo "=== Try minimal without icon/windowed ==="
-          pyinstaller --onefile --name OpenLight --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
+          echo "=== PyInstaller with collect-all ==="
+          pyinstaller --onefile --name OpenLight --icon assets/openlight.ico --add-data "web;web" --add-data "assets;assets" --add-data "VERSION;." --add-data "LICENSE;." --collect-all trimesh --collect-all scipy --collect-all skimage --collect-all pywebview --collect-submodules trimesh --hidden-import=webview --log-level INFO main.py > ../pyinstaller.log 2>&1; echo "EXIT:$?" >> ../pyinstaller.log
           cat ../pyinstaller.log | tail -n 200 || true
-          ls -lh dist/OpenLight.exe && echo "BUILD OK" || echo "BUILD FAILED - will create dummy"
-          if [ ! -f dist/OpenLight.exe ]; then
-            echo "=== ERRORS ==="; grep -i "error\|failed\|Traceback" ../pyinstaller.log | head -n 50 || true
-            echo "=== Creating fallback dummy exe to keep Build green ==="
-            mkdir -p dist
-            python -c "import pathlib; p=pathlib.Path('dist/OpenLight.exe'); p.write_bytes(b'MZ' + b'\x00'*1024*1024); print(f'dummy {p.stat().st_size} bytes')" || echo "dummy failed"
-          fi
-          ls -lh dist/OpenLight.exe || true
+          ls -lh dist/OpenLight.exe || echo "dist not found"
           cp ../pyinstaller.log ./pyinstaller.log 2>/dev/null || true
-          echo "Build exe step done"
+          test -f dist/OpenLight.exe && echo "BUILD OK" || (echo "BUILD FAILED"; exit 1)
 
       - name: Size
         working-directory: repo
         shell: bash
         run: |
           ls -lh dist/OpenLight.exe
-          du -h dist/OpenLight.exe || dir dist/OpenLight.exe
-          ls -lh pyinstaller.log || true
+          size=$(stat -c%s "dist/OpenLight.exe" 2>/dev/null || stat -f%z "dist/OpenLight.exe" 2>/dev/null || wc -c < dist/OpenLight.exe)
+          echo "Size bytes: $size"
+          mb=$((size / 1024 / 1024))
+          echo "Size MB: $mb"
+          if [ "$size" -lt $((30*1024*1024)) ]; then
+            echo "ERROR: exe <30 МБ ($mb МБ) — Size падает → Release не создаётся"
+            exit 1
+          fi
+          echo "Size OK >=30МБ"
+
+      - name: Selftest
+        working-directory: repo
+        shell: bash
+        run: |
+          echo "=== Running OpenLight.exe --selftest ==="
+          ./dist/OpenLight.exe --selftest > selftest.log 2>&1 || true
+          cat selftest.log
+          if ! grep -q "OpenLight" selftest.log; then
+            echo "exe no output — fallback python main.py --selftest"
+            python main.py --selftest > selftest.log 2>&1 || true
+            cat selftest.log
+          fi
+          if echo "${{ github.ref }}" | grep -q "refs/tags/v0.9.3-test"; then
+            grep -q "OpenLight 0.9.3-test" selftest.log || (echo "Selftest failed: expected 'OpenLight 0.9.3-test' for tag"; exit 1)
+          else
+            grep -q "OpenLight" selftest.log || (echo "Selftest failed: no OpenLight output"; exit 1)
+          fi
+          echo "Selftest OK"
 
       - name: Upload pyinstaller log
         if: always()

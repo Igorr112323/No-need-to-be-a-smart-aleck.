@@ -32,8 +32,13 @@ def get_version() -> str:
         if out:
             return out.lstrip("v")
     except: pass
-    return "0.9.2-test"
+    return "0.9.3-test"
 APP_VERSION = get_version()
+
+# --selftest флаг (без окна) для CI проверки exe
+if "--selftest" in sys.argv:
+    print(f"OpenLight {APP_VERSION}")
+    sys.exit(0)
 
 def get_app_data_dir() -> pathlib.Path:
     if os.name == 'nt':

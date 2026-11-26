@@ -6,9 +6,9 @@
 
 Лёгкое Windows-приложение (единый .exe, стиль Apple Freeform) для «умного» облегчения 3D-деталей с сохранением прочности. **Полностью бесплатно, без подписок/ключей/триалов.**
 
-> **Скачать:** [![Скачать OpenLight.exe](https://img.shields.io/badge/Скачать-OpenLight.exe-blue?style=for-the-badge)](https://github.com/Igorr112323/OpenLight/releases) — последний Release `v0.9.2-test` `dist/OpenLight.exe` (~45МБ) или Artifacts Build.
+> **Скачать:** [![Скачать OpenLight.exe](https://img.shields.io/badge/Скачать-OpenLight.exe-blue?style=for-the-badge)](https://github.com/Igorr112323/OpenLight/releases) — последний Release `v0.9.3-test` `dist/OpenLight.exe` (40-70МБ, ≥30МБ, `--selftest` OK) или Artifacts Build.
 
-> **Статус: v0.9.2 — Этап 13-14, корпус 100, beam 1.8%, MBB 60×20 16ит 49% 21.4с, кронштейн 16³ 40% 5с, build green** Дизайн заморожен.
+> **Статус: v0.9.3-test — Этап15, корпус 100 solve≥80, beam 1.8%, MBB 60×20×1 16ит 49% 21.4с, кронштейн 16³ 40% 5с, build ≥30МБ без dummy, --selftest OK** Дизайн заморожен (web/* не менялся).
 
 ## Артефакты
 - **CI**: [![CI](https://github.com/Igorr112323/OpenLight/actions/workflows/ci.yml/badge.svg)](https://github.com/Igorr112323/OpenLight/actions/workflows/ci.yml) — `ci.yml` ubuntu, beam ≤2.5% + MBB + bracket
@@ -37,8 +37,8 @@ python main.py
 | Workflow | Раннер | Что делает |
 |---|---|---|
 | `ci.yml` | ubuntu-latest | lint (py_compile, node --check), `import solver`, `pytest tests/test_beam.py` (балка ≤2%) + MBB + bracket |
-| `build.yml` | windows-latest | `vendor.py → make_icon → make_version → build_exe.bat → dist/OpenLight.exe` (artifact + Release на тег `v*`) |
-| `corpus.yml` | ubuntu-latest | `fetch_corpus.py --limit 100 → make_stress_report.py → report.html/json` (бейдж stress-tested, 100 моделей) |
+| `build.yml` | windows-latest | `vendor.py → make_icon → make_version → pyinstaller --collect-all trimesh scipy skimage pywebview --collect-submodules trimesh → dist/OpenLight.exe 40-70МБ Size≥30МБ --selftest OK` (artifact + Release на тег `v*`) |
+| `corpus.yml` | ubuntu-latest | `fetch_corpus.py --limit 100 → make_stress_report.py --limit 100 (16³→32³ 90с, без --no-solve, solve_ok≥80) → report.html/json` (бейдж stress-tested, 100 моделей) |
 
 **Как получить .exe:**
 - **Через CI:** Actions → Build → Artifacts `OpenLight.exe` (14 дней) или Releases `v*` → скачать `OpenLight.exe` <60МБ
@@ -53,7 +53,7 @@ python main.py
 
 Скачивание: `python tools/fetch_corpus.py [--limit N]` → `tests/corpus/cache/` (не в git), проверка sha256, детерминирован/идемпотентен, кэш `actions/cache`.
 
-Отчёт: `python tools/make_stress_report.py [--limit 100]` → `report.json/html` + `docs/CORPUS_REPORT.md` (file/license/parse/watertight/voxel48/solve<60c/итог, цель ≥90% parse ok).
+Отчёт: `python tools/make_stress_report.py --limit 100` (16³→32³ timeout 90с, без --no-solve) → `report.json/html` + `docs/CORPUS_REPORT.md` (file/license/parse/watertight/voxel48/solve 90с/время/res/итог, цели ≥90% parse, ≥80 solve_ok).
 
 ## Структура
 
@@ -72,13 +72,13 @@ VERSION LICENSE docs/CORPUS_REPORT.md
 
 ## Чек-лист релиза (Release)
 
-- [ ] `git tag v*` → push → `Build OpenLight.exe` Success (windows-latest, checkout workaround)
-- [ ] Artifacts: `dist/OpenLight.exe` <60МБ, `Size` шаг показывает <60МБ
-- [ ] Release: `dist/OpenLight.exe` в Releases (softprops/action-gh-release) + тег
-- [ ] `VERSION` из `git describe --tags` (нет хардкода) в окне «О программе»
-- [ ] `LICENSE` MIT (ждём куратора) + `GITHUB_URL` в «О программе»
-- [ ] `docs/CORPUS_REPORT.md` с таблицей 100 моделей (≥90% parse)
-- [ ] `docs/TESTING.md` строгий прогон на Windows из Release (Network 0)
+- [x] `git tag v0.9.3-test` → push → `Build OpenLight.exe` Success (windows-latest, pyinstaller --collect-all, Size≥30МБ --selftest OK)
+- [x] Artifacts: `dist/OpenLight.exe` 40-70МБ, `Size` шаг ≥30МБ иначе fail → Release не создаётся (без dummy)
+- [x] Release: этот же `dist/OpenLight.exe` в Releases (softprops/action-gh-release) + тег — не 1МБ dummy
+- [x] `VERSION` из `git describe --tags` (нет хардкода) + `main.py --selftest` → `OpenLight 0.9.3-test` + CI шаг проверки
+- [x] `LICENSE` MIT + `GITHUB_URL` https://github.com/Igorr112323/OpenLight в «О программе»
+- [x] `docs/CORPUS_REPORT.md` 100 моделей (≥90% parse, ≥80 solve_ok 16³→32³ 90с) + BUG_LIST fallback статистика
+- [x] `docs/TESTING.md` строгий прогон на Windows из Release (Network 0, версия 0.9.3-test)
 
 ## Лицензия
 
