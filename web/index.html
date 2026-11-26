@@ -55,15 +55,57 @@
 </head>
 <body>
   <script>
-  // DIAG boot wrapper — ошибки → title, маркеры в init.log
+  // DIAG boot wrapper — ошибки → title, маркеры в ui.log/init.log (17F: js-boot, splash-hidden, api-ready, first-error)
   (function(){
-    window.__diag = function(m){ try{ if(window.pywebview && window.pywebview.api && window.pywebview.api.diag_ping) window.pywebview.api.diag_ping(m); else if(window.pywebview && window.pywebview.api && window.pywebview.api.diag_log_js) window.pywebview.api.diag_log_js(m); console.log('[diag] '+m); }catch(e){ console.log('diag fail '+e); } };
-    window.onerror = function(msg, src, line, col, err){ try{ document.title='ERR: '+msg; }catch(e){} window.__diag('onerror '+msg+' @'+(src||'')+':'+line+':'+col); console.error('onerror',msg,src,line,col,err); };
-    window.addEventListener('unhandledrejection', function(e){ try{ document.title='ERR: '+(e.reason && e.reason.message || e.reason); }catch(ex){} window.__diag('unhandledrejection '+(e.reason && e.reason.stack || e.reason)); console.error('unhandledrejection',e.reason); });
-    window.__diag('splash shown');
-    document.addEventListener('DOMContentLoaded', function(){ window.__diag('web-loaded DOMContentLoaded'); });
-    window.addEventListener('load', function(){ window.__diag('js-ready window.load'); });
-    window.addEventListener('pywebviewready', function(){ window.__diag('api-ready pywebviewready'); try{ window.pywebview.api.get_app_info().then(function(r){ window.__diag('api get_app_info OK '+JSON.stringify(r).slice(0,400)); }).catch(function(e){ window.__diag('api get_app_info ERR '+e); }); }catch(e){ window.__diag('api get_app_info throw '+e); } });
+    var _firstError=null;
+    function _record(m){ try{ if(window.pywebview && window.pywebview.api && window.pywebview.api.record_log) window.pywebview.api.record_log(m); else if(window.pywebview && window.pywebview.api && window.pywebview.api.diag_ping) window.pywebview.api.diag_ping(m); else if(window.pywebview && window.pywebview.api && window.pywebview.api.diag_log_js) window.pywebview.api.diag_log_js(m); }catch(e){} try{ console.log('[diag] '+m); }catch(e){} }
+    window.__diag = _record;
+    window.__diag('js-boot');
+    window.__firstError = null;
+    window.onerror = function(msg, src, line, col, err){
+      if(!_firstError) _firstError=msg;
+      try{ document.title='ERR: '+msg; }catch(e){}
+      _record('first-error: '+msg+' @'+(src||'')+':'+line+':'+col+' '+(err && err.stack || ''));
+      console.error('onerror',msg,src,line,col,err);
+    };
+    window.addEventListener('unhandledrejection', function(e){
+      var m=e.reason && (e.reason.stack || e.reason.message || e.reason);
+      if(!_firstError) _firstError=m;
+      try{ document.title='ERR: '+(e.reason && e.reason.message || e.reason); }catch(ex){}
+      _record('first-error: unhandledrejection '+m);
+      console.error('unhandledrejection',e.reason);
+    });
+    // перехват console.* → ui.log
+    ['log','warn','error','info'].forEach(function(k){
+      var orig=console[k];
+      console[k]=function(){ try{ var args=[].slice.call(arguments); _record(k+': '+args.map(String).join(' ').slice(0,600)); }catch(e){} return orig.apply(console, arguments); };
+    });
+    _record('splash shown');
+    document.addEventListener('DOMContentLoaded', function(){ _record('web-loaded DOMContentLoaded'); });
+    window.addEventListener('load', function(){ _record('js-ready window.load'); });
+    // splash-hidden — когда лоадер реально скрыт
+    var _origHide=null;
+    setTimeout(function(){
+      var el=document.getElementById('appLoader');
+      if(el){
+        var obs=new MutationObserver(function(){
+          if(el.classList.contains('hidden')){ _record('splash-hidden'); obs.disconnect(); }
+        });
+        obs.observe(el, {attributes:true, attributeFilter:['class']});
+      }
+    }, 0);
+    window.addEventListener('pywebviewready', function(){
+      _record('api-ready pywebviewready'); try{ window.pywebview.api.get_app_info().then(function(r){ _record('api get_app_info OK '+JSON.stringify(r).slice(0,400)); }).catch(function(e){ _record('api get_app_info ERR '+e); if(!_firstError) _firstError=e; }); }catch(e){ _record('api get_app_info throw '+e); if(!_firstError) _firstError=e; }
+      _record('listeners-attached check: '+(!!window.pywebview && !!window.pywebview.api));
+    });
+    // ?diag=1 — красный баннер с последними ошибками/маркерами
+    if(location.search.includes('diag=1')){
+      var banner=document.createElement('div');
+      banner.style.cssText='position:fixed;top:36px;left:12px;right:12px;z-index:9999;background:#FF3B30;color:#fff;padding:8px 12px;border-radius:10px;font-size:12px;font-family:monospace;max-height:120px;overflow:auto;pointer-events:none';
+      banner.id='diagBanner';
+      banner.textContent='DIAG: js-boot → жду логи...';
+      document.addEventListener('DOMContentLoaded', function(){ document.body.appendChild(banner); setInterval(function(){ banner.textContent='DIAG first-error: '+(_firstError||'none')+' | title='+document.title; }, 500); });
+    }
   })();
   </script>
   <!-- Экран загрузки -->
