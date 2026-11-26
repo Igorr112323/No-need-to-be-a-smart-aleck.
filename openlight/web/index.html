@@ -15,42 +15,27 @@
   </script>
 </head>
 <body>
-  <!-- 3D сцена — прозрачный canvas, сквозь него виден dot-grid -->
   <canvas id="scene" tabindex="0"></canvas>
 
-  <!-- Верх слева: назад / проекты -->
   <div class="top-left">
     <button class="circle-btn" aria-label="Назад" title="Проекты" id="btnBack">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18L9 12L15 6" /></svg>
     </button>
   </div>
 
-  <!-- Верх справа: Undo · Экспорт · ... -->
   <div class="top-right" role="toolbar" aria-label="Действия">
     <button class="icon-btn" id="btnUndo" title="Отменить" aria-label="Отменить">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M9 8H5V5" />
-        <path d="M5 8A8 8 0 1 0 9 4.5" />
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8H5V5" /><path d="M5 8A8 8 0 1 0 9 4.5" /></svg>
     </button>
     <div class="divider" aria-hidden="true"></div>
     <button class="icon-btn" id="btnExport" title="Экспорт STL" aria-label="Экспорт">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 16V4" />
-        <path d="M8 8L12 4L16 8" />
-        <path d="M4 12V19A1 1 0 0 0 5 20H19A1 1 0 0 0 20 19V12" />
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4" /><path d="M8 8L12 4L16 8" /><path d="M4 12V19A1 1 0 0 0 5 20H19A1 1 0 0 0 20 19V12" /></svg>
     </button>
     <button class="icon-btn" id="btnMore" title="Настройки" aria-label="Ещё">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/>
-        <circle cx="19.2" cy="12" r="1.4" fill="currentColor" stroke="none"/>
-        <circle cx="4.8" cy="12" r="1.4" fill="currentColor" stroke="none"/>
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="19.2" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="4.8" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
     </button>
   </div>
 
-  <!-- Центр — подсказка (скрывается когда 3D загружено) -->
   <div class="center-hint" id="centerHint" aria-hidden="true">
     <div class="center-hint-inner">
       <div class="center-hint-icon">
@@ -61,74 +46,52 @@
     </div>
   </div>
 
-  <!-- Низ слева: материал / технология -->
   <div class="bottom-left">
     <button class="circle-btn large" id="btnMaterial" title="Материал и технология" aria-label="Материал">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 3L19.5 8.5V15.5L12 21L4.5 15.5V8.5L12 3Z" />
-        <path d="M4.5 8.5L12 13L19.5 8.5" />
-        <path d="M12 13V21" />
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L19.5 8.5V15.5L12 21L4.5 15.5V8.5L12 3Z" /><path d="M4.5 8.5L12 13L19.5 8.5" /><path d="M12 13V21" /></svg>
     </button>
   </div>
 
-  <!-- Низ центр: главный док — 5 инструментов -->
   <nav class="bottom-center" role="toolbar" aria-label="Инструменты">
     <button class="dock-btn" data-tool="fix" aria-label="Крепления" title="Крепления">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M9 11C9 11 9 7 12 7C15 7 15 11 15 11C15 13 13.5 14.2 12.8 14.7L12 15.3L11.2 14.7C10.5 14.2 9 13 9 11Z" />
-        <path d="M12 15.3V19" />
-        <path d="M9.5 19H14.5" />
-        <path d="M8 7.5H16" />
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11C9 11 9 7 12 7C15 7 15 11 15 11C15 13 13.5 14.2 12.8 14.7L12 15.3L11.2 14.7C10.5 14.2 9 13 9 11Z" /><path d="M12 15.3V19" /><path d="M9.5 19H14.5" /><path d="M8 7.5H16" /></svg>
       <span class="tooltip">Крепления</span>
     </button>
     <button class="dock-btn" data-tool="force" aria-label="Силы" title="Силы">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 4V16" />
-        <path d="M8 12L12 16L16 12" />
-        <path d="M6 18H18" />
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V16" /><path d="M8 12L12 16L16 12" /><path d="M6 18H18" /></svg>
       <span class="tooltip">Силы</span>
     </button>
     <button class="dock-btn" data-tool="keep" aria-label="Запретная зона" title="Запретная зона">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="5" y="5" width="14" height="14" rx="2.2" pathLength="1" stroke-dasharray="2.2 2.2" />
-        <path d="M9 14L15 8" opacity="0.9" />
-        <path d="M9 8H9.01" stroke-width="2.2" stroke-linecap="round"/>
-        <path d="M15 14H15.01" stroke-width="2.2" stroke-linecap="round"/>
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2.2" pathLength="1" stroke-dasharray="2.2 2.2" /><path d="M9 14L15 8" opacity="0.9" /><path d="M9 8H9.01" stroke-width="2.2" stroke-linecap="round"/><path d="M15 14H15.01" stroke-width="2.2" stroke-linecap="round"/></svg>
       <span class="tooltip">Запретная зона</span>
     </button>
     <button class="dock-btn accent" id="btnOptimize" aria-label="Оптимизировать" title="Оптимизировать">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 3L13.6 8.4L19 10L13.6 11.6L12 17L10.4 11.6L5 10L10.4 8.4L12 3Z" fill="white" stroke="white" stroke-width="1.1" stroke-linejoin="round"/>
-        <path d="M18.5 5.2L19.2 7.1L21.2 7.8L19.2 8.5L18.5 10.4L17.8 8.5L15.8 7.8L17.8 7.1L18.5 5.2Z" fill="white" stroke="white" stroke-width="0.9" stroke-linejoin="round"/>
-        <path d="M6.2 14.2L6.7 15.6L8.2 16.1L6.7 16.6L6.2 18.2L5.7 16.6L4.2 16.1L5.7 15.6L6.2 14.2Z" fill="white" stroke="white" stroke-width="0.9" stroke-linejoin="round"/>
-      </svg>
+      <span class="opt-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L13.6 8.4L19 10L13.6 11.6L12 17L10.4 11.6L5 10L10.4 8.4L12 3Z" fill="white" stroke="white" stroke-width="1.1" stroke-linejoin="round"/><path d="M18.5 5.2L19.2 7.1L21.2 7.8L19.2 8.5L18.5 10.4L17.8 8.5L15.8 7.8L17.8 7.1L18.5 5.2Z" fill="white" stroke="white" stroke-width="0.9" stroke-linejoin="round"/><path d="M6.2 14.2L6.7 15.6L8.2 16.1L6.7 16.6L6.2 18.2L5.7 16.6L4.2 16.1L5.7 15.6L6.2 14.2Z" fill="white" stroke="white" stroke-width="0.9" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="opt-progress" aria-hidden="true">
+        <span class="ring"></span>
+        <span class="bar"><span class="bar-fill" id="optBarFill"></span></span>
+      </span>
       <span class="tooltip">Оптимизировать</span>
     </button>
     <div class="dock-divider" aria-hidden="true"></div>
     <button class="dock-btn" data-tool="view" aria-label="Вид" title="Вид">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 5L20 9L12 13L4 9L12 5Z" />
-        <path d="M4 14L12 18L20 14" />
-        <path d="M4 11L12 15L20 11" />
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5L20 9L12 13L4 9L12 5Z" /><path d="M4 14L12 18L20 14" /><path d="M4 11L12 15L20 11" /></svg>
       <span class="tooltip">Вид / Слои</span>
     </button>
   </nav>
 
-  <!-- Низ справа: метрики -->
   <div class="bottom-right" role="status" aria-live="polite">
-    <div class="metrics-label"><span class="metrics-dot"></span> Метрики</div>
+    <div class="metrics-label"><span class="metrics-dot"></span> Метрики <span style="font-weight:400; text-transform:none; letter-spacing:0; color:#9AA0AA; margin-left:6px; font-size:10px;">демо-режим</span></div>
     <div class="metrics-row"><span class="muted">Вес:</span> <strong id="weightBefore">412 г</strong> <span class="muted">→</span> <strong id="weightAfter">—</strong> <span class="muted">· Экономия: <span id="economy">—</span></span></div>
     <div class="metrics-row" style="margin-top:4px"><span class="muted">Запас прочности:</span> <strong id="safety">—</strong></div>
   </div>
 
   <div id="toast" class="toast" role="status"></div>
+  <div id="warningToast" class="warning-toast" role="alert"></div>
+  <div id="phaseToast" class="phase-toast" role="status"><span class="dot"></span><span id="phaseText">Анализ</span></div>
 
-  <!-- Поповер: сила -->
   <div id="popoverForce" class="popover has-arrow" role="dialog" aria-label="Сила">
     <div class="popover-title">Сила</div>
     <div class="popover-row">
@@ -140,7 +103,6 @@
     <button class="btn-ok" id="forceOk">OK</button>
   </div>
 
-  <!-- Поповер: запретная зона -->
   <div id="popoverKeep" class="popover has-arrow" role="dialog" aria-label="Запретная зона">
     <div class="popover-title">Запретная зона</div>
     <div class="chips">
@@ -150,7 +112,6 @@
     </div>
   </div>
 
-  <!-- Поповер: материал -->
   <div id="popoverMaterial" class="popover material-popover" role="dialog" aria-label="Материал">
     <div class="section">
       <div class="section-label">Материал</div>
@@ -169,13 +130,32 @@
     </div>
   </div>
 
-  <!-- Поповер: настройки -->
   <div id="popoverSettings" class="popover settings-popover" role="dialog" aria-label="Настройки">
     <div class="popover-title">Настройки</div>
     <div class="settings-row"><span class="label">Единицы</span><span>Н, мм</span></div>
     <div class="settings-row muted">Сетка: 24 мм</div>
     <div class="settings-row muted">Точность: 0.1 мм</div>
-    <div class="settings-row muted">Оптимизация: 40% (Этап 4)</div>
+    <div class="settings-row muted">Оптимизация: демо-режим</div>
+  </div>
+
+  <div id="popoverRelief" class="popover" role="dialog" aria-label="Облегчение">
+    <div class="popover-title">Облегчение</div>
+    <div class="chips" style="margin-bottom:10px;">
+      <button class="chip" data-relief="0.2">20 %</button>
+      <button class="chip active" data-relief="0.4">40 %</button>
+      <button class="chip" data-relief="0.6">60 %</button>
+    </div>
+    <div style="font-size:11px; color:#6E6E73; line-height:1.3;">Переключение — мгновенно, без пересчёта. Демонстрационная геометрия.</div>
+  </div>
+
+  <div id="legend" aria-hidden="true">
+    <div class="legend-title">σ, МПа</div>
+    <div class="legend-bar"></div>
+    <div class="legend-labels"><span>0</span><span>120</span><span>240</span></div>
+  </div>
+
+  <div id="splitDivider" aria-hidden="true">
+    <div class="handle"></div>
   </div>
 
   <script type="module" src="js/app.js"></script>
