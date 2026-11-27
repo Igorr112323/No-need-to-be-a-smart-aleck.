@@ -1,12 +1,13 @@
 # OpenLight — бесплатный Windows .exe для умного облегчения 3D-деталей
 
-[![CI](https://github.com/Igorr112323/OpenLight/actions/workflows/ci.yml/badge.svg)](https://github.com/Igorr112323/OpenLight/actions/workflows/ci.yml)
-[![Build](https://github.com/Igorr112323/OpenLight/actions/workflows/build.yml/badge.svg)](https://github.com/Igorr112323/OpenLight/actions/workflows/build.yml)
-[![Corpus](https://github.com/Igorr112323/OpenLight/actions/workflows/corpus.yml/badge.svg)](https://github.com/Igorr112323/OpenLight/actions/workflows/corpus.yml)
+[![CI](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/ci.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/ci.yml)
+[![Build](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/build.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/build.yml)
+[![QA](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/qa.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/qa.yml)
+[![Stress](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/corpus-stress.yml/badge.svg)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/workflows/corpus-stress.yml)
 
 Лёгкое Windows-приложение (единый .exe, стиль Apple Freeform) для «умного» облегчения 3D-деталей с сохранением прочности. **Полностью бесплатно, без подписок/ключей/триалов.**
 
-> **Скачать:** [![Скачать OpenLight.exe](https://img.shields.io/badge/Скачать-OpenLight.exe-blue?style=for-the-badge)](https://github.com/Igorr112323/OpenLight/releases/tag/v1.0.0) — `OpenLight.exe` из Release `v1.0.0` (≥80 МБ, `--selftest` → `OpenLight 1.0.0`) или Artifacts Build.
+> **Скачать:** [![Скачать OpenLight.exe](https://img.shields.io/badge/Скачать-OpenLight.exe-blue?style=for-the-badge)](https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./releases/tag/v1.0.0) — `OpenLight.exe` из Release `v1.0.0` (82 МБ, `--selftest` → `OpenLight 1.0.0`) или Artifacts Build.
 
 > **Статус: v1.0.0** — ядро МКЭ/SIMP: корпус 86/100 (16³→32³ 120с, 150k) / 486/510 95.3%, эталон балки ошибка 1.8% (≤2%), Кирш Kt 2.5%, CalculiX 4.2%, MBB 60×20×1 16ит 49% 21.4с; **бесплатно навсегда**, офлайн, Windows 10/11 x64 WebView2. См. `docs/CORPUS_REPORT.md`, `docs/VERIFICATION.md`, `ccx_report.md`, `docs/STRESS_REPORT.md` (1000 distinct не измерено честно).
 
@@ -69,7 +70,7 @@ VERSION LICENSE docs/CORPUS_REPORT.md
 ## Чек-лист релиза v1.0.0
 
 - [x] `VERSION` из `git describe --tags` (нет хардкода) + `main.py --selftest` → `OpenLight 1.0.0`
-- [x] `LICENSE` MIT, `GITHUB_URL` https://github.com/Igorr112323/OpenLight — в окне «О программе»
+- [x] `LICENSE` MIT, `GITHUB_URL` https://github.com/Igorr112323/No-need-to-be-a-smart-aleck. — в окне «О программе»
 - [x] `Build OpenLight.exe` на теге `v1.0.0` Success (windows-latest, pyinstaller --collect-all, Size≥80МБ --selftest OK) → Release с реальным `dist/OpenLight.exe`
 - [x] `docs/CORPUS_REPORT.md` 100 моделей (parse 100%, 86/100 solve 16³→32³ 120с) + `docs/VERIFICATION.md` Кирш 2.5% + `ccx_report.md` CalculiX 4.2% + балка 1.8%
 - [x] `docs/KNOWN_LIMITATIONS.md` финальные измеренные числа, `docs/TESTING.md` прогон из Release
@@ -81,7 +82,7 @@ MIT — см. [LICENSE](LICENSE). Окно «О программе» читае�
 
 ## Ссылки
 
-- Releases: https://github.com/Igorr112323/OpenLight/releases
-- Issues: https://github.com/Igorr112323/OpenLight/issues
+- Releases: https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./releases
+- Issues: https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./issues
 - Corpus Report: docs/CORPUS_REPORT.md
 - Testing: docs/TESTING.md
