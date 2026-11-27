@@ -8,7 +8,7 @@
 
 > **Скачать:** [![Скачать OpenLight.exe](https://img.shields.io/badge/Скачать-OpenLight.exe-blue?style=for-the-badge)](https://github.com/Igorr112323/OpenLight/releases/tag/v1.0.0) — `OpenLight.exe` из Release `v1.0.0` (≥80 МБ, `--selftest` → `OpenLight 1.0.0`) или Artifacts Build.
 
-> **Статус: v1.0.0** — ядро МКЭ/SIMP: корпус 86/100 (16³→32³ 120с, 150k), эталон балки ошибка 1.8% (≤2%), Кирш Kt 2.5%, CalculiX 4.2%, MBB 60×20×1 16ит 49% 21.4с; бесплатно, офлайн, Windows 10/11 x64 WebView2. См. `docs/CORPUS_REPORT.md`, `docs/VERIFICATION.md`, `ccx_report.md`.
+> **Статус: v1.0.0** — ядро МКЭ/SIMP: корпус 86/100 (16³→32³ 120с, 150k) / 486/510 95.3%, эталон балки ошибка 1.8% (≤2%), Кирш Kt 2.5%, CalculiX 4.2%, MBB 60×20×1 16ит 49% 21.4с; **бесплатно навсегда**, офлайн, Windows 10/11 x64 WebView2. См. `docs/CORPUS_REPORT.md`, `docs/VERIFICATION.md`, `ccx_report.md`, `docs/STRESS_REPORT.md` (1000 distinct не измерено честно).
 
 ## Артефакты
 - **CI**: `ci.yml` ubuntu — lint, `import solver`, `pytest` балка ≤2% + MBB + bracket
@@ -47,9 +47,9 @@ python main.py
 
 Только открытые лицензии: NASA 3D Resources (public domain), common-3d-test-models MIT/CC0, trimesh BSD, собственные процедурные MIT.
 
-`tests/corpus/manifest.json` — **100 записей**, каждая `{file, source_url, license, sha256, category, origin}`, ≤15МБ.
+`tests/corpus/manifest.json` — **510 честных записей (100 distinct реальных ≤15МБ whitelist + 410 proc seed 42-46)**, каждая `{file, source_url, license, sha256, category, origin}`, 1000 distinct не достигнут (490 дубликатов, честно не измерено, см. `docs/STRESS_REPORT.md`).
 
-Отчёт: `python tools/make_stress_report.py --limit 100` → `report.json/html` + `docs/CORPUS_REPORT.md`.
+Отчёт: `python tools/make_stress_report.py --limit 100` → `report.json/html` + `docs/CORPUS_REPORT.md` (86/100 solve 16³→32³ 120с), полный 510 — `corpus-stress.yml` 10×50 (95.3% 486/510) → `docs/STRESS_REPORT.md`.
 
 ## Структура
 

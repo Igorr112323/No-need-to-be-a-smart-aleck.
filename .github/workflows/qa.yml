@@ -134,3 +134,64 @@ jobs:
           path: docs/qa/
           if-no-files-found: error
           retention-days: 14
+
+  qa-e2e-extra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt
+          pip install pytest playwright Pillow trimesh scipy scikit-image mapbox-earcut shapely
+          python -m playwright install --with-deps chromium
+      - name: Start web server
+        run: |
+          nohup python -m http.server 8080 --directory web > /tmp/http.log 2>&1 &
+          sleep 2
+          curl -sI http://127.0.0.1:8080/index.html | head
+      - name: Run e2e-extra 20 random real seed123
+        env:
+          E2E_URL: http://127.0.0.1:8080/index.html
+        run: |
+          mkdir -p docs/qa-extra
+          pytest tests/e2e/test_e2e_extra.py -v -s --tb=short 2>&1 | tee /tmp/e2e-extra.log
+          ls -lh docs/qa-extra/ || echo "no qa-extra"
+      - name: Show e2e-extra log
+        if: always()
+        run: cat /tmp/e2e-extra.log | tail -n 100
+      - name: Size gate qa-extra ≥5KB
+        if: always()
+        run: |
+          ls -lh docs/qa-extra/
+          count=$(ls docs/qa-extra/*.png 2>/dev/null | wc -l)
+          echo "found $count png in qa-extra"
+          if [ "$count" -lt 10 ]; then echo "FAIL qa-extra expected ≥10 PNG, found $count"; exit 1; fi
+          for f in docs/qa-extra/*.png; do
+            sz=$(stat -c%s "$f")
+            echo "$f $sz"
+            if [ "$sz" -lt 5120 ]; then echo "FAIL $f <5KB"; exit 1; fi
+          done
+          echo "qa-extra size gate OK"
+      - name: Upload qa-extra
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-extra-${{ github.run_id }}
+          path: docs/qa-extra/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Commit qa-extra (arena only)
+        if: always() && github.ref == 'refs/heads/arena/84988ed1-no-need-to-be-a-smart-aleck'
+        run: |
+          git config user.name "arena-ai-coding-agent[bot]"
+          git config user.email "298482267+arena-ai-coding-agent[bot]@users.noreply.github.com"
+          git add docs/qa-extra/*.png || true
+          if git diff --cached --quiet; then echo "no new qa-extra"; else git commit -m "qa: e2e-extra 20 png seed123" && git push origin HEAD; fi

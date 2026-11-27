@@ -4329,6 +4329,4416 @@
     "notes": "Рама БПЛА"
   },
   {
+    "file": "real_0000_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0001_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0002_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0003_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0004_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0005_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0006_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0007_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0008_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0009_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0010_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0011_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0012_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0013_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0014_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0015_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0016_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0017_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0018_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0019_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0020_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0021_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0022_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0023_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0024_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0025_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0026_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0027_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0028_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0029_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0030_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0031_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0032_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0033_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0034_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0035_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0036_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0037_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0038_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0039_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0040_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0041_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0042_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0043_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0044_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0045_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0046_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0047_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0048_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0049_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0050_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0051_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0052_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0053_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0054_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0055_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0056_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0057_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0058_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0059_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0060_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0061_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0062_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0063_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0064_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0065_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0066_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0067_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0068_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0069_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0070_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0071_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0072_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0073_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0074_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0075_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0076_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0077_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0078_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0079_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0080_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0081_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0082_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0083_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0084_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0085_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0086_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0087_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0088_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0089_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0090_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0091_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0092_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0093_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0094_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0095_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0096_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0097_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0098_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0099_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0100_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0101_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0102_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0103_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0104_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0105_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0106_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0107_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0108_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0109_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0110_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0111_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0112_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0113_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0114_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0115_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0116_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0117_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0118_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0119_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0120_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0121_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0122_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0123_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0124_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0125_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0126_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0127_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0128_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0129_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0130_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0131_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0132_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0133_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0134_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0135_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0136_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0137_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0138_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0139_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0140_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0141_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0142_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0143_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0144_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0145_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0146_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0147_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0148_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0149_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0150_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0151_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0152_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0153_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0154_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0155_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0156_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0157_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0158_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0159_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0160_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0161_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0162_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0163_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0164_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0165_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0166_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0167_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0168_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0169_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0170_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0171_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0172_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0173_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0174_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0175_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0176_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0177_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0178_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0179_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0180_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0181_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0182_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0183_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0184_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0185_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0186_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0187_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0188_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0189_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0190_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0191_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0192_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0193_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0194_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0195_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0196_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0197_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0198_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0199_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0200_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0201_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0202_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0203_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0204_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0205_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0206_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0207_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0208_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0209_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0210_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0211_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0212_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0213_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0214_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0215_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0216_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0217_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0218_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0219_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0220_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0221_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0222_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0223_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0224_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0225_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0226_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0227_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0228_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0229_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0230_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0231_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0232_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0233_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0234_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0235_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0236_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0237_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0238_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0239_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0240_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0241_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0242_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0243_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0244_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0245_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0246_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0247_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0248_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0249_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0250_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0251_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0252_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0253_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0254_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0255_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0256_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0257_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0258_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0259_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0260_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0261_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0262_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0263_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0264_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0265_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0266_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0267_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0268_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0269_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0270_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0271_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0272_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0273_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0274_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0275_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0276_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0277_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0278_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0279_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0280_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0281_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0282_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0283_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0284_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0285_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0286_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0287_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0288_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0289_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0290_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0291_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0292_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0293_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0294_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0295_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0296_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0297_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0298_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0299_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0300_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0301_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0302_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0303_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0304_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0305_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0306_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0307_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0308_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0309_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0310_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0311_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0312_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0313_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0314_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0315_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0316_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0317_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0318_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0319_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0320_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0321_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0322_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0323_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0324_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0325_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0326_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0327_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0328_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0329_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0330_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0331_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0332_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0333_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0334_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0335_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0336_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0337_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0338_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0339_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0340_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0341_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0342_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0343_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0344_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0345_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0346_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0347_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0348_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0349_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0350_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0351_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0352_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0353_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0354_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0355_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0356_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0357_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0358_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0359_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0360_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0361_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0362_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0363_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0364_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0365_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0366_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0367_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0368_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0369_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0370_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0371_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0372_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0373_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0374_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0375_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0376_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0377_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0378_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0379_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0380_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0381_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0382_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0383_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0384_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0385_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0386_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0387_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0388_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0389_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0390_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0391_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0392_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0393_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0394_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0395_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0396_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0397_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0398_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0399_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0400_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0401_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0402_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0403_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0404_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0405_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0406_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0407_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0408_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0409_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0410_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0411_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0412_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0413_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0414_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0415_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0416_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0417_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0418_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0419_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0420_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0421_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0422_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0423_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0424_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0425_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0426_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0427_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0428_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0429_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0430_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0431_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0432_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0433_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0434_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0435_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0436_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0437_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0438_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0439_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0440_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0441_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0442_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0443_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0444_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0445_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0446_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0447_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0448_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0449_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0450_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0451_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0452_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0453_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0454_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0455_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0456_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0457_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0458_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0459_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0460_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0461_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0462_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0463_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0464_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0465_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0466_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0467_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0468_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0469_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0470_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0471_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0472_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0473_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0474_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0475_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0476_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0477_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0478_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0479_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0480_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0481_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0482_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0483_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0484_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0485_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0486_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0487_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
+    "file": "real_0488_horse.obj",
+    "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/horse.obj",
+    "origin": "external",
+    "license": "MIT (common-3d-test-models)",
+    "sha256": "d2e1beaa7e366b61746192345f552f09056c97bbd096cb31eac4b9fe467fa7aa",
+    "category": "bracket",
+    "notes": "Реальный внешний bracket, добавлено seed 123"
+  },
+  {
+    "file": "real_0489_trimesh_featuretype2.STL",
+    "source_url": "https://raw.githubusercontent.com/mikedh/trimesh/main/models/featuretype.STL",
+    "origin": "external",
+    "license": "BSD (trimesh)",
+    "sha256": "c9946c4bb8034cd43522526a2f325200e2d2322a0c7258f848a81f00e418dab3",
+    "category": "gear",
+    "notes": "Реальный внешний gear, добавлено seed 123"
+  },
+  {
     "file": "rocker-arm.obj",
     "source_url": "https://raw.githubusercontent.com/alecjacobson/common-3d-test-models/master/data/rocker-arm.obj",
     "origin": "external",
