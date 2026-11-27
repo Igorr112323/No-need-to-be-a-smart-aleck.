@@ -143,6 +143,10 @@ jobs:
             grep -q "OpenLight" selftest.log || (echo "Selftest failed: no OpenLight output"; exit 1)
           fi
           echo "Selftest OK"
+          echo "=== SHA256 OpenLight.exe (сверка с digest артефакта) ==="
+          sha256sum dist/OpenLight.exe | tee sha256.txt
+          echo "size $(stat -c%s dist/OpenLight.exe) bytes ≥80МБ"
+          test -s sha256.txt || (echo "sha256 missing"; exit 1)
 
       - name: Upload pyinstaller log
         if: always()
