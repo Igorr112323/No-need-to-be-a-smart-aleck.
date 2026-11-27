@@ -50,8 +50,8 @@ jobs:
             done
           fi
           echo "after gen manifest $(cat tests/corpus/manifest.json | python3 -c 'import json; print(len(json.load(open(\"tests/corpus/manifest.json\"))))')"
-      - name: Fetch corpus (limit 100 real)
-        run: python tools/fetch_corpus.py --limit 100 || echo "fetch corpus warning"
+      - name: Fetch corpus (1000 real, whitelist ≤15МБ, sha256)
+        run: python tools/fetch_corpus.py || echo "fetch corpus warning (1000, network)"
       - name: Stress shard ${{ matrix.shard }}/20 (50 моделей, 16³→32³ 90с, watertight/parse/solve/время/память)
         run: |
           echo "manifest $(cat tests/corpus/manifest.json | python3 -c 'import json; print(len(json.load(open("tests/corpus/manifest.json"))))')"
