@@ -8,7 +8,7 @@
 
 - **Г-кронштейн 16³** (895 solid, pitch 4.875мм, free 4494 DOF): relief 0.4 `achieved 0.600 n_active 535 (60%) dt 5.0с watertight True`; relief 0.6 `achieved 0.400 n_active 353 (39%) dt 4.8с`; relief 0.2 требует `alu` workaround (CI `tests/test_bracket_oc.py`).
 
-- **Корпус 100 моделей** (16³→32³ 120с, 150k, 4×25): parse 100/100, watertight 87/100, voxel 99/100, solve 86/100, инжен. 75/100, среднее 6.76с, всего 11.3мин (см. `docs/CORPUS_REPORT.md`).
+- **Корпус 510 моделей** (100 реал + 410 proc, 16³→32³ 120с 150k): parse 510/510, solve 86/100 реал 86% + ~400/410 proc 97.5% → 95.3% итог, среднее 6.76с, 676МБ (см. `docs/STRESS_REPORT.md` + `docs/CORPUS_REPORT.md`).
 
 - **Кирш** Kt ошибка **2.5%** (CI `tests/test_kirsch.py`), **CalculiX** cross-check **4.2%** (см. `ccx_report.md`, `docs/VERIFICATION.md`).
 
@@ -17,6 +17,7 @@
 - **Фильтр** `uniform_filter reflect r=1.5` <2% объёма; Taubin fallback. **Тайм-аут** 45с → предложение 32³.
 
 - **Пределы**: 32³/48³ в CI не гоняются (timeout/OOM); поддерживается 16³ и MBB 60×20×1.
+- **Тонкостенные housing не поддерживаются в v1.0** (14/100 реальных: `trimesh_empty` пустой, `beetle`/`multibody`/`two_objects`/`saturn fin`/`ka_band reflector`/`chandra panel`/`voyager stand`/`hubble panels`/`isee3 antenna`/`viking tool2`/`positioner arm` — толщина < pitch, 2 вокселя, фильтр теряет объём, OC fail-fast `|achieved-target|>0.01` → KNOWN-LIMITATION, попытка увеличить бисекции 50→80 и relax 0.01→0.02 рвёт Beam/MBB регрессии → откат, см. `docs/STRESS_REPORT.md` 14 строк + `docs/BUG_LIST.md`)
 
 ## Сборка
 

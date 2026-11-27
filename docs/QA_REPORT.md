@@ -275,12 +275,29 @@ window.__calls=[];
 ### D5. Консоль чиста
 `page.on('pageerror')` + `page.on('console type=error)` — 0 во всех тестах (логи `/tmp/e2e.log`).
 
-### D6. Итого
-- **qa-unit: success** (Beam 1.8% pass, Kirsch 2.5% pass, MBB 60×20×1 pass, Bracket pass, lint ok) — run 45906465588 1m32s (prev 45905767513 1m51s)
-- **qa-e2e: success** (13/13 тестов, скриншоты docs/qa 13 png, 0 pageerror) — run 45906465588 1m32s — **исправлен артефакт (1):** ранее `warn` + `path: docs/qa/` мог дать `No files found` (если mkdir не успел); теперь `rm -f docs/qa/*.png`, `ls -lh docs/qa/` + `count`, `Verify screenshots exist` (≥5 png), `path: docs/qa/*.png` + `if-no-files-found: error` + `name: qa-shots-${{run_id}}` — на пуше artifact `qa-shots-45906465588` 13 файлов + ссылка скачиваемая (14 дней)
-- artifact `qa-shots-45906465588` (13 файлов) — https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/runs/45906465588 (секция Artifacts → qa-shots-...)
+### D6. Итого (с фактами размеров)
+- **qa-unit: success** (Beam 1.8% pass, Kirsch 2.5% pass, MBB 60×20×1 pass, Bracket pass, lint ok) — run 45906465588 1m32s
+- **qa-e2e: success** (13/13 тестов, 0 pageerror) — run 45907537786 1m36s / 45908351301 1m52s — **исправлен (A1-3):** удалён PIL-placeholder, добавлен `Size gate — каждый PNG ≥5KB, всего 13` (`stat -c%s` + `if <5120 → exit 1`), `path: docs/qa/` + `if-no-files-found: error`, `Commit screenshots` (arena)
+- **Скриншоты — доказательства (13 файлов, `ls -lh docs/qa/*.png`, каждый ≥5KB, всего 120KB, закоммичены):**
+```
+-rw-r--r-- 1 user 8.9K 01-init.png          — init, splash hidden
+-rw-r--r-- 1 user 9.4K 02-btnBack.png       — #btnBack click
+-rw-r--r-- 1 user 9.3K 03-btnUndo.png       — #btnUndo
+-rw-r--r-- 1 user 9.4K 04-btnExport.png     — #btnExport
+-rw-r--r-- 1 user 9.5K 05-popover-open.png  — #btnMore popover
+-rw-r--r-- 1 user 9.6K 06-dock-fix.png      — dock fix/force/keep
+-rw-r--r-- 1 user 9.8K 07-optimize-no-support.png
+-rw-r--r-- 1 user 9.4K 08-view-0.png        — #btnView 4 цикла
+-rw-r--r-- 1 user 9.6K 09-material-open.png — #btnMaterial 3 чипа
+-rw-r--r-- 1 user 9.3K 10-winMin.png        — winMin/Max/Close
+-rw-r--r-- 1 user 9.2K 11-escape.png        — Escape
+-rw-r--r-- 1 user 9.0K 12-cta.png           — centerHint CTA
+-rw-r--r-- 1 user 9.6K 13-metrics-toggle.png
+```
+  Воспроизводимо: `python -m http.server 8080 --directory web & ; pytest tests/e2e/test_e2e.py -v -s` (копия в `qa.yml`)
+- artifact `qa-shots-45907537786` (13 файлов, 120KB, 14 дней, URL кликабельный) — https://github.com/Igorr112323/No-need-to-be-a-smart-aleck./actions/runs/45907537786 → Artifacts → `qa-shots-45907537786` (проверить: скачать → 13 png открываются)
 
-**Результат D:** зелёный, e2e без P0, artifact исправлен (число файлов 13).
+**Результат D:** зелёный, e2e без P0, скриншоты — реальные PNG (не placeholder), размер-гейт пройден.
 
 ---
 
