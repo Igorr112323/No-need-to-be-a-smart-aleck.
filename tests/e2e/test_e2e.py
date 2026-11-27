@@ -58,18 +58,11 @@ def goto_app(page: Page, base_url):
 def screenshot(page: Page, name: str):
     out=pathlib.Path("docs/qa")/name
     out.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        page.screenshot(path=str(out))
-        print(f"[screenshot] {out} {out.stat().st_size} bytes")
-    except Exception as e:
-        print(f"[screenshot fail] {name}: {e}")
-        # fallback: create placeholder via PIL so artifact not empty
-        try:
-            from PIL import Image
-            Image.new('RGB',(800,600),(240,240,240)).save(out)
-            print(f"[screenshot fallback] {out}")
-        except Exception as e2:
-            print(f"fallback fail {e2}")
+    # playwright screenshot каждого шага — без PIL-placeholder, если <5KB gate падает
+    page.screenshot(path=str(out))
+    sz=out.stat().st_size
+    print(f"[screenshot] {out} {sz} bytes")
+    assert sz >= 5120, f"{name} too small {sz} <5KB"
     return out
 
 def test_01_no_pageerror_and_splash_hidden(page: Page, base_url):

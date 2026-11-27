@@ -789,6 +789,7 @@ def optimize_topology(
         # после бисекции passive уже =1 (выше), vol уже учтён
         volfrac_achieved = float(np.mean(rho_new)) if 'rho_new' in locals() else float(np.mean(rho))
         # ОБЯЗАТЕЛЬНЫЙ fail-fast: |achieved - vol_frac| >0.01 → RuntimeError
+        # v1.0 KNOWN-LIMITATION: тонкостенные housing (толщина < pitch, 2 вокселя) — OC не сходится, помечается как не поддерживается в v1.0 (см. docs/KNOWN_LIMITATIONS.md, docs/STRESS_REPORT.md 14 строк)
         if abs(volfrac_achieved - vol_frac) > 0.01:
             print(f"[OC FAIL] it={it+1} target {vol_frac:.4f} achieved {volfrac_achieved:.4f} dc_abs_max {dc_abs_max:.2e} n_passive {n_passive}")
             raise RuntimeError(f"OC fail-fast: |achieved {volfrac_achieved:.4f} - target {vol_frac:.4f}| >0.01 (l1 {l1:.2e} l2 {l2:.2e} lmid {lmid:.2e})")
