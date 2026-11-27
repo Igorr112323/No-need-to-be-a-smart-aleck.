@@ -18,7 +18,7 @@
 
 - **Пределы**: 32³/48³ в CI не гоняются (timeout/OOM); поддерживается 16³ и MBB 60×20×1.
 - **Тонкостенные housing не поддерживаются в v1.0** (14/100 реальных: `trimesh_empty` пустой, `beetle`/`multibody`/`two_objects`/`saturn fin`/`ka_band reflector`/`chandra panel`/`voyager stand`/`hubble panels`/`isee3 antenna`/`viking tool2`/`positioner arm` — толщина < pitch, 2 вокселя, фильтр теряет объём, OC fail-fast `|achieved-target|>0.01` → KNOWN-LIMITATION, попытка увеличить бисекции 50→80 и relax 0.01→0.02 рвёт Beam/MBB регрессии → откат, см. `docs/STRESS_REPORT.md` 14 строк + `docs/BUG_LIST.md`)
-- **Корпус 1000**: 580 external (whitelist MIT/BSD/Public Domain/CC0, ≤15МБ, sha256 измерены в CI) + 420 proc — parse 99%+ watertight 90%+ solve 93%+ (проекция 510: 95.3% → с 490 дубликатами лёгких моделей 97%+, измерение 20×50 90с pending в `corpus-stress.yml`). 14 тонкостенных остаются KNOWN-LIMITATION, не влияют на 1000/1000.
+- **Корпус 1000 distinct не измерен:** manifest 1000 на arena содержит 490 дубликатов 12 whitelist (не distinct), честный distinct 100 + 410 proc = 510 — 1000 distinct не достигнут, corpus-stress 20×50 1000 run `45973121183` 3m23s без фактических чисел (честно не измерено, см. STRESS_REPORT). 14 тонкостенных остаются KNOWN-LIMITATION.
 
 ## Сборка
 
