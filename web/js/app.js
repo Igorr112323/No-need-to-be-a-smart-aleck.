@@ -986,7 +986,6 @@ function showOriginal() {
     if (viewMode === 'stress' && state.stressField) enableStressMaterial(bracket, true); else enableStressMaterial(bracket, false);
   }
 }
-let viewMode = 'original';
 function setView(mode) {
   viewMode = mode; state.viewMode = mode;
   legendEl.classList.remove('show'); splitDivider.classList.remove('show');
@@ -1039,7 +1038,6 @@ function cycleView() {
   const labels = { original: 'Вид: Исходная', stress: 'Вид: Карта напряжений', light: 'Вид: Облегчённая', split: 'Вид: До/После' };
   showToast(labels[next] || next);
 }
-let splitRatio = 0.5;
 function updateSplitDividerPos() { splitDivider.style.left = (splitRatio * 100) + '%'; }
 let splitDragging = false;
 splitDivider.addEventListener('pointerdown', (e) => { splitDragging = true; splitDivider.setPointerCapture(e.pointerId); e.preventDefault(); });
@@ -1566,7 +1564,6 @@ canvas.addEventListener('click', (e) => {
     showToast('Зона ' + currentKeepRadius + ' мм — можно изменить'); scheduleAutosave(); if (state.optimized) showToast('Условия изменились — перезапустите оптимизацию');
   }
 });
-function _removeWithoutHistory(id, group, arr) { const idx = arr.findIndex(x => x.id === id); if (idx >= 0) arr.splice(idx, 1); const mesh = group.children.find(m => m.userData.id === id); if (mesh) group.remove(mesh); }
 document.addEventListener('click', (e) => { if (pendingForce && !e.target.closest('#popoverForce') && !e.target.closest('#scene')) {} });
 function onResize() { const w = window.innerWidth, h = window.innerHeight; camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h, false); if (viewMode === 'split') updateSplitDividerPos(); }
 window.addEventListener('resize', onResize); onResize();

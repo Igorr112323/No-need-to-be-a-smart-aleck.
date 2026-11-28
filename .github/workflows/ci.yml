@@ -22,7 +22,7 @@ jobs:
       - name: Python compile
         run: python -m py_compile main.py solver.py build/vendor.py build/make_icon.py tools/fetch_corpus.py tools/make_stress_report.py tests/test_beam.py tests/test_solver.py tests/test_corpus.py tests/test_mbb.py tests/test_bracket_oc.py
       - name: Node check
-        run: node --check web/js/app.js && node --check web/js/state.js
+        run: node --input-type=module --check < web/js/app.js && node --check web/js/state.js
       - name: Solver import smoke
         run: python -c "import solver; print(solver.MATERIALS)"
       - name: Beam etalon (≤2%)
